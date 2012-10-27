@@ -1,0 +1,181 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[ngerman]{babel}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Hausaufgabe 1}
+\author{Tom Nick, Marius Liwotto, Maximilian Bachl (341455)}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{Aufgabe}
+T -- Tobi kommt
+C -- Christoph kommt
+S -- Sebastian kommt
+V -- Viktor kommt
+F -- Friederike kommt
+\\
+
+$
+(T \to C \land S) \land
+(C \lor V) \land
+(S \to \lnot F) \land
+(\lnot V) \land
+(\lnot T \to \lnot C) \leftrightarrow
+$
+
+$
+(\lnot T \lor (C \land S)) \land
+(C \lor V) \land
+(\lnot S \lor \lnot F) \land
+(\lnot V) \land
+(T \lor \lnot C) \leftrightarrow
+$
+
+$
+(\lnot T \lor C) \land (\lnot T \lor S) \land
+C \land \lnot V \land
+(\lnot S \lor \lnot F) \land
+(T \lor \lnot C) \leftrightarrow
+$
+
+$
+C \land (\lnot T \lor S) \land
+\lnot V \land
+(\lnot S \lor \lnot F) \land
+(T \lor \lnot C) \leftrightarrow
+$
+
+$
+C \land (\lnot T \lor S) \land
+\lnot V \land
+(\lnot S \lor \lnot F) \land
+T \leftrightarrow
+$
+
+$
+C \land S \land
+\lnot V \land
+\lnot F \land
+T
+$
+
+\section{Aufgabe}
+
+Ist nicht erfüllbar
+
+$
+\lnot(X \to (Y \to X)) \leftrightarrow \lnot(\lnot X \lor (\lnot Y \lor X)) \leftrightarrow \lnot\top \leftrightarrow \bot
+$
+
+Ist erfüllbar
+
+$
+(X \land (Y \to \lnot X)) \to Y \leftrightarrow
+$
+
+$
+\lnot(X \land (\lnot Y \lor \lnot X)) \lor Y \leftrightarrow
+$
+
+$
+\lnot(X \land \lnot Y) \lor Y \leftrightarrow
+$
+
+$
+\lnot X \lor Y \lor Y \leftrightarrow
+$
+
+$
+\lnot X \lor Y
+$
+
+Ist erfüllbar
+
+$
+(\lnot X \to (X \land Y)) \to (Y \to X) \leftrightarrow
+$
+
+$
+\lnot (X \lor (X \land Y)) \lor \lnot(Y \lor X) \leftrightarrow
+$
+
+$
+\lnot ((X \lor (X \land Y)) \land (Y \lor X)) \leftrightarrow
+$
+
+$
+\lnot (X \land (Y \lor X)) \leftrightarrow
+$
+
+$
+\lnot (X \land (Y \lor X)) \leftrightarrow
+$
+
+$
+\lnot X
+$
+
+Ist erfüllbar
+
+$
+(X \lor Y) \to (X \land Y) \leftrightarrow
+$
+
+$
+\lnot(X \lor Y) \lor (X \land Y) \leftrightarrow
+$
+
+$
+(\lnot X \land \lnot Y) \lor (X \land Y) \leftrightarrow
+$
+
+$
+(X \leftrightarrow Y)
+$
+
+Ist eine Tautologie
+
+$
+(X \land Y ) \to (X \lor Y) \leftrightarrow
+$
+
+$
+\lnot (X \land Y ) \lor (X \lor Y) \leftrightarrow
+$
+
+$
+\lnot X \lor \lnot Y \lor (X \lor Y) \leftrightarrow
+$
+
+$
+\lnot X \lor \lnot Y \lor (X \lor Y) \leftrightarrow
+$
+
+$
+\lnot X \lor \lnot Y \lor X \lor Y \leftrightarrow
+$
+
+$
+\top
+$
+
+\section{Aufgabe}
+
+\end{document}
+
+
+
+
+
+
+
+
