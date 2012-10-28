@@ -1,180 +1,141 @@
 \documentclass[11pt]{amsart}
-\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
-%\geometry{landscape}                % Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{epstopdf}
-\usepackage[ngerman]{babel}
-\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{fullpage}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{pst-all}
+\usepackage{enumerate}
+\usepackage{pstricks}
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\ts}{\textsf}
 
-\title{Hausaufgabe 1}
-\author{Tom Nick, Marius Liwotto, Maximilian Bachl (341455)}
-%\date{}                                           % Activate to display a given date or no date
+\usepackage{tabularx}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+
+\author{}
 
 \begin{document}
-\maketitle
+
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 1} \\
+\large{Tutorium: , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  
+\end{tabbing}
 
 \section{Aufgabe}
-T -- Tobi kommt
-C -- Christoph kommt
-S -- Sebastian kommt
-V -- Viktor kommt
-F -- Friederike kommt
+\textbf{T} - Tobi kommt $\mid$
+\textbf{C} - Christoph kommt $\mid$
+\textbf{S} - Sebastian kommt $\mid$
+\textbf{V} - Viktor kommt $\mid$
+\textbf{F} - Friederike kommt
 \\
 
-$
+\begin{align*}
 (T \to C \land S) \land
 (C \lor V) \land
 (S \to \lnot F) \land
 (\lnot V) \land
-(\lnot T \to \lnot C) \leftrightarrow
-$
-
-$
+(\lnot T \to \lnot C) &\leftrightarrow \\
 (\lnot T \lor (C \land S)) \land
 (C \lor V) \land
 (\lnot S \lor \lnot F) \land
 (\lnot V) \land
-(T \lor \lnot C) \leftrightarrow
-$
-
-$
+(T \lor \lnot C) &\leftrightarrow \\
 (\lnot T \lor C) \land (\lnot T \lor S) \land
 C \land \lnot V \land
 (\lnot S \lor \lnot F) \land
-(T \lor \lnot C) \leftrightarrow
-$
-
-$
+(T \lor \lnot C) &\leftrightarrow \\
 C \land (\lnot T \lor S) \land
 \lnot V \land
 (\lnot S \lor \lnot F) \land
-(T \lor \lnot C) \leftrightarrow
-$
-
-$
+(T \lor \lnot C) &\leftrightarrow \\
 C \land (\lnot T \lor S) \land
 \lnot V \land
 (\lnot S \lor \lnot F) \land
-T \leftrightarrow
-$
-
-$
+T &\leftrightarrow \\
 C \land S \land
 \lnot V \land
 \lnot F \land
 T
-$
+\end{align*}
 
 \section{Aufgabe}
 
-Ist nicht erfüllbar
+\begin{enumerate}[(i)]
+\item Ist nicht erfüllbar
+\begin{align*}
+\lnot(X \to (Y \to X)) &\leftrightarrow \\
+\lnot(\lnot X \lor (\lnot Y \lor X)) &\leftrightarrow \\
+\lnot\top &\leftrightarrow \\
+\bot
+\end{align*}
 
-$
-\lnot(X \to (Y \to X)) \leftrightarrow \lnot(\lnot X \lor (\lnot Y \lor X)) \leftrightarrow \lnot\top \leftrightarrow \bot
-$
-
-Ist erfüllbar
-
-$
-(X \land (Y \to \lnot X)) \to Y \leftrightarrow
-$
-
-$
-\lnot(X \land (\lnot Y \lor \lnot X)) \lor Y \leftrightarrow
-$
-
-$
-\lnot(X \land \lnot Y) \lor Y \leftrightarrow
-$
-
-$
-\lnot X \lor Y \lor Y \leftrightarrow
-$
-
-$
+\item Ist erfüllbar
+\begin{align*}
+(X \land (Y \to \lnot X)) \to Y &\leftrightarrow \\
+\lnot(X \land (\lnot Y \lor \lnot X)) \lor Y &\leftrightarrow \\
+\lnot(X \land \lnot Y) \lor Y &\leftrightarrow \\
+\lnot X \lor Y \lor Y &\leftrightarrow \\
 \lnot X \lor Y
-$
+\end{align*}
 
-Ist erfüllbar
-
-$
-(\lnot X \to (X \land Y)) \to (Y \to X) \leftrightarrow
-$
-
-$
-\lnot (X \lor (X \land Y)) \lor \lnot(Y \lor X) \leftrightarrow
-$
-
-$
-\lnot ((X \lor (X \land Y)) \land (Y \lor X)) \leftrightarrow
-$
-
-$
-\lnot (X \land (Y \lor X)) \leftrightarrow
-$
-
-$
-\lnot (X \land (Y \lor X)) \leftrightarrow
-$
-
-$
+\item Ist erfüllbar
+\begin{align*}
+(\lnot X \to (X \land Y)) \to (Y \to X) &\leftrightarrow \\
+\lnot (X \lor (X \land Y)) \lor \lnot(Y \lor X) &\leftrightarrow\\
+\lnot ((X \lor (X \land Y)) \land (Y \lor X)) &\leftrightarrow\\
+\lnot (X \land (Y \lor X)) &\leftrightarrow\\
+\lnot (X \land (Y \lor X)) &\leftrightarrow\\
 \lnot X
-$
+\end{align*}
 
-Ist erfüllbar
+\item Ist erfüllbar
 
-$
-(X \lor Y) \to (X \land Y) \leftrightarrow
-$
-
-$
-\lnot(X \lor Y) \lor (X \land Y) \leftrightarrow
-$
-
-$
-(\lnot X \land \lnot Y) \lor (X \land Y) \leftrightarrow
-$
-
-$
+\begin{align*}
+(X \lor Y) \to (X \land Y) &\leftrightarrow\\
+\lnot(X \lor Y) \lor (X \land Y) &\leftrightarrow\\
+(\lnot X \land \lnot Y) \lor (X \land Y) &\leftrightarrow\\
 (X \leftrightarrow Y)
-$
+\end{align*}
 
-Ist eine Tautologie
+\item Ist eine Tautologie
 
-$
-(X \land Y ) \to (X \lor Y) \leftrightarrow
-$
-
-$
-\lnot (X \land Y ) \lor (X \lor Y) \leftrightarrow
-$
-
-$
-\lnot X \lor \lnot Y \lor (X \lor Y) \leftrightarrow
-$
-
-$
-\lnot X \lor \lnot Y \lor (X \lor Y) \leftrightarrow
-$
-
-$
-\lnot X \lor \lnot Y \lor X \lor Y \leftrightarrow
-$
-
-$
+\begin{align*}
+(X \land Y ) \to (X \lor Y) &\leftrightarrow \\
+\lnot (X \land Y ) \lor (X \lor Y) &\leftrightarrow\\
+\lnot X \lor \lnot Y \lor (X \lor Y) &\leftrightarrow\\
+\lnot X \lor \lnot Y \lor (X \lor Y) &\leftrightarrow\\
+\lnot X \lor \lnot Y \lor X \lor Y &\leftrightarrow\\
 \top
-$
+\end{align*}
+\end{enumerate}
 
 \section{Aufgabe}
-
-$
-% Das Ergebnis dann noch in Top/Bottom konvertieren mit so ner großen LaTeX-Klammer ;)
-\phi_i(a_{n-1},...,a_0,b_{n-1},...,b_0) = concat(a_{n-1},...,a_0) + concat(b_{n-1},...,b_0))_i
-$
-
+$$
+\mathsf{
+\phi_i(a_{n-1},...,a_0,b_{n-1},...,b_0) = concat(a_{n-1},...,a_0) + concat(b_{n-1},...,b_0))_i}
+$$
 \section{Aufgabe}
 % Irgendwas mit der Disjunktive Normalform würde ich probieren. Die war in der Vorlesung und dürfen wir auch benutzen...
 \end{document}
