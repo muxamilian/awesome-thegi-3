@@ -135,28 +135,28 @@ $$\phi_i\mathsf{(a_{n-1},...,a_0,b_{n-1},...,b_0)} \rightarrow
 \section{Aufgabe}
 % Irgendwas mit der Disjunktive Normalform würde ich probieren. Die war in der Vorlesung und dürfen wir auch benutzen... 
 Wie in der Vorlesung gezeigt wurde (Folien S. ) gibt es zu jeder Formel $\phi$ eine äquivalente konjunktive Normalform. Damit diese der Bedingung max-depth = min-depth gerecht wird, bedarf es folgender Konstruktion: \\
-$$f(\phi) \rightarrow \begin{cases}f((\psi \land \top) * \xi), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $<$ max-depth($\xi$)} \land * \in \{ \lnot, \land\} \\ f(\psi * (\xi \land \top)), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $>$ max-depth($\xi$)} \land * \in \{ \lnot, \land\}  \\
-f(\phi) * f(\xi), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $=$ max-depth($\xi$)} \land * \in \{ \lnot, \land\} \\ \phi ,& \phi \in (\textrm{AVar } \cup \lnot\textrm{AVar } \cup \{\top, \bot  \})\end{cases} $$ $$ \textrm{wobei $\lnot$AVar definiert ist als die Menge der negierten Variablen von AVar} $$
+$$f(\phi) \rightarrow \begin{cases}f((\psi \land \top) * \xi), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $<$ max-depth($\xi$)} \land * \in \{ \lor, \land\} \\ f(\psi * (\xi \land \top)), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $>$ max-depth($\xi$)} \land * \in \{ \lor, \land\}  \\
+f(\psi) * f(\xi), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $=$ max-depth($\xi$)} \land * \in \{ \lor \land\} \\ \phi ,& \phi \in (\textrm{AVar } \cup \lnot\textrm{AVar } \cup \{\top, \bot  \})\end{cases} $$ $$ \textrm{wobei $\lnot$AVar definiert ist als die Menge der negierten Variablen von AVar} $$
 
 
 Sei zu beweisen, dass diese Konstruktion hält was sie verspricht. 
 
 \begin{itemize}
-\item[\textbf{IA}]  $\phi \in (\textrm{AVar }  \cup \{\top, \bot  \}) \Rightarrow$ max-depth($\phi$) = 0 = min-depth($\phi$) \\
- $\phi \in \lnot\textrm{AVar } \Rightarrow$ max-depth($\phi$) = 1 = min-depth($\phi$) 
-\item[\textbf{IV}] Sei $\phi$ eine Formel, wobei max-depth($f(\phi)$) =  min-depth($f(\phi)$) und  \\ Sei $\xi$ eine Formel, wobei max-depth($f(\xi)$) = min-depth($f(\xi)$)
-\item[\textbf{IS}] Zu Zeigen ist, dass für die Termgrösse n+1 das ganze noch gilt: $f(\phi  * \xi)$ \\
-\textbf{Fallunterscheidung über $f(\phi  * \xi)$}
+\item[\textbf{IA}]  $\phi \in (\textrm{AVar }  \cup \{\top, \bot  \}) \Rightarrow f(\phi) = \phi \Rightarrow$ max-depth($f(\phi)$) = 0 = min-depth($f(\phi)$) \\
+ $\phi \in \lnot\textrm{AVar } \Rightarrow$ $f(\phi) = \phi \Rightarrow$ max-depth($f(\phi)$) = 1 = min-depth($f(\phi)$) 
+\item[\textbf{IV}] Sei $\psi$ eine Formel, wobei max-depth($f(\psi)$) =  min-depth($f(\psi)$) und  \\ Sei $\xi$ eine Formel, wobei max-depth($f(\xi)$) = min-depth($f(\xi)$)
+\item[\textbf{IS}] Zu Zeigen ist, dass für die Termgrösse n+1 das ganze noch gilt: $f(\psi  * \xi)$ \\
+\textbf{Fallunterscheidung über $f(\psi  * \xi)$}
 \begin{itemize}
-\item $\textrm{ max-depth($\psi$) $<$ max-depth($\xi$)} \land * \in \{ \lnot, \land\}$ \\
-$f(\phi  * \xi) = f((\phi \land \top)  * \xi) = ... = f((...(\phi \land \top) ...) * \xi)$ \\
-Es werden zu $\phi$ so lange $\land \top$ hinzugefügt bis max-depth der linken Seite = max-depth der rechten Seite. Jetzt kommt die Magie der Rekursion und die Funktion wird auf die Unterfunktionen aufgerufen: \\
-$(f(...(\phi \land \top) ... \land \top)) * f(\xi)) = (f(...(\phi \land \top) ... \land (\top \land \top)) * f(\xi)) = ... $ \\
+\item $\textrm{ max-depth($\psi$) $<$ max-depth($\xi$)} \land * \in \{ \lor, \land\}$ \\
+$f(\psi  * \xi) = f((\psi \land \top)  * \xi) = ... = f((...(\psi \land \top) ...) * \xi)$ \\
+Es werden zu $\psi$ so lange $\land \top$ hinzugefügt bis max-depth der linken Seite = max-depth der rechten Seite. Jetzt kommt die Magie der Rekursion und die Funktion wird auf die Unterfunktionen aufgerufen: \\
+$(f(...(\psi \land \top) ... \land \top)) * f(\xi)) = (f(...(\psi \land \top) ... \land (\top \land \top)) * f(\xi)) = ... $ \\
 Durch die rekursiven Aufrufe wird der Term und alle Subterme tiefensymmetrisch.
-Wegen der \textbf{IV} ist damit auch min-depth($f(\phi * \xi)$) = max-depth($f(\phi * \xi)$)
-\item $\textrm{ max-depth($\psi$) $>$ max-depth($\xi$)} \land * \in \{ \lnot, \land\}$ \\
+Wegen der \textbf{IV} ist damit auch min-depth($f(\psi * \xi)$) = max-depth($f(\psi * \xi)$)
+\item $\textrm{ max-depth($\psi$) $>$ max-depth($\xi$)} \land * \in \{ \lor, \land\}$ \\
 analog
-\item  $\textrm{ max-depth($\psi$) $=$ max-depth($\xi$)} \land * \in \{ \lnot, \land\}$ \\
+\item  $\textrm{ max-depth($\psi$) $=$ max-depth($\xi$)} \land * \in \{ \lor, \land\}$ \\
 Da $\textrm{ max-depth($\psi$) $=$ max-depth($\xi$)} $ gilt per Transitivität und der \textbf{IV} dieser Fall.
 \end{itemize}
 
