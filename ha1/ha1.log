@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  29 OCT 2012 19:50
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  31 OCT 2012 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -666,7 +666,12 @@ File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
 ) [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Overfull \hbox (18.95781pt too wide) in paragraph at lines 141--141
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
@@ -677,12 +682,12 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 8968 strings out of 493634
- 132012 string characters out of 3143401
+ 8961 strings out of 493634
+ 131909 string characters out of 3143401
  302263 words of memory out of 3000000
- 12064 multiletter control sequences out of 15000+200000
- 21310 words of font info for 69 fonts, out of 3000000 for 9000
+ 12058 multiletter control sequences out of 15000+200000
+ 20410 words of font info for 66 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  49i,12n,62p,586b,567s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on ha1.dvi (2 pages, 8432 bytes).
+Output written on ha1.dvi (2 pages, 9148 bytes).
