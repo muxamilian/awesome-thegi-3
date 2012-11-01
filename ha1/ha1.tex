@@ -35,12 +35,12 @@ top=2.0cm, bottom=2.0cm]{geometry}
 
 \begin{center}
 \Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 1} \\
-\large{Tutorium: , Mi 14.00 - 16.00 Uhr}
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
 \end{center}
 \begin{tabbing}
 Tom Nick \hspace{2cm}\= - 340528\\
 Maximillian Bachl \> - 341455 \\
-Marius Liwotto\> -  
+Marius Liwotto\> -  341051
 \end{tabbing}
 
 \section{Aufgabe}
@@ -77,7 +77,7 @@ C \land S \land
 \lnot F \land
 T
 \end{align*}
-
+Also kommen: Christopher, Sebastian und Tobi. Viktor und Frederike werden nicht kommen.
 \section{Aufgabe}
 
 \begin{enumerate}[(i)]
@@ -130,13 +130,21 @@ T
 \end{enumerate}
 
 \section{Aufgabe}
-$$\phi_i\mathsf{(a_{n-1},...,a_0,b_{n-1},...,b_0)} \rightarrow 
-\begin{cases} \top ,& \textrm{falls } \mathsf{(concat(a_{n-1},...,a_0) + concat(b_{n-1},...,b_0))_i}  = 1 \\ \bot,  & \textrm{sonst }\end{cases}$$
+%$$\phi_i\mathsf{(a_{n-1},...,a_0,b_{n-1},...,b_0)} \rightarrow 
+%\begin{cases} \top ,& \textrm{falls } \mathsf{(concat(a_{n-1},...,a_0) + concat(b_{n-1},...,b_0))_i}  = 1 \\ \bot,  & \textrm{sonst }\end{cases}$$
+Sei $\phi_i$ induktiv definiert als: 
+\begin{align*}
+\phi_0(a_{n-1},...,a_0,b_{n-1},...,b_0) &= \lnot(a_0 \leftrightarrow b_0) \\
+\psi_0(a_{n-1},...,a_0,b_{n-1},...,b_0) &= a_0 \land b_0\\
+\phi_{i+1}(a_{n-1},...,a_0,b_{n-1},...,b_0) &= (\lnot a_{i+1} \land \lnot b_{i+1} \land \psi_i) \lor  (\lnot a_{i+1} \land b_{i+1} \land \lnot \psi_i)  \lor (a_{i+1} \land \lnot b_{i+1} \land \lnot \psi_i)  \lor (a_{i+1} \land  b_{i+1} \land \psi_i)  \\
+\psi_{i+1}(a_{n-1},...,a_0,b_{n-1},...,b_0) &= (a_{i+1} \land b_{i+1}) \lor (a_{i+1} \land \psi_i) \lor (b_{i+1} \land \psi_i)
+\end{align*}
+
 \section{Aufgabe}
 % Irgendwas mit der Disjunktive Normalform würde ich probieren. Die war in der Vorlesung und dürfen wir auch benutzen... 
 Wie in der Vorlesung gezeigt wurde (Folien S. ) gibt es zu jeder Formel $\phi$ eine äquivalente konjunktive Normalform. Damit diese der Bedingung max-depth = min-depth gerecht wird, bedarf es folgender Konstruktion: \\
 $$f(\phi) \rightarrow \begin{cases}f((\psi \land \top) * \xi), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $<$ max-depth($\xi$)} \land * \in \{ \lor, \land\} \\ f(\psi * (\xi \land \top)), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $>$ max-depth($\xi$)} \land * \in \{ \lor, \land\}  \\
-f(\psi) * f(\xi), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $=$ max-depth($\xi$)} \land * \in \{ \lor \land\} \\ \phi ,& \phi \in (\textrm{AVar } \cup \lnot\textrm{AVar } \cup \{\top, \bot  \})\end{cases} $$ $$ \textrm{wobei $\lnot$AVar definiert ist als die Menge der negierten Variablen von AVar} $$
+(f(\psi) * f(\xi)), & \phi = (\psi * \xi) \land \textrm{ max-depth($\psi$) $=$ max-depth($\xi$)} \land * \in \{ \lor, \land\} \\ \phi ,& \phi \in (\textrm{AVar } \cup \lnot\textrm{AVar } \cup \{\top, \bot  \})\end{cases} $$ $$ \textrm{wobei $\lnot$AVar definiert ist als die Menge der negierten Variablen von AVar} $$
 
 
 Sei zu beweisen, dass diese Konstruktion hält was sie verspricht. 
