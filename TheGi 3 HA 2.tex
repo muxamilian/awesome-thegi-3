@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amssymb} 
+\usepackage{amsmath}
+\usepackage{ulem}
+
+\begin{document}
+	\begin{Large}
+	\section*{TheGi 3 HA 2}	
+	\subsection*{Aufgabe 1}
+	
+	\( N_k = \{X_{ik}~|~(v_i,v_k) \in E \wedge v_i,v_k \in V \} \)
+	
+	\begin{enumerate}
+	\item[(i)]	
+	\( \varphi_n = \bigwedge\limits_{k = 1}^{n} (\bigvee\limits_{c = 1}^{\#(N_k)} X_{kc} \in  N_k) \)
+
+	\item[(ii)]
+	\( \phi(k) = \begin{cases}	
+	(X_{ij} \wedge X_{i(j+1)}) \wedge (\neg X_{i(j+2)} \wedge ... \wedge \neg X_{i(j+m)}), & \#(N_k) \geq 2\\
+	X_{ij}, & \#(N_k) = 1 \wedge X_{ij} \in N_k 	
+	\end{cases} \)
+	
+	\ \\ \( \varphi_n = \bigwedge\limits_{k = 1}^{\#V} (\phi(k))
+	\)
+	
+	\end{enumerate}
+	
+	\subsection*{Aufgabe 2}	
+	
+	\subsection*{Aufgabe 3}
+	
+	\( \varphi_1 = X \Rightarrow (Y \wedge Z) \\
+	\equiv \neg X \vee (Y \wedge Z) \\
+	\equiv (\neg X \vee Y) \wedge (\neg X \vee Z) \\
+	\equiv (X \Rightarrow Y) \wedge (X \Rightarrow Z) \\
+	\equiv \psi_1 \\
+	\) 
+	
+	\ \\ \( \varphi_2 = (X \wedge Y \wedge Z) \Rightarrow Q \\
+	\equiv \neg (X \wedge Y \wedge Z) \vee Q \\
+	\equiv \neg X \vee \neg Y \vee \neg Z \vee Q \\
+	\equiv (\neg X \vee (\neg Y \vee (\neg Z \vee Q))) \\
+	\equiv (X \Rightarrow (Y \Rightarrow (Z \Rightarrow Q))) \\
+	\equiv \psi_2 \\
+	\) 
+	
+	\ \\ \( \varphi_3 = (X \wedge Y) \Rightarrow \neg (Z \Rightarrow X)  \\
+	\equiv \neg (X \wedge Y) \vee \neg (\neg Z \vee X)  \\
+	\equiv (\neg X \vee \neg Y) \vee (Z \wedge \neg X)  \\
+	\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y \vee \neg X)  \\
+	\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y)  \\
+	\equiv (\neg X \vee \neg Y) \\
+	\equiv (\neg X \vee \neg Y) \wedge T \\
+	\equiv (\neg X \vee \neg Y) \wedge (\neg X \vee X) \\
+	\equiv (\neg X \vee \neg Y) \wedge (Y \vee \neg X \vee X) \\
+	\equiv (\neg X \vee \neg Y) \wedge (Y \vee X) \vee \neg X \\
+	\equiv (X \Rightarrow \neg Y) \wedge (\neg Y \Rightarrow X) \vee \neg X \\
+	\equiv \psi_3 \\
+	\) 
+	
+	\ \\ \( \varphi_4 = (Y \Rightarrow Z) \Rightarrow (Y \Rightarrow X) \\
+	\equiv \neg (Y \Rightarrow Z) \vee (Y \Rightarrow X) \\
+	\equiv \neg (\neg Y \vee Z) \vee (\neg Y \vee X) \\
+	\equiv (Y \wedge \neg Z) \vee (\neg Y \vee X) \\
+	\equiv (Y \vee \neg Y \vee X) \wedge (\neg Z \vee \neg Y \vee X)\\
+	\equiv (T \vee X) \wedge (\neg Z \vee \neg Y \vee X)\\
+	\equiv T \wedge (\neg Z \vee \neg Y \vee X)\\
+	\equiv \neg Z \vee \neg Y \vee X\\
+	\equiv \psi_4 \\
+	\) 
+	
+	\ \\ \( \varphi_5 = (X \wedge\neg Y) \vee (Y \wedge \neg X) \\
+	\equiv \neg (\neg X \vee Y) \vee \neg (\neg Y \vee X) \\
+	\equiv \neg (X \Rightarrow Y) \vee \neg (Y \Rightarrow X) \\
+	\equiv \neg ((X \Rightarrow Y) \wedge (Y \Rightarrow X)) \\
+	\equiv \neg (X \Leftrightarrow Y) \\
+	\equiv \psi_5 \\
+	\) 
+	
+	\end{Large}
+	
+	\subsection*{Aufgabe 4}
+	
+\end{document}
