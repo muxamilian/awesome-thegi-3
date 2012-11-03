@@ -5,12 +5,13 @@
 \usepackage{amssymb} 
 \usepackage{amsmath}
 \usepackage{ulem}
+\usepackage{mathabx}
 
 \begin{document}
 	\begin{Large}
 	\section*{TheGi 3 HA 2}	
 	\subsection*{Aufgabe 1}
-	
+
 	\( N_k = \{X_{ik}~|~(v_i,v_k) \in E \wedge v_i,v_k \in V \} \)
 	
 	\begin{enumerate}
@@ -80,8 +81,33 @@
 	\equiv \psi_5 \\
 	\) 
 	
-	\end{Large}
-	
 	\subsection*{Aufgabe 4}
+	Aus der VL wissen wir, dass zu jeder aussagenlogischen Formel eine äquivalente KNF existiert. \\
+	Folglich gilt: $\varphi \equiv knf_{\varphi} = \bigwedge\limits_{i=1}^{n} \bigvee\limits_{j=1}^{m} L_{ij}$ \\
+	Aus $\varphi \equiv True$ kann man folgern, dass alle Disjunktionsterme von $knf_{\varphi}$ wahr sein müssen.\\
+	Des Weiteren gilt, dass $\chi$ die folgende äquivalente Form besitzt, wenn $\chi$ keine Tautologie ist:
 	
+	\ \\ \( \chi \equiv t_{\varphi 1} \vee ... \vee  t_{\varphi i} \vee \gamma \text{ mit } \\
+	\gamma \in AL,~t_{\varphi i} \text{ ist ein Disjunktionsterm
+	mit i $\in [1,u]$ und 1 $\leq$ u $\leq$ n von } \\ 
+	knf_{\varphi} \text{ und } var(\gamma) ~\cap~ var(\varphi) = \emptyset \)
+	
+	\ \\Würde dies nicht gelten, so gäbe es eine passende Belegung $\beta$, \\
+	sodass $\ldbrack \chi \rdbrack ^\beta \equiv False$, obwohl $\varphi \equiv True$. \\
+	Das stünde im Widerspruch zur Aussage, dass $\varphi \Rightarrow \chi$ gilt. \\
+	Ist $\chi$ eine Tautologie gilt: $t_{\varphi} = True$ \\
+	Aus der Struktur von $\chi$ folgt ebenfalls, dass $t_{\varphi}$ folgende Bedingungen erfüllt:\\
+	\ \\ \(\varphi \Rightarrow t_{\varphi} \wedge t_{\varphi} \Rightarrow \chi \wedge var(t_{\varphi}) \subseteq 		  	var(\varphi) \cap var(\chi) \)
+	
+	\ \\Daraus folgt, dass für alle Formeln $\varphi$, $\chi \in$ AL gilt mit $\varphi \Rightarrow \chi \equiv True$:
+	
+	\ \\ \( \exists \psi \in AL. \varphi \Rightarrow \psi \wedge 
+	\psi \Rightarrow \chi \wedge var(\psi) \subseteq var(\varphi) \cap var(\chi) \)
+	
+	
+	
+
+	
+	
+	\end{Large}
 \end{document}
