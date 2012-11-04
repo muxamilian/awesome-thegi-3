@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.10.28)  4 NOV 2012 23:02
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.10.28)  4 NOV 2012 23:33
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -913,7 +913,7 @@ File: omsppl.fd
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 186--192
 
  []
 
@@ -942,7 +942,7 @@ xmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2012/texm
 f-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2012/texmf-dist/
 fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on "TheGi 3 HA 2.pdf" (3 pages, 100167 bytes).
+Output written on "TheGi 3 HA 2.pdf" (3 pages, 99971 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
