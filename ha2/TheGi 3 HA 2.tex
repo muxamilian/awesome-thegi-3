@@ -50,12 +50,13 @@ Marius Liwotto\> -  341051
 	$G' := (V, t(s(r(E')))$ mit $t(s(r(E)))$ = reflexiver, symmetrischer und transitiver Abschluss von $E$.
 	
 	\ \\Die Menge aller Pfade von $v_n$ nach $v_m$ mit $v_n, v_m \in V$ in G':\\	
-	\( P_{v_n,v_m} = \{p~|~\text{wenn p ein Pfad von $v_n$ zu $v_m$ ist mit $v_n, v_m \in V$} \}  \)
+	\( P_{v_n,v_m} := \{p~|~\text{wenn p ein Pfad von $v_n$ zu $v_m$ ist mit $v_n, v_m \in V$} \}  \)
 	
-	\ \\Ein Pfad von $v_n$ nach $v_m$ ist eine Menge von Tupel $(v_i,v_j)$ mit:\\	
+	\ \\Ein Pfad von $v_n$ nach $v_m$ ist eine Menge aus Tupeln $(v_i,v_j)$ mit:\\
 	\( \forall (v_i,v_j) \in p.~\exists (v_j,v_l) \in p \vee (v_j,v_m).~True \)
+	% Diese Formel ergibt für mich irgendwie keinen Sinn -- Max
 	
-	\ \\ \( \phi(P_i) = \begin{cases}
+	\ \\ \( \phi(P_i) := \begin{cases}
 	X_{ij} \wedge \phi(P_i\setminus \{(v_i,v_j)\}), & \#(P_i) \geq 2 \wedge (v_i,v_j) \in P_i \\
 	X_{ij},  & \#(P_i) = 1 \wedge (v_i,v_j) \in P_i
 	\end{cases} \)
@@ -63,7 +64,7 @@ Marius Liwotto\> -  341051
 	\ \\Jeder Pfad $P_i \in P_{v_n,v_m}$ wird mit $\phi(P_i)$ zu einem Konjunktionsterm aus $X_{ij}$ \\
 	umgebaut.
 		
-	\ \\ \( \varphi_n = \bigwedge\limits_{l = 1}^{m} \bigwedge\limits_{k = 1}^{n} 
+	\ \\ \( \varphi_n = \bigwedge\limits_{l = 1}^{n} \bigwedge\limits_{k = 1}^{n} 
 	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k}) \)
 		
 	\ \\$\varphi_n$ wird gdw. wahr, wenn für jeden Knoten $v_n$ gilt, dass er zu jedem anderen Knoten $v_m$ \\
@@ -71,7 +72,7 @@ Marius Liwotto\> -  341051
 	Daraus folgt: $\llbracket \varphi_n \rrbracket^{\beta_G} = 1 \Leftrightarrow$ G ist zusammenhängend
 
 	\item[(ii)]
-	\( N_k = \{X_{kj}~|~(v_k,v_j) \in E\} \)
+	\( N_k = \{X_{kj}~|~\{v_k,v_j\} \in E\} \)
 	
 	\ \\ \( \phi(k) = \begin{cases}	
 	(X_{ij} \wedge X_{i(j+1)}) \wedge (\neg X_{i(j+2)} \wedge ... \wedge \neg X_{i(j+m)}), & \#(N_k) \geq 2\\
@@ -79,7 +80,7 @@ Marius Liwotto\> -  341051
 	\end{cases} \)
 	
 	\ \\ \( \varphi_n = \bigwedge\limits_{k = 1}^{\#V} (\phi(k)) 
-	\wedge \left( \bigwedge\limits_{l = 1}^{m} \bigwedge\limits_{k = 1}^{n} 
+	\wedge \left( \bigwedge\limits_{l = 1}^{n} \bigwedge\limits_{k = 1}^{n} 
 	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k})\right)  \)
 	
 	\ \\Wenn ein Graph einen Hamilton-Kreis besitzt, so muss man ihn einmal komplett durchlaufen können, \\
