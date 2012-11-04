@@ -31,8 +31,6 @@ top=2.0cm, bottom=2.0cm]{geometry}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
 
-\author{}
-
 \begin{document}
 
 \begin{center}
@@ -48,7 +46,9 @@ Marius Liwotto\> -  341051
 
 	\begin{enumerate}
 	\item[(i)]
-	Die Menge aller Pfade von $v_n$ nach $v_m$:\\	
+	G' = (V, t(s(r(E))) mit t(s(r(E))) = reflexiver,symmetrischer und transitiver Abschluss von E
+	
+	\ \\Die Menge aller Pfade von $v_n$ nach $v_m$ mit $v_n, v_m \in V$ in G':\\	
 	\( P_{v_n,v_m} = \{p~|~\text{wenn p ein Pfad von $v_n$ zu $v_m$ ist mit $v_n, v_m \in V$} \}  \)
 	
 	\ \\Ein Pfad von $v_n$ nach $v_m$ ist eine Menge von Tupel $(v_i,v_j)$ mit:\\	
@@ -66,7 +66,7 @@ Marius Liwotto\> -  341051
 	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k}) \)
 		
 	\ \\$\varphi_n$ wird gdw. wahr, wenn für jeden Knoten $v_n$ gilt, dass er zu jedem anderen Knoten $v_m$ \\
-	einen Pfad besitzt, der in dem Ausgangsgraph enthalten ist. \\
+	einen Pfad besitzt, der auch in G enthalten ist. \\
 	Daraus folgt: $\llbracket \varphi_n \rrbracket^{\beta_G} = 1 \Leftrightarrow$ G ist zusammenhängend
 
 	\item[(ii)]
