@@ -1,15 +1,49 @@
-\documentclass{article}
-\usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=2cm]{geometry}
-\usepackage{amssymb} 
+\documentclass[a4paper,10pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{pst-all}
+\usepackage{enumerate}
+\usepackage{pstricks}
 \usepackage{ulem}
-\usepackage{mathabx}
+\usepackage{ stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\ts}{\textsf}
+
+\usepackage{tabularx}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+
+\author{}
 
 \begin{document}
-	\begin{Large}
-	\section*{TheGi 3 HA 2}	
+
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 2} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
 	\subsection*{Aufgabe 1}
 
 	\( N_k = \{X_{ik}~|~(v_i,v_k) \in E \wedge v_i,v_k \in V \} \)
@@ -30,56 +64,81 @@
 	\end{enumerate}
 	
 	\subsection*{Aufgabe 2}	
+	\begin{enumerate}[(i)]
+	\item 
+	\begin{align*}
+	\varphi \mathcal{S} &= \mathcal{S}(((X \land Y) \lor Z) \leftrightarrow (((X \lor \neg Y) \leftrightarrow Y)) \\
+	&= (\mathcal{S} ((X \land Y) \lor Z) \leftrightarrow \mathcal{S}(((X \lor \neg Y) \leftrightarrow Y) ) \\
+	&= ((\mathcal{S}(X \land Y)  \lor \mathcal{S}(Z) ) \leftrightarrow ((\mathcal{S}(X \lor \neg Y)  \leftrightarrow \mathcal{S}(Y) ) ) \\
+	&= (((\mathcal{S}(X) \land \mathcal{S}(Y))  \lor Z ) \leftrightarrow (((\mathcal{S}(X) \lor \neg \mathcal{S}(Y))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
+	&= ((((Z \lor U) \land (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \lor Z ) \leftrightarrow (((Z \lor U) \lor \neg (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
+	\end{align*}
+	\item
+	\begin{align*}
+	\beta\mathcal{S}(X) &= \llbracket \mathcal{S}(X)\rrbracket^\beta \\
+	\beta\mathcal{S}(Y) &= \llbracket \mathcal{S}(Y)\rrbracket^\beta \\
+	\beta\mathcal{S}(U) &= \beta(U)
+	\end{align*}
+	\begin{itemize}
+	\item $\beta\mathcal{S}$ ist passend für $\varphi$, da $\{X, Y\} = \textsf{var}(\varphi) \subseteq \textsf{Dom}(\beta\mathcal{S}) = \{X,Y,U \}$ \\
+	$\beta$ ist passend für $\varphi\mathcal{S}$, da $\{X, Y, U\} = \textsf{var}(\varphi\mathcal{S}) \subseteq \textsf{Dom}(\beta) = \{X,Y,U \}$ 
+	\item Dies ist im Substitutionslemma bewiesen, was ja eine vollständige Verifikation ist, dass es auch mit der  hier angegebenen Formel, Substitution und Belegung gilt.
 	
+	\end{itemize}
+		
+	\end{enumerate}
 	\subsection*{Aufgabe 3}
+	\begin{align*}
+	\varphi_1 \equiv X \Rightarrow (Y \wedge Z) 
+	&\equiv \neg X \vee (Y \wedge Z) \\
+	&\equiv (\neg X \vee Y) \wedge (\neg X \vee Z) \\
+	&\equiv (X \Rightarrow Y) \wedge (X \Rightarrow Z) \\
+	&\equiv \psi_1 \\
+	\end{align*}
+	\begin{align*}
+	\varphi_2 \equiv (X \wedge Y \wedge Z) \Rightarrow Q 
+	&\equiv \neg (X \wedge Y \wedge Z) \vee Q \\
+	&\equiv \neg X \vee \neg Y \vee \neg Z \vee Q \\
+	&\equiv (\neg X \vee (\neg Y \vee (\neg Z \vee Q))) \\
+	&\equiv (X \Rightarrow (Y \Rightarrow (Z \Rightarrow Q))) \\
+	&\equiv \psi_2 
+	\end{align*}	 \
 	
-	\( \varphi_1 = X \Rightarrow (Y \wedge Z) \\
-	\equiv \neg X \vee (Y \wedge Z) \\
-	\equiv (\neg X \vee Y) \wedge (\neg X \vee Z) \\
-	\equiv (X \Rightarrow Y) \wedge (X \Rightarrow Z) \\
-	\equiv \psi_1 \\
-	\) 
+	\begin{align*}
+	\varphi_3 \equiv (X \wedge Y) \Rightarrow \neg (Z \Rightarrow X) 
+	&\equiv \neg (X \wedge Y) \vee \neg (\neg Z \vee X)  \\
+	&\equiv (\neg X \vee \neg Y) \vee (Z \wedge \neg X)  \\
+	&\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y \vee \neg X)  \\
+	&\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y)  \\
+	&\equiv (\neg X \vee \neg Y) \\
+	&\equiv (\neg X \vee \neg Y) \wedge T \\
+	&\equiv (\neg X \vee \neg Y) \wedge (\neg X \vee X) \\
+	&\equiv (\neg X \vee \neg Y) \wedge (Y \vee \neg X \vee X) \\
+	&\equiv (\neg X \vee \neg Y) \wedge (Y \vee X) \vee \neg X \\
+	&\equiv (X \Rightarrow \neg Y) \wedge (\neg Y \Rightarrow X) \vee \neg X \\
+	&\equiv \psi_3 
+	\end{align*}
 	
-	\ \\ \( \varphi_2 = (X \wedge Y \wedge Z) \Rightarrow Q \\
-	\equiv \neg (X \wedge Y \wedge Z) \vee Q \\
-	\equiv \neg X \vee \neg Y \vee \neg Z \vee Q \\
-	\equiv (\neg X \vee (\neg Y \vee (\neg Z \vee Q))) \\
-	\equiv (X \Rightarrow (Y \Rightarrow (Z \Rightarrow Q))) \\
-	\equiv \psi_2 \\
-	\) 
+	\begin{align*}
+	\varphi_4 \equiv (Y \Rightarrow Z) \Rightarrow (Y \Rightarrow X) 
+	&\equiv \neg (Y \Rightarrow Z) \vee (Y \Rightarrow X) \\
+	&\equiv \neg (\neg Y \vee Z) \vee (\neg Y \vee X) \\
+	&\equiv (Y \wedge \neg Z) \vee (\neg Y \vee X) \\
+	&\equiv (Y \vee \neg Y \vee X) \wedge (\neg Z \vee \neg Y \vee X)\\
+	&\equiv (T \vee X) \wedge (\neg Z \vee \neg Y \vee X)\\
+	&\equiv T \wedge (\neg Z \vee \neg Y \vee X)\\
+	&\equiv \neg Z \vee \neg Y \vee X\\
+	&\equiv \psi_4 
+	\end{align*}
 	
-	\ \\ \( \varphi_3 = (X \wedge Y) \Rightarrow \neg (Z \Rightarrow X)  \\
-	\equiv \neg (X \wedge Y) \vee \neg (\neg Z \vee X)  \\
-	\equiv (\neg X \vee \neg Y) \vee (Z \wedge \neg X)  \\
-	\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y \vee \neg X)  \\
-	\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y)  \\
-	\equiv (\neg X \vee \neg Y) \\
-	\equiv (\neg X \vee \neg Y) \wedge T \\
-	\equiv (\neg X \vee \neg Y) \wedge (\neg X \vee X) \\
-	\equiv (\neg X \vee \neg Y) \wedge (Y \vee \neg X \vee X) \\
-	\equiv (\neg X \vee \neg Y) \wedge (Y \vee X) \vee \neg X \\
-	\equiv (X \Rightarrow \neg Y) \wedge (\neg Y \Rightarrow X) \vee \neg X \\
-	\equiv \psi_3 \\
-	\) 
-	
-	\ \\ \( \varphi_4 = (Y \Rightarrow Z) \Rightarrow (Y \Rightarrow X) \\
-	\equiv \neg (Y \Rightarrow Z) \vee (Y \Rightarrow X) \\
-	\equiv \neg (\neg Y \vee Z) \vee (\neg Y \vee X) \\
-	\equiv (Y \wedge \neg Z) \vee (\neg Y \vee X) \\
-	\equiv (Y \vee \neg Y \vee X) \wedge (\neg Z \vee \neg Y \vee X)\\
-	\equiv (T \vee X) \wedge (\neg Z \vee \neg Y \vee X)\\
-	\equiv T \wedge (\neg Z \vee \neg Y \vee X)\\
-	\equiv \neg Z \vee \neg Y \vee X\\
-	\equiv \psi_4 \\
-	\) 
-	
-	\ \\ \( \varphi_5 = (X \wedge\neg Y) \vee (Y \wedge \neg X) \\
-	\equiv \neg (\neg X \vee Y) \vee \neg (\neg Y \vee X) \\
-	\equiv \neg (X \Rightarrow Y) \vee \neg (Y \Rightarrow X) \\
-	\equiv \neg ((X \Rightarrow Y) \wedge (Y \Rightarrow X)) \\
-	\equiv \neg (X \Leftrightarrow Y) \\
-	\equiv \psi_5 \\
-	\) 
+	\begin{align*}
+	\varphi_5 = (X \wedge\neg Y) \vee (Y \wedge \neg X) 
+	&\equiv \neg (\neg X \vee Y) \vee \neg (\neg Y \vee X) \\
+	&\equiv \neg (X \Rightarrow Y) \vee \neg (Y \Rightarrow X) \\
+	&\equiv \neg ((X \Rightarrow Y) \wedge (Y \Rightarrow X)) \\
+	&\equiv \neg (X \Leftrightarrow Y) \\
+	&\equiv \psi_5 
+	\end{align*}
 	
 	\subsection*{Aufgabe 4}
 	Aus der VL wissen wir, dass zu jeder aussagenlogischen Formel eine äquivalente KNF existiert. \\
@@ -93,7 +152,7 @@
 	knf_{\varphi} \text{ und } var(\gamma) ~\cap~ var(\varphi) = \emptyset \)
 	
 	\ \\Würde dies nicht gelten, so gäbe es eine passende Belegung $\beta$, \\
-	sodass $\ldbrack \chi \rdbrack ^\beta \equiv False$, obwohl $\varphi \equiv True$. \\
+	sodass $\llbracket \chi \rrbracket ^\beta \equiv False$, obwohl $\varphi \equiv True$. \\
 	Das stünde im Widerspruch zur Aussage, dass $\varphi \Rightarrow \chi$ gilt. \\
 	Ist $\chi$ eine Tautologie gilt: $t_{\varphi} = True$ \\
 	Aus der Struktur von $\chi$ folgt ebenfalls, dass $t_{\varphi}$ folgende Bedingungen erfüllt:\\
@@ -103,11 +162,4 @@
 	
 	\ \\ \( \exists \psi \in AL. \varphi \Rightarrow \psi \wedge 
 	\psi \Rightarrow \chi \wedge var(\psi) \subseteq var(\varphi) \cap var(\chi) \)
-	
-	
-	
-
-	
-	
-	\end{Large}
 \end{document}
