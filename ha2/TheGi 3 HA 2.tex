@@ -1,5 +1,5 @@
-\documentclass[a4paper,10pt]{scrartcl}
-\usepackage[utf8x]{inputenc}
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -46,21 +46,50 @@ Marius Liwotto\> -  341051
 \end{tabbing}
 	\subsection*{Aufgabe 1}
 
-	\( N_k = \{X_{ik}~|~(v_i,v_k) \in E \wedge v_i,v_k \in V \} \)
-	
 	\begin{enumerate}
-	\item[(i)]	
-	\( \varphi_n = \bigwedge\limits_{k = 1}^{n} (\bigvee\limits_{c = 1}^{\#(N_k)} X_{kc} \in  N_k) \)
+	\item[(i)]
+	Die Menge aller Pfade von $v_n$ nach $v_m$:\\	
+	\( P_{v_n,v_m} = \{p~|~\text{wenn p ein Pfad von $v_n$ zu $v_m$ ist mit $v_n, v_m \in V$} \}  \)
+	
+	\ \\Ein Pfad von $v_n$ nach $v_m$ ist eine Menge von Tupel $(v_i,v_j)$ mit:\\	
+	\( \forall (v_i,v_j) \in p.~\exists (v_j,v_l) \in p \vee (v_j,v_m).~True \)
+	
+	\ \\ \( \phi(P_i) = \begin{cases}
+	X_{ij} \wedge \phi(P_i\setminus \{(v_i,v_j)\}), & \#(P_i) \geq 2 \wedge (v_i,v_j) \in P_i \\
+	X_{ij},  & \#(P_i) = 1 \wedge (v_i,v_j) \in P_i
+	\end{cases} \)
+	
+	\ \\Jeder Pfad $P_i \in P_{v_n,v_m}$ wird mit $\phi(P_i)$ zu einem Konjunktionsterm aus $X_{ij}$ \\
+	umgebaut.
+		
+	\ \\ \( \varphi_n = \bigwedge\limits_{l = 1}^{m} \bigwedge\limits_{k = 1}^{n} 
+	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k}) \)
+		
+	\ \\$\varphi_n$ wird gdw. wahr, wenn für jeden Knoten $v_n$ gilt, dass er zu jedem anderen Knoten $v_m$ \\
+	einen Pfad besitzt, der in dem Ausgangsgraph enthalten ist. \\
+	Daraus folgt: $\llbracket \varphi_n \rrbracket^{\beta_G} = 1 \Leftrightarrow$ G ist zusammenhängend
 
 	\item[(ii)]
-	\( \phi(k) = \begin{cases}	
+	\( N_k = \{X_{kj}~|~(v_k,v_j) \in E\} \)
+	
+	\ \\ \( \phi(k) = \begin{cases}	
 	(X_{ij} \wedge X_{i(j+1)}) \wedge (\neg X_{i(j+2)} \wedge ... \wedge \neg X_{i(j+m)}), & \#(N_k) \geq 2\\
 	X_{ij}, & \#(N_k) = 1 \wedge X_{ij} \in N_k 	
 	\end{cases} \)
 	
-	\ \\ \( \varphi_n = \bigwedge\limits_{k = 1}^{\#V} (\phi(k))
-	\)
+	\ \\ \( \varphi_n = \bigwedge\limits_{k = 1}^{\#V} (\phi(k)) 
+	\wedge \left( \bigwedge\limits_{l = 1}^{m} \bigwedge\limits_{k = 1}^{n} 
+	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k})\right)  \)
 	
+	\ \\Wenn ein Graph einen Hamilton-Kreis besitzt, so muss man ihn einmal komplett durchlaufen können, \\
+	sodass man jeden Knoten genau einmal besucht und wieder beim Anfangsknoten landet. Folglich muss der Graph ein 	       	Kreis sein bzw., man kann die Knoten so verschieben, dass ein Kreis entsteht, 
+	der äquivalent zum Ausgangsgraph ist. \\
+	Diese Kreisstruktur bedeutet, dass jeder Knoten genau 2 Nachbarn hat. \\
+	Die Funktion $\phi(k)$ konstruiert für jeden Knoten $v_i$ einen Konjunktionsterm so, dass wenn $v_i$  mehr als \\
+	2 Nachbarn hat, der Term zu False auswertet.\\
+	$\varphi_n$ prüft, ob $\phi$ für jeden Knoten $v_i \in V$ gilt und ob der Graph abgeschlossen \\
+	ist mit der Formel aus (i).
+
 	\end{enumerate}
 	
 	\subsection*{Aufgabe 2}	
@@ -111,7 +140,7 @@ Marius Liwotto\> -  341051
 	&\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y \vee \neg X)  \\
 	&\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y)  \\
 	&\equiv (\neg X \vee \neg Y) \\
-	&\equiv (\neg X \vee \neg Y) \wedge T \\
+	&\equiv (\neg X \vee \neg Y) \wedge True \\
 	&\equiv (\neg X \vee \neg Y) \wedge (\neg X \vee X) \\
 	&\equiv (\neg X \vee \neg Y) \wedge (Y \vee \neg X \vee X) \\
 	&\equiv (\neg X \vee \neg Y) \wedge (Y \vee X) \vee \neg X \\
