@@ -46,51 +46,60 @@ Marius Liwotto\> -  341051
 
 	\begin{enumerate}
 	\item[(i)]
-	$E' := \lbrace (v_1, v_2) | \lbrace v_1, v_2 \rbrace \in E \rbrace$\\
-	$G' := (V, t(s(r(E')))$ mit $t(s(r(E)))$ = reflexiver, symmetrischer und transitiver Abschluss von $E$.
-	
-	\ \\Die Menge aller Pfade von $v_n$ nach $v_m$ mit $v_n, v_m \in V$ in G':\\	
-	\( P_{v_n,v_m} := \{p~|~\text{wenn p ein Pfad von $v_n$ zu $v_m$ ist mit $v_n, v_m \in V$} \}  \)
-	
-	\ \\Ein Pfad von $v_n$ nach $v_m$ ist eine Menge aus Tupeln $(v_i,v_j)$ mit:\\
-	\( \forall (v_i,v_j) \in p.~\exists (v_j,v_l) \in p \vee (v_j,v_m).~True \)
-	% Diese Formel ergibt für mich irgendwie keinen Sinn -- Max
-	
-	\ \\ \( \phi(P_i) := \begin{cases}
-	X_{ij} \wedge \phi(P_i\setminus \{(v_i,v_j)\}), & \#(P_i) \geq 2 \wedge (v_i,v_j) \in P_i \\
-	X_{ij},  & \#(P_i) = 1 \wedge (v_i,v_j) \in P_i
-	\end{cases} \)
-	
-	\ \\Jeder Pfad $P_i \in P_{v_n,v_m}$ wird mit $\phi(P_i)$ zu einem Konjunktionsterm aus $X_{ij}$ \\
-	umgebaut.
-		
-	\ \\ \( \varphi_n = \bigwedge\limits_{l = 1}^{n} \bigwedge\limits_{k = 1}^{n} 
-	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k}) \)
-		
-	\ \\$\varphi_n$ wird gdw. wahr, wenn für jeden Knoten $v_n$ gilt, dass er zu jedem anderen Knoten $v_m$ \\
-	einen Pfad besitzt, der auch in G enthalten ist. \\
-	Daraus folgt: $\llbracket \varphi_n \rrbracket^{\beta_G} = 1 \Leftrightarrow$ G ist zusammenhängend
+%	$E' := \lbrace (v_1, v_2) | \lbrace v_1, v_2 \rbrace \in E \rbrace$\\
+%	$G' := (V, t(s(r(E')))$ mit $t(s(r(E)))$ = reflexiver, symmetrischer und transitiver Abschluss von $E$.
+%	
+%	\ \\Die Menge aller Pfade von $v_n$ nach $v_m$ mit $v_n, v_m \in V$ in G':\\	
+%	\( P_{v_n,v_m} := \{p~|~\text{wenn p ein Pfad von $v_n$ zu $v_m$ ist mit $v_n, v_m \in V$} \}  \)
+%	
+%	\ \\Ein Pfad $p \in P_{v_n,v_m}$ von $v_n$ nach $v_m$ ist eine Menge aus Tupeln $(v_i,v_j)$ mit:\\
+%	\( \forall (v_i,v_j) \in p.~\exists (v_j,v_l) \in p \vee (v_j,v_m).~True \)
+%	% Diese Formel ergibt für mich irgendwie keinen Sinn -- Max
+%	
+%	\ \\ \( \phi(P_i) := \begin{cases}
+%	X_{ij} \wedge \phi(P_i\setminus \{(v_i,v_j)\}), & \#(P_i) \geq 2 \wedge (v_i,v_j) \in P_i \\
+%	X_{ij},  & \#(P_i) = 1 \wedge (v_i,v_j) \in P_i
+%	\end{cases} \)
+%	
+%	\ \\Jeder Pfad $P_i \in P_{v_n,v_m}$ wird mit $\phi(P_i)$ zu einem Konjunktionsterm aus $X_{ij}$ \\
+%	umgebaut.
+%		
+%	\ \\ \( \varphi_n = \bigwedge\limits_{l = 1}^{n} \bigwedge\limits_{k = 1}^{n} 
+%	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k}) \)
+%		
+%	\ \\$\varphi_n$ wird gdw. wahr, wenn für jeden Knoten $v_n$ gilt, dass er zu jedem anderen Knoten $v_m$ \\
+%	einen Pfad besitzt, der auch in G enthalten ist. \\
+%	Daraus folgt: $\llbracket \varphi_n \rrbracket^{\beta_G} = 1 \Leftrightarrow$ G ist zusammenhängend
+Ein Graph $G = (V,E)$ ist zusammenhängend, falls von einem beliebigen Knoten $v_n \in V$ ein Pfad zu jedem anderen Knoten $v_m \in V$ existiert. Man kann sehr einfach feststellen ob ein Knoten eine Verbindung zu jedem anderen Knoten hat, dazu bilde man den reflexiven, transitiven und symmetrischen Abschluss von $E$ und bezeichne ihn $E'$. Weiterhin definiere  $X'_{ij}$ und erweitere den Zielbereich von $\beta_G$.
+$$\llbracket X'_{ij} \rrbracket = 1 \Leftrightarrow \{v_i,v_j\} \in E'$$
+Wenn nun alle Knoten untereinander verbunden sind (wenn $E'$ als Kantenmenge benutzt wird) dann ist der Graph $G$ zusammenhängend.
+$$\varphi_n = \bigwedge_{i=1}^n\bigwedge_{j=i+1}^n X'_{ij}$$
+
 
 	\item[(ii)]
-	\( N_k = \{X_{kj}~|~\{v_k,v_j\} \in E\} \)
-	
-	\ \\ \( \phi(k) = \begin{cases}	
-	(X_{ij} \wedge X_{i(j+1)}) \wedge (\neg X_{i(j+2)} \wedge ... \wedge \neg X_{i(j+m)}), & \#(N_k) \geq 2\\
-	X_{ij}, & \#(N_k) = 1 \wedge X_{ij} \in N_k 	
-	\end{cases} \)
-	
-	\ \\ \( \varphi_n = \bigwedge\limits_{k = 1}^{\#V} (\phi(k)) 
-	\wedge \left( \bigwedge\limits_{l = 1}^{n} \bigwedge\limits_{k = 1}^{n} 
-	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k})\right)  \)
-	
-	\ \\Wenn ein Graph einen Hamilton-Kreis besitzt, so muss man ihn einmal komplett durchlaufen können, \\
-	sodass man jeden Knoten genau einmal besucht und wieder beim Anfangsknoten landet. Folglich muss der Graph ein 	       	Kreis sein bzw., man kann die Knoten so verschieben, dass ein Kreis entsteht, 
-	der äquivalent zum Ausgangsgraph ist. \\
-	Diese Kreisstruktur bedeutet, dass jeder Knoten genau 2 Nachbarn hat. \\
-	Die Funktion $\phi(k)$ konstruiert für jeden Knoten $v_i$ einen Konjunktionsterm so, dass wenn $v_i$  mehr als \\
-	2 Nachbarn hat, der Term zu False auswertet.\\
-	$\varphi_n$ prüft, ob $\phi$ für jeden Knoten $v_i \in V$ gilt und ob der Graph abgeschlossen \\
-	ist mit der Formel aus (i).
+%	\( N_k = \{X_{kj}~|~\{v_k,v_j\} \in E\} \)
+%	
+%	\ \\ \( \phi(k) = \begin{cases}	
+%	(X_{ij} \wedge X_{i(j+1)}) \wedge (\neg X_{i(j+2)} \wedge ... \wedge \neg X_{i(j+m)}), & \#(N_k) \geq 2\\
+%	X_{ij}, & \#(N_k) = 1 \wedge X_{ij} \in N_k 	
+%	\end{cases} \)
+%	
+%	\ \\ \( \varphi_n = \bigwedge\limits_{k = 1}^{\#V} (\phi(k)) 
+%	\wedge \left( \bigwedge\limits_{l = 1}^{n} \bigwedge\limits_{k = 1}^{n} 
+%	(\bigvee\limits_{c = 1}^{\#(P_{v_l,v_k})} \phi(P_c) \text{ mit }P_c \in P_{v_l,v_k})\right)  \)
+%	
+%	\ \\Wenn ein Graph einen Hamilton-Kreis besitzt, so muss man ihn einmal komplett durchlaufen können, \\
+%	sodass man jeden Knoten genau einmal besucht und wieder beim Anfangsknoten landet. Folglich muss der Graph ein 	       	Kreis sein bzw., man kann die Knoten so verschieben, dass ein Kreis entsteht, 
+%	der äquivalent zum Ausgangsgraph ist. \\
+%	Diese Kreisstruktur bedeutet, dass jeder Knoten genau 2 Nachbarn hat. \\
+%	Die Funktion $\phi(k)$ konstruiert für jeden Knoten $v_i$ einen Konjunktionsterm so, dass wenn $v_i$  mehr als \\
+%	2 Nachbarn hat, der Term zu False auswertet.\\
+%	$\varphi_n$ prüft, ob $\phi$ für jeden Knoten $v_i \in V$ gilt und ob der Graph abgeschlossen \\
+%	ist mit der Formel aus (i).
+Wenn ein Graph einen Hamilton Kreis besizt, dann gibt es von einem beliebigen Knoten aus einen Pfad der Länge $n$, wobei $n$ die Anzahl der Knoten ist der wieder zu diesem führt. Zuerst erweitere die Definitien von $X_{ij}$:
+$$X''_{ij} \rightarrow \begin{cases}X_{ij}, & i < j \\ X_{ji}, & i > j \\ 0, & i = j \end{cases} $$
+Sei weiterhin die Menge $P_V$ die Menge aller möglichen Permutationen der Reihenfolge der Knoten $V$, diese Folgen sind dargestellt als n-Tupel. Die Schreibweise $t[x]$ bei Tupeln soll das $x$-te Element des Tupels $t$ sein.  
+$$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[k+1]} \right) \land X''_{p[n],p[1]} \right)$$
 
 	\end{enumerate}
 	
