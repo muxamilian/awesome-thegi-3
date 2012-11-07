@@ -107,12 +107,11 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	\begin{enumerate}[(i)]
 	\item 
 	\begin{align*}
-	\varphi \mathcal{S} &= \mathcal{S}(((X \land Y) \lor Z) \leftrightarrow (((X \lor \neg Y) \leftrightarrow Y)) \\
-	&= (\mathcal{S} ((X \land Y) \lor Z) \leftrightarrow \mathcal{S}(((X \lor \neg Y) \leftrightarrow Y) ) \\
-	&= ((\mathcal{S}(X \land Y)  \lor \mathcal{S}(Z) ) \leftrightarrow ((\mathcal{S}(X \lor \neg Y)  \leftrightarrow \mathcal{S}(Y) ) ) \\
-	&= (((\mathcal{S}(X) \land \mathcal{S}(Y))  \lor Z ) \leftrightarrow (((\mathcal{S}(X) \lor \neg \mathcal{S}(Y))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
-	&= ((((Z \lor U) \land (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \lor Z ) \leftrightarrow (((Z \lor U) \lor \neg (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
-	\end{align*}
+	\varphi \mathcal{S} &= (((X \land Y) \lor Z) \leftrightarrow (((X \lor \neg Y) \leftrightarrow Y))\mathcal{S} \\
+	&= (((X \land Y) \lor Z)\mathcal{S} \leftrightarrow (((X \lor \neg Y)\mathcal{S} \leftrightarrow Y) ) \\
+	&= (((X \land Y)\mathcal{S}  \lor Z\mathcal{S} ) \leftrightarrow (((X \lor \neg Y)\mathcal{S}  \leftrightarrow Y\mathcal{S} ) ) \\
+	&= (((X\mathcal{S} \land Y\mathcal{S})  \lor Z ) \leftrightarrow (((X\mathcal{S} \lor \neg Y\mathcal{S})  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
+	&= ((((Z \lor U) \land (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \lor Z ) \leftrightarrow (((Z \lor U) \lor \neg (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)))) \\	\end{align*}
 	\item
 	\begin{align*}
 	\beta\mathcal{S}(X) &= \llbracket \mathcal{S}(X)\rrbracket^\beta \\
