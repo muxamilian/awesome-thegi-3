@@ -185,17 +185,15 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	Aus der VL wissen wir, dass zu jeder aussagenlogischen Formel eine äquivalente KNF existiert. \\
 	Folglich gilt: $\varphi \equiv knf_{\varphi} = \bigwedge\limits_{i=1}^{n} \bigvee\limits_{j=1}^{m} L_{ij}$ \\
 	Aus $\varphi \equiv True$ kann man folgern, dass alle Disjunktionsterme von $knf_{\varphi}$ wahr sein müssen.\\
-	Des Weiteren gilt, dass $\chi$ die folgende äquivalente Form besitzt, wenn $\chi$ keine Tautologie ist:
+	Des Weiteren gilt, dass $\chi$ die folgende äquivalente Form besitzt:
 	
-	\ \\ \( \chi \equiv t_{\varphi 1} \vee ... \vee  t_{\varphi i} \vee \gamma \text{ mit } \\
-	\gamma \in AL,~t_{\varphi i} \text{ ist ein Disjunktionsterm
-	mit i $\in [1,u]$ und 1 $\leq$ u $\leq$ n von } \\ 
-	knf_{\varphi} \text{ und } var(\gamma) ~\cap~ var(\varphi) = \emptyset \)
+	\ \\ \( \chi \equiv t_{\varphi} \vee \gamma \text{ mit } \\
+	\gamma \in AL,~t_{\varphi} \text{ ist ein Disjunktionsterm
+	mit von } knf_{\varphi} \) 	
 	
 	\ \\Würde dies nicht gelten, so gäbe es eine passende Belegung $\beta$, \\
 	sodass $\llbracket \chi \rrbracket ^\beta \equiv False$, obwohl $\varphi \equiv True$. \\
 	Das stünde im Widerspruch zur Aussage, dass $\varphi \Rightarrow \chi$ gilt. \\
-	Ist $\chi$ eine Tautologie gilt: $t_{\varphi} = True$ \\
 	Aus der Struktur von $\chi$ folgt ebenfalls, dass $t_{\varphi}$ folgende Bedingungen erfüllt:\\
 	\ \\ \(\varphi \Rightarrow t_{\varphi} \wedge t_{\varphi} \Rightarrow \chi \wedge var(t_{\varphi}) \subseteq 		  	var(\varphi) \cap var(\chi) \)
 	
