@@ -75,7 +75,7 @@ Ein Graph $G = (V,E)$ ist zusammenhängend, falls von einem beliebigen Knoten $v
 Man definiert $$E' = \bigcup\limits_{n \in \mathbb{N}} \{(x,y) | \{ x,y \} \in E \}^n. E'$$ ist also der reflexive, symmetrische und transitive Abschluss von E.
 
 Man kann sehr einfach feststellen ob ein Knoten eine Verbindung zu jedem anderen Knoten hat, dazu benutze den reflexiven, transitiven und symmetrischen Abschluss von E, nämlich $E'$. Weiterhin definiere $X'_{ij}$ und erweitere den Zielbereich von $\beta_G$.
-$$\llbracket X'_{ij} \rrbracket^{\beta_G} = 1 \Leftrightarrow \{v_i,v_j\} \in E'$$
+$$\llbracket X'_{ij} \rrbracket^{\beta_G} = 1 \Leftrightarrow (v_i,v_j) \in E'$$
 Wenn nun alle Knoten untereinander verbunden sind (wenn $E'$ als Kantenmenge benutzt wird) dann ist der Graph $G$ zusammenhängend.
 $$\varphi_n = \bigwedge_{i=1}^n\bigwedge_{j=i+1}^n X'_{ij}$$
 
