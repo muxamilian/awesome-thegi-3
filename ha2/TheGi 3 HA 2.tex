@@ -131,25 +131,28 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	\end{itemize}
 		
 	\end{enumerate}
-	\subsection*{Aufgabe 3}
+\subsection*{Aufgabe 3}
+\begin{enumerate}[(i)]
+\item $\varphi_1 \equiv \psi_1$
 	\begin{align*}
-	\varphi_1 \equiv X \Rightarrow (Y \wedge Z) 
+	\varphi_1 \equiv X \rightarrow (Y \wedge Z) 
 	&\equiv \neg X \vee (Y \wedge Z) \\
 	&\equiv (\neg X \vee Y) \wedge (\neg X \vee Z) \\
-	&\equiv (X \Rightarrow Y) \wedge (X \Rightarrow Z) \\
+	&\equiv (X \rightarrow Y) \wedge (X \rightarrow Z) \\
 	&\equiv \psi_1 \\
 	\end{align*}
+\item $\varphi_2 \equiv \psi_2$
 	\begin{align*}
-	\varphi_2 \equiv (X \wedge Y \wedge Z) \Rightarrow Q 
+	\varphi_2 \equiv (X \wedge Y \wedge Z) \rightarrow Q 
 	&\equiv \neg (X \wedge Y \wedge Z) \vee Q \\
 	&\equiv \neg X \vee \neg Y \vee \neg Z \vee Q \\
 	&\equiv (\neg X \vee (\neg Y \vee (\neg Z \vee Q))) \\
-	&\equiv (X \Rightarrow (Y \Rightarrow (Z \Rightarrow Q))) \\
+	&\equiv (X \rightarrow (Y \rightarrow (Z \rightarrow Q))) \\
 	&\equiv \psi_2 
-	\end{align*}	 \
-	
+	\end{align*}	 
+\item $\varphi_3 \equiv \psi_3$
 	\begin{align*}
-	\varphi_3 \equiv (X \wedge Y) \Rightarrow \neg (Z \Rightarrow X) 
+	\varphi_3 \equiv (X \wedge Y) \rightarrow \neg (Z \rightarrow X) 
 	&\equiv \neg (X \wedge Y) \vee \neg (\neg Z \vee X)  \\
 	&\equiv (\neg X \vee \neg Y) \vee (Z \wedge \neg X)  \\
 	&\equiv (\neg X \vee \neg Y \vee Z) \wedge (\neg X \vee \neg Y \vee \neg X)  \\
@@ -159,13 +162,13 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	&\equiv (\neg X \vee \neg Y) \wedge (\neg X \vee X) \\
 	&\equiv (\neg X \vee \neg Y) \wedge (Y \vee \neg X \vee X) \\
 	&\equiv (\neg X \vee \neg Y) \wedge (Y \vee X) \vee \neg X \\
-	&\equiv (X \Rightarrow \neg Y) \wedge (\neg Y \Rightarrow X) \vee \neg X \\
+	&\equiv (X \rightarrow \neg Y) \wedge (\neg Y \rightarrow X) \vee \neg X \\
 	&\equiv \psi_3 
 	\end{align*}
-	
+\item $\varphi_4 \equiv \psi_4$
 	\begin{align*}
-	\varphi_4 \equiv (Y \Rightarrow Z) \Rightarrow (Y \Rightarrow X) 
-	&\equiv \neg (Y \Rightarrow Z) \vee (Y \Rightarrow X) \\
+	\varphi_4 \equiv (Y \rightarrow Z) \rightarrow (Y \rightarrow X) 
+	&\equiv \neg (Y \rightarrow Z) \vee (Y \rightarrow X) \\
 	&\equiv \neg (\neg Y \vee Z) \vee (\neg Y \vee X) \\
 	&\equiv (Y \wedge \neg Z) \vee (\neg Y \vee X) \\
 	&\equiv (Y \vee \neg Y \vee X) \wedge (\neg Z \vee \neg Y \vee X)\\
@@ -174,33 +177,33 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	&\equiv \neg Z \vee \neg Y \vee X\\
 	&\equiv \psi_4 
 	\end{align*}
-	
+\item $\varphi_5 \equiv \psi_5$
 	\begin{align*}
-	\varphi_5 = (X \wedge\neg Y) \vee (Y \wedge \neg X) 
+	\varphi_5 \equiv (X \wedge\neg Y) \vee (Y \wedge \neg X) 
 	&\equiv \neg (\neg X \vee Y) \vee \neg (\neg Y \vee X) \\
-	&\equiv \neg (X \Rightarrow Y) \vee \neg (Y \Rightarrow X) \\
-	&\equiv \neg ((X \Rightarrow Y) \wedge (Y \Rightarrow X)) \\
-	&\equiv \neg (X \Leftrightarrow Y) \\
+	&\equiv \neg (X \rightarrow Y) \vee \neg (Y \rightarrow X) \\
+	&\equiv \neg ((X \rightarrow Y) \wedge (Y \rightarrow X)) \\
+	&\equiv \neg (X \leftrightarrow Y) \\
 	&\equiv \psi_5 
 	\end{align*}
-	
+\end{enumerate}
+	\newpage
 	\subsection*{Aufgabe 4}
 	Aus der VL wissen wir, dass zu jeder aussagenlogischen Formel eine äquivalente KNF existiert. \\
-	Folglich gilt: $\varphi \equiv knf_{\varphi} = \bigwedge\limits_{i=1}^{n} \bigvee\limits_{j=1}^{m} L_{ij}$ \\
-	Aus $\varphi \equiv \top$ kann man folgern, dass alle Disjunktionsterme von $knf_{\varphi}$ wahr sein müssen.\\
-	Des Weiteren gilt, dass $\chi$ die folgende äquivalente Form besitzt:
+	Folglich gilt: $$\varphi \equiv knf_{\varphi} = \bigwedge\limits_{i=1}^{n} \bigvee\limits_{j=1}^{m} L_{ij}$$ 
+	Aus $\varphi \equiv \top$ kann man folgern, dass alle Disjunktionsterme von $knf_{\varphi}$ wahr sein müssen. Des Weiteren gilt, dass $\chi$ die folgende äquivalente Form besitzt, wenn $\chi$ keine Tautologie ist:
+	$$ \chi \equiv t_{\varphi 1} \vee ... \vee  t_{\varphi i} \vee \gamma$$ 
+	wobei
+	$\gamma \in AL,~t_{\varphi i} \text{ ist ein Disjunktionsterm
+	mit i $\in [1,u]$ und 1 $\leq$ u $\leq$ n von } 
+	knf_{\varphi} \text{ und } var(\gamma) ~\cap~ var(\varphi) = \emptyset $
+	\\
 	
-	\ \\ \( \chi \equiv t_{\varphi} \vee \gamma \text{ mit } \\
-	\gamma \in AL,~t_{\varphi} \text{ ist ein Disjunktionsterm von } knf_{\varphi} \) 	
+	Würde dies nicht gelten, so gäbe es eine passende Belegung $\beta$, sodass $\llbracket \chi \rrbracket ^\beta \equiv \bot$, obwohl $\varphi \equiv \top$. Das stünde im Widerspruch zur Aussage, dass $\varphi \Rightarrow \chi$ gilt. Ist $\chi$ eine Tautologie gilt: $t_{\varphi} = \top$ 
+	Aus der Struktur von $\chi$ folgt ebenfalls, dass $t_{\varphi}$ folgende Bedingungen erfüllt:
+	$$\varphi \Rightarrow t_{\varphi} \wedge t_{\varphi} \Rightarrow \chi \wedge var(t_{\varphi}) \subseteq 		  	var(\varphi) \cap var(\chi) $$
+	Daraus folgt, dass für alle Formeln $\varphi$, $\chi \in$ AL gilt mit $\varphi \Rightarrow \chi \equiv \top$:
 	
-	\ \\Würde dies nicht gelten, so gäbe es eine passende Belegung $\beta$, \\
-	sodass $\llbracket \chi \rrbracket ^\beta \equiv \bot$, obwohl $\varphi \equiv \top$. \\
-	Das stünde im Widerspruch zur Aussage, dass $\varphi \Rightarrow \chi$ gilt. \\
-	Aus der Struktur von $\chi$ folgt ebenfalls, dass $t_{\varphi}$ folgende Bedingungen erfüllt:\\
-	\ \\ \(\varphi \Rightarrow t_{\varphi} \wedge t_{\varphi} \Rightarrow \chi \wedge var(t_{\varphi}) \subseteq 		  	var(\varphi) \cap var(\chi) \)
-	
-	\ \\Daraus folgt, dass für alle Formeln $\varphi$, $\chi \in$ AL gilt mit $\varphi \Rightarrow \chi \equiv \top$:
-	
-	\ \\ \( \exists \psi \in AL. \varphi \Rightarrow \psi \wedge 
-	\psi \Rightarrow \chi \wedge var(\psi) \subseteq var(\varphi) \cap var(\chi) \)
+	$$\exists \psi \in AL. \varphi \Rightarrow \psi \wedge 
+	\psi \Rightarrow \chi \wedge var(\psi) \subseteq var(\varphi) \cap var(\chi)$$
 \end{document}

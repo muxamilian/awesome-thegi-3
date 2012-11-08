@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.10.28)  7 NOV 2012 19:37
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2012.6.30)  8 NOV 2012 08:59
 entering extended mode
- \write18 enabled.
- file:line:error style messages enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **"TheGi 3 HA 2.tex"
 (./TheGi 3 HA 2.tex
@@ -360,18 +359,10 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 91.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count100
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
@@ -394,12 +385,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen122
 \cmidrulekern=\dimen123
 \defaultaddspace=\dimen124
-\@cmidla=\count101
-\@cmidlb=\count102
+\@cmidla=\count100
+\@cmidlb=\count101
 \@aboverulesep=\dimen125
 \@belowrulesep=\dimen126
-\@thisruleclass=\count103
-\@lastruleclass=\count104
+\@thisruleclass=\count102
+\@lastruleclass=\count103
 \@thisrulewidth=\dimen127
 )
 (/usr/local/texlive/2012/texmf-dist/tex/latex/tools/verbatim.sty
@@ -412,36 +403,36 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 Package: pst-all 2008/01/01 the main pstricks tools
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/pstricks/pstricks.sty
-Package: pstricks 2012/08/24 v0.53 LaTeX wrapper for `PSTricks' (RN,HV)
+Package: pstricks 2011/10/31 v0.52 LaTeX wrapper for `PSTricks' (RN,HV)
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pstricks/pstricks.tex
 (/usr/local/texlive/2012/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
 File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks24
 \XKV@tempa@toks=\toks25
-\XKV@depth=\count105
-File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
+\XKV@depth=\count104
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
 )))
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pstricks/pst-fp.tex
 `pst-fp' v0.05, 2010/01/17 (hv)
-\pstFP@xs=\count106
-\pstFP@xia=\count107
-\pstFP@xib=\count108
-\pstFP@xfa=\count109
-\pstFP@xfb=\count110
-\pstFP@rega=\count111
-\pstFP@regb=\count112
-\pstFP@regs=\count113
-\pstFP@times=\count114
+\pstFP@xs=\count105
+\pstFP@xia=\count106
+\pstFP@xib=\count107
+\pstFP@xfa=\count108
+\pstFP@xfb=\count109
+\pstFP@rega=\count110
+\pstFP@regb=\count111
+\pstFP@regs=\count112
+\pstFP@times=\count113
 )
-\psLoopIndex=\count115
+\psLoopIndex=\count114
 
-`PSTricks' v2.33  <2012/09/23> (tvz)
+`PSTricks' v2.29  <2012/06/04> (tvz)
 \pst@dima=\dimen128
 \pst@dimb=\dimen129
 \pst@dimc=\dimen130
@@ -455,23 +446,23 @@ File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 \pst@hbox=\box28
 \pst@ibox=\box29
 \pst@boxg=\box30
-\pst@cnta=\count116
-\pst@cntb=\count117
-\pst@cntc=\count118
-\pst@cntd=\count119
-\pst@cntg=\count120
-\pst@cnth=\count121
-\pst@cntm=\count122
-\pst@cntn=\count123
-\pst@cnto=\count124
-\pst@cntp=\count125
-\@zero=\count126
+\pst@cnta=\count115
+\pst@cntb=\count116
+\pst@cntc=\count117
+\pst@cntd=\count118
+\pst@cntg=\count119
+\pst@cnth=\count120
+\pst@cntm=\count121
+\pst@cntn=\count122
+\pst@cnto=\count123
+\pst@cntp=\count124
+\@zero=\count125
 \pst@toks=\toks26
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pstricks/pstricks.con)
 \psunit=\dimen138
 \psxunit=\dimen139
 \psyunit=\dimen140
-\pst@C@@rType=\count127
+\pst@C@@rType=\count126
 \pslinewidth=\dimen141
 \psk@startLW=\dimen142
 \psk@endLW=\dimen143
@@ -486,10 +477,10 @@ File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 \pst@shift=\dimen150
 \theoverlaybox=\box31
 )
-File: pstricks.tex 2012/09/23 v2.33 `PSTricks' (tvz,hv)
+File: pstricks.tex 2012/06/04 v2.29 `PSTricks' (tvz,hv)
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pstricks/pst-fp.tex)
-File: pst-fp.tex 2012/09/23 v2.33 `PST-fp' (hv)
+File: pst-fp.tex 2012/06/04 v2.29 `PST-fp' (hv)
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
@@ -497,9 +488,8 @@ Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 (/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: dvips.def on input line 225.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
@@ -520,8 +510,8 @@ Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/multido/multido.tex
  v1.42, 2010/05/14 <tvz>
-\multido@count=\count128
-\multidocount=\count129
+\multido@count=\count127
+\multidocount=\count128
 \multido@stuff=\toks29
 )
 File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
@@ -532,7 +522,7 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
  v1.42, 2012/05/03 (tvz,hv)
 \pstRadUnit=\dimen151
 \pstRadUnitInv=\dimen152
-\pst@linecnt=\count130
+\pst@linecnt=\count129
 \psxlabelsep=\dimen153
 \psylabelsep=\dimen154
 \psk@subticksize=\dimen155
@@ -542,7 +532,7 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 \pst@yticksizeA=\dimen159
 \pst@yticksizeB=\dimen160
 \pst@yticksizeC=\dimen161
-\@digitcounter=\count131
+\@digitcounter=\count130
 \psk@llx=\dimen162
 \psk@lly=\dimen163
 \psk@urx=\dimen164
@@ -553,21 +543,21 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 File: pst-plot.tex 2012/05/03 1.42 `pst-plot' (tvz,hv)
 )
 (/usr/local/texlive/2012/texmf-dist/tex/latex/pst-node/pst-node.sty
-Package: pst-node 2012/09/18 v1.01 LaTeX wrapper for `pst-node' (HV)
+Package: pst-node 2011/06/05 v1.00 LaTeX wrapper for `pst-node' (HV)
 Package: pst-node 2010/04/22 package wrapper for pst-node.tex
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pst-node/pst-node.tex
- v1.25, 2012/09/21
-\psrow=\count132
-\pscol=\count133
-\psmatrixcnt=\count134
+ v1.22, 2012/02/12
+\psrow=\count131
+\pscol=\count132
+\psmatrixcnt=\count133
 \psrowsep=\skip47
 \pscolsep=\skip48
-\pst@args=\count135
-\num@pts=\count136
-\pst@argcnt=\count137
+\pst@args=\count134
+\num@pts=\count135
+\pst@argcnt=\count136
 )
-File: pst-node.tex 2012/09/21 1.25 `pst-node' (tvz,hv)
+File: pst-node.tex 2012/02/12 1.22 `pst-node' (tvz)
 )
 (/usr/local/texlive/2012/texmf-dist/tex/latex/pst-tree/pst-tree.sty
 Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
@@ -576,11 +566,11 @@ Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
  v1.12, 2011/02/28(tvz,dg,hv)
 \pstree@rootbox=\box32
 \pstree@box=\box33
-\psnodecnt=\count138
-\pstreelevel=\count139
-\pstreecnt=\count140
-\pstree@cnt=\count141
-\pstree@stop=\count142
+\psnodecnt=\count137
+\pstreelevel=\count138
+\pstreecnt=\count139
+\pstree@cnt=\count140
+\pstree@stop=\count141
 )
 File: pst-tree.tex 2011/02/28 1.12 `pst-tree' (tvz,hv)
 )
@@ -644,20 +634,19 @@ Package: pstricks-add 2010/02/11 v. 0.14 package wrapper for pstricks-add.tex (
 hv)
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex
-`pstricks-add' v3.59, 2012/09/28 (dr,hv)
-\psparallelogramsep=\dimen168
-\pshooklength=\dimen169
-\pshookwidth=\dimen170
-\pst@cntC=\count143
-\chart@ColorIndex=\dimen171
-\chart@ColorStep=\dimen172
-\pst@chartHeight=\dimen173
-\pst@chartStackDepth=\dimen174
-\pst@chartStackWidth=\dimen175
-\chart@Toggle=\count144
-\psVectorCtr=\count145
+`pstricks-add' v3.55, 2011/12/11 (dr,hv)
+\pshooklength=\dimen168
+\pshookwidth=\dimen169
+\pst@cntC=\count142
+\chart@ColorIndex=\dimen170
+\chart@ColorStep=\dimen171
+\pst@chartHeight=\dimen172
+\pst@chartStackDepth=\dimen173
+\pst@chartStackWidth=\dimen174
+\chart@Toggle=\count143
+\psVectorCtr=\count144
 )
-File: pstricks-add.tex 2012/09/28 v3.59 `PSTricks-add' (hv)
+File: pstricks-add.tex 2011/12/11 v3.55 `PSTricks-add' (hv)
 ))
 (/usr/local/texlive/2012/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
@@ -668,12 +657,12 @@ Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \UL@hyphenbox=\box36
 \UL@skip=\skip49
 \UL@hook=\toks31
-\UL@height=\dimen176
-\UL@pe=\count146
-\UL@pixel=\dimen177
+\UL@height=\dimen175
+\UL@pe=\count145
+\UL@pixel=\dimen176
 \ULC@box=\box37
 Package: ulem 2012/05/18
-\ULdepth=\dimen178
+\ULdepth=\dimen177
 )
 (/usr/local/texlive/2012/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
 Package: stmaryrd 1994/03/03 St Mary's Road symbol package
@@ -686,7 +675,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 )
 (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
@@ -695,17 +684,17 @@ Package ifvtex Info: VTeX not detected.
 (/usr/local/texlive/2012/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count147
-\Gm@cntv=\count148
-\c@Gm@tempcnt=\count149
-\Gm@bindingoffset=\dimen179
-\Gm@wd@mp=\dimen180
-\Gm@odd@mp=\dimen181
-\Gm@even@mp=\dimen182
-\Gm@layoutwidth=\dimen183
-\Gm@layoutheight=\dimen184
-\Gm@layouthoffset=\dimen185
-\Gm@layoutvoffset=\dimen186
+\Gm@cnth=\count146
+\Gm@cntv=\count147
+\c@Gm@tempcnt=\count148
+\Gm@bindingoffset=\dimen178
+\Gm@wd@mp=\dimen179
+\Gm@odd@mp=\dimen180
+\Gm@even@mp=\dimen181
+\Gm@layoutwidth=\dimen182
+\Gm@layoutheight=\dimen183
+\Gm@layouthoffset=\dimen184
+\Gm@layoutvoffset=\dimen185
 \Gm@dimlist=\toks32
 )
 (/usr/local/texlive/2012/texmf-dist/tex/latex/tools/tabularx.sty
@@ -713,18 +702,18 @@ Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen187
-\extrarowheight=\dimen188
+\col@sep=\dimen186
+\extrarowheight=\dimen187
 \NC@list=\toks33
 \extratabsurround=\skip50
 \backup@length=\skip51
 )
-\TX@col@width=\dimen189
-\TX@old@table=\dimen190
-\TX@old@col=\dimen191
-\TX@target=\dimen192
-\TX@delta=\dimen193
-\TX@cols=\count150
+\TX@col@width=\dimen188
+\TX@old@table=\dimen189
+\TX@old@col=\dimen190
+\TX@target=\dimen191
+\TX@delta=\dimen192
+\TX@cols=\count149
 \TX@ftn=\toks34
 )
 (./TheGi 3 HA 2.aux)
@@ -747,67 +736,10 @@ LaTeX Font Info:    Try loading font information for OT1+ppl on input line 34.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count151
-\scratchdimen=\dimen194
-\scratchbox=\box38
-\nofMPsegments=\count152
-\nofMParguments=\count153
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count154
-\MPscratchDim=\dimen195
-\MPnumerator=\count155
-\makeMPintoPDFobject=\count156
-\everyMPtoPDFconversion=\toks36
-) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -901,52 +833,25 @@ File: omsppl.fd
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 126.
  [1
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
 
-
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/upd
-map/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 196--201
+] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 195--201
 
  []
 
-[3] (./TheGi 3 HA 2.aux) ) 
+[3] (./TheGi 3 HA 2.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.43996pt have occurred.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8466 strings out of 493488
- 121790 string characters out of 3141325
- 269901 words of memory out of 3000000
- 11501 multiletter control sequences out of 15000+200000
- 24507 words of font info for 75 fonts, out of 3000000 for 9000
+ 7507 strings out of 493489
+ 106844 string characters out of 3141349
+ 247655 words of memory out of 3000000
+ 10605 multiletter control sequences out of 15000+200000
+ 22046 words of font info for 77 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  44i,8n,54p,597b,231s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/b
-ase/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss1
-0.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></u
-sr/local/texlive/2012/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr
-/local/texlive/2012/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/
-texlive/2012/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "TheGi 3 HA 2.pdf" (3 pages, 106326 bytes).
-PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+Output written on "TheGi 3 HA 2.dvi" (3 pages, 10896 bytes).
