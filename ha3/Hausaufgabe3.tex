@@ -147,9 +147,16 @@ Damit ist bewiesen, dass die Junktorbasis $\{\land, \lor, \rightarrow \}$ nicht 
 \subsection*{Aufgabe 3}
 
 \begin{enumerate}[(i)]
-\item
+\item Sei $\varphi_n$ induktiv definiert als:
+\begin{align*}
+\varphi_1(X_1) &= X_1 \\
+\varphi_{n+1}(X_1,...,X_{n+1}) &= \varphi_n(X_1,...,X_n) \oplus X_{n+1}
+\end{align*}
+Wie im Tutorium 2 bewiesen wurde, wechselt $\varphi$ immer den Wahrheitswert, wenn sich in der Belegung eine Zahl ändert. Damit gibt es genau $2^{n-1}$ Belegungen zu denen $\varphi$ zu Wahr auswertet. Somit hätte die kanonische KNF $2^{n-1}$ Klauseln. Diese lassen sich jedoch \textbf{nicht} zusammenfassen, da sich in jeder Klausel immer 2 Variablen unterscheiden. Dies ensteht wie schon erwähnt dadurch, dass sich der Wahrheitswert ändert, sobald eine Variable ihren Wert ändert. \textbf{Somit müssen sich immer 2 Variablen jeder Belegung unterscheiden} damit die KNF zu \textsf{True} auswertet. Wollte man die Aussage beweisen, müsste man zeigen, dass sich Klauseln mit 2 unterschiedlichen Variablen nicht zusammenfassen lassen. 
 
-\item
+ Dadurch ist hat die minimale KNF $2^{n-1}$ Klauseln mit jeweils $n$ Variablen in jeder Klausel.
+
+\item Die Formel, sowie die Begründung von 3i kann übernommen wurden.
 
 \end{enumerate}
 
