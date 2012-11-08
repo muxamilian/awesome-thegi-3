@@ -46,14 +46,14 @@ Marius Liwotto\> -  341051
 
 	\begin{enumerate}
 	\item[(i)]
-%	$E'' := \lbrace (v_1, v_2) | \lbrace v_1, v_2 \rbrace \in E \rbrace$\\
-%	$G' := (V, t(s(r(E'')))$ mit $t(s(r(E)))$ = reflexiver, symmetrischer und transitiver Abschluss von $E$.
+%	$E' := \lbrace (v_1, v_2) | \lbrace v_1, v_2 \rbrace \in E \rbrace$\\
+%	$G' := (V, t(s(r(E')))$ mit $t(s(r(E)))$ = reflexiver, symmetrischer und transitiver Abschluss von $E$.
 %	
 %	\ \\Die Menge aller Pfade von $v_n$ nach $v_m$ mit $v_n, v_m \in V$ in G':\\	
 %	\( P_{v_n,v_m} := \{p~|~\text{wenn p ein Pfad von $v_n$ zu $v_m$ ist mit $v_n, v_m \in V$} \}  \)
 %	
 %	\ \\Ein Pfad $p \in P_{v_n,v_m}$ von $v_n$ nach $v_m$ ist eine Menge aus Tupeln $(v_i,v_j)$ mit:\\
-%	\( \forall (v_i,v_j) \in p.~\exists (v_j,v_l) \in p \vee (v_j,v_m).~\top \)
+%	\( \forall (v_i,v_j) \in p.~\exists (v_j,v_l) \in p \vee (v_j,v_m).~True \)
 %	% Diese Formel ergibt für mich irgendwie keinen Sinn -- Max
 %	
 %	\ \\ \( \phi(P_i) := \begin{cases}
@@ -70,13 +70,13 @@ Marius Liwotto\> -  341051
 %	\ \\$\varphi_n$ wird gdw. wahr, wenn für jeden Knoten $v_n$ gilt, dass er zu jedem anderen Knoten $v_m$ \\
 %	einen Pfad besitzt, der auch in G enthalten ist. \\
 %	Daraus folgt: $\llbracket \varphi_n \rrbracket^{\beta_G} = 1 \Leftrightarrow$ G ist zusammenhängend
-Ein Graph $G = (V,E)$ ist zusammenhängend, falls von einem beliebigen Knoten $v_n \in V$ ein Pfad zu jedem anderen Knoten $v_m \in V$ existiert. 
+Ein Graph $G = (V,E)$ ist zusammenhängend, falls von einem beliebigen Knoten $v_n \in V$ ein Pfad zu jedem anderen Knoten $v_m \in V$ existiert.
 
-Man definiert $E' = \bigcup\limits_{n \in \mathbb{N}}  \{(x,y) | \{ x,y \} \in E \}^n$. $E'$ ist also der reflexive, symmetrische und transitive Abschluss von E.
+Man definiert $$E' = \bigcup\limits_{n \in \mathbb{N}} \{(x,y) | \{ x,y \} \in E \}^n. E'$$ ist also der reflexive, symmetrische und transitive Abschluss von E.
 
-Man kann sehr einfach feststellen ob ein Knoten eine Verbindung zu jedem anderen Knoten hat, dazu bilde man den reflexiven, transitiven und symmetrischen Abschluss von $E$ und bezeichne ihn $E''$. Weiterhin definiere  $X'_{ij}$ und erweitere den Zielbereich von $\beta_G$.
-$$\llbracket X'_{ij} \rrbracket = 1 \Leftrightarrow \{v_i,v_j\} \in E''$$
-Wenn nun alle Knoten untereinander verbunden sind (wenn $E''$ als Kantenmenge benutzt wird) dann ist der Graph $G$ zusammenhängend.
+Man kann sehr einfach feststellen ob ein Knoten eine Verbindung zu jedem anderen Knoten hat, dazu benutze den reflexiven, transitiven und symmetrischen Abschluss von E, nämlich $E'$. Weiterhin definiere $X'_{ij}$ und erweitere den Zielbereich von $\beta_G$.
+$$\llbracket X'_{ij} \rrbracket^{\beta_G} = 1 \Leftrightarrow \{v_i,v_j\} \in E'$$
+Wenn nun alle Knoten untereinander verbunden sind (wenn $E'$ als Kantenmenge benutzt wird) dann ist der Graph $G$ zusammenhängend.
 $$\varphi_n = \bigwedge_{i=1}^n\bigwedge_{j=i+1}^n X'_{ij}$$
 
 
@@ -97,10 +97,10 @@ $$\varphi_n = \bigwedge_{i=1}^n\bigwedge_{j=i+1}^n X'_{ij}$$
 %	der äquivalent zum Ausgangsgraph ist. \\
 %	Diese Kreisstruktur bedeutet, dass jeder Knoten genau 2 Nachbarn hat. \\
 %	Die Funktion $\phi(k)$ konstruiert für jeden Knoten $v_i$ einen Konjunktionsterm so, dass wenn $v_i$  mehr als \\
-%	2 Nachbarn hat, der Term zu \bot auswertet.\\
+%	2 Nachbarn hat, der Term zu False auswertet.\\
 %	$\varphi_n$ prüft, ob $\phi$ für jeden Knoten $v_i \in V$ gilt und ob der Graph abgeschlossen \\
 %	ist mit der Formel aus (i).
-Wenn ein Graph einen Hamilton Kreis besizt, dann gibt es von einem beliebigen Knoten aus einen Pfad der Länge $n$, wobei $n$ die Anzahl der Knoten ist der wieder zu diesem führt. Zuerst erweitere die Definition von $X_{ij}$:
+Wenn ein Graph einen Hamilton Kreis besizt, dann gibt es von einem beliebigen Knoten aus einen Pfad der Länge $n$, wobei $n$ die Anzahl der Knoten ist der wieder zu diesem führt. Zuerst erweitere die Definitien von $X_{ij}$:
 $$X''_{ij} \rightarrow \begin{cases}X_{ij}, & i < j \\ X_{ji}, & i > j \\ 0, & i = j \end{cases} $$
 Sei weiterhin die Menge $P_V$ die Menge aller möglichen Permutationen der Reihenfolge der Knoten $V$, diese Folgen sind dargestellt als n-Tupel. Die Schreibweise $t[x]$ bei Tupeln soll das $x$-te Element des Tupels $t$ sein.  
 $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[k+1]} \right) \land X''_{p[n],p[1]} \right)$$
@@ -111,16 +111,18 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	\begin{enumerate}[(i)]
 	\item 
 	\begin{align*}
-	\varphi \mathcal{S} &= (((X \land Y) \lor Z) \leftrightarrow (((X \lor \neg Y) \leftrightarrow Y))\mathcal{S} \\
-	&= (((X \land Y) \lor Z)\mathcal{S} \leftrightarrow (((X \lor \neg Y)\mathcal{S} \leftrightarrow Y) ) \\
-	&= (((X \land Y)\mathcal{S}  \lor Z\mathcal{S} ) \leftrightarrow (((X \lor \neg Y)\mathcal{S}  \leftrightarrow Y\mathcal{S} ) ) \\
-	&= (((X\mathcal{S} \land Y\mathcal{S})  \lor Z ) \leftrightarrow (((X\mathcal{S} \lor \neg Y\mathcal{S})  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
-	&= ((((Z \lor U) \land (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \lor Z ) \leftrightarrow (((Z \lor U) \lor \neg (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)))) \\	\end{align*}
+	\varphi \mathcal{S} &= \mathcal{S}(((X \land Y) \lor Z) \leftrightarrow (((X \lor \neg Y) \leftrightarrow Y)) \\
+	&= (\mathcal{S} ((X \land Y) \lor Z) \leftrightarrow \mathcal{S}(((X \lor \neg Y) \leftrightarrow Y) ) \\
+	&= ((\mathcal{S}(X \land Y)  \lor \mathcal{S}(Z) ) \leftrightarrow ((\mathcal{S}(X \lor \neg Y)  \leftrightarrow \mathcal{S}(Y) ) ) \\
+	&= ... \\
+	&= ((((Z \lor U) \land (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \lor Z ) \leftrightarrow (((Z \lor U) \lor \neg (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
+	\end{align*}
 	\item
 	\begin{align*}
 	\beta\mathcal{S}(Y) &= \llbracket \mathcal{S}(Y)\rrbracket^\beta = \llbracket ((Y \leftrightarrow (Z \rightarrow (Y \land Z)))\rrbracket^\beta = 1\\
 	\beta\mathcal{S}(X) &= \llbracket \mathcal{S}(X)\rrbracket^\beta = \llbracket (Z \lor U)\rrbracket^\beta = 1\\
-	\beta\mathcal{S}(U) &= \beta(U) = 1
+	\beta\mathcal{S}(U) &= \beta(U) = 1 \\
+	\beta\mathcal{S}(Z) &= \beta(Z) = 1
 	\end{align*}
 	\begin{itemize}
 	\item $\beta\mathcal{S}$ ist passend für $\varphi$, da $\{X, Y, Z\} = \textsf{var}(\varphi) \subseteq \textsf{Dom}(\beta\mathcal{S}) = \{X,Y,U,Z \}$ \\
@@ -131,7 +133,7 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	\end{itemize}
 		
 	\end{enumerate}
-\subsection*{Aufgabe 3}
+	\subsection*{Aufgabe 3}
 \begin{enumerate}[(i)]
 \item $\varphi_1 \equiv \psi_1$
 	\begin{align*}
@@ -187,7 +189,7 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	&\equiv \psi_5 
 	\end{align*}
 \end{enumerate}
-	\newpage
+\newpage
 	\subsection*{Aufgabe 4}
 	Aus der VL wissen wir, dass zu jeder aussagenlogischen Formel eine äquivalente KNF existiert. \\
 	Folglich gilt: $$\varphi \equiv knf_{\varphi} = \bigwedge\limits_{i=1}^{n} \bigvee\limits_{j=1}^{m} L_{ij}$$ 
