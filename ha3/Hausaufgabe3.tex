@@ -125,8 +125,23 @@ Analog
 \end{math}
 \end{itemize}
 Da alle Operatoren der uns bekannten funktional vollständigen Junktorbasis durch \textsf{NAND} darstellbar ist, ist \textsf{NAND} funktional vollständig.
-\item
-
+\item $\{\land, \lor, \rightarrow \}$ ist nicht funktional vollständig, da $\lnot X$ mit $\{\land, \lor, \rightarrow \}$  nicht darstellbar ist. Sei dazu die Belegung $\beta$ definiert als $\beta(X) = 1$.
+Beweis per struktureller Induktion:
+\begin{itemize}
+\item[\textbf{IA}] $\phi = X$ \\
+$\llbracket X \rrbracket^{\beta} = 1$
+\item[\textbf{IV}] Seien $\phi_1, \phi_2$ Formeln die nur aus   $\{\land, \lor, \rightarrow \}$ bestehen, wobei gilt, dass $\llbracket \phi_1 \rrbracket^{\beta} = 1 = \llbracket \phi_2 \rrbracket^{\beta} $
+\item[\textbf{IS}] 
+\begin{itemize}
+\item $\psi = (\phi_1 \land \phi_2)$ \\
+$\llbracket  (\phi_1 \land \phi_2) \rrbracket^\beta = 1$
+\item $\psi = (\phi_1 \lor \phi_2)$ \\
+$\llbracket  (\phi_1 \lor\phi_2) \rrbracket^\beta = 1$
+\item $\psi = (\phi_1 \rightarrow \phi_2)$ \\
+$\llbracket  (\phi_1 \rightarrow \phi_2) \rrbracket^\beta = 1$
+\end{itemize}
+\end{itemize}
+Damit ist bewiesen, dass die Junktorbasis $\{\land, \lor, \rightarrow \}$ nicht funktional vollständig ist.
 \end{enumerate}
 
 \subsection*{Aufgabe 3}
