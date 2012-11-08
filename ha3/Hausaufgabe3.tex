@@ -80,10 +80,51 @@ Analog
 \end{itemize}
 \end{itemize}
 \subsection*{Aufgabe 2}
-
 \begin{enumerate}[(i)]
-\item
-
+\item Es ist zu zeigen, dass \textsf{NAND} funktional vollständig ist. Bisher kennen wir $\{\lnot, \lor, \land\}$ als funktional vollständig. Wenn nun alle Operatoren dieser Basis durch \textsf{NAND} dargestellt werden können, ist \textsf{NAND} funktional vollständig.
+\begin{itemize}
+\item $\lnot\phi \equiv (\phi \textsf{ NAND } \phi)$ \\
+\\
+\begin{math}
+\begin{array}{c|cc}
+\toprule 
+\phi & \lnot \phi & (\phi \textsf{ NAND } \phi) \\
+\midrule
+0 & 1 & 1 \\
+1 & 0 & 0 \\
+\bottomrule
+\end{array}
+\end{math}
+\item $(\phi \lor \psi) \equiv ((\phi \textsf{ NAND } \phi) \textsf{NAND} (\psi \textsf{ NAND } \psi))$ \\
+\\
+\begin{math}
+\begin{array}{cc|cc}
+\toprule 
+\phi & \psi & (\phi \lor  \psi) & ((\phi \textsf{ NAND } \phi) \textsf{NAND} (\psi \textsf{ NAND } \psi)) \\
+\midrule
+0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 1 & 1 \\
+\bottomrule
+\end{array}
+\end{math}
+\item $(\phi \lor \psi) \equiv ((\phi \textsf{ NAND } \phi) \textsf{NAND} (\psi \textsf{ NAND } \psi))$ \\
+\\
+\begin{math}
+\begin{array}{cc|cc}
+\toprule 
+\phi & \psi & (\phi \land  \psi) & ((\phi \textsf{ NAND } \psi) \textsf{NAND} (\phi \textsf{ NAND } \psi)) \\
+\midrule
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+\bottomrule
+\end{array}
+\end{math}
+\end{itemize}
+Da alle Operatoren der uns bekannten funktional vollständigen Junktorbasis durch \textsf{NAND} darstellbar ist, ist \textsf{NAND} funktional vollständig.
 \item
 
 \end{enumerate}
