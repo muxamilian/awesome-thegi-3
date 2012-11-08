@@ -72,7 +72,8 @@ Marius Liwotto\> -  341051
 %	Daraus folgt: $\llbracket \varphi_n \rrbracket^{\beta_G} = 1 \Leftrightarrow$ G ist zusammenhängend
 Ein Graph $G = (V,E)$ ist zusammenhängend, falls von einem beliebigen Knoten $v_n \in V$ ein Pfad zu jedem anderen Knoten $v_m \in V$ existiert.
 
-Man definiert $$E' = \bigcup\limits_{n \in \mathbb{N}} \{(x,y) | \{ x,y \} \in E \}^n. E'$$ ist also der reflexive, symmetrische und transitive Abschluss von E.
+Man definiert $$E' = \bigcup\limits_{n \in \mathbb{N}} \{(x,y) | \{ x,y \} \in E \}^n$$
+$E'$ ist also der reflexive, symmetrische und transitive Abschluss von E.
 
 Man kann sehr einfach feststellen ob ein Knoten eine Verbindung zu jedem anderen Knoten hat, dazu benutze den reflexiven, transitiven und symmetrischen Abschluss von E, nämlich $E'$. Weiterhin definiere $X'_{ij}$ und erweitere den Zielbereich von $\beta_G$.
 $$\llbracket X'_{ij} \rrbracket^{\beta_G} = 1 \Leftrightarrow (v_i,v_j) \in E'$$
@@ -111,12 +112,12 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	\begin{enumerate}[(i)]
 	\item 
 	\begin{align*}
-	\varphi \mathcal{S} &= \mathcal{S}(((X \land Y) \lor Z) \leftrightarrow (((X \lor \neg Y) \leftrightarrow Y)) \\
-	&= (\mathcal{S} ((X \land Y) \lor Z) \leftrightarrow \mathcal{S}(((X \lor \neg Y) \leftrightarrow Y) ) \\
-	&= ((\mathcal{S}(X \land Y)  \lor \mathcal{S}(Z) ) \leftrightarrow ((\mathcal{S}(X \lor \neg Y)  \leftrightarrow \mathcal{S}(Y) ) ) \\
-	&= ... \\
-	&= ((((Z \lor U) \land (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \lor Z ) \leftrightarrow (((Z \lor U) \lor \neg (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
-	\end{align*}
+	\varphi \mathcal{S} &= (((X \land Y) \lor Z) \leftrightarrow (((X \lor \neg Y) \leftrightarrow Y))\mathcal{S} \\
+	&= (((X \land Y) \lor Z)\mathcal{S} \leftrightarrow (((X \lor \neg Y)\mathcal{S} \leftrightarrow Y) ) \\
+	&= (((X \land Y)\mathcal{S}  \lor Z\mathcal{S} ) \leftrightarrow (((X \lor \neg Y)\mathcal{S}  \leftrightarrow Y\mathcal{S} ) ) \\
+	&= ...\\
+	&= (((X\mathcal{S} \land Y\mathcal{S})  \lor Z ) \leftrightarrow (((X\mathcal{S} \lor \neg Y\mathcal{S})  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)) ) ) \\
+	&= ((((Z \lor U) \land (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \lor Z ) \leftrightarrow (((Z \lor U) \lor \neg (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)))) \\	\end{align*}
 	\item
 	\begin{align*}
 	\beta\mathcal{S}(Y) &= \llbracket \mathcal{S}(Y)\rrbracket^\beta = \llbracket ((Y \leftrightarrow (Z \rightarrow (Y \land Z)))\rrbracket^\beta = 1\\
@@ -193,19 +194,18 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	\subsection*{Aufgabe 4}
 	Aus der VL wissen wir, dass zu jeder aussagenlogischen Formel eine äquivalente KNF existiert. \\
 	Folglich gilt: $$\varphi \equiv knf_{\varphi} = \bigwedge\limits_{i=1}^{n} \bigvee\limits_{j=1}^{m} L_{ij}$$ 
-	Aus $\varphi \equiv \top$ kann man folgern, dass alle Disjunktionsterme von $knf_{\varphi}$ wahr sein müssen. Des Weiteren gilt, dass $\chi$ die folgende äquivalente Form besitzt, wenn $\chi$ keine Tautologie ist:
-	$$ \chi \equiv t_{\varphi 1} \vee ... \vee  t_{\varphi i} \vee \gamma$$ 
-	wobei
-	$\gamma \in AL,~t_{\varphi i} \text{ ist ein Disjunktionsterm
-	mit i $\in [1,u]$ und 1 $\leq$ u $\leq$ n von } 
-	knf_{\varphi} \text{ und } var(\gamma) ~\cap~ var(\varphi) = \emptyset $
-	\\
-	
-	Würde dies nicht gelten, so gäbe es eine passende Belegung $\beta$, sodass $\llbracket \chi \rrbracket ^\beta \equiv \bot$, obwohl $\varphi \equiv \top$. Das stünde im Widerspruch zur Aussage, dass $\varphi \Rightarrow \chi$ gilt. Ist $\chi$ eine Tautologie gilt: $t_{\varphi} = \top$ 
+	Aus $\varphi \equiv \top$ kann man folgern, dass alle Disjunktionsterme von $knf_{\varphi}$ wahr sein müssen. Des Weiteren gilt, dass $\chi$ die folgende äquivalente Form besitzt:
+
+	$$ \chi \equiv t_{\varphi} \vee \gamma \text{ mit } 
+	\gamma \in AL,~t_{\varphi} \text{ ist ein Disjunktionsterm von } knf_{\varphi} $$ 	
+
+	Würde dies nicht gelten, so gäbe es eine passende Belegung $\beta$, sodass $\llbracket \chi \rrbracket ^\beta \equiv \bot$, obwohl $\llbracket \varphi \rrbracket ^\beta \equiv \top$. 
+	Das stünde im Widerspruch zur Aussage, dass $\varphi \Rightarrow \chi$ gilt.
 	Aus der Struktur von $\chi$ folgt ebenfalls, dass $t_{\varphi}$ folgende Bedingungen erfüllt:
 	$$\varphi \Rightarrow t_{\varphi} \wedge t_{\varphi} \Rightarrow \chi \wedge var(t_{\varphi}) \subseteq 		  	var(\varphi) \cap var(\chi) $$
-	Daraus folgt, dass für alle Formeln $\varphi$, $\chi \in$ AL gilt mit $\varphi \Rightarrow \chi \equiv \top$:
-	
+
+	\ \\Daraus folgt, dass für alle Formeln $\varphi$, $\chi \in$ AL gilt mit $\varphi \Rightarrow \chi \equiv \top$:
+
 	$$\exists \psi \in AL. \varphi \Rightarrow \psi \wedge 
-	\psi \Rightarrow \chi \wedge var(\psi) \subseteq var(\varphi) \cap var(\chi)$$
+	\psi \Rightarrow \chi \wedge var(\psi) \subseteq var(\varphi) \cap var(\chi) $$
 \end{document}
