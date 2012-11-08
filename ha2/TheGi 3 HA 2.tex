@@ -118,14 +118,14 @@ $$\varphi_n =  \bigvee_{p \in P_V}\left(\left(\bigwedge_{k=1}^{n-1} X''_{p[k],p[
 	&= ((((Z \lor U) \land (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \lor Z ) \leftrightarrow (((Z \lor U) \lor \neg (Y \leftrightarrow (Z \rightarrow (Y \land Z)))  \leftrightarrow (Y \leftrightarrow (Z \rightarrow (Y \land Z)))) \\	\end{align*}
 	\item
 	\begin{align*}
-	\beta\mathcal{S}(X) &= \llbracket \mathcal{S}(X)\rrbracket^\beta \\
-	\beta\mathcal{S}(Y) &= \llbracket \mathcal{S}(Y)\rrbracket^\beta \\
-	\beta\mathcal{S}(U) &= \beta(U)
+	\beta\mathcal{S}(Y) &= \llbracket \mathcal{S}(Y)\rrbracket^\beta = \llbracket ((Y \leftrightarrow (Z \rightarrow (Y \land Z)))\rrbracket^\beta = 1\\
+	\beta\mathcal{S}(X) &= \llbracket \mathcal{S}(X)\rrbracket^\beta = \llbracket (Z \lor U)\rrbracket^\beta = 1\\
+	\beta\mathcal{S}(U) &= \beta(U) = 1
 	\end{align*}
 	\begin{itemize}
-	\item $\beta\mathcal{S}$ ist passend für $\varphi$, da $\{X, Y\} = \textsf{var}(\varphi) \subseteq \textsf{Dom}(\beta\mathcal{S}) = \{X,Y,U \}$ \\
-	$\beta$ ist passend für $\varphi\mathcal{S}$, da $\{X, Y, U\} = \textsf{var}(\varphi\mathcal{S}) \subseteq \textsf{Dom}(\beta) = \{X,Y,U \}$ 
-	\item Da $\beta$ eine zu $\varphi\mathcal{S}$ passende Belegung ist und  $\beta\mathcal{S}$ zu $\varphi$ passt, kann Lemma 2.27-A aus der Vorlesung angewendet werden, welches dort auch allgemein bewiesen wird.
+	\item $\beta\mathcal{S}$ ist passend für $\varphi$, da $\{X, Y, Z\} = \textsf{var}(\varphi) \subseteq \textsf{Dom}(\beta\mathcal{S}) = \{X,Y,U,Z \}$ \\
+	$\beta$ ist passend für $\varphi\mathcal{S}$, da $\{Y, U, Z\} = \textsf{var}(\varphi\mathcal{S}) \subseteq \textsf{Dom}(\beta) = \{Y,U,Z \}$ 
+\item Da $\llbracket \varphi \rrbracket^{\beta\mathcal{S}} = 1$ gilt: $\beta\mathcal{S} \vDash \varphi$ und $\llbracket \varphi\mathcal{S} \rrbracket^{\beta} = 1$ gilt auch: $\beta \vDash \varphi\mathcal{S}$. Somit wurde $\beta\mathcal{S} \vDash \varphi \Leftrightarrow \beta \vDash \varphi\mathcal{S}$ verifiziert.
 	%Dies ist im Substitutionslemma bewiesen, was ja eine vollständige Verifikation ist, dass es auch mit der  hier angegebenen Formel, Substitution und Belegung gilt.
 	
 	\end{itemize}
