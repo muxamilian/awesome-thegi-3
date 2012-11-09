@@ -14,7 +14,7 @@
 \usepackage{verbatim}
 \usepackage{enumerate}
 \usepackage{ulem}
-\usepackage{ stmaryrd }
+\usepackage{stmaryrd}
 \usepackage[a4paper,
 left=1.8cm, right=1.8cm,
 top=2.0cm, bottom=2.0cm]{geometry}
@@ -164,9 +164,9 @@ Wie im Tutorium 2 bewiesen wurde, wechselt $\varphi$ immer den Wahrheitswert, we
 \section*{Aufgabe 4}
 % Der Rückrichtung fehlt noch der Feinschliff
 \subsection*{Hinrichtung}
-\textbf{Annahme:} Es existiert eine Parkettierung über das Dominosystem $\mathcal D$ von $\mathbb{Z} \times \mathbb{Z}$.
+\textbf{Annahme:} Es existiert eine Parkettierung über das endliche Dominosystem $\mathcal D$ von $\mathbb{Z} \times \mathbb{Z}$.
 
-Da die unbeschränkt große Matrix nach Annahme komplett parkettiert ist, gilt dies auch für jede endliche Teilmatrix $\mathbb{Z}_n \times \mathbb{Z}_n$.
+Da die unbeschränkt große Matrix nach Annahme komplett parkettiert ist, gilt dies trivialerweise auch für jede endliche Teilmatrix $\mathbb{Z}_n \times \mathbb{Z}_n$.
 %Man definiere folgende Funktion:
 %
 %\(
@@ -177,7 +177,7 @@ Da die unbeschränkt große Matrix nach Annahme komplett parkettiert ist, gilt d
 \subsection*{Rückrichtung}
 \textbf{Annahme:} Es existiert eine Parkettierung über das Dominosystem $\mathcal D$ von $\mathbb{Z}_n \times \mathbb{Z}_n$ für jedes $n \ge 1$.
 
-Z.z, dass dadurch auch eine Parkettierung von $\mathbb{Z} \times \mathbb{Z}$ existiert.
-$$\lim_{n \to \infty} \mathbb{Z}_n \times \mathbb{Z}_n = \mathbb{Z} \times \mathbb{Z}$$
-Lässt man $n$ nach $\infty$ gehen, so wird $\mathbb{Z}_n \times \mathbb{Z}_n$ zu $\mathbb{Z} \times \mathbb{Z}$. Da es nach Annahme für jedes $n \ge 1$ eine Parkettierung gibt, geht das Parkett auch in ein unendlich großes über.
+Da nach Angabe das Dominosystem $\mathcal{D}$ endlich ist, muss es ein gewisses $n_0 \in \mathbb{N} \ge 1$ geben, ab dem für alle $\mathbb{Z}_n \times \mathbb{Z}_n$ mit $n \ge n_0$ gilt, dass sie nur noch Parkettierungen von $\mathbb{Z}_{n_0} \times \mathbb{Z}_{n_0}$ sind (E- kann aber der Rand durchaus abgeschnitten sein).
+
+Geht $n$ gegen $\infty$ lässt sich diese Parkettierung ins unendliche fortführen und spannt $\mathbb{Z} \times \mathbb{Z}$ auf.
 \end{document}
