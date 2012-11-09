@@ -31,7 +31,7 @@ Tom Nick \hspace{2cm}\= - 340528\\
 Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
-\subsection*{Aufgabe 1}
+\section*{Aufgabe 1}
 Beweis durch strukturelle Induktion. Seien dazu $\beta$ und $\beta'$ zwei Belegungen mit $\beta \leq \beta'$, sowie $\varphi$ eine Formeln die nur aus Variablen $X_1,...,X_n$ und $\bot,\top,\land,\lor$ besteht.
 \begin{itemize}
 \item[\textbf{IA}] $\varphi = X_1$ \\ 
@@ -79,7 +79,7 @@ Anolog
 Analog
 \end{itemize}
 \end{itemize}
-\subsection*{Aufgabe 2}
+\section*{Aufgabe 2}
 \begin{enumerate}[(i)]
 \item Es ist zu zeigen, dass \textsf{NAND} funktional vollständig ist. Bisher kennen wir $\{\lnot, \lor, \land\}$ als funktional vollständig. Wenn nun alle Operatoren dieser Basis durch \textsf{NAND} dargestellt werden können, ist \textsf{NAND} funktional vollständig.
 \begin{itemize}
@@ -146,7 +146,7 @@ $\llbracket  (\phi_1 \rightarrow \phi_2) \rrbracket^\beta = 1$
 Damit ist bewiesen, dass die Junktorbasis $\{\land, \lor, \rightarrow \}$ nicht funktional vollständig ist.
 \end{enumerate}
 
-\subsection*{Aufgabe 3}
+\section*{Aufgabe 3}
 
 \begin{enumerate}[(i)]
 \item Sei $\varphi_n$ induktiv definiert als:
@@ -154,15 +154,30 @@ Damit ist bewiesen, dass die Junktorbasis $\{\land, \lor, \rightarrow \}$ nicht 
 \varphi_1(X_1) &= X_1 \\
 \varphi_{n+1}(X_1,...,X_{n+1}) &= \varphi_n(X_1,...,X_n) \oplus X_{n+1}
 \end{align*}
-Wie im Tutorium 2 bewiesen wurde, wechselt $\varphi$ immer den Wahrheitswert, wenn sich in der Belegung eine Zahl ändert. Damit gibt es genau $2^{n-1}$ Belegungen zu denen $\varphi$ zu Wahr auswertet. Somit hätte die kanonische KNF $2^{n-1}$ Klauseln. Diese lassen sich jedoch \textbf{nicht} zusammenfassen, da sich in jeder Klausel immer mindestens 2 Variablen unterscheiden (wobei $X$ und $\lnot X$ auch als unterschiedlich gelten) . Dies entsteht wie schon erwähnt dadurch, dass sich der Wahrheitswert ändert, sobald eine Variable ihren Wert ändert. \textbf{Somit müssen sich immer mindestens 2 Variablen jeder Belegung unterscheiden} damit die KNF zu \textsf{True} auswertet. Wollte man die Aussage beweisen, müsste man zeigen, dass sich Klauseln mit mindestens 2 unterschiedlichen Variablen nicht zusammenfassen lassen. Siehe Satz von Quine-McClusky.
+Wie im Tutorium 2 bewiesen wurde, wechselt $\varphi$ immer den Wahrheitswert, wenn sich in der Belegung eine Zahl ändert. Damit gibt es genau $2^{n-1}$ Belegungen zu denen $\varphi$ zu wahr auswertet. Somit hätte die kanonische KNF $2^{n-1}$ Klauseln. Diese lassen sich jedoch \textbf{nicht} zusammenfassen, da sich in jeder Klausel immer mindestens 2 Variablen unterscheiden (wobei $X$ und $\lnot X$ als unterschiedlich gelten) . Dies entsteht wie schon erwähnt dadurch, dass sich der Wahrheitswert ändert, sobald eine Variable ihren Wert ändert. Somit müssen sich immer mindestens 2 Variablen jeder Belegung unterscheiden damit die KNF zu \textsf{true} auswertet. Wollte man die Aussage beweisen, müsste man zeigen, dass sich Klauseln mit mindestens 2 unterschiedlichen Variablen nicht zusammenfassen lassen. Siehe Satz von Quine-McClusky.
 
  Dadurch hat die minimale KNF $2^{n-1}$ Klauseln mit jeweils $n$ Variablen in jeder Klausel. Das ist offensichtlich exponentiell.
 
 \item Die Formel, sowie die Begründung von 3i kann übernommen wurden.
-
-
 \end{enumerate}
 
-\subsection*{Aufgabe 4}
+\section*{Aufgabe 4}
+% Der Rückrichtung fehlt noch der Feinschliff
+\subsection{Hinrichtung}
+\textbf{Annahme:} Es existiert eine Parkettierung über das Dominosystem $\mathcal D$ von $\mathbb{Z} \times \mathbb{Z}$.
 
+Da die unbeschränkt große Matrix nach Annahme komplett parkettiert ist, gilt dies auch für jede endliche Teilmatrix $\mathbb{Z}_n \times \mathbb{Z}_n$.
+%Man definiere folgende Funktion:
+%
+%\(
+%\textsf{sum}: \mathbb{N}_+ \to \mathbb{N}_+ \\
+%1 \mapsto 1 \\
+%n \mapsto n + \textsf{sum}(n-1)
+%\)
+\subsection{Rückrichtung}
+\textbf{Annahme:} Es existiert eine Parkettierung über das Dominosystem $\mathcal D$ von $\mathbb{Z}_n \times \mathbb{Z}_n$ für jedes $n \ge 1$.
+
+Z.z, dass dadurch auch eine Parkettierung von $\mathbb{Z} \times \mathbb{Z}$ existiert.
+$$\lim_{n \to \infty} \mathbb{Z}_n \times \mathbb{Z}_n = \mathbb{Z} \times \mathbb{Z}$$
+Lässt man $n$ nach $\infty$ gehen, so wird $\mathbb{Z}_n \times \mathbb{Z}_n$ zu $\mathbb{Z} \times \mathbb{Z}$. Da es nach Annahme für jedes $n \ge 1$ eine Parkettierung gibt, geht das Parkett auch in ein unendlich großes über.
 \end{document}
