@@ -95,8 +95,22 @@ Analog
 \bottomrule
 \end{array}
 \end{math}
-\item $(\phi \lor \psi) \equiv ((\phi \textsf{ NAND } \phi) \textsf{NAND} (\psi \textsf{ NAND } \psi))$ \\
+\item $(\phi \land \psi) \equiv \lnot( \phi \textsf{NAND} \psi)$ \\($\lnot$ kann benutzt werden, da oben bereits gezeigt wurde, dass es sich mittels \textsf{NAND} darstellen lässt)\\
 \\
+\begin{math}
+\begin{array}{cc|cc}
+\toprule 
+\phi & \psi & (\phi \land  \psi) & \lnot( \psi \textsf{NAND} \psi) \\
+\midrule
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+\bottomrule
+\end{array}
+\end{math}
+\\
+\item $(\phi \lor \psi) \equiv \lnot(\lnot \phi \land \lnot \psi)$ \\($\lnot$ und $\land$ könn benutzt werden, da oben bereits gezeigt wurde, dass es sich mittels \textsf{NAND} darstellen lässt)\\
 \begin{math}
 \begin{array}{cc|cc}
 \toprule 
@@ -105,20 +119,6 @@ Analog
 0 & 0 & 0 & 0 \\
 0 & 1 & 1 & 1 \\
 1 & 0 & 1 & 1 \\
-1 & 1 & 1 & 1 \\
-\bottomrule
-\end{array}
-\end{math}
-\item $(\phi \lor \psi) \equiv ((\phi \textsf{ NAND } \phi) \textsf{NAND} (\psi \textsf{ NAND } \psi))$ \\
-\\
-\begin{math}
-\begin{array}{cc|cc}
-\toprule 
-\phi & \psi & (\phi \land  \psi) & ((\phi \textsf{ NAND } \psi) \textsf{NAND} (\phi \textsf{ NAND } \psi)) \\
-\midrule
-0 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-1 & 0 & 0 & 0 \\
 1 & 1 & 1 & 1 \\
 \bottomrule
 \end{array}
