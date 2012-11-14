@@ -184,22 +184,17 @@ Wie im Tutorium 2 bewiesen wurde, wechselt $\varphi$ immer den Wahrheitswert, we
 \end{enumerate}
 
 \section*{Aufgabe 4}
-% Der Rückrichtung fehlt noch der Feinschliff
-\subsection*{Hinrichtung}
-\textbf{Annahme:} Es existiert eine Parkettierung über das endliche Dominosystem $\mathcal D$ von $\mathbb{Z} \times \mathbb{Z}$.
-
-Da die unbeschränkt große Matrix nach Annahme komplett parkettiert ist, gilt dies trivialerweise auch für jede endliche Teilmatrix $\mathbb{Z}_n \times \mathbb{Z}_n$.
-%Man definiere folgende Funktion:
-%
-%\(
-%\textsf{sum}: \mathbb{N}_+ \to \mathbb{N}_+ \\
-%1 \mapsto 1 \\
-%n \mapsto n + \textsf{sum}(n-1)
-%\)
 \subsection*{Rückrichtung}
-\textbf{Annahme:} Es existiert eine Parkettierung über das Dominosystem $\mathcal D$ von $\mathbb{Z}_n \times \mathbb{Z}_n$ für jedes $n \ge 1$.
+Annahme: Für jedes $n \ge 0$ existiert eine Parkettierung.
 
-Da nach Angabe das Dominosystem $\mathcal{D}$ endlich ist, muss es ein gewisses $n_0 \in \mathbb{N} \ge 1$ geben, ab dem für alle $\mathbb{Z}_n \times \mathbb{Z}_n$ mit $n \ge n_0$ gilt, dass sie nur noch Parkettierungen von $\mathbb{Z}_{n_0} \times \mathbb{Z}_{n_0}$ sind (kann aber der Rand durchaus abgeschnitten sein).
+Wir definieren für jeden Platz am Parkett die folgende Variable:
+\begin{align*} X_{i,j} &:= (P(i,j)_1 = P(i-1,j)_3) \land (P(i,j)_2 = P(i,j+1)_4) \\ &\land (P(i,j)_3 = P(i+1,j)_1) \land (P(i,j)_4 = P(i,j-1)_2)\end{align*}
+wobei der Vergleich weggelassen wird, falls $P(k,l)$ nicht definiert ist. Sei nun $\Phi$ definiert als: 
+$$\Phi = \{X_{i,j} \mid i,j \in \mathbb{Z} \}$$
+Zu zeigen $\Phi$ ist erfüllt. Sei $\mathbb{Z}_n \times \mathbb{Z}_n \subseteq \mathbb{Z} \times \mathbb{Z}$. Nun definiere $\Phi_0$ als: $$\Phi_0 = \{\textsf{proper-surrounding}(i,j) \mid i,j \in \mathbb{Z}_n \}$$ 
+Offensichtlich gilt: $\Phi_0 \subseteq \Phi$. Die Parkettierung definiert eine erfüllbare Belegung von $\Phi_0$. Nach dem Kompaktheitssatz existiert auch eine erfüllbare Belegung von $\Phi$. 
+\subsection*{Hinrichtung}
+Die Hinrichtung ist trivial.
 
-Geht $n$ gegen $\infty$ lässt sich diese Parkettierung ins Unendliche fortführen und spannt $\mathbb{Z} \times \mathbb{Z}$ auf.
+
 \end{document}
