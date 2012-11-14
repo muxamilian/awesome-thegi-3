@@ -45,11 +45,11 @@ $\varphi$ ist eine monotone Formel ohne einen einzigen Junktor. Dann gibt es nur
 \item[\textbf{IV}]
 $\varphi$ ist eine monotone Formel. Sie ist besteht nur aus $X_1,...,X_m$ sowie $\bot$, $\top$, $\land$ und $\lor$.
 \item[\textbf{IS}] 
-Das Anhängen von $\top$ und $\bot$ funktioniert, da es keinen Einfluss auf die Monotonie der Formeln hat (Da die Belegungen nur Einfluss auf Variablen hat)
+Das Anhängen von $\top$ und $\bot$ funktioniert, da es keinen Einfluss auf die Monotonie der Formeln hat (Da die Belegung nur Einfluss auf Variablen hat)
 \begin{itemize}
 \item $\lnot \varphi$ ist nicht monoton, da $\llbracket \varphi \rrbracket^{\beta} \le \llbracket \varphi \rrbracket^{\beta'} \rightarrow \llbracket \lnot\varphi \rrbracket^{\beta} \ge \llbracket \lnot\varphi \rrbracket^{\beta'}$. Daher kann die Formel nicht negiert werden.
-\item $\varphi \land \lnot X_k$ ist ebenfalls nicht monoton, da wenn $\beta(X_k) = 0 \land\beta'(X_k) = 1$ ist, $\llbracket \varphi \land \lnot X_k \rrbracket^{\beta} > \llbracket \varphi \land \lnot X_k \rrbracket^{\beta'}$. 
-\item $\varphi \lor \lnot X_k$ ist ebenfalls nicht monoton, da wenn $\beta(X_k) = 0 \land\beta'(X_k) = 1$ ist, $\llbracket \varphi \lor \lnot X_k \rrbracket^{\beta} > \llbracket \varphi \lor \lnot X_k \rrbracket^{\beta'}$. 
+\item $\varphi \land \lnot X_k$ ist ebenfalls nicht monoton, da wenn $\beta(X_k) = 0 \land\beta'(X_k) = 1$ ist, $\llbracket \varphi \land \lnot X_k \rrbracket^{\beta} \ge \llbracket \varphi \land \lnot X_k \rrbracket^{\beta'}$. 
+\item $\varphi \lor \lnot X_k$ ist ebenfalls nicht monoton, da wenn $\beta(X_k) = 0 \land\beta'(X_k) = 1$ ist, $\llbracket \varphi \lor \lnot X_k \rrbracket^{\beta} \ge \llbracket \varphi \lor \lnot X_k \rrbracket^{\beta'}$. 
 \end{itemize}
 Somit kann an $\varphi$ nur einer der in der Angabe aufgezählten Bausteine erweitert werden, damit die Monotonie nicht verletzt wird.
 \end{itemize}
@@ -64,7 +64,7 @@ $\llbracket \varphi \rrbracket^{\beta} = 0 \leq 0 = \llbracket \varphi \rrbracke
 \item Die anderen Fälle sind analog.
 \end{itemize}
 \item[\textbf{IV}] Sei $\varphi$ eine monotone Formel, wobei diese nur aus Variablen $X_1,...,X_n$ und $\bot,\top,\land,\lor$ besteht.
-\item[\textbf{IS}] Da das Anhängen von $\top$ und $\bot$ mittels $\land, \lor$ keinerlei Einfluss auf die Monotonie von Formeln hat (Da die Belegungen nur Einfluss auf Variablen hat), werden diese hier nicht betrachtet. Es ist nun zu zeigen, dass die Aussage auch für $\varphi \land X_{n+1}$ und $\varphi \lor X_{n+1}$ gilt.
+\item[\textbf{IS}] Da das Anhängen von $\top$ und $\bot$ mittels $\land, \lor$ keinerlei Einfluss auf die Monotonie von Formeln hat (Da die Belegung nur Einfluss auf Variablen hat), werden diese hier nicht betrachtet. Es ist nun zu zeigen, dass die Aussage auch für $\varphi \land X_{n+1}$ und $\varphi \lor X_{n+1}$ gilt.
 \begin{itemize}
 \item $\varphi \land X_{n+1}$ mit $\llbracket \varphi \rrbracket^{\beta} = 0 \stackrel{\textbf{IV}}{\leq} 0 = \llbracket \varphi \rrbracket^{\beta'}$ 
 \begin{itemize}
