@@ -185,12 +185,16 @@ Wie im Tutorium 2 bewiesen wurde, wechselt $\varphi$ immer den Wahrheitswert, we
 
 \section*{Aufgabe 4}
 \subsection*{Rückrichtung}
-Annahme: Für jedes $n \ge 0$ existiert eine Parkettierung.
-
-Wir definieren für jeden Platz am Parkett die folgende Variable:
-\begin{align*} X_{i,j} &:= (P(i,j)_1 = P(i-1,j)_3) \land (P(i,j)_2 = P(i,j+1)_4) \\ &\land (P(i,j)_3 = P(i+1,j)_1) \land (P(i,j)_4 = P(i,j-1)_2)\end{align*}
-wobei der Vergleich weggelassen wird, falls $P(k,l)$ nicht definiert ist. Sei nun $\Phi$ definiert als: 
-$$\Phi = \{X_{i,j} \mid i,j \in \mathbb{Z} \}$$
+Annahme: Für jedes $n \ge 0$ existiert eine Parkettierung. Wir definieren die folgende Variablen für jedes Feld der Parkettierung:
+$$X_{(i,j),d} \text{ mit } d \in |\mathcal{D}| \text{ und } (i,j) \in \mathbb{Z} \times \mathbb{Z}$$
+Jedes Feld kann natürlich nur einen Dominostein haben:
+$$\textsf{proper-field}(i,j) = \bigvee_{d \in \mathcal{D}} (X_{i,j,d} \land \bigwedge_{\overline{d} \in \mathcal{D}\setminus\{d\} } \lnot X_{i,j,\overline{d}}) $$
+Die Umgebung jedes Steines muss korrekt sein:
+\begin{align*} \textsf{proper-surrounding} (i,j)  := 
+\bigvee_{m,l,r,o,u \in \mathcal{D}} (&(X_{i,j,m} \land X_{i-1,j,l}  \land X_{i+1,j,r}  \land X_{i,j+1,o} \land X_{i,j-1,u} ) \\\land
+&(m_1 = l_r \land m_2 = o_4 \land m_3 = r_1 \land m_4 = u_2) \land \textsf{proper-field}(i,j))) \end{align*}
+wobei für nicht definierte Variablen diese gleich $\top$ ist.  Sei nun $\Phi$ definiert als: 
+$$\Phi = \{\textsf{proper-surrounding}(i,j) \mid i,j \in \mathbb{Z} \}$$
 Zu zeigen $\Phi$ ist erfüllt. Sei $\mathbb{Z}_n \times \mathbb{Z}_n \subseteq \mathbb{Z} \times \mathbb{Z}$. Nun definiere $\Phi_0$ als: $$\Phi_0 = \{\textsf{proper-surrounding}(i,j) \mid i,j \in \mathbb{Z}_n \}$$ 
 Offensichtlich gilt: $\Phi_0 \subseteq \Phi$. Die Parkettierung definiert eine erfüllbare Belegung von $\Phi_0$. Nach dem Kompaktheitssatz existiert auch eine erfüllbare Belegung von $\Phi$. 
 \subsection*{Hinrichtung}
