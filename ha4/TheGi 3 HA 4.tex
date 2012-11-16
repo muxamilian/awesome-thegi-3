@@ -1,0 +1,107 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{pst-all}
+\usepackage{enumerate}
+\usepackage{pstricks}
+\usepackage{ulem}
+\usepackage{ stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\ts}{\textsf}
+
+\usepackage{tabularx}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+
+\begin{document}
+
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 4} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+	\subsection*{Aufgabe 1}
+	\subsection*{Aufgabe 2}
+	\begin{enumerate}
+	\item[(i)]
+	Damit eine Klauselmenge nicht erfüllbar ist, muss eine Resolutionswiderlegung geben,\\
+	d.h. man muss aus der Klauselmenge die leere Klausel herleiten können.\\
+	Die leere Klausel lässt sich wiederum  nur herleiten, wenn 2 Klauseln der Form $\{ V \} \{ \neg V \}$ aus der\\
+	Klauselmenge hergeleitet werden können, d.h., dass es möglich sein muss eine pos. Klausel herzuleiten.
+	
+	\ \\Ich werde nun beweisen, dass es nicht möglich ist eine positive Klausel herzuleiten, wenn man eine Klauselmenge gegeben hat, 
+	die keine positiven Klauseln enthält.
+	
+	\ \\$\mathcal{C}$ ist eine Klauselmenge ohne positive Klauseln.
+	
+	\ \\Fall 1: Es können keine Resolventen gebildet werden \\
+	Hier ist nichts zu beweisen.\\
+	\\
+	Fall 2: Es können Resolventen gebildet werden \\
+	Es existieren 2 Klauseln $\mathcal{C}_1$, $\mathcal{C}_2 \in \mathcal{C}$ 
+	mit $\mathcal{C}_1 = \{ X_1,...,X_n \},\mathcal{C}_2 = \{ \neg X_1,...,X_m \} $, sodass:\\
+	\\
+	\(R := \mathcal{C}_1 \setminus{ \{ X_1 \} } \cup \mathcal{C}_2 \setminus{ \{ \neg X_1 \} } \) \\
+	\\
+	\( \mathcal{C} \overset{res(\mathcal{C}_1,\mathcal{C}_2)}{\equiv} \mathcal{C} \cup \{ R \} \\
+	\\
+	\text{Es gilt wegen $\mathcal{C}$ enthält keine pos. Klauseln: }\\
+	(\exists i \in [1,n]. \neg X_i \in \mathcal{C}_1) \Rightarrow \neg X_i \in R \Rightarrow \text{R ist keine pos. Klausel}\\
+	\Rightarrow \text{ es können keine pos. Klauseln durch das Resolvieren der Klauseln aus $\mathcal{C}$ entstehen} \\
+	\Rightarrow \text{ es nicht möglich eine pos. Klausel aus $\mathcal{C}$ herzuleiten} \)\\
+	\\
+	Da es notwendig ist eine positive Klausel herzuleiten, damit die leere Klausel hergeleitet werden kann, \\
+	folgt, dass es keine Resolutionswiderlegung für eine Klauselmengel mit nur pos. Klauseln gibt. \\
+	Daraus folgt, wegen dem Resolutionskalkül, dass jede Klauselmengel mit nur pos. Klauseln erfüllbar ist.
+	
+	
+
+	
+	 
+	\item[(ii)]
+	\( \{ \{ \neg Z, Y \},\{ V,Y,Z \},\{ \neg X,V \},\{ \neg V, Y \},\{ \neg Y \} \} 
+	\overset{res(\{ \neg Z, Y \},\{ V,Y,Z \})}{\equiv} \mathcal{C} \cup \{\{ Y,V \}\}
+	\overset{res(\{ \neg V, Y \},\{ V,Y,Z \})}{\equiv} \\ 
+	\mathcal{C} \cup \{\{ Y,V \}\} \cup \{\{ Y,Z \}\}
+	\overset{res(\{ \neg Z, Y \},\{ Y,Z \})}{\equiv} \mathcal{C} \cup \{\{ Y,V \}\} \cup \{\{ Y,Z \}\} \cup \{\{ Y \}\}
+	\overset{res(\{ \neg Y \},\{ Y \})}{\equiv} 
+	\mathcal{C} \cup \{\{ Y,V \}\} \cup \{\{ Y,Z \}\} \cup \{\{ Y \}\} \cup \{\emptyset\} \)
+	
+	\ \\Aus dem Resolutionskalkül folgt, dass $\mathcal{C}$ nicht erfüllbar ist, da es die leere Klausel enthält.
+	
+	\item[(iii)]
+	Die P-Resolution muss korrekt sein, da alle von der P-Resolution gebildeten Resolventen auch mit der normalen
+	Resolution gebildet werden können.\\
+	Wenn also die leere Klausel mit der P-Resolution gebildet werden kann, dann kann man mit der normalen Resolution
+	ebenfalls die leere Klausel herleiten.\\
+	Aus der VL wissen wir, dass wenn man mit der Resolution die leere Klausel herleiten kann, so ist die \\
+	Klauselmenge unerfüllbar.\\
+	Daraus folgt unweigerlich, dass die Herleitung der leeren Klausel mit der P-Resolution, bedeutet, dass die\\
+	Klauselmenge unerfüllbar ist.	
+	\end{enumerate}
+	
+
+
+\end{document}
