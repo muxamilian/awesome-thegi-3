@@ -43,6 +43,21 @@ Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
 	\subsection*{Aufgabe 1}
+	\begin{enumerate}
+	\item[(i)]
+	\item[(ii)]
+	\( \varphi \overset{res(\{ A_0,A_1\},\{ \neg A_0,\neg C_0\})}{\equiv} \varphi \cup \{\{ A_1,\neg C_0 \} \} 
+	\overset{res(\{ A_1,\neg C_0\},\{ C_0,C_1 \})}{\equiv} \varphi \cup \{ \{ A_1,\neg C_0 \} \} \cup \{ \{ A_1,C_1 \} \} \\
+	\\	
+	\overset{res(\{ A_1,C_1 \},\{ \neg B_1,\neg C_1 \})}{\equiv} \varphi 
+	\cup \{ \{ A_1,\neg C_0 \} \} \cup \{ \{ A_1,C_1 \} \} \cup \{ \{ A_1,\neg B_1 \} \} \\
+	\\
+	\overset{res(\{ \neg A_1,\neg B_1 \},\{ A_1,\neg B_1 \})}{\equiv} \varphi 
+	\cup \{ \{ A_1,\neg C_0 \} \} \cup \{ \{ A_1,C_1 \} \} \cup \{ \{ A_1,\neg B_1 \} \} \cup \{ \{\neg B_1 \} \} 
+	\equiv \varphi_1
+	\)
+	
+	\end{enumerate}
 	\subsection*{Aufgabe 2}
 	\begin{enumerate}
 	\item[(i)]
@@ -139,4 +154,19 @@ Marius Liwotto\> -  341051
 	
 	\ \\ \textbf{Hinrichtung:} \\
 	Die Hinrichtung ist trivial.
+	
+	\subsection*{Aufgabe 4}
+	\begin{enumerate}
+	\item[(i)]
+		\begin{enumerate}
+		\item[a)]
+		\(\varphi = \bigwedge\limits_{0 \leq i < j \leq \infty} X_{i,j} \)
+						
+		\item[b)]
+		\( \psi = \bigwedge\limits_{0 \leq i < j < k \leq \infty}(X_{i,j} \wedge X_{j,k} \Rightarrow X_{i,k}) \)
+		
+		\end{enumerate}
+	\item[(ii)]
+	\end{enumerate}
+
 \end{document}
