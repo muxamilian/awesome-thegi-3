@@ -43,6 +43,39 @@ Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
 	\subsection*{Aufgabe 1}
+	\begin{enumerate}
+	\item[(i)]
+	\item[(ii)]
+	\begin{align*}
+		\varphi \overset{res(\{ A_0,A_1\},\{ \neg A_0,\neg C_0\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \\
+		\overset{res(\{ A_1,\neg C_0 \},\{ \neg A_1,\neg B_1\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\}\\
+		\overset{res(\{ B_0, B_1 \},\{ \neg B_1,\neg C_1\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\}\\
+		\overset{res(\{ B_0, B_1 \},\{ \neg A_1,\neg B_1\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\} \cup \{\neg A_1, B_0\}\\
+		\overset{res(\{ A_1,\neg C_0 \},\{\neg A_1, B_0\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\} \cup \{\neg A_1, B_0\} \cup \{\neg C_0, B_0 \}\\
+		\overset{res(\{ \neg B_0,\neg C_0 \},\{\neg C_0, B_0\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\} \cup \{\neg A_1, B_0\} \cup \{\neg C_0, B_0 \} \cup \{\neg C_0\}\\
+		\overset{res(\{ C_0, C_1 \},\{\neg C_0\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\} \cup \{\neg A_1, B_0\} \cup \{\neg C_0, B_0 \} \cup \{\neg C_0\} \cup \{C_1\}\\
+		\overset{res(\{ \neg A_1, \neg C_1 \},\{C_1\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\} \cup \{\neg A_1, B_0\} \cup \{\neg C_0, B_0 \} \cup \{\neg C_0\} \cup \{C_1\} \\
+		&\cup \{ \neg A_1 \}\\
+		\overset{res(\{ B_0, \neg C_1 \},\{C_1\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\} \cup \{\neg A_1, B_0\} \cup \{\neg C_0, B_0 \} \cup \{\neg C_0\} \cup \{C_1\} \\
+		&\cup \{ \neg A_1 \} \cup \{ B_0 \}\\
+		\overset{...}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\} \cup \{\neg A_1, B_0\} \cup \{\neg C_0, B_0 \} \cup \{\neg C_0\} \cup \{C_1\} \\
+		&\cup \{ \neg A_1 \} \cup \{ B_0 \} \cup \{\neg A_0\} \cup \{A_1\} \\
+		\overset{res(\{\neg A_1\},\{ A_1 \})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \cup \{ \neg C_0, \neg B_1\} \cup \{ B_0, \neg C_1\} \cup \{\neg A_1, B_0\} \cup \{\neg C_0, B_0 \} \cup \{C_1\} \\
+		&\cup \{ \neg A_1 \} \cup \{ B_0 \} \cup \{\neg A_0\} \cup \{A_1\} \cup \square
+	\end{align*}
+	Somit ist $\varphi$ unerfüllbar, da sich die leere Klausel resolvieren lässt.
+	% \( \varphi \overset{res(\{ A_0,A_1\},\{ \neg A_0,\neg C_0\})}{\equiv} \varphi \cup \{\{ A_1,\neg C_0 \} \} 
+	% \overset{res(\{ A_1,\neg C_0\},\{ C_0,C_1 \})}{\equiv} \varphi \cup \{ \{ A_1,\neg C_0 \} \} \cup \{ \{ A_1,C_1 \} \} \\
+	% \\	
+	% \overset{res(\{ A_1,C_1 \},\{ \neg B_1,\neg C_1 \})}{\equiv} \varphi 
+	% \cup \{ \{ A_1,\neg C_0 \} \} \cup \{ \{ A_1,C_1 \} \} \cup \{ \{ A_1,\neg B_1 \} \} \\
+	% \\
+	% \overset{res(\{ \neg A_1,\neg B_1 \},\{ A_1,\neg B_1 \})}{\equiv} \varphi 
+	% \cup \{ \{ A_1,\neg C_0 \} \} \cup \{ \{ A_1,C_1 \} \} \cup \{ \{ A_1,\neg B_1 \} \} \cup \{ \{\neg B_1 \} \} 
+	% \equiv \varphi_1
+	% \)
+	
+	\end{enumerate}
 	\subsection*{Aufgabe 2}
 	\begin{enumerate}
 	\item[(i)]
@@ -102,6 +135,56 @@ Marius Liwotto\> -  341051
 	Klauselmenge unerfüllbar ist.	
 	\end{enumerate}
 	
-
+	\subsection*{Aufgabe 3}
+	
+	\ \\ \textbf{Rückrichtung:} \\
+	\\
+	Den Kanten $\{ u,v \} \in E$ werden die Variablen $X_{u,v,col}$ und $col \in [0,3]$ zugeordnet.\\
+	\\
+	proper-colour = 
+	\( \{ \bigvee\limits_{col \in [0,3]} (X_{u,v,col} \wedge \bigwedge\limits_{\overline{col} \in [0,3]\setminus{ \{ col \} } } 
+	\neg X_{u,v,\overline{col}})~|~u,v \in V \} \) \\	
+	\\
+	Die Funktion proper-colour stellt sicher, dass jeder Kante nur eine Farbe zugewiesen wird.\\
+	\\
+	different-colour = \\
+	\( \{ X_{u,v,col} \wedge \neg X_{u',v',col}~|~
+	\{ u,v \} \cap \{ u',v' \} \neq \emptyset \wedge 
+	\{ u,v \} \neq \{ u',v' \} \wedge 
+	c(\{ u,v \}) = col \wedge 
+	\{u,v\},\{u',v'\} \in E \} \) \\
+	\\	
+	\(\Phi = \text{proper-colour } \cup \text{ different-colour} \)\\
+	\\
+	Sei $\Phi_0 \subset \Phi$ endlich.\\
+	E' = $\{ \{u,v\} \in E~|~\text{es existiert ein col } \in [0,3], \text{sodass } X_{u,v,col} \in var(\Phi_0) \}$ \\
+	Der von E' induzierte Untergraph ist endlich, da var($\Phi_0$) endlich ist.\\
+	Daraus folgt nach Annahme, dass der Untergraph 4-kantenfärbbar ist.\\
+	Sei f: E' $\rightarrow$ [0,3] eine 4-Kantenfärbung von G' $|_{E'}$\\
+	\\
+	Sei $\beta$ wie folgt definiert: \\
+	\(\beta(X_{u,v,f(\{ u,v \})}) = 1,~\beta(X_{u,v,col}) = 0 \text{ mit } f(\{ u,v \}) \neq col \) \\
+	\\
+	Somit erfüllt $\beta~~\Phi_0$.\\
+	Nach dem Kompaktheitssatz gilt nun, dass $\Phi$ ebenfalls erfüllbar ist, da alle endlichen Teilmengen $\Phi_0$\\
+	erfüllbar sind.\\
+	Daraus folgt auch, dass G 4-kantenfärbbar ist, wenn es alle endlichen Untergraphen sind.\\	
+	
+	\ \\ \textbf{Hinrichtung:} \\
+	Die Hinrichtung ist trivial.
+	
+	\subsection*{Aufgabe 4}
+	\begin{enumerate}
+	\item[(i)]
+		\begin{enumerate}
+		\item[a)]
+		\(\varphi = \bigwedge\limits_{0 \leq i < j \leq \infty} X_{i,j} \)
+						
+		\item[b)]
+		\( \psi = \bigwedge\limits_{0 \leq i < j < k \leq \infty}(X_{i,j} \wedge X_{j,k} \Rightarrow X_{i,k}) \)
+		
+		\end{enumerate}
+	\item[(ii)]
+	\end{enumerate}
 
 \end{document}
