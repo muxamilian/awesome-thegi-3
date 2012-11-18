@@ -102,6 +102,41 @@ Marius Liwotto\> -  341051
 	Klauselmenge unerfüllbar ist.	
 	\end{enumerate}
 	
-
-
+	\subsection*{Aufgabe 3}
+	
+	\ \\ \textbf{Rückrichtung:} \\
+	\\
+	Den Kanten $\{ u,v \} \in E$ werden die Variablen $X_{u,v,col}$ und $col \in [0,3]$ zugeordnet.\\
+	\\
+	proper-colour = 
+	\( \{ \bigvee\limits_{col \in [0,3]} (X_{u,v,col} \wedge \bigwedge\limits_{\overline{col} \in [0,3]\setminus{ \{ col \} } } 
+	\neg X_{u,v,\overline{col}})~|~u,v \in V \} \) \\	
+	\\
+	Die Funktion proper-colour stellt sicher, dass jeder Kante nur eine Farbe zugewiesen wird.\\
+	\\
+	different-colour = \\
+	\( \{ X_{u,v,col} \wedge \neg X_{u',v',col}~|~
+	\{ u,v \} \cap \{ u',v' \} \neq \emptyset \wedge 
+	\{ u,v \} \neq \{ u',v' \} \wedge 
+	c(\{ u,v \}) = col \wedge 
+	\{u,v\},\{u',v'\} \in E \} \) \\
+	\\	
+	\(\Phi = \text{proper-colour } \cup \text{ different-colour} \)\\
+	\\
+	Sei $\Phi_0 \subset \Phi$ endlich.\\
+	E' = $\{ \{u,v\} \in E~|~\text{es existiert ein col } \in [0,3], \text{sodass } X_{u,v,col} \in var(\Phi_0) \}$ \\
+	Der von E' induzierte Untergraph ist endlich, da var($\Phi_0$) endlich ist.\\
+	Daraus folgt nach Annahme, dass der Untergraph 4-kantenfärbbar ist.\\
+	Sei f: E' $\rightarrow$ [0,3] eine 4-Kantenfärbung von G' $|_{E'}$\\
+	\\
+	Sei $\beta$ wie folgt definiert: \\
+	\(\beta(X_{u,v,f(\{ u,v \})}) = 1,~\beta(X_{u,v,col}) = 0 \text{ mit } f(\{ u,v \}) \neq col \) \\
+	\\
+	Somit erfüllt $\beta~~\Phi_0$.\\
+	Nach dem Kompaktheitssatz gilt nun, dass $\Phi$ ebenfalls erfüllbar ist, da alle endlichen Teilmengen $\Phi_0$\\
+	erfüllbar sind.\\
+	Daraus folgt auch, dass G 4-kantenfärbbar ist, wenn es alle endlichen Untergraphen sind.\\	
+	
+	\ \\ \textbf{Hinrichtung:} \\
+	Die Hinrichtung ist trivial.
 \end{document}
