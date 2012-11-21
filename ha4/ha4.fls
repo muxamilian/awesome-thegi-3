@@ -1,4 +1,4 @@
-PWD /Users/Tom/Dropbox/3 Semester/THEGI 3/awesome-thegi-3/ha4
+PWD /Users/max/Documents/Studium/awesome-thegi-3.git/ha4
 INPUT /usr/local/texlive/2012/texmf.cnf
 INPUT /usr/local/texlive/2012/texmf/web2c/texmf.cnf
 INPUT /usr/local/texlive/2012/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -216,6 +216,11 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
@@ -226,6 +231,7 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
