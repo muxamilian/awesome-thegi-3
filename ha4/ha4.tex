@@ -174,9 +174,46 @@ Marius Liwotto\> -  341051
 		\begin{enumerate}
 		\item[a)]
 		\(\varphi = \bigwedge\limits_{0 \leq i < j \leq \infty} X_{i,j} \)
-						
+		\\
+		\\
+		\\
+		\underline{Diese Formel wird wahr, wenn G ein vollständiger Graph ist:}\\
+		\\
+		Für einen vollständigen Graphen gilt, dass alle $\{i,j\}$ mit i,j $\in \mathbb{N}$ in E enthalten sein müssen, \\
+		da es sonst kein vollständiger Graph wäre. \\
+		Aus der Definition des $\beta_G$ folgt dann sofort, dass alle $X_{i,j}$ wahr sein müssen und damit diese Formel erfüllen. \\
+		\\
+		\underline{G ist ein vollständiger Graph, wenn diese Formel wahr ist:}\\
+		\\
+		Wenn diese Formel wahr ist gilt, dass $\beta_G (X_{i,j})$ = 1 für alle i,j $\in \mathbb{N}$ woraus,\\
+		nach Definition von $\beta_G$, folgt, dass auch alle i,j $\{i,j\} \in E$ gilt. \\
+		Es besteht also zwischen jedem Knoten i und j eine Verbindung, sodass G ein vollständiger Graph ist.
+		
 		\item[b)]
 		\( \psi = \bigwedge\limits_{0 \leq i < j < k \leq \infty}(X_{i,j} \wedge X_{j,k} \Rightarrow X_{i,k}) \)
+		\\
+		\\
+		\\
+		\underline{Diese Formel wird wahr, wenn G transitiv ist:}\\
+		\\
+		Aus der Transitivität von G folgt, dass für alle Kanten $\{i,j\}, \{j,k\} \in E$ gilt, \\
+		dass $\{i,k\} \in E$ mit i,j,k $\in \mathbb{N}$. \\
+		Es gilt also, dass für alle $X_{i,j}, X_{j,k}$ auch ein $X_{i,k}$ existiert, sodass $\beta_G (X_{i,k}) = 1$. \\
+		Daraus folgt, dass $X_{i,j} \wedge X_{j,k} \Rightarrow X_{i,k}$ immer erfüllt wird. \\
+		Ist $\{i,j\}$oder $\{j,k\}$ nicht aus E, dann wird die Implikation auch erfüllt.
+		\\
+		\\
+		\underline{G ist transitiv, wenn diese Formel wahr ist:}\\
+		\\
+		Fall 1: $\{i,j\},\{j,k\} \in E$:
+		\\
+		Da die Formel wahr ist, muss gelten, dass $\beta_G(X_{i,k}) = 1$ gilt.\\
+		Somit existiert die Kante $\{i,k\}$ auch im Graphen G und die Transitivität ist erfüllt.\\
+		\\
+		Sonst:
+		\\
+		Hier ist nichts zu zeigen.
+		
 		
 		\end{enumerate}
 	\item[(ii)]
