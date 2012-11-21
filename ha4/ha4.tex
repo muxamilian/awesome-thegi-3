@@ -3,7 +3,6 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{fullpage}
 \usepackage[german]{babel}
 \setlength{\parindent}{0cm}
 \usepackage{setspace}
@@ -12,24 +11,13 @@
 \usepackage{wasysym} 
 \usepackage{booktabs}
 \usepackage{verbatim}
-\usepackage{pst-all}
 \usepackage{enumerate}
-\usepackage{pstricks}
 \usepackage{ulem}
-\usepackage{ stmaryrd }
+\usepackage{stmaryrd }
 \usepackage[a4paper,
 left=1.8cm, right=1.8cm,
 top=2.0cm, bottom=2.0cm]{geometry}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\A}{\mathcal{A}}
-\newcommand{\ts}{\textsf}
-
 \usepackage{tabularx}
-
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-
 
 \begin{document}
 
@@ -45,6 +33,32 @@ Marius Liwotto\> -  341051
 	\subsection*{Aufgabe 1}
 	\begin{enumerate}
 	\item[(i)]
+		Der Aufbau von \(\varphi\) besitzt 3 Muster für Klauseln, welche auf dem Aufgabenblatt auch untereinander dargestellt sind. Man kann \(\varphi \) auch schreiben als:
+		\[ \bigvee_{X \in \{A,B,C\}} (X_0 \lor X_1) \land \bigvee_{Y \in \{A,B,C \}\setminus\{X\} }(\lnot X_0 \lor \lnot Y_0) \land (\lnot X_1 \lor \lnot Y_1) \]
+		Diese Form lässt es offensichtlich machen, warum
+		\begin{enumerate}[1.]
+			\item $\varphi$ nicht erfüllbar ist: \\
+				In der zweiten grossen Konjunktion, kommt in den Klauseln jeweils die negierte Version der Variablen der Klausel aus der ersten grossen Konjunktion vor $( (X_0 \lor X_1) \land (\lnot X_0 \lor ..) \land (\lnot X_1 \lor ..))$. Da dies jedoch für alle Variablen aus $\varphi$ gleichermassen gilt, kann $\varphi$ nicht erfüllbar sein.
+			\item $\varphi$ erfüllbar ist, wenn eine beliebieg Klausel entfernt wird:
+				\begin{enumerate}[\text{Fall} 1:]
+				\item Eine Klausel des Typs $(X_0 \lor X_1)$  mit $ X \in \{ A,B,C\}$ wird weggelassen: \\
+				$\Rightarrow X_0,X_1$ kann mit 0 belegt werden. \\
+				$\Rightarrow $ Klauseln der Form $(\lnot X_0 \lor \lnot Y_0)$ und $(\lnot X_1 \lor \lnot Y_1)$ mit $ \in \{A,B,C \}\setminus\{X\}$  sind erfüllt\\
+				$\Rightarrow$ Belege $Y_0,Z_1$ mit 1 und $Y_1,Z_0$ mit 0, wobei $Z \in \{A,B,C\}\setminus\{X,Y\}$ \\
+				$\Rightarrow$ Die Klauseln $(Y_0 \lor Y_1),(Z_0 \lor Z_1),(\lnot Y_0 \lor \lnot Z_0), (\lnot Y_1 \lor Z_1)$ sind erfüllt.
+				\item Eine Klausel des Typs $(\lnot X_0 \lor \lnot Y_0)$ mit $X \in \{A,B,C\}, Y \in \{A,B,C \}\setminus\{X\}$ wird weggelassen.\\
+				Belege $(X_0, Y_0)$ mit 1 \\
+				$\Rightarrow$ $(X_1, Y_1)$ können mit 0 belegt werden. \\
+				$\Rightarrow$ Klauseln der Form $(\lnot X_1 \lor \lnot Z_1)$ und $(\lnot Y_1 \lor \lnot Z_1)$ mit $Z \in \{A,B,C\}\setminus\{X,Y\}$ sind erfüllt\\
+				$\Rightarrow Z_1$ kann mit 1 belegt werden.\\
+				$\Rightarrow$ $(Z_0 \lor Z_1)$ ist erfüllt\\
+				$\Rightarrow$ $Z_0 $ kann mit 0 belegt werden \\
+				$\Rightarrow$ Klauseln der Form $(\lnot X_0 \lor \lnot Z_0)$ und $(\lnot Y_0 \lor \lnot Z_0)$ sind erfüllt \\
+				\item Eine Klausel des Typs $(\lnot X_1 \lor \lnot Y_1)$ mit $X \in \{A,B,C\}, Y \in \{A,B,C \}\setminus\{X\}$ wird weggelassen.\\
+				analog zu Fall 2.
+
+				\end{enumerate}
+		\end{enumerate}
 	\item[(ii)]
 	\begin{align*}
 		\varphi \overset{res(\{ A_0,A_1\},\{ \neg A_0,\neg C_0\})}{\equiv} &\varphi \cup \{ A_1,\neg C_0 \} \\
@@ -160,9 +174,46 @@ Marius Liwotto\> -  341051
 		\begin{enumerate}
 		\item[a)]
 		\(\varphi = \bigwedge\limits_{0 \leq i < j \leq \infty} X_{i,j} \)
-						
+		\\
+		\\
+		\\
+		\underline{Diese Formel wird wahr, wenn G ein vollständiger Graph ist:}\\
+		\\
+		Für einen vollständigen Graphen gilt, dass alle $\{i,j\}$ mit i,j $\in \mathbb{N}$ in E enthalten sein müssen, \\
+		da es sonst kein vollständiger Graph wäre. \\
+		Aus der Definition des $\beta_G$ folgt dann sofort, dass alle $X_{i,j}$ wahr sein müssen und damit diese Formel erfüllen. \\
+		\\
+		\underline{G ist ein vollständiger Graph, wenn diese Formel wahr ist:}\\
+		\\
+		Wenn diese Formel wahr ist gilt, dass $\beta_G (X_{i,j})$ = 1 für alle i,j $\in \mathbb{N}$ woraus,\\
+		nach Definition von $\beta_G$, folgt, dass auch alle i,j $\{i,j\} \in E$ gilt. \\
+		Es besteht also zwischen jedem Knoten i und j eine Verbindung, sodass G ein vollständiger Graph ist.
+		
 		\item[b)]
 		\( \psi = \bigwedge\limits_{0 \leq i < j < k \leq \infty}(X_{i,j} \wedge X_{j,k} \Rightarrow X_{i,k}) \)
+		\\
+		\\
+		\\
+		\underline{Diese Formel wird wahr, wenn G transitiv ist:}\\
+		\\
+		Aus der Transitivität von G folgt, dass für alle Kanten $\{i,j\}, \{j,k\} \in E$ gilt, \\
+		dass $\{i,k\} \in E$ mit i,j,k $\in \mathbb{N}$. \\
+		Es gilt also, dass für alle $X_{i,j}, X_{j,k}$ auch ein $X_{i,k}$ existiert, sodass $\beta_G (X_{i,k}) = 1$. \\
+		Daraus folgt, dass $X_{i,j} \wedge X_{j,k} \Rightarrow X_{i,k}$ immer erfüllt wird. \\
+		Ist $\{i,j\}$oder $\{j,k\}$ nicht aus E, dann wird die Implikation auch erfüllt.
+		\\
+		\\
+		\underline{G ist transitiv, wenn diese Formel wahr ist:}\\
+		\\
+		Fall 1: $\{i,j\},\{j,k\} \in E$:
+		\\
+		Da die Formel wahr ist, muss gelten, dass $\beta_G(X_{i,k}) = 1$ gilt.\\
+		Somit existiert die Kante $\{i,k\}$ auch im Graphen G und die Transitivität ist erfüllt.\\
+		\\
+		Sonst:
+		\\
+		Hier ist nichts zu zeigen.
+		
 		
 		\end{enumerate}
 	\item[(ii)]
