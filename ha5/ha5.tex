@@ -1,0 +1,95 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+
+\begin{document}
+
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 5} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+\subsection*{Aufgabe 1}
+\begin{enumerate}[(i)]
+\item 	Die wohl einfachste Methode um eine Formel in eine KNF umzuformen ist per Wahrheitstabelle:
+	\[
+	\left.\begin{array}{cccc|c}
+		\toprule 
+		A & B & C & D & \varphi\\
+		\midrule
+		0 & 0 & 0 & 0 & 1\\
+		0 & 0 & 0 & 1 & 1\\
+		0 & 0 & 1 & 0 & 1\\
+		0 & 0 & 1 & 1 & 1\\
+		0 & 1 & 0 & 0 & 1\\
+		0 & 1 & 0 & 1 & 1\\
+		0 & 1 & 1 & 0 & 1\\
+		0 & 1 & 1 & 1 & 1\\
+		1 & 0 & 0 & 0 & 1\\
+		1 & 0 & 0 & 1 & 1\\
+		1 & 0 & 1 & 0 & 0\\
+		1 & 0 & 1 & 1 & 1\\
+		1 & 1 & 0 & 0 & 0\\
+		1 & 1 & 0 & 1 & 1\\
+		1 & 1 & 1 & 0 & 1\\
+		1 & 1 & 1 & 1 & 1\\
+		\bottomrule
+		\end{array} \quad \right\} ( \lnot A \lor  \lnot B \lor C \lor D) \land (\lnot A \lor B \lor \lnot C \lor D) = \varphi'
+	 \]
+\item  	\begin{enumerate}[$\quad$ 1.]
+		\item  	Wegen Assoziativgesetz gilt: \[\varphi' \equiv  ( (\lnot A \lor  \lnot B) \lor (C \lor D)) \land ((\lnot A \lor B) \lor (\lnot C \lor D)) \]
+		\item  	Füge für jede Klausel der Form $(X \lor Y)$ eine Variable $Z_i$ ein und bilde Klauseln der Form:
+			\[((X \lor Y) \leftrightarrow Z_i) \] 
+			Falls man diese Klauseln verundet und zusätzlich $Z_0$ mit dem Term verundet, entsteht ein Erfüllbarkeits\-äquivalenter Term (Siehe Schöning S. 160), also gilt:
+			\begin{align*} \varphi' \equiv   &Z_0 \land (Z_0 \leftrightarrow (Z_1 \lor Z_2)) 
+			\land (Z_1 \leftrightarrow (Z_3 \lor Z_4)) \\
+			&\land (Z_2 \leftrightarrow (Z_5 \lor Z_6)) 
+			\land (Z_3 \leftrightarrow (\lnot A \lor  \lnot B)) \\
+			&\land (Z_4 \leftrightarrow (C \lor D))) 
+			\land (Z_5 \leftrightarrow(\lnot A \lor B)) 
+			\land (Z_6\leftrightarrow(\lnot C \lor D))
+			\end{align*}
+		\item 	Es gilt:
+			\[Z \leftrightarrow (X \lor Y) \equiv (Z \lor \lnot X) \land (\lnot Z \lor X \lor Y) \land (Z \lor \lnot Y)\]
+			Also gilt:
+			\begin{align*} \varphi' \equiv   &Z_0 \land ((\lnot Z_0 \lor Z_1 \lor Z_2) \land (Z_0 \lor \lnot Z_1) \land (Z_0 \lor \lnot Z_2)) 
+			\land ((\lnot Z_1 \lor Z_3 \lor Z_4) \land (Z_1 \lor \lnot Z_3) \land (Z_1 \lor \lnot Z_4)) \\
+			&\land ((\lnot Z_2 \lor Z_5 \lor Z_6) \land (Z_2 \lor \lnot Z_5) \land (Z_2 \lor \lnot Z_6)) 
+			\land ((\lnot Z_3 \lor\lnot A \lor  \lnot B) \land (Z_3 \lor A) \land (Z_3 \lor B)) \\
+			&\land (( \lnot Z_4 \lor C \lor D) \land (Z_4 \lor \lnot C) (Z_4 \lor \lnot D)) 
+			\land ((\lnot Z_5 \lor \lnot A \lor B) \land (Z_5 \lor A) \land (Z_5 \lor \lnot B)) \\
+			&\land ((\lnot Z_6\lor \lnot C \lor D) \land (Z_6 \lor C) \land (Z_6 \lor \lnot D))
+			\end{align*}
+		\item 	Wegen Assosiativgesetz gilt:
+			\begin{align*} \varphi''    &Z_0 \land (\lnot Z_0 \lor Z_1 \lor Z_2) \land (Z_0 \lor \lnot Z_1) \land (Z_0 \lor \lnot Z_2) 
+			\land (\lnot Z_1 \lor Z_3 \lor Z_4) \land (Z_1 \lor \lnot Z_3) \land (Z_1 \lor \lnot Z_4) \\
+			&\land (\lnot Z_2 \lor Z_5 \lor Z_6) \land (Z_2 \lor \lnot Z_5) \land (Z_2 \lor \lnot Z_6))
+			\land (\lnot Z_3 \lor\lnot A \lor  \lnot B) \land (Z_3 \lor A) \land (Z_3 \lor B) \\
+			&\land ( \lnot Z_4 \lor C \lor D) \land (Z_4 \lor \lnot C) (Z_4 \lor \lnot D)
+			\land (\lnot Z_5 \lor \lnot A \lor B) \land (Z_5 \lor A) \land (Z_5 \lor \lnot B) \\
+			&\land (\lnot Z_6\lor \lnot C \lor D) \land (Z_6 \lor C) \land (Z_6 \lor \lnot D)
+			\end{align*}
+	\end{enumerate}
+ \end{enumerate}
+\end{document}
