@@ -61,7 +61,7 @@ Marius Liwotto\> -  341051
 	Vielleicht bin ich ja jetzt ganz dumm, aber $\phi''$ ist z.B. einfach $A \lor B \lor C$. Oder hab ich da was falsch verstanden? -- Max
  \end{enumerate}
 \section*{Aufgabe 2}
-	Man koennte das ganze auch als rekursive Formel angeben, wenn mir langweilig ist, 		mache ich das vllt (Dadurch koennte man einen schoenen Induktionsbeweis fuehren). 
+	Man könnte das ganze auch als rekursive Formel angeben, wenn mir langweilig ist, 		mache ich das vllt (Dadurch koennte man einen schoenen Induktionsbeweis fuehren). 
 	Ansonsten erstmal eine Rechenvorschrift.
 
 	Sei $\varphi$ eine beliebige aussagenlogische Formel, um sie zu einer erf\"ullbarkeits
@@ -79,21 +79,51 @@ Marius Liwotto\> -  341051
 			$Y_0$ erhalten. Mithilfe der Varibale wird jeder solcher Teilformel 
 			eine neue Teilformel zugeordnet: 
 			$Y_x \leftrightarrow (\xi' \bullet \xi'')$
-			Alle diese Teilformeln werden mit einem $\land$ verkn\"upft und., 
-			ausserdem kommt die Variable des Wurzelknoten hinzu ($Y_0$). Diese 
+			Alle diese Teilformeln + der Variablen des Wurzelknotens ($Y_0$) werden mit einem $\land$ verkn\"upft. Diese 
 			Formel definieren wir als $\Psi$. 
-			$\Psi$ ist erf\"ullbarkeits\"aquivalent zu 
-			$\varphi$. Von einer erf\"ullenden Belegung f\"ur $\varphi$ erh\"alt 
-			man eine erf\"llende Belegung f\"ur $\Psi$ indem man die Belegung 
+			$\Psi$ ist erfüllbarkeits\"aquivalent zu 
+			$\varphi$. Von einer erfüllenden Belegung f\"ur $\varphi$ erh\"alt 
+			man eine erfüllende Belegung f\"ur $\Psi$ indem man die Belegung 
 			\"ubernimmt und die $Y$-Variablen mit den an den jeweiligen Junktoren 
 			resultierenden Wahrheitswerten belegt. Eine erf\"ullende Belegung von 
-			$\Psi$ auch trivialerweise auch eine f\"ur $\varphi$.
+			$\Psi$ ist auch trivialerweise auch eine f\"ur $\varphi$.
 		\item	Es gilt: $(Y_x \leftrightarrow (\xi' \bullet \xi'')) 
 			\leftrightarrow (Y_x \lor \lnot \xi') \land (Y_x \lor \lnot \xi'') 				\land (\lnot Y_x \lor \xi' \lor \xi'')$
-Die Rechenanleitung erzeugt verundete Disjunktionsklauseln der gr\"osse h\"ochstes 3, was einer 3KNF entspricht. Alle Umformungsschritte k\"onnen in polynomiellen Aufwand durchgef\"hrt werden.
+Die Rechenanleitung erzeugt verundete Disjunktionsklauseln der gr\"osse h\"ochstes 3, was einer 3KNF entspricht. Alle Umformungsschritte k\"onnen in polynomiellen Aufwand durchgeführt werden.
 			
 	\end{enumerate}
 \section*{Aufgabe 3}
+Es ist zu zeigen, dass \((i) \leftrightarrow (ii) \) gilt. D.h es muss gezeigt werden, dass
+ 	\begin{enumerate}
+ 		\item 	\( (i) \rightarrow (ii) \)
+ 		\item 	\( (ii) \rightarrow (i)\)
+ 	\end{enumerate}
+ 	Sei $\Phi$ eine erfüllbare Formelmenge.
+ 	\begin{enumerate}
+ 		\item 	\( (i) \rightarrow (ii)\) \\
+ 			\textbf{Annahme: } Für alle Formeln \(\varphi\) mit \( \text{var}(\varphi)  \subseteq \text{var}(\Phi)\) gilt \(\Phi \vDash \varphi  \) oder \(\Phi \vDash \lnot \varphi\) \\
+ 			Sei $\varphi$ beliebig. Fallunterscheidung über die Anzahl Belegungen von $\Phi$:
+ 			\begin{enumerate}[$\quad$\text{Fall } 1:]
+ 				\item 	Es gibt genau eine Belegung $\beta$, sodass $\beta \vDash \Phi$ \\
+ 					Falls $\beta \vDash \Phi \land \beta \vDash \varphi$ folgt direkt \(\Phi \vDash \varphi  \), da keine andere Belegung zu überprüfen ist. \\
+ 					Falls $\beta \not \vDash \varphi \land \beta \vDash \Phi$ ist $\varphi$ für die einzige Belegung bei der $\Phi$ erfüllt ist, nicht erfüllt. Also ist $\varphi$ nicht erfüllt wenn $\Phi$ erfüllt, formal: \(\Phi \vDash \lnot \varphi  \)
+ 				\item 	Es gibt mehr als eine Belegung $\beta$, sodass $\beta \vDash \Phi$ \\
+ 					Dann gibt es den Fall, dass für ein $\beta$ gilt $\beta \vDash \Phi \land \beta \vDash \varphi$, aber es kann auch noch ein anderes $\beta'$ geben mit $\beta' \vDash \Phi \land \beta' \not \vDash \varphi$. Damit gilt weder $\Phi \vDash \varphi$ noch $\Phi \vDash \varphi$
+ 			\end{enumerate}
+ 			Da die Aussage nur gilt, wenn $\Phi$ genau eine erfüllbare Belegung hat, gilt: $(i) \rightarrow (ii)$
+ 		\item 	\( (ii) \rightarrow (i) \)	\\
+ 			\textbf{Annahme: } Es existiert genau eine Belegung \(\beta \) von var\((\Phi)\) mit \( \beta \vDash \Phi\)\\
+ 			Sei $\varphi$ beliebig. Fallunterscheidung über die Anzahl Belegungen von $\Phi$:
+ 			\begin{enumerate}[$\quad$\text{Fall }1:]
+ 				\item 	$\beta \vDash \varphi $ \\
+ 					Folgt direkt \(\Phi \vDash \varphi  \), da keine andere Belegung zu überprüfen ist. 
+ 				\item  	$\beta \not \vDash \varphi$ \\
+ 					$\varphi$ ist für die einzige Belegung bei der $\Phi$ erfüllt ist, nicht erfüllt. Also ist $\varphi$ nicht erfüllt wenn $\Phi$ erfüllt, formal: \(\Phi \vDash \lnot\varphi  \)
+ 			\end{enumerate}
+ 			Daraus folgt, dass $\Phi \vDash \varphi$ oder $\Phi \vDash \lnot \varphi$
+ 			
+ 	\end{enumerate}
+
 \section*{Aufgabe 4}
 \begin{enumerate}[(i)]
 \item
