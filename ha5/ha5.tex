@@ -61,35 +61,35 @@ Marius Liwotto\> -  341051
 	Wir wählen $\varphi'' = A$. $\varphi''$ ist erfüllbarkeitsäquivalent zu $\varphi'$, da beide Formeln erfüllbar sind. Für die Belegung $\gamma(A) = 1$ gilt $\llbracket \varphi'' \rrbracket^{\gamma} = \top$. 
  \end{enumerate}
 \section*{Aufgabe 2}
-	Man könnte das ganze auch als rekursive Formel angeben, wenn mir langweilig ist, 		mache ich das vllt (Dadurch koennte man einen schoenen Induktionsbeweis fuehren). 
+	%Man könnte das ganze auch als rekursive Formel angeben, wenn mir langweilig ist, 		mache ich das vllt (Dadurch koennte man einen schoenen Induktionsbeweis fuehren). 
 	Ansonsten erstmal eine Rechenvorschrift.
 
-	Sei $\varphi$ eine beliebige aussagenlogische Formel, um sie zu einer erf\"ullbarkeits
+	Sei $\varphi$ eine beliebige aussagenlogische Formel, um sie zu einer erfüllbarkeits
 	\"aquivalenten 3KNF umzuformen, befolge folgende Rechenanleitung:
 	\begin{enumerate}
 		\item 	Mit Hilfe von deMorgan's Regel werden wir Formeln der Form 
 			$\lnot(\xi)$ mit $\xi \in AL\setminus VAR$ umformen, sodass alle 
 			Negationszeichen an den Variablen stehen. 
 			Dieser Vorgang dauert so lange wie die Formel lang ist, kann also mit
-			linear abgesch\"atzt werden.
-		\item   F\"ur jeden Junktor ausser der Negation f\"uhren wir eine 
+			linear abgeschätzt werden.
+		\item   Für jeden Junktor außer der Negation führen wir eine 
 			Variable $Y_x$ ein. Wobei der Wurzelknoten der Formel, also falls 
 			$\varphi = (\xi' \bullet \xi'') \text{ mit } \bullet \in \{\lor, \land\}$, 
-			würde $\bullet$ die Variable 
-			$Y_0$ erhalten. Mithilfe der Varibale wird jeder solcher Teilformel 
+			$\bullet$ die Variable 
+			$Y_0$ erhalten würde. Mithilfe der Varibale wird jeder solchen Teilformel 
 			eine neue Teilformel zugeordnet: 
 			$Y_x \leftrightarrow (\xi' \bullet \xi'')$
-			Alle diese Teilformeln + der Variablen des Wurzelknotens ($Y_0$) werden mit einem $\land$ verkn\"upft. Diese 
+			Alle diese Teilformeln und die Variable des Wurzelknotens ($Y_0$) werden mit einem $\land$ verknüpft. Diese 
 			Formel definieren wir als $\Psi$. 
-			$\Psi$ ist erfüllbarkeits\"aquivalent zu 
-			$\varphi$. Von einer erfüllenden Belegung f\"ur $\varphi$ erh\"alt 
-			man eine erfüllende Belegung f\"ur $\Psi$ indem man die Belegung 
-			\"ubernimmt und die $Y$-Variablen mit den an den jeweiligen Junktoren 
-			resultierenden Wahrheitswerten belegt. Eine erf\"ullende Belegung von 
-			$\Psi$ ist auch trivialerweise auch eine f\"ur $\varphi$.
+			$\Psi$ ist erfüllbarkeitsäquivalent zu 
+			$\varphi$. Von einer erfüllenden Belegung für $\varphi$ erhält 
+			man eine erfüllende Belegung für $\Psi$ indem man die Belegung 
+			übernimmt und die $Y$-Variablen mit den an den jeweiligen Junktoren 
+			resultierenden Wahrheitswerten belegt. Eine erfüllende Belegung von 
+			$\Psi$ ist auch trivialerweise auch eine für $\varphi$.
 		\item	Es gilt: $(Y_x \leftrightarrow (\xi' \bullet \xi'')) 
 			\leftrightarrow (Y_x \lor \lnot \xi') \land (Y_x \lor \lnot \xi'') 				\land (\lnot Y_x \lor \xi' \lor \xi'')$
-Die Rechenanleitung erzeugt verundete Disjunktionsklauseln der gr\"osse h\"ochstes 3, was einer 3KNF entspricht. Alle Umformungsschritte k\"onnen in polynomiellen Aufwand durchgeführt werden.
+Die Rechenanleitung erzeugt verundete Disjunktionsklauseln der Größe höchstens 3, was einer 3KNF entspricht. Alle Umformungsschritte können in polynomiellem Aufwand durchgeführt werden.
 			
 	\end{enumerate}
 \section*{Aufgabe 3}
