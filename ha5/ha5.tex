@@ -74,11 +74,11 @@ Marius Liwotto\> -  341051
 			linear abgesch\"atzt werden.
 		\item   F\"ur jeden Junktor ausser der Negation f\"uhren wir eine 
 			Variable $Y_x$ ein. Wobei der Wurzelknoten der Formel, also falls 
-			$\varphi = (\xi' \dot \xi'') \text{ mit } \dot \in \{\lor, \land\}$, 
-			w\"urde $\dot$ die Variable 
+			$\varphi = (\xi' \bullet \xi'') \text{ mit } \bullet \in \{\lor, \land\}$, 
+			würde $\bullet$ die Variable 
 			$Y_0$ erhalten. Mithilfe der Varibale wird jeder solcher Teilformel 
 			eine neue Teilformel zugeordnet: 
-			$Y_x \leftrightarrow (\xi' \dot \xi'')$
+			$Y_x \leftrightarrow (\xi' \bullet \xi'')$
 			Alle diese Teilformeln werden mit einem $\land$ verkn\"upft und., 
 			ausserdem kommt die Variable des Wurzelknoten hinzu ($Y_0$). Diese 
 			Formel definieren wir als $\Psi$. 
@@ -88,7 +88,7 @@ Marius Liwotto\> -  341051
 			\"ubernimmt und die $Y$-Variablen mit den an den jeweiligen Junktoren 
 			resultierenden Wahrheitswerten belegt. Eine erf\"ullende Belegung von 
 			$\Psi$ auch trivialerweise auch eine f\"ur $\varphi$.
-		\item	Es gilt: $(Y_x \leftrightarrow (\xi' \dot \xi'')) 
+		\item	Es gilt: $(Y_x \leftrightarrow (\xi' \bullet \xi'')) 
 			\leftrightarrow (Y_x \lor \lnot \xi') \land (Y_x \lor \lnot \xi'') 				\land (\lnot Y_x \lor \xi' \lor \xi'')$
 Die Rechenanleitung erzeugt verundete Disjunktionsklauseln der gr\"osse h\"ochstes 3, was einer 3KNF entspricht. Alle Umformungsschritte k\"onnen in polynomiellen Aufwand durchgef\"hrt werden.
 			
