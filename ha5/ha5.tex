@@ -59,43 +59,40 @@ Marius Liwotto\> -  341051
 	 \]
 \item
 	Vielleicht bin ich ja jetzt ganz dumm, aber $\phi''$ ist z.B. einfach $A \lor B \lor C$. Oder hab ich da was falsch verstanden? -- Max
-% \item  	\begin{enumerate}[$\quad$ 1.]
-% 		\item  	Wegen Assoziativgesetz gilt: \[\varphi' \equiv  ( (\lnot A \lor  \lnot B) \lor (C \lor D)) \land ((\lnot A \lor B) \lor (\lnot C \lor D)) \]
-% 		\item  	Füge für jede Klausel der Form $(X \lor Y)$ eine Variable $Z_i$ ein und bilde Klauseln der Form:
-% 			\[((X \lor Y) \leftrightarrow Z_i) \] 
-% 			Falls man diese Klauseln verundet und zusätzlich $Z_0$ mit dem Term verundet, entsteht ein Erfüllbarkeits\-äquivalenter Term (Siehe Schöning S. 160), also gilt:
-% 			\begin{align*} \varphi' \equiv   &Z_0 \land (Z_0 \leftrightarrow (Z_1 \lor Z_2)) 
-% 			\land (Z_1 \leftrightarrow (Z_3 \lor Z_4)) \\
-% 			&\land (Z_2 \leftrightarrow (Z_5 \lor Z_6)) 
-% 			\land (Z_3 \leftrightarrow (\lnot A \lor  \lnot B)) \\
-% 			&\land (Z_4 \leftrightarrow (C \lor D))) 
-% 			\land (Z_5 \leftrightarrow(\lnot A \lor B)) 
-% 			\land (Z_6\leftrightarrow(\lnot C \lor D))
-% 			\end{align*}
-% 		\item 	Es gilt:
-% 			\[Z \leftrightarrow (X \lor Y) \equiv (Z \lor \lnot X) \land (\lnot Z \lor X \lor Y) \land (Z \lor \lnot Y)\]
-% 			Also gilt:
-% 			\begin{align*} \varphi' \equiv   &Z_0 \land ((\lnot Z_0 \lor Z_1 \lor Z_2) \land (Z_0 \lor \lnot Z_1) \land (Z_0 \lor \lnot Z_2)) 
-% 			\land ((\lnot Z_1 \lor Z_3 \lor Z_4) \land (Z_1 \lor \lnot Z_3) \land (Z_1 \lor \lnot Z_4)) \\
-% 			&\land ((\lnot Z_2 \lor Z_5 \lor Z_6) \land (Z_2 \lor \lnot Z_5) \land (Z_2 \lor \lnot Z_6)) 
-% 			\land ((\lnot Z_3 \lor\lnot A \lor  \lnot B) \land (Z_3 \lor A) \land (Z_3 \lor B)) \\
-% 			&\land (( \lnot Z_4 \lor C \lor D) \land (Z_4 \lor \lnot C) (Z_4 \lor \lnot D)) 
-% 			\land ((\lnot Z_5 \lor \lnot A \lor B) \land (Z_5 \lor A) \land (Z_5 \lor \lnot B)) \\
-% 			&\land ((\lnot Z_6\lor \lnot C \lor D) \land (Z_6 \lor C) \land (Z_6 \lor \lnot D))
-% 			\end{align*}
-% 		\item 	Wegen Assosiativgesetz gilt:
-% 			\begin{align*} \varphi''    &Z_0 \land (\lnot Z_0 \lor Z_1 \lor Z_2) \land (Z_0 \lor \lnot Z_1) \land (Z_0 \lor \lnot Z_2) 
-% 			\land (\lnot Z_1 \lor Z_3 \lor Z_4) \land (Z_1 \lor \lnot Z_3) \land (Z_1 \lor \lnot Z_4) \\
-% 			&\land (\lnot Z_2 \lor Z_5 \lor Z_6) \land (Z_2 \lor \lnot Z_5) \land (Z_2 \lor \lnot Z_6))
-% 			\land (\lnot Z_3 \lor\lnot A \lor  \lnot B) \land (Z_3 \lor A) \land (Z_3 \lor B) \\
-% 			&\land ( \lnot Z_4 \lor C \lor D) \land (Z_4 \lor \lnot C) (Z_4 \lor \lnot D)
-% 			\land (\lnot Z_5 \lor \lnot A \lor B) \land (Z_5 \lor A) \land (Z_5 \lor \lnot B) \\
-% 			&\land (\lnot Z_6\lor \lnot C \lor D) \land (Z_6 \lor C) \land (Z_6 \lor \lnot D)
-% 			\end{align*}
-% 	\end{enumerate}
  \end{enumerate}
 \section*{Aufgabe 2}
-Lösungsansatz: \url{http://de.wikipedia.org/wiki/Erf%C3%BCllbarkeits%C3%A4quivalenz}
+	Man koennte das ganze auch als rekursive Formel angeben, wenn mir langweilig ist, 		mache ich das vllt (Dadurch koennte man einen schoenen Induktionsbeweis fuehren). 
+	Ansonsten erstmal eine Rechenvorschrift.
+
+	Sei $\varphi$ eine beliebige aussagenlogische Formel, um sie zu einer erf\"ullbarkeits
+	\"aquivalenten 3KNF umzuformen, befolge folgende Rechenanleitung:
+	\begin{enumerate}
+		\item 	Mit Hilfe von deMorgan's Regel werden wir Formeln der Form 
+			$\lnot(\xi)$ mit $\xi \in AL\setminus VAR$ umformen, sodass alle 
+			Negationszeichen an den Variablen stehen. 
+			Dieser Vorgang dauert so lange wie die Formel lang ist, kann also mit
+			linear abgesch\"atzt werden.
+		\item   F\"ur jeden Junktor ausser der Negation f\"uhren wir eine 
+			Variable $Y_x$ ein. Wobei der Wurzelknoten der Formel, also falls 
+			$\varphi = (\xi' \dot \xi'') \text{ mit } \dot \in \{\lor, \land\}$, 
+			w\"urde $\dot$ die Variable 
+			$Y_0$ erhalten. Mithilfe der Varibale wird jeder solcher Teilformel 
+			eine neue Teilformel zugeordnet: 
+			$Y_x \leftrightarrow (\xi' \dot \xi'')$
+			Alle diese Teilformeln werden mit einem $\land$ verkn\"upft und., 
+			ausserdem kommt die Variable des Wurzelknoten hinzu ($Y_0$). Diese 
+			Formel definieren wir als $\Psi$. 
+			$\Psi$ ist erf\"ullbarkeits\"aquivalent zu 
+			$\varphi$. Von einer erf\"ullenden Belegung f\"ur $\varphi$ erh\"alt 
+			man eine erf\"llende Belegung f\"ur $\Psi$ indem man die Belegung 
+			\"ubernimmt und die $Y$-Variablen mit den an den jeweiligen Junktoren 
+			resultierenden Wahrheitswerten belegt. Eine erf\"ullende Belegung von 
+			$\Psi$ auch trivialerweise auch eine f\"ur $\varphi$.
+		\item	Es gilt: $(Y_x \leftrightarrow (\xi' \dot \xi'')) 
+			\leftrightarrow (Y_x \lor \lnot \xi') \land (Y_x \lor \lnot \xi'') 				\land (\lnot Y_x \lor \xi' \lor \xi'')$
+Die Rechenanleitung erzeugt verundete Disjunktionsklauseln der gr\"osse h\"ochstes 3, was einer 3KNF entspricht. Alle Umformungsschritte k\"onnen in polynomiellen Aufwand durchgef\"hrt werden.
+			
+	\end{enumerate}
 \section*{Aufgabe 3}
 \section*{Aufgabe 4}
 \begin{enumerate}[(i)]
