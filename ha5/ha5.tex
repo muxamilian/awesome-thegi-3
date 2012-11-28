@@ -106,9 +106,9 @@ Es ist zu zeigen, dass \((i) \leftrightarrow (ii) \) gilt. D.h es muss gezeigt w
  			\begin{enumerate}[$\quad$\text{Fall } 1:]
  				\item 	Es gibt genau eine Belegung $\beta$, sodass $\beta \vDash \Phi$ \\
  					Falls $\beta \vDash \Phi \land \beta \vDash \varphi$ folgt direkt \(\Phi \vDash \varphi  \), da keine andere Belegung zu überprüfen ist. \\
- 					Falls $\beta \not \vDash \varphi \land \beta \vDash \Phi$ ist $\varphi$ für die einzige Belegung bei der $\Phi$ erfüllt ist, nicht erfüllt. Also ist $\varphi$ nicht erfüllt wenn $\Phi$ erfüllt, formal: \(\Phi \vDash \lnot \varphi  \)
+ 					Falls $\beta \not \vDash \varphi \land \beta \vDash \Phi$ ist $\varphi$ für die einzige Belegung, bei der $\Phi$ erfüllt ist, nicht erfüllt. Also ist $\varphi$ nicht erfüllt wenn $\Phi$ erfüllt, formal: \(\Phi \vDash \lnot \varphi  \)
  				\item 	Es gibt mehr als eine Belegung $\beta$, sodass $\beta \vDash \Phi$ \\
- 					Dann gibt es den Fall, dass für ein $\beta$ gilt $\beta \vDash \Phi \land \beta \vDash \varphi$, aber es kann auch noch ein anderes $\beta'$ geben mit $\beta' \vDash \Phi \land \beta' \not \vDash \varphi$. Damit gilt weder $\Phi \vDash \varphi$ noch $\Phi \vDash \varphi$
+ 					Dann gibt es den Fall, dass für ein $\beta$ gilt $\beta \vDash \Phi \land \beta \vDash \varphi$, aber es kann auch noch ein anderes $\beta'$ geben mit $\beta' \vDash \Phi \land \beta' \not \vDash \varphi$. Damit gilt weder $\Phi \vDash \varphi$ noch $\Phi \vDash \lnot \varphi$
  			\end{enumerate}
  			Da die Aussage nur gilt, wenn $\Phi$ genau eine erfüllbare Belegung hat, gilt: $(i) \rightarrow (ii)$
  		\item 	\( (ii) \rightarrow (i) \)	\\
@@ -116,9 +116,9 @@ Es ist zu zeigen, dass \((i) \leftrightarrow (ii) \) gilt. D.h es muss gezeigt w
  			Sei $\varphi$ beliebig. Fallunterscheidung über die Anzahl Belegungen von $\Phi$:
  			\begin{enumerate}[$\quad$\text{Fall }1:]
  				\item 	$\beta \vDash \varphi $ \\
- 					Folgt direkt \(\Phi \vDash \varphi  \), da keine andere Belegung zu überprüfen ist. 
+ 					Es folgt direkt \(\Phi \vDash \varphi  \), da keine andere Belegung zu überprüfen ist. 
  				\item  	$\beta \not \vDash \varphi$ \\
- 					$\varphi$ ist für die einzige Belegung bei der $\Phi$ erfüllt ist, nicht erfüllt. Also ist $\varphi$ nicht erfüllt wenn $\Phi$ erfüllt, formal: \(\Phi \vDash \lnot\varphi  \)
+ 					$\varphi$ ist für die einzige Belegung, bei der $\Phi$ erfüllt ist, nicht erfüllt. Also ist $\varphi$ nicht erfüllt wenn $\Phi$ erfüllt, formal: \(\Phi \vDash \lnot\varphi  \)
  			\end{enumerate}
  			Daraus folgt, dass $\Phi \vDash \varphi$ oder $\Phi \vDash \lnot \varphi$, also $(ii) \rightarrow (i)$		
  	\end{enumerate}
@@ -131,10 +131,7 @@ $\phi_1$ ist in H-Form.\\
 $\phi_2$ ist nicht in H-Form (keine KNF).\\
 $\phi_3$ ist nicht in H-Form (mehr als ein positives Literal).\\
 \item
-% Nach Definition ist $(\beta \sqcap \beta')(X) = 1$ wenn $\beta$ und $\beta'$ von X ebenfalls 1 sind.
 
-% Nach Annahme gilt: 
-% $$\beta \models \phi \land \beta' \models \phi$$
 Sei $\phi$ eine beliebige Formel in H-Form. Damit $\phi$ erfüllt ist, muss jede Klausel erfüllt werden. 
 
 Annahmen: $\beta \models \phi$ und $\beta' \models \phi$
@@ -145,44 +142,30 @@ Es gibt folgende Fälle für den Aufbau einer Klausel $k$:
 	Um k zu erfüllen muss $\beta(X) = 1$ und $\beta'(X) = 1$. Somit ist per Definiton auch $(\beta \sqcap \beta')(X) = 1$ und $(\beta \sqcap \beta')$ erfüllt diese Klausel.
 \item $k = \lnot X$\\
 	Um k zu erfüllen muss $\beta(X) = 0$ und $\beta'(X) = 0$. Somit ist per Definiton auch $(\beta \sqcap \beta')(X) = 0$ und $(\beta \sqcap \beta')$ erfüllt diese Klausel.
-\item $k = \lnot X \lor \lnot Y \lor \lnot Z \lor ...$\\
-	Um k zu erfüllen muss es ein $X$ und $Y$ geben, sodass $\beta(X) = 0$ und $\beta(Y) = 0$. $X$ und $Y$ müssen nicht die gleiche Variable sein. Somit ist per Definiton auch $(\beta \sqcap \beta')(X) = 0$ und $(\beta \sqcap \beta')(Y) = 0$ und $(\beta \sqcap \beta')$ erfüllt diese Klausel.
-\item $k = X \lor \lnot Y \lor \lnot Z \lor ...$\\
+\item $k = \lnot X_1 \lor \lnot X_2 \lor \lnot X_3 \lor ...$\\
+	Um k zu erfüllen muss es ein $X_i$ und $X_j$ geben, sodass $\beta(X_i) = 0$ und $\beta'(X_j) = 0$. $i$ und $j$ können hierbei auch identisch sein. Somit ist per Definiton auch $(\beta \sqcap \beta')(X_i) = 0$ und $(\beta \sqcap \beta')(X_j) = 0$ und $(\beta \sqcap \beta')$ erfüllt diese Klausel.
+\item $k = X_1 \lor \lnot X_2 \lor \lnot X_3 \lor ...$\\
 	Um diese Formel zu erfüllen gibt es wiederum 4 Fälle:
 	\begin{enumerate}[(1)]
 	\item
-	$\beta(X) = 1$ und $\beta'(X) = 1$\\
-	Dann gilt $(\beta \sqcap \beta')(X) = 1$ und $\beta \sqcap \beta'$ erfüllt die Formel.
+	$\beta(X_1) = 1$ und $\beta'(X_1) = 1$\\
+	Dann gilt $(\beta \sqcap \beta')(X_1) = 1$ und $\beta \sqcap \beta'$ erfüllt die Formel.
 	\item
-	$\beta(X) = 1$ und $\beta'(Y) = 0$\\
-	Dann gilt $(\beta \sqcap \beta')(Y) = 0$ und $\beta \sqcap \beta'$ erfüllt die Formel.
+	$\beta(X_1) = 1$ und $\beta'(X_i) = 0 \text{ mit $i$ ungleich 1}$\\
+	Dann gilt $(\beta \sqcap \beta')(X_i) = 0$ und $\beta \sqcap \beta'$ erfüllt die Formel.
 	\item
-	$\beta(Y) = 0$ und $\beta'(X) = 1$\\
-	Dann gilt $(\beta \sqcap \beta')(Y) = 0$ und $\beta \sqcap \beta'$ erfüllt die Formel.
+	$\beta(X_i) = 0$ und $\beta'(X_1) = 1 \text{ mit $i$ ungleich 1}$\\
+	Dann gilt $(\beta \sqcap \beta')(X_i) = 0$ und $\beta \sqcap \beta'$ erfüllt die Formel.
 	\item
-	$\beta(Y) = 0$ und $\beta'(Z) = 0$\\
-	Dann gilt $(\beta \sqcap \beta')(Y) = 0$ und $\beta \sqcap \beta'$ erfüllt die Formel.
+	$\beta(X_i) = 0$ und $\beta'(X_i) = 0  \text{ mit $i,j$ ungleich 1}$\\
+	Dann gilt $(\beta \sqcap \beta')(X_i) = 0$ und $\beta \sqcap \beta'$ erfüllt die Formel.
 	\end{enumerate}
-	$X$ und $Y$ stehen hier für beliebige, in der Klausel negiert vorkommende Variablen.
 \end{enumerate}
 \item 
 Wir wählen $\phi = A \lor B$ als Formel in KNF.
 
-% Die Wahrheitstabelle sieht dann folgendermaßen aus:
-% \[
-% \begin{array}{ccc}
-% 	\toprule 
-% 	A & \lor & B\\
-% 	\midrule
-% 	0 & 0 & 0\\
-% 	0 & 1 & 1\\
-% 	1 & 1 & 0\\
-% 	1 & 1 & 1\\
-% 	\bottomrule
-% \end{array}
-% \]
 Formte man $\phi$ in H-Form um, so würde diese ebenfalls nur aus den beiden Variablen $A$ und $B$ bestehen und hätte höchstens 3 verschiedene Klauseln, nämlich $\lnot A \lor \lnot B$, $\lnot A \lor B$, $A \lor \lnot B$, da $A \lor B$ nicht der H-Form genügt. \\
-Klauseln, die äquivalent zu $\top$ oder $\bot$ sind, werden ebenfalls nicht betrachtet, da sie trivialerweise nicht äquivalent zu $\phi$ sein können.
+Klauseln, die äquivalent zu $\top$ oder $\bot$ sind oder nur aus einem Literal bestehen, werden ebenfalls nicht betrachtet, da sie trivialerweise nicht äquivalent zu $\phi$ sein können.
 
 Alle Formeln, die sich aus den 3 Klauseln bilden lassen, sind nicht äquivalent zu $\phi$.
 
@@ -194,8 +177,8 @@ $(\lnot A \lor \lnot B) \land (A \lor \lnot B) \not \equiv \phi$
 \item
 $(\lnot A \lor B) \land (A \lor \lnot B) \not \equiv \phi$
 \end{enumerate}
-Die Fälle, die 3 Klauseln jeweils mit sich selbst zu verunden, sind trivialerweise nicht äquivalent zu $\phi$.
-Somit gibt es keine äquivalente Formel in H-Form zu $\phi$
+Die Fälle, die die 3 Klauseln jeweils mit sich selbst zu verunden, sind trivialerweise nicht äquivalent zu $\phi$.
+Somit gibt es keine äquivalente Formel in H-Form zu $\phi$.
 \end{enumerate}
 \end{document}
 
