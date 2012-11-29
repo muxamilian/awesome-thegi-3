@@ -1,0 +1,125 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+\begin{document}
+
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 5} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+\subsection*{Aufgabe 1}
+\begin{enumerate}
+\item[(i)]
+\( h: V(G) \rightarrow V(H)\\
+v_1 \mapsto w_1 \\
+v_2 \mapsto w_2 \\
+v_3 \mapsto w_1 \\
+v_4 \mapsto w_3 \\
+v_5 \mapsto w_2 \)
+
+\item[(ii)]
+Zu zeigen ist: \\
+(i) Graph G ist 3-färbbar $\Rightarrow$ es existiert ein Homomorph. von G nach H\\
+(ii) es existiert ein Homomorph. von G nach H $\Rightarrow$ Graph G ist 3-färbbar\\
+\\
+H ist 3-färbbar mit folgender Farbbelegung \\
+c: V(H) $\rightarrow \{r,g,b\}$ \\
+\( c(w_1) \mapsto r \\
+c(w_2) \mapsto g \\
+c(w_3) \mapsto b \)
+
+\begin{enumerate}
+\item[(i)]
+Da G 3-färbbar ist, gilt: \\
+\( \exists c': V(G) \rightarrow $\{r,g,b\}$.~\text{c' ist eine 3-Färbung von G} \\
+\\
+\text{Daraus kann man nun folgenden Homomorphismus h bilden:} \\
+\\
+h: V(G) \rightarrow V(H) \\
+h(v) \mapsto 
+\begin{cases}
+w_1, & c'(v) = r \\
+w_2, & c'(v) = g \\
+w_3, & c'(v) = b \\
+\end{cases} \\
+\\
+\text{Beweis der Richtigkeit des gebildeten h:} \\
+\text{Es muss gelten:} \\
+\\
+\forall \{u,v\} \in V(G).~\{h(u),h(v)\} \in V(H)\\
+\\
+\text{Da nach Annahme alle Knoten einer Kante aus G verschiedenfarbig sind, gilt:}\\
+\\
+(1)~\forall \{u,v\} \in V(G).~h(u) \neq h(v)\\
+\\
+\text{Des Weiteren gilt:}\\
+\\
+(2)~\forall~ u \in \{w_1,w_2,w_3\}.~\forall~ v \in \{w_1,w_2,w_3\} \setminus{ \{u\} }.~\{u,v\} \in E(H) \\
+\\
+\text{Aus (1) und (2) folgt:} \\
+\\
+\forall \{u,v\} \in V(G).~\{h(u),h(v)\} \in V(H) \)
+
+\item[(ii)]
+Da ein Homomorphismus h von G nach H existiert, gilt: \\
+\\
+\((*)~ \forall \{u,v\} \in V(G).~\{h(u),h(v)\} \in V(H)\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Daraus kann man nun folgende 3-Färbung c' ableiten:} \\
+\\
+c': V(G) \rightarrow $\{r,g,b\}$ \\
+\\
+c'(v) \mapsto c(h(v)) \\
+\\
+\text{Beweis der Richtigkeit der 3-Färbung c':}\\
+\\
+\text{Es gilt:} \\
+\\
+(**)~\forall~ \{u,v\} \in V(G).~h(u) \neq h(v) \\
+\\
+\text{Würde dies nicht gelten, würde das bedeuten, dass $\{h(u),h(u)\} \in E(H)$ sein würde, da aber} \\
+\text{H irreflexiv ist, wäre das ein Widerspruch. }\\
+\text{Aus (*) und (**) folgt:}\\
+\\
+\forall~ \{u,v\} \in V(G).~c(h(u)) \neq c(h(v)) 
+\Leftrightarrow
+\forall~ \{u,v\} \in V(G).~c'(u) \neq c'(v) \\
+\\
+\Rightarrow \text{c' ist eine passende 3-Färbung für G}
+\Rightarrow \text{G ist 3-färbbar}
+\)
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+
+
