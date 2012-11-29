@@ -62,7 +62,7 @@ Marius Liwotto\> -  341051
  \end{enumerate}
 \section*{Aufgabe 2}
 	%Man könnte das ganze auch als rekursive Formel angeben, wenn mir langweilig ist, 		mache ich das vllt (Dadurch koennte man einen schoenen Induktionsbeweis fuehren). 
-	Ansonsten erstmal eine Rechenvorschrift.
+	Hier kommt eine Rechenvorschrift.
 
 	Sei $\varphi$ eine beliebige aussagenlogische Formel, um sie zu einer erfüllbarkeits
 	\"aquivalenten 3KNF umzuformen, befolge folgende Rechenanleitung:
@@ -104,11 +104,12 @@ Es ist zu zeigen, dass \((i) \leftrightarrow (ii) \) gilt. D.h es muss gezeigt w
  			\textbf{Annahme: } Für alle Formeln \(\varphi\) mit \( \text{var}(\varphi)  \subseteq \text{var}(\Phi)\) gilt \(\Phi \vDash \varphi  \) oder \(\Phi \vDash \lnot \varphi\) \\
  			Sei $\varphi$ beliebig. Fallunterscheidung über die Anzahl Belegungen von $\Phi$:
  			\begin{enumerate}[$\quad$\text{Fall } 1:]
- 				\item 	Es gibt genau eine Belegung $\beta$, sodass $\beta \vDash \Phi$ \\
+ 				\item 	Es gibt genau eine Belegung $\beta$, sodass $\beta \vDash \Phi$. \\
  					Falls $\beta \vDash \Phi \land \beta \vDash \varphi$ folgt direkt \(\Phi \vDash \varphi  \), da keine andere Belegung zu überprüfen ist. \\
  					Falls $\beta \not \vDash \varphi \land \beta \vDash \Phi$ ist $\varphi$ für die einzige Belegung, bei der $\Phi$ erfüllt ist, nicht erfüllt. Also ist $\varphi$ nicht erfüllt wenn $\Phi$ erfüllt, formal: \(\Phi \vDash \lnot \varphi  \)
- 				\item 	Es gibt mehr als eine Belegung $\beta$, sodass $\beta \vDash \Phi$ \\
- 					Dann gibt es den Fall, dass für ein $\beta$ gilt $\beta \vDash \Phi \land \beta \vDash \varphi$, aber es kann auch noch ein anderes $\beta'$ geben mit $\beta' \vDash \Phi \land \beta' \not \vDash \varphi$. Damit gilt weder $\Phi \vDash \varphi$ noch $\Phi \vDash \lnot \varphi$
+ 				\item 	Es gibt mehr als eine Belegung $\beta$, sodass $\beta \vDash \Phi$. \\
+ 					Dann muss es eine Variable $\psi$ aus var($\Phi$) geben, sodass $\beta(\psi) = 1$ und $\beta'(\psi) = 0$, wobei $\beta'$ die andere Belegung ist. Nimmt man nun $\varphi = \psi$ kann unmöglich gelten, dass $\Phi \vDash \varphi$, da $\phi$ je nach Belegung einmal erfüllt ist und einmal nicht. Das ist ein Widerspruch.		
+					% Dann gibt es den Fall, dass für ein $\beta$ gilt $\beta \vDash \Phi \land \beta \vDash \varphi$, aber es kann auch noch ein anderes $\beta'$ geben mit $\beta' \vDash \Phi \land \beta' \not \vDash \varphi$. Damit gilt weder $\Phi \vDash \varphi$ noch $\Phi \vDash \lnot \varphi$
  			\end{enumerate}
  			Da die Aussage nur gilt, wenn $\Phi$ genau eine erfüllbare Belegung hat, gilt: $(i) \rightarrow (ii)$
  		\item 	\( (ii) \rightarrow (i) \)	\\
