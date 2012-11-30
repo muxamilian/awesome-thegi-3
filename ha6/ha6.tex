@@ -116,8 +116,50 @@ c'(v) \mapsto c(h(v)) \\
 \Rightarrow \text{G ist 3-färbbar}
 \)
 \end{enumerate}
-
 \end{enumerate}
+
+\subsection*{Aufgabe 2}
+Zu zeigen ist:\\
+(i) Existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H, so \\
+existiert auch ein Homomorphismus von G nach H.\\
+\\
+(ii) Existiert für G ein Homomorphismus von G nach H, so \\
+existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
+
+\begin{enumerate}
+	\item[(i)]
+	Der Graph G = (V,E) wird folgendermaßen in einer Aussagenlogische Formel übersetzt:\\
+	Für jede Kante $\{u,v\} \in$ E(G) führen wir eine Variable $X_{u,v}$ ein.\\
+	\\
+	Sei h: V(G) $\rightarrow$ V(H) \\
+	\\
+	\( \Phi = \{X_{u,v} \Rightarrow X_{h(u),h(v)} ~|~ \{u,v\} \in E(G) \} \\
+	\\
+	\text{Sei $\Phi_0 \subset \Phi$} \\
+	\\
+	E' = \{\{u,v\} ~|~ (X_{u,v} \Rightarrow X_{h(u),h(v)}) \in \Phi_0 \} \\
+	V' = \{v ~|~ \{u,v\} \in E'\} \\
+	\\
+	\text{Da $\Phi_0$ eine endliche Teilmenge von $\Phi$ ist, muss auch E' und damit V' endlich sein.} \\
+	\text{Für den von V' endlichen induzierten Untergraphen G' von G existiert} \\
+	\text{nach Annahme ein Homomorphismus h': V(G') $\rightarrow$ V(H)} \\
+	\text{Daraus folgt, dass folgendes gilt:} \\
+	\\
+	\forall~ \{u,v\} \in E'.~\{h'(u),h'(v)\} \in E(H) \\
+	\\
+	\text{Eine passende Belegung $\beta$ wäre somit Folgende:}\\
+	\\
+	\beta(X_{u,v}) = 1 \text{, wenn $\{u,v\} \in$ E' und } 
+	\beta(X_{h'(u),h'(v)}) = 1 \text{, wenn $\{h'(u),h'(v)\} \in$ E(H)} \)\\
+	\\
+	Aus der Erfüllbarkeit von $\Phi_0$, gilt nach dem Kompaktheitssatz, dass $\Phi$ auch erfüllbar ist.\\
+	Daraus folgt, dass ein Homomorphismus h: V(G) $\rightarrow$ V(H) existiert, wenn für alle Teilgraphen G' \\
+	ein Homomorphismus existiert.\\
+	
+\item[(ii)]
+Ist trivial.
+\end{enumerate}
+
 \subsection*{Aufgabe 4}
 Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die jeweils $n$ Indizes haben mit der Namensgebung $X_{i,j}$. Die Idee ist, dass diese $n \times n$ Matrix aus Variablen einen Pfad definiert, indem man jeweils genau eine Variable der $n$ Variablen mit 1 belegt, alle anderen mit 0. Nun würden die Variablen $X_{i,j}$ und $X_{i+1,k}$ für die Kante $\{j,k\}$ stehen. $\varphi$ muss folgendes leisten:
 \begin{enumerate}
