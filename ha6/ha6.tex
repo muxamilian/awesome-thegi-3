@@ -185,14 +185,16 @@ In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. fal
 		$\mathcal{C}^+$ und $\mathcal{C}^-$ sind beide unerfüllbar. Denn wäre z.B. $C^+$ erfüllbar, z.B. durch $\beta \vDash \mathcal{C}^+$, dann würde $\beta' := \beta \cup \{V_n \rightarrow 1 \}$ die Menge $\mathcal{C}$ erfüllen. \\
 		Nach Induktionsvorraussetzung gibt es Resolutionsableitungen $(C_1,...,C_s)$ und $(D_1,...,D_t)$ der leeren Klausel $C_s = D_t = \square$ aus $\mathcal{C}^+$ bzw. $\mathcal{C}^-$. \\
 		 \ \\
-		Falls  $(D_1,...,D_t)$  schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $D_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $V_n$ entstanden sind, d.h. $D_i' := D_i \cup \{V_n \} \in \mathcal{C}$. \\
+		Falls  $(D_1,...,D_t)$  schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $D_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $V_n$ entstanden sind, d.h. $D_i \cup \{V_n \} \in \mathcal{C}$. \\
 		Fügen wir zu diesen Klauseln und allen Resolventen wieder $V_n$ hinzu, so erhalten wir eine Ableitung $(D_1',...,D_t')$ von $V_n$ aus $\mathcal{C}$. \\
 		 \ \\
-		 Falls $(C_1,..., C_s)$ schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $C_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $\lnot V_n$ entstanden sind, d.h. $C_i' := C_i \cup \{\lnot V_n \} \in \mathcal{C}$. \\
+		 Falls $(C_1,..., C_s)$ schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $C_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $\lnot V_n$ entstanden sind, d.h. $C_i \cup \{\lnot V_n \} \in \mathcal{C}$. \\
 		\ \\
-		Da wir hier negative Variablen einführen, besteht die Möglichkeit, dass eine P-Resolution wie sie bei $\mathcal{C}^-$ nicht mehr möglich ist. Da wir jedoch schon $\{V_n\}$ im vorherigen Teil abgeleitet haben. Können wir dadurch Klauseln der Form $ C_i \cup \{\lnot V_n \} \in \mathcal{C}$ mit $\{V_n\}$ resolvieren, wodurch wir wieder $C_i$ erhalten. Womit die Ableitungskette $(C_1,...,C_s)$,die eine Ableitung zu $\square$ ergibt, in $\mathcal{C}$ existert.  \\
+		Fügen wir zu diesen Klausel $\lnot V_n$ hinzu, gibt es in der normalen Resolution eine Ableitung $(C_1',...,C_s')$ von $\lnot V_n$ aus $\mathcal{C}$. Doch gibt es in der P-Resolution das Problem, das immer eine positive Klausel resolviert werden muss, und da wir negative Variablen zu den Klauseln hinzufügten ist $(C_1',...'C_s')$ unter Umständen keine gültige P-Resolution. \\
 		\ \\
-		Damit wäre $(D_1',...,D_t1,C_1,...,C_s,\square)$ eine Resolutionswiderlegung von $\mathcal{C}$ 
+		Doch haben wir schon zuvor $\{V_n \}$ resolviert, wodurch alle Klauseln der Form $C_i \cup \{\lnot V_n \} \in \mathcal{C}$ wieder zu $C_i$ resolviert werden können. Diese Resolutionskette bezeichne als $(C'D'_1,...,C'D'_k)$. Nun sind die Resolutionsableitungen $(C_1,..., C_s)$ möglich, da alle Klauseln vorliegen. \\
+		\ \\
+		Damit wäre $(D_1',...,D'_t,C'D'_1,...,C'D'_k,C_1,...,C_s,\square)$ eine Resolutionswiderlegung von $\mathcal{C}$ 
 \end{itemize}
 Nun muss das ganze noch jede Klauselmengen $\mathcal{C}$ bewiesen werden. Sei dazu $\mathcal{C}$ eine unerfüllbare Klauselmenge
 \begin{enumerate}
