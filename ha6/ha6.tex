@@ -35,12 +35,12 @@ Marius Liwotto\> -  341051
 \subsection*{Aufgabe 1}
 \begin{enumerate}
 	\item[(i)]
-			\( h: V(G) \rightarrow V(H)\\
-			v_1 \mapsto w_1 \\
-			v_2 \mapsto w_2 \\
-			v_3 \mapsto w_1 \\
-			v_4 \mapsto w_3 \\
-			v_5 \mapsto w_2 \)
+	\( h: V(G) \rightarrow V(H)\\
+	v_1 \mapsto w_1 \\
+	v_2 \mapsto w_2 \\
+	v_3 \mapsto w_1 \\
+	v_4 \mapsto w_3 \\
+	v_5 \mapsto w_2 \)
 
 	\item[(ii)]
 			Zu zeigen ist: \\
@@ -166,23 +166,31 @@ endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
 	ein Homomorphismus existiert.
 	\end{tabular}
 	
-\item[(ii)]
-Ist trivial.
+	\item[(ii)]
+	Ist trivial.
 \end{enumerate}
 
 \subsection*{Aufgabe 3}
+\begin{tabular}{@{} p{\tabspace}}
 In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. falls es eine Menge von Klausels eine P-Resolutionswiderlegung hat, so ist die Klauselmenge unerfüllbar. Damit die P-Resolution vollständig ist, muss gezeigt werden, dass für jede unerfüllbare Klauselmenge eine P-Resolutionswiderlegung existiert. Dazu wird zuerst folgende Behauptung aufgestellt: \\
+\end{tabular}
 \ \\
 \textbf{Behauptung: } Sei $n \in \mathbb{N}$ und sei $\mathcal{C}$ eine unerfüllbare Klauselmenge in den Variablen $\{V_1,...,V_{n-1} \}$. Dann hat $\mathcal{C}$ eine Resolutionswiderlegung. 
 \begin{itemize}
-	\item[\textbf{IA:}] $n=1$. \\
+	\item[\textbf{IA:}] 
+		\begin{tabular}{@{} p{\tabspace}}
+		$n=1$. \\
 		In diesem Fall ist $\mathcal{C}$ unerfüllbar und enthält keine Variablen. Also $\mathcal{C} := \{ \square \}$ und somit existiert eine Resolutionswiderlegung, bzw. das ganze ist schon eine Resolutionswiderlegung.
+		\end{tabular}
 	\item[\textbf{IS:}] $n \rightarrow n+1$ \\
+	
 		Sei $\mathcal{C}$ eine unerfüllbare Klauselmenge in den Variablen $\{V_1,...,V_n \}$. Wir definieren
 		\begin{align*}
 			\mathcal{C}^+ &:= \{C \setminus \{ \lnot V_n  \}: C \in \mathcal{C} \land V_n \not \in C \} \\
 			\mathcal{C}^- &:= \{C \setminus \{V_n  \}: C \in \mathcal{C} \land \lnot V_n \not \in C \}
 		\end{align*}
+		
+		\begin{tabular}{@{} p{\tabspace}}
 		$\mathcal{C}^+$ und $\mathcal{C}^-$ sind beide unerfüllbar. Denn wäre z.B. $C^+$ erfüllbar, z.B. durch $\beta \vDash \mathcal{C}^+$, dann würde $\beta' := \beta \cup \{V_n \rightarrow 1 \}$ die Menge $\mathcal{C}$ erfüllen. \\
 		Nach Induktionsvorraussetzung gibt es Resolutionsableitungen $(C_1,...,C_s)$ und $(D_1,...,D_t)$ der leeren Klausel $C_s = D_t = \square$ aus $\mathcal{C}^+$ bzw. $\mathcal{C}^-$. \\
 		 \ \\
@@ -196,13 +204,17 @@ In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. fal
 		Doch haben wir schon zuvor $\{V_n \}$ resolviert, wodurch alle Klauseln der Form $C_i \cup \{\lnot V_n \} \in \mathcal{C}$ wieder zu $C_i$ resolviert werden können. Diese Resolutionskette bezeichne als $(C'D'_1,...,C'D'_k)$. Nun sind die Resolutionsableitungen $(C_1,..., C_s)$ möglich, da alle Klauseln vorliegen. \\
 		\ \\
 		Damit wäre $(D_1',...,D'_t,C'D'_1,...,C'D'_k,C_1,...,C_s,\square)$ eine Resolutionswiderlegung von $\mathcal{C}$ 
+	\end{tabular}
 \end{itemize}
+
+\begin{tabular}{@{} p{\tabspace}}
 Nun muss das ganze noch für jede Klauselmenge $\mathcal{C}$ bewiesen werden. Sei dazu $\mathcal{C}$ eine unerfüllbare Klauselmenge
 \begin{enumerate}
 	\item Ist $\mathcal{C}$ endlich, dann enthält sie nur endlich viele Variablen und der Beweis folgt sofort aus der Behauptung. 
-	\item Ist $\mathcal{C}$ unendlich, dann folgt aus dem Kompaktheitssatz, dass bereits eine endliche Teilmenge $\mathcal{C}'\subseteq \mathcal{C} $unerfüllbar ist. Also hat $\mathcal{C}'$ eine Resolutionswiderlegung. Diese ist aber auch eine Resolutionswiderlegung von $\mathcal{C}$.
-
+	\item Ist $\mathcal{C}$ unendlich, dann folgt aus dem Kompaktheitssatz, dass bereits eine endliche Teilmenge $\mathcal{C}'\subseteq \mathcal{C} $unerfüllbar ist. Also hat $\mathcal{C}'$ eine Resolutionswiderlegung. Diese ist aber auch eine Resolutionswiderlegung von $\mathcal{C}$.	
 \end{enumerate}
+\end{tabular}
+
 \begin{center}\textbf{Hinweis: Grosse Teile des Beweises kommen aus den Vorlesungsfolien der VL TheGI3 von S. Kreutzer. }\end{center}
 \subsection*{Aufgabe 4}
 \begin{tabular}{@{} p{\tabspace}}
