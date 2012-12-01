@@ -19,8 +19,10 @@
 left=1.8cm, right=1.8cm,
 top=2.0cm, bottom=2.0cm]{geometry}
 \usepackage{tabularx}
-\begin{document}
 
+\newcommand{\tabspace}{15cm}
+
+\begin{document}
 \begin{center}
 \Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 6} \\
 \large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
@@ -42,7 +44,7 @@ Marius Liwotto\> -  341051
 
 	\item[(ii)]
 			Zu zeigen ist: \\
-			(i) Graph G ist 3-färbbar $\Rightarrow$ es existiert ein Homomorph. von G nach H\\
+			(i) Graph G ist 3-färbbar $\Rightarrow$ es existiert ein Homomorph. von G nach H \\
 			(ii) es existiert ein Homomorph. von G nach H $\Rightarrow$ Graph G ist 3-färbbar\\
 			\\
 			H ist 3-färbbar mit folgender Farbbelegung \\
@@ -104,9 +106,11 @@ c'(v) \mapsto c(h(v)) \\
 \\
 (**)~\forall~ \{u,v\} \in E(G).~h(u) \neq h(v) \\
 \\
-\text{Würde dies nicht gelten, würde das bedeuten, dass $\{h(u),h(u)\} \in E(H)$ sein würde, da aber} \\
-\text{H irreflexiv ist, wäre das ein Widerspruch. }\\
-\text{Aus (*) und (**) folgt:}\\
+\begin{tabular}{@{} p{\tabspace}}
+Würde dies nicht gelten, würde das bedeuten, dass $\{h(u),h(u)\} \in E(H)$ sein würde, da aber
+H irreflexiv ist, wäre das ein Widerspruch. 
+Aus (*) und (**) folgt:
+\end{tabular}\\
 \\
 \forall~ \{u,v\} \in E(G).~c(h(u)) \neq c(h(v)) 
 \Leftrightarrow
@@ -119,12 +123,14 @@ c'(v) \mapsto c(h(v)) \\
 \end{enumerate}
 
 \subsection*{Aufgabe 2}
+\begin{tabular}{@{} p{\tabspace}}
 Zu zeigen ist:\\
-(i) Existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H, so \\
+(i) Existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H, so 
 existiert auch ein Homomorphismus von G nach H.\\
 \\
-(ii) Existiert für G ein Homomorphismus von G nach H, so \\
-existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
+(ii) Existiert für G ein Homomorphismus von G nach H, so existieren für alle
+endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
+\end{tabular}
 
 \begin{enumerate}
 	\item[(i)]
@@ -140,10 +146,12 @@ existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H
 	E' = \{\{u,v\} ~|~ (X_{u,v} \Rightarrow X_{h(u),h(v)}) \in \Phi_0 \} \\
 	V' = \{v ~|~ \{u,v\} \in E'\} \\
 	\\
-	\text{Da $\Phi_0$ eine endliche Teilmenge von $\Phi$ ist, muss auch E' und damit V' endlich sein.} \\
-	\text{Für den von V' endlichen induzierten Untergraphen G' von G existiert} \\
-	\text{nach Annahme ein Homomorphismus h': V(G') $\rightarrow$ V(H)} \\
-	\text{Daraus folgt, dass folgendes gilt:} \\
+	\begin{tabular}{@{} p{\tabspace}}	
+	Da $\Phi_0$ eine endliche Teilmenge von $\Phi$ ist, muss auch E' und damit V' endlich sein.
+	Für den von V' endlichen induzierten Untergraphen G' von G existiert
+	nach Annahme ein Homomorphismus h': V(G') $\rightarrow$ V(H).
+	Daraus folgt, dass folgendes gilt:
+	\end{tabular} \\
 	\\
 	\forall~ \{u,v\} \in E'.~\{h'(u),h'(v)\} \in E(H) \\
 	\\
@@ -152,16 +160,20 @@ existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H
 	\beta(X_{u,v}) = 1 \text{, wenn $\{u,v\} \in$ E' und } 
 	\beta(X_{h'(u),h'(v)}) = 1 \text{, wenn $\{h'(u),h'(v)\} \in$ E(H)} \)\\
 	\\
-	Aus der Erfüllbarkeit von $\Phi_0$, gilt nach dem Kompaktheitssatz, dass $\Phi$ auch erfüllbar ist.\\
-	Daraus folgt, dass ein Homomorphismus h: V(G) $\rightarrow$ V(H) existiert, wenn für alle Teilgraphen G' \\
-	ein Homomorphismus existiert.\\
+	\begin{tabular}{@{} p{\tabspace}}
+	Aus der Erfüllbarkeit von $\Phi_0$, gilt nach dem Kompaktheitssatz, dass $\Phi$ auch erfüllbar ist.
+	Daraus folgt, dass ein Homomorphismus h: V(G) $\rightarrow$ V(H) existiert, wenn für alle Teilgraphen G'
+	ein Homomorphismus existiert.
+	\end{tabular}
 	
 \item[(ii)]
 Ist trivial.
 \end{enumerate}
 
 \subsection*{Aufgabe 4}
+\begin{tabular}{@{} p{\tabspace}}
 Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die jeweils $n$ Indizes haben mit der Namensgebung $X_{i,j}$. Die Idee ist, dass diese $n \times n$ Matrix aus Variablen einen Pfad definiert, indem man jeweils genau eine Variable der $n$ Variablen mit 1 belegt, alle anderen mit 0. Nun würden die Variablen $X_{i,j}$ und $X_{i+1,k}$ für die Kante $\{j,k\}$ stehen. $\varphi$ muss folgendes leisten:
+\end{tabular}
 \begin{enumerate}
 	\item 	Jede Variable definiert genau einen Knoten.
 		\[\varphi_1 = \bigwedge_{0 \le i < n } ~\bigvee_{j \in {V(G)}} \left( X_{i,j} \land \left( \bigwedge_{k \in V(G)\setminus\{ j\}} ~ \lnot X_{i,k} \right) \right) \]
@@ -173,8 +185,12 @@ Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die jeweils $n
 		\[\varphi_3 = X_{n-1,0}\bigwedge_{0 \le i <n}~ \bigvee_{\{k,l\} \in E(G)} X_{i,k} \land X_{i+1,l}  \]
 		Jede Klausel hat die Grösse $2$, es werden $n$ mal maximal $\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^3)$
 \end{enumerate}
+\begin{tabular}{@{} p{\tabspace}}
 $\varphi$ wird nun als Konjunktion des Ganzen definiert: \[\varphi(G) = \varphi_1 \land \varphi_2 \land \varphi_3 \] 
-$\varphi(G)$ genau erfüllbar wenn ein Hamilton Kreis in $G$ existiert. Da für $\varphi_{1-3}$ gezeigt wurde, dass es polynomiellen Aufwand hat, ist der Aufwand $\varphi$ zu bilden auch polynomiell, da $n^2$ Variablen eingeführt wurden, wäre der Aufwand um eine Belegung zu finden $\mathcal{O}(n^2)$
+$\varphi(G)$ ist genau erfüllbar, wenn ein Hamilton Kreis in $G$ existiert. Da für $\varphi_{1-3}$ gezeigt wurde, dass es polynomiellen Aufwand hat, ist der Aufwand von $\varphi$ ebenfalls polynomiell, nämlich\\
+$\mathcal{O}(n^3) + \mathcal{O}(n^3) + \mathcal{O}(n^3) = \mathcal{O}(n^3)$.
+
+\end{tabular}
 \end{document}
 
 
