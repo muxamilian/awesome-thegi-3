@@ -169,13 +169,14 @@ endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
 \item[(ii)]
 Ist trivial.
 \end{enumerate}
+
 \subsection*{Aufgabe 3}
-In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. falls es eine Menge von Klausels eine P-Resolutionswiderlegung hat, ist die Klauselmenge unerfüllbar. Damit die P-Resolution vollständig ist, muss gezeigt werden, dass  es für jede unerfüllbare Klauselmenge eine P-Resolutionswiderlegung existiert. Dazu wird zuerst folgende Behauptung: \\
+In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. falls es eine Menge von Klausels eine P-Resolutionswiderlegung hat, so ist die Klauselmenge unerfüllbar. Damit die P-Resolution vollständig ist, muss gezeigt werden, dass für jede unerfüllbare Klauselmenge eine P-Resolutionswiderlegung existiert. Dazu wird zuerst folgende Behauptung aufgestellt: \\
 \ \\
 \textbf{Behauptung: } Sei $n \in \mathbb{N}$ und sei $\mathcal{C}$ eine unerfüllbare Klauselmenge in den Variablen $\{V_1,...,V_{n-1} \}$. Dann hat $\mathcal{C}$ eine Resolutionswiderlegung. 
 \begin{itemize}
 	\item[\textbf{IA:}] $n=1$. \\
-		In desem Fall ist $\mathcal{C}$ unerfüllbar und enthält keine Variablen. Also $\mathcal{C} := \{ \square \}$ und somit existiert eine Resolutionswiderlegung, bzw. das ganze ist schon eine Resolutionswiderlegung.
+		In diesem Fall ist $\mathcal{C}$ unerfüllbar und enthält keine Variablen. Also $\mathcal{C} := \{ \square \}$ und somit existiert eine Resolutionswiderlegung, bzw. das ganze ist schon eine Resolutionswiderlegung.
 	\item[\textbf{IS:}] $n \rightarrow n+1$ \\
 		Sei $\mathcal{C}$ eine unerfüllbare Klauselmenge in den Variablen $\{V_1,...,V_n \}$. Wir definieren
 		\begin{align*}
@@ -190,13 +191,13 @@ In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. fal
 		 \ \\
 		 Falls $(C_1,..., C_s)$ schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $C_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $\lnot V_n$ entstanden sind, d.h. $C_i \cup \{\lnot V_n \} \in \mathcal{C}$. \\
 		\ \\
-		Fügen wir zu diesen Klausel $\lnot V_n$ hinzu, gibt es in der normalen Resolution eine Ableitung $(C_1',...,C_s')$ von $\lnot V_n$ aus $\mathcal{C}$. Doch gibt es in der P-Resolution das Problem, das immer eine positive Klausel resolviert werden muss, und da wir negative Variablen zu den Klauseln hinzufügten ist $(C_1',...'C_s')$ unter Umständen keine gültige P-Resolution. \\
+		Fügen wir zu diesen Klausel $\lnot V_n$ hinzu, gibt es in der normalen Resolution eine Ableitung $(C_1',...,C_s')$ von $\lnot V_n$ aus $\mathcal{C}$. Doch es gibt in der P-Resolution das Problem, das immer eine positive Klausel resolviert werden muss, und da wir negative Variablen zu den Klauseln hinzufügten, ist $(C_1',...'C_s')$ unter Umständen keine gültige P-Resolution. \\
 		\ \\
 		Doch haben wir schon zuvor $\{V_n \}$ resolviert, wodurch alle Klauseln der Form $C_i \cup \{\lnot V_n \} \in \mathcal{C}$ wieder zu $C_i$ resolviert werden können. Diese Resolutionskette bezeichne als $(C'D'_1,...,C'D'_k)$. Nun sind die Resolutionsableitungen $(C_1,..., C_s)$ möglich, da alle Klauseln vorliegen. \\
 		\ \\
 		Damit wäre $(D_1',...,D'_t,C'D'_1,...,C'D'_k,C_1,...,C_s,\square)$ eine Resolutionswiderlegung von $\mathcal{C}$ 
 \end{itemize}
-Nun muss das ganze noch jede Klauselmengen $\mathcal{C}$ bewiesen werden. Sei dazu $\mathcal{C}$ eine unerfüllbare Klauselmenge
+Nun muss das ganze noch für jede Klauselmenge $\mathcal{C}$ bewiesen werden. Sei dazu $\mathcal{C}$ eine unerfüllbare Klauselmenge
 \begin{enumerate}
 	\item Ist $\mathcal{C}$ endlich, dann enthält sie nur endlich viele Variablen und der Beweis folgt sofort aus der Behauptung. 
 	\item Ist $\mathcal{C}$ unendlich, dann folgt aus dem Kompaktheitssatz, dass bereits eine endliche Teilmenge $\mathcal{C}'\subseteq \mathcal{C} $unerfüllbar ist. Also hat $\mathcal{C}'$ eine Resolutionswiderlegung. Diese ist aber auch eine Resolutionswiderlegung von $\mathcal{C}$.
