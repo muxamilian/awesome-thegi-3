@@ -1,0 +1,242 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+
+\newcommand{\tabspace}{15cm}
+
+\begin{document}
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 6} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+\subsection*{Aufgabe 1}
+\begin{enumerate}
+	\item[(i)]
+	\( h: V(G) \rightarrow V(H)\\
+	v_1 \mapsto w_1 \\
+	v_2 \mapsto w_2 \\
+	v_3 \mapsto w_1 \\
+	v_4 \mapsto w_3 \\
+	v_5 \mapsto w_2 \)
+
+	\item[(ii)]
+			Zu zeigen ist: \\
+			(i) Graph G ist 3-färbbar $\Rightarrow$ es existiert ein Homomorph. von G nach H \\
+			(ii) es existiert ein Homomorph. von G nach H $\Rightarrow$ Graph G ist 3-färbbar\\
+			\\
+			H ist 3-färbbar mit folgender Farbbelegung \\
+			c: V(H) $\rightarrow \{r,g,b\}$ \\
+			\( c(w_1) \mapsto r \\
+			c(w_2) \mapsto g \\
+			c(w_3) \mapsto b \)
+\begin{enumerate}
+	\item[(i)]
+		Da G 3-färbbar ist, gilt: \\
+		\( \exists c': V(G) \rightarrow $\{r,g,b\}$.~\text{c' ist eine 3-Färbung von G} \\
+		\\
+		\text{Daraus kann man nun folgenden Homomorphismus h bilden:} \\
+		\\
+		h: V(G) \rightarrow V(H) \\
+		h(v) \mapsto 
+		\begin{cases}
+		w_1, & c'(v) = r \\
+		w_2, & c'(v) = g \\
+		w_3, & c'(v) = b \\
+		\end{cases} \\
+		\\
+		\text{Beweis der Richtigkeit des gebildeten h:} \\
+		\text{Es muss gelten:} \\
+		\\
+		\forall \{u,v\} \in E(G).~\{h(u),h(v)\} \in E(H)\\
+		\\
+		\text{Da nach Annahme alle Knoten einer Kante aus G verschiedenfarbig sind, gilt:}\\
+		\\
+		(1)~\forall \{u,v\} \in E(G).~h(u) \neq h(v)\\
+		\\
+		\text{Des Weiteren gilt:}\\
+		\\
+		(2)~\forall~ u \in \{w_1,w_2,w_3\}.~\forall~ v \in \{w_1,w_2,w_3\} \setminus{ \{u\} }.~\{u,v\} \in E(H) \\
+		\\
+		\text{Aus (1) und (2) folgt:} \\
+		\\
+		\forall \{u,v\} \in E(G).~\{h(u),h(v)\} \in E(H) \)
+\item[(ii)]
+Da ein Homomorphismus h von G nach H existiert, gilt: \\
+\\
+\((*)~ \forall \{u,v\} \in E(G).~\{h(u),h(v)\} \in E(H)\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\text{Daraus kann man nun folgende 3-Färbung c' ableiten:} \\
+\\
+c': V(G) \rightarrow $\{r,g,b\}$ \\
+\\
+c'(v) \mapsto c(h(v)) \\
+\\
+\text{Beweis der Richtigkeit der 3-Färbung c':}\\
+\\
+\text{Es gilt:} \\
+\\
+(**)~\forall~ \{u,v\} \in E(G).~h(u) \neq h(v) \\
+\\
+\begin{tabular}{@{} p{\tabspace}}
+Würde dies nicht gelten, würde das bedeuten, dass $\{h(u),h(u)\} \in E(H)$ sein würde, da aber
+H irreflexiv ist, wäre das ein Widerspruch. 
+Aus (*) und (**) folgt:
+\end{tabular}\\
+\\
+\forall~ \{u,v\} \in E(G).~c(h(u)) \neq c(h(v)) 
+\Leftrightarrow
+\forall~ \{u,v\} \in E(G).~c'(u) \neq c'(v) \\
+\\
+\Rightarrow \text{c' ist eine passende 3-Färbung für G}
+\Rightarrow \text{G ist 3-färbbar}
+\)
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Aufgabe 2}
+\begin{tabular}{@{} p{\tabspace}}
+Zu zeigen ist:\\
+(i) Existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H, so 
+existiert auch ein Homomorphismus von G nach H.\\
+\\
+(ii) Existiert für G ein Homomorphismus von G nach H, so existieren für alle
+endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
+\end{tabular}
+
+\begin{enumerate}
+	\item[(i)]
+	Der Graph G = (V,E) wird folgendermaßen in einer Aussagenlogische Formel übersetzt:\\
+	Für jede Kante $\{u,v\} \in$ E(G) führen wir eine Variable $X_{u,v}$ ein.\\
+	\\
+	Sei h: V(G) $\rightarrow$ V(H) \\
+	\\
+	\( \Phi = \{\{X_{u,v} \rightarrow X_{h(u),h(v)}\} ~|~ \{u,v\} \in E(G) \} \\
+	\\
+	\text{Sei $\Phi_0 \subseteq \Phi$} \\
+	\\
+	E' = \{\{u,v\} ~|~ \{X_{u,v} \rightarrow X_{h(u),h(v)}\} \in \Phi_0 \} \\
+	V' = \{v ~|~ \{u,v\} \in E'\} \\
+	\\
+	\begin{tabular}{@{} p{\tabspace}}	
+	Da $\Phi_0$ eine endliche Teilmenge von $\Phi$ ist, muss auch E' und damit V' endlich sein.
+	Für den von V' endlichen induzierten Untergraphen G' von G existiert
+	nach Annahme ein Homomorphismus h': V(G') $\rightarrow$ V(H).
+	Daraus folgt, dass folgendes gilt:
+	\end{tabular} \\
+	\\
+	\forall~ \{u,v\} \in E'.~\{h'(u),h'(v)\} \in E(H) \\
+	\\
+	\text{Eine passende Belegung $\beta$ wäre somit Folgende:}\\
+	\\
+	\beta(X_{u,v}) = 1 \text{, wenn $\{u,v\} \in$ E' und } 
+	\beta(X_{h'(u),h'(v)}) = 1 \text{, wenn $\{h'(u),h'(v)\} \in$ E(H)} \)\\
+	\\
+	\begin{tabular}{@{} p{\tabspace}}
+	Aus der Erfüllbarkeit von $\Phi_0$, gilt nach dem Kompaktheitssatz, dass $\Phi$ auch erfüllbar ist.
+	Daraus folgt, dass ein Homomorphismus h: V(G) $\rightarrow$ V(H) existiert, wenn für alle Teilgraphen G'
+	ein Homomorphismus existiert.
+	\end{tabular}
+	
+	\item[(ii)]
+	Ist trivial.
+\end{enumerate}
+
+\subsection*{Aufgabe 3}
+\begin{tabular}{@{} p{\tabspace}}
+In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. falls es eine Menge von Klausels eine P-Resolutionswiderlegung hat, so ist die Klauselmenge unerfüllbar. Damit die P-Resolution vollständig ist, muss gezeigt werden, dass für jede unerfüllbare Klauselmenge eine P-Resolutionswiderlegung existiert. Dazu wird zuerst folgende Behauptung aufgestellt: \\
+\end{tabular}
+\ \\
+\textbf{Behauptung: } Sei $n \in \mathbb{N}$ und sei $\mathcal{C}$ eine unerfüllbare Klauselmenge in den Variablen $\{V_1,...,V_{n-1} \}$. Dann hat $\mathcal{C}$ eine Resolutionswiderlegung. 
+\begin{itemize}
+	\item[\textbf{IA:}] 
+		\begin{tabular}{@{} p{\tabspace}}
+		$n=1$. \\
+		In diesem Fall ist $\mathcal{C}$ unerfüllbar und enthält keine Variablen. Also $\mathcal{C} := \{ \square \}$ und somit existiert eine Resolutionswiderlegung, bzw. das ganze ist schon eine Resolutionswiderlegung.
+		\end{tabular}
+	\item[\textbf{IS:}] $n \rightarrow n+1$ \\
+	
+		Sei $\mathcal{C}$ eine unerfüllbare Klauselmenge in den Variablen $\{V_1,...,V_n \}$. Wir definieren
+		\begin{align*}
+			\mathcal{C}^+ &:= \{C \setminus \{ \lnot V_n  \}: C \in \mathcal{C} \land V_n \not \in C \} \\
+			\mathcal{C}^- &:= \{C \setminus \{V_n  \}: C \in \mathcal{C} \land \lnot V_n \not \in C \}
+		\end{align*}
+		
+		\begin{tabular}{@{} p{\tabspace}}
+		$\mathcal{C}^+$ und $\mathcal{C}^-$ sind beide unerfüllbar. Denn wäre z.B. $C^+$ erfüllbar, z.B. durch $\beta \vDash \mathcal{C}^+$, dann würde $\beta' := \beta \cup \{V_n \rightarrow 1 \}$ die Menge $\mathcal{C}$ erfüllen. \\
+		Nach Induktionsvorraussetzung gibt es Resolutionsableitungen $(C_1,...,C_s)$ und $(D_1,...,D_t)$ der leeren Klausel $C_s = D_t = \square$ aus $\mathcal{C}^+$ bzw. $\mathcal{C}^-$. \\
+		 \ \\
+		Falls  $(D_1,...,D_t)$  schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $D_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $V_n$ entstanden sind, d.h. $D_i \cup \{V_n \} \in \mathcal{C}$. \\
+		Fügen wir zu diesen Klauseln und allen Resolventen wieder $V_n$ hinzu, so erhalten wir eine Ableitung $(D_1',...,D_t')$ von $V_n$ aus $\mathcal{C}$. \\
+		 \ \\
+		 Falls $(C_1,..., C_s)$ schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $C_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $\lnot V_n$ entstanden sind, d.h. $C_i \cup \{\lnot V_n \} \in \mathcal{C}$. \\
+		\ \\
+		Fügen wir zu diesen Klausel $\lnot V_n$ hinzu, gibt es in der normalen Resolution eine Ableitung $(C_1',...,C_s')$ von $\lnot V_n$ aus $\mathcal{C}$. Doch es gibt in der P-Resolution das Problem, das immer eine positive Klausel resolviert werden muss, und da wir negative Variablen zu den Klauseln hinzufügten, ist $(C_1',...'C_s')$ unter Umständen keine gültige P-Resolution. \\
+		\ \\
+		Doch haben wir schon zuvor $\{V_n \}$ resolviert, wodurch alle Klauseln der Form $C_i \cup \{\lnot V_n \} \in \mathcal{C}$ wieder zu $C_i$ resolviert werden können. Diese Resolutionskette bezeichne als $(C'D'_1,...,C'D'_k)$. Nun sind die Resolutionsableitungen $(C_1,..., C_s)$ möglich, da alle Klauseln vorliegen. \\
+		\ \\
+		Damit wäre $(D_1',...,D'_t,C'D'_1,...,C'D'_k,C_1,...,C_s,\square)$ eine Resolutionswiderlegung von $\mathcal{C}$ 
+	\end{tabular}
+\end{itemize}
+
+\begin{tabular}{@{} p{\tabspace}}
+Nun muss das ganze noch für jede Klauselmenge $\mathcal{C}$ bewiesen werden. Sei dazu $\mathcal{C}$ eine unerfüllbare Klauselmenge
+\begin{enumerate}
+	\item Ist $\mathcal{C}$ endlich, dann enthält sie nur endlich viele Variablen und der Beweis folgt sofort aus der Behauptung. 
+	\item Ist $\mathcal{C}$ unendlich, dann folgt aus dem Kompaktheitssatz, dass bereits eine endliche Teilmenge $\mathcal{C}'\subseteq \mathcal{C} $unerfüllbar ist. Also hat $\mathcal{C}'$ eine Resolutionswiderlegung. Diese ist aber auch eine Resolutionswiderlegung von $\mathcal{C}$.	
+\end{enumerate}
+\end{tabular}
+
+\begin{center}\textbf{Hinweis: Grosse Teile des Beweises kommen aus den Vorlesungsfolien der VL TheGI3 von S. Kreutzer. }\end{center}
+\subsection*{Aufgabe 4}
+\begin{tabular}{@{} p{\tabspace}}
+Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die jeweils $n$ Indizes haben mit der Namensgebung $X_{i,j}$. Die Idee ist, dass diese $n \times n$ Matrix aus Variablen einen Pfad definiert, indem man jeweils genau eine Variable der $n$ Variablen mit 1 belegt, alle anderen mit 0. Nun würden die Variablen $X_{i,j}$ und $X_{i+1,k}$ für die Kante $\{j,k\}$ stehen. $\varphi$ muss folgendes leisten:
+\end{tabular}
+\begin{enumerate}
+	\item 	Jede Variable definiert genau einen Knoten.
+		\[\varphi_1 = \bigwedge_{0 \le i < n } ~\bigvee_{j \in {V(G)}} \left( X_{i,j} \land \left( \bigwedge_{k \in V(G)\setminus\{ j\}} ~ \lnot X_{i,k} \right) \right) \]
+		Jede Klausel hat die Grösse $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_1 \in \mathcal{O}(n^3)$
+	\item 	Jeder Knoten kommt genau einmal vor:
+		\[\varphi_2 = \bigwedge_{j \in {V(G)}} ~\bigvee_{0 \le i < n } \left( X_{i,j} \land \left( \bigwedge_{i' \in \{0,...,n-1 \}\setminus\{ i\}} ~ \lnot X_{i',j} \right) \right)\]
+		Jede Klausel hat die Grösse $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_2 \in \mathcal{O}(n^3)$
+	\item  	Die Kanten existieren und bilden einen geschlossenen Pfad:
+		\[\varphi_3 = X_{n-1,0}\bigwedge_{0 \le i <n}~ \bigvee_{\{k,l\} \in E(G)} X_{i,k} \land X_{i+1,l}  \]
+		Jede Klausel hat die Grösse $2$, es werden $n$ mal maximal $\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^3)$
+\end{enumerate}
+\begin{tabular}{@{} p{\tabspace}}
+$\varphi$ wird nun als Konjunktion des Ganzen definiert: \[\varphi(G) = \varphi_1 \land \varphi_2 \land \varphi_3 \] 
+$\varphi(G)$ ist genau erfüllbar, wenn ein Hamilton Kreis in $G$ existiert. Da für $\varphi_{1-3}$ gezeigt wurde, dass es polynomiellen Aufwand hat, ist der Aufwand von $\varphi$ ebenfalls polynomiell, nämlich\\
+$\mathcal{O}(n^3) + \mathcal{O}(n^3) + \mathcal{O}(n^3) = \mathcal{O}(n^3)$.
+
+\end{tabular}
+\end{document}
+
+
