@@ -215,7 +215,7 @@ Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die jeweils $n
 		\[\varphi_2 = \bigwedge_{j \in {V(G)}} ~\bigvee_{0 \le i < n } \left( X_{i,j} \land \left( \bigwedge_{i' \in \{0,...,n-1 \}\setminus\{ i\}} ~ \lnot X_{i',j} \right) \right)\]
 		Jede Klausel hat die Grösse $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_2 \in \mathcal{O}(n^3)$
 	\item  	Die Kanten existieren und bilden einen geschlossenen Pfad:
-		\[\varphi_3 = X_{n-1,0}\bigwedge_{0 \le i <n}~ \bigvee_{\{k,l\} \in E(G)} X_{i,k} \land X_{i+1,l}  \]
+		\[\varphi_3 = \bigvee_{j \in V(G)}X_{n,j}\bigwedge_{0 \le i <n}~ \bigvee_{\{k,l\} \in E(G)} X_{i,k} \land X_{i+1,l}  \]
 		Jede Klausel hat die Grösse $2$, es werden $n$ mal maximal $\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^3)$
 \end{enumerate}
 \begin{tabular}{@{} p{\tabspace}}
