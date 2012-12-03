@@ -98,7 +98,7 @@ Da ein Homomorphismus h von G nach H existiert, gilt: \\
 \\
 c': V(G) \rightarrow $\{r,g,b\}$ \\
 \\
-c'(v) \mapsto c(h(v)) \\
+v \mapsto h(v) \\
 \\
 \text{Beweis der Richtigkeit der 3-Färbung c':}\\
 \\
@@ -148,7 +148,7 @@ endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
 	\\
 	\begin{tabular}{@{} p{\tabspace}}	
 	Da $\Phi_0$ eine endliche Teilmenge von $\Phi$ ist, muss auch E' und damit V' endlich sein.
-	Für den von V' endlichen induzierten Untergraphen G' von G existiert
+	Für den von V' induzierten endlichen Untergraphen G' von G existiert
 	nach Annahme ein Homomorphismus h': V(G') $\rightarrow$ V(H).
 	Daraus folgt, dass folgendes gilt:
 	\end{tabular} \\
@@ -161,7 +161,7 @@ endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
 	\beta(X_{h'(u),h'(v)}) = 1 \text{, wenn $\{h'(u),h'(v)\} \in$ E(H)} \)\\
 	\\
 	\begin{tabular}{@{} p{\tabspace}}
-	Aus der Erfüllbarkeit von $\Phi_0$, gilt nach dem Kompaktheitssatz, dass $\Phi$ auch erfüllbar ist.
+	Aus der Erfüllbarkeit von jedem beliebigen $\Phi_0$ folgt nach dem Kompaktheitssatz, dass $\Phi$ auch erfüllbar ist.
 	Daraus folgt, dass ein Homomorphismus h: V(G) $\rightarrow$ V(H) existiert, wenn für alle Teilgraphen G'
 	ein Homomorphismus existiert.
 	\end{tabular}
@@ -179,27 +179,27 @@ In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. fal
 \begin{itemize}
 	\item[\textbf{IA:}] 
 		\begin{tabular}{@{} p{\tabspace}}
-		$n=1$. \\
+		$n=0$. \\
 		In diesem Fall ist $\mathcal{C}$ unerfüllbar und enthält keine Variablen. Also $\mathcal{C} := \{ \square \}$ und somit existiert eine Resolutionswiderlegung, bzw. das ganze ist schon eine Resolutionswiderlegung.
 		\end{tabular}
 	\item[\textbf{IS:}] $n \rightarrow n+1$ \\
 	
 		Sei $\mathcal{C}$ eine unerfüllbare Klauselmenge in den Variablen $\{V_1,...,V_n \}$. Wir definieren
 		\begin{align*}
-			\mathcal{C}^+ &:= \{C \setminus \{ \lnot V_n  \}: C \in \mathcal{C} \land V_n \not \in C \} \\
-			\mathcal{C}^- &:= \{C \setminus \{V_n  \}: C \in \mathcal{C} \land \lnot V_n \not \in C \}
+			\mathcal{C}^+ &:= \{C \setminus \{ \lnot V_n  \} \mid C \in \mathcal{C} \land V_n \not \in C \} \\
+			\mathcal{C}^- &:= \{C \setminus \{V_n  \} \mid C \in \mathcal{C} \land \lnot V_n \not \in C \}
 		\end{align*}
 		
 		\begin{tabular}{@{} p{\tabspace}}
-		$\mathcal{C}^+$ und $\mathcal{C}^-$ sind beide unerfüllbar. Denn wäre z.B. $C^+$ erfüllbar, z.B. durch $\beta \vDash \mathcal{C}^+$, dann würde $\beta' := \beta \cup \{V_n \rightarrow 1 \}$ die Menge $\mathcal{C}$ erfüllen. \\
+		$\mathcal{C}^+$ und $\mathcal{C}^-$ sind beide unerfüllbar. Denn wäre z.B. $\mathcal{C}^+$ erfüllbar, z.B. durch $\beta \vDash \mathcal{C}^+$, dann würde $\beta' := \beta \cup \{V_n \rightarrow 1 \}$ die Menge $\mathcal{C}$ erfüllen. \\
 		Nach Induktionsvorraussetzung gibt es Resolutionsableitungen $(C_1,...,C_s)$ und $(D_1,...,D_t)$ der leeren Klausel $C_s = D_t = \square$ aus $\mathcal{C}^+$ bzw. $\mathcal{C}^-$. \\
 		 \ \\
 		Falls  $(D_1,...,D_t)$  schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $D_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $V_n$ entstanden sind, d.h. $D_i \cup \{V_n \} \in \mathcal{C}$. \\
 		Fügen wir zu diesen Klauseln und allen Resolventen wieder $V_n$ hinzu, so erhalten wir eine Ableitung $(D_1',...,D_t')$ von $V_n$ aus $\mathcal{C}$. \\
 		 \ \\
 		 Falls $(C_1,..., C_s)$ schon eine Ableitung von $\square$ aus $\mathcal{C}$ ist, sind wir fertig. Andernfalls werden Klauseln $C_i$ benutzt, die aus $\mathcal{C}$ durch Entfernen von $\lnot V_n$ entstanden sind, d.h. $C_i \cup \{\lnot V_n \} \in \mathcal{C}$. \\
-		\ \\
-		Fügen wir zu diesen Klausel $\lnot V_n$ hinzu, gibt es in der normalen Resolution eine Ableitung $(C_1',...,C_s')$ von $\lnot V_n$ aus $\mathcal{C}$. Doch es gibt in der P-Resolution das Problem, das immer eine positive Klausel resolviert werden muss, und da wir negative Variablen zu den Klauseln hinzufügten, ist $(C_1',...'C_s')$ unter Umständen keine gültige P-Resolution. \\
+		Fügen wir zu diesen Klausel $\lnot V_n$ hinzu, gibt es in der normalen Resolution eine Ableitung $(C_1',...,C_s')$ von $\lnot V_n$ aus $\mathcal{C}$. 
+		\ \\Doch es gibt in der P-Resolution das Problem, dass immer eine positive Klausel resolviert werden muss, und da wir negative Variablen zu den Klauseln hinzufügten, ist $(C_1',...C_s')$ unter Umständen keine gültige P-Resolution. \\
 		\ \\
 		Doch haben wir schon zuvor $\{V_n \}$ resolviert, wodurch alle Klauseln der Form $C_i \cup \{\lnot V_n \} \in \mathcal{C}$ wieder zu $C_i$ resolviert werden können. Diese Resolutionskette bezeichne als $(C'D'_1,...,C'D'_k)$. Nun sind die Resolutionsableitungen $(C_1,..., C_s)$ möglich, da alle Klauseln vorliegen. \\
 		\ \\
@@ -215,21 +215,21 @@ Nun muss das ganze noch für jede Klauselmenge $\mathcal{C}$ bewiesen werden. Se
 \end{enumerate}
 \end{tabular}
 
-\begin{center}\textbf{Hinweis: Grosse Teile des Beweises kommen aus den Vorlesungsfolien der VL TheGI3 von S. Kreutzer. }\end{center}
+\textbf{Hinweis: Große Teile des Beweises kommen aus den Vorlesungsfolien der VL TheGI3 von S. Kreutzer. }
 \subsection*{Aufgabe 4}
 \begin{tabular}{@{} p{\tabspace}}
-Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die jeweils $n$ Indizes haben mit der Namensgebung $X_{i,j}$. Die Idee ist, dass diese $n \times n$ Matrix aus Variablen einen Pfad definiert, indem man jeweils genau eine Variable der $n$ Variablen mit 1 belegt, alle anderen mit 0. Nun würden die Variablen $X_{i,j}$ und $X_{i+1,k}$ für die Kante $\{j,k\}$ stehen. $\varphi$ muss folgendes leisten:
+Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die jeweils 2 Indizes haben mit der Namensgebung $X_{i,j}$, wobei $1\le i\le j\le n$ . Die Idee ist, dass diese $n \times n$ Matrix aus Variablen einen Pfad definiert, indem man jeweils genau eine Variable der $n$ Variablen mit 1 belegt, alle anderen mit 0. Nun würden die Variablen $X_{i,j}$ und $X_{i+1,k}$ für die Kante $\{j,k\}$ stehen. $\varphi$ muss folgendes leisten:
 \end{tabular}
 \begin{enumerate}
 	\item 	Jede Variable definiert genau einen Knoten.
 		\[\varphi_1 = \bigwedge_{0 \le i < n } ~\bigvee_{j \in {V(G)}} \left( X_{i,j} \land \left( \bigwedge_{k \in V(G)\setminus\{ j\}} ~ \lnot X_{i,k} \right) \right) \]
-		Jede Klausel hat die Grösse $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_1 \in \mathcal{O}(n^3)$
+		Jede Klausel hat die Größe $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_1 \in \mathcal{O}(n^3)$
 	\item 	Jeder Knoten kommt genau einmal vor:
 		\[\varphi_2 = \bigwedge_{j \in {V(G)}} ~\bigvee_{0 \le i < n } \left( X_{i,j} \land \left( \bigwedge_{i' \in \{0,...,n-1 \}\setminus\{ i\}} ~ \lnot X_{i',j} \right) \right)\]
-		Jede Klausel hat die Grösse $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_2 \in \mathcal{O}(n^3)$
+		Jede Klausel hat die Größe $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_2 \in \mathcal{O}(n^3)$
 	\item  	Die Kanten existieren und bilden einen geschlossenen Pfad:
 		\[\varphi_3 = X_{n-1,0}\bigwedge_{0 \le i <n}~ \bigvee_{\{k,l\} \in E(G)} X_{i,k} \land X_{i+1,l}  \]
-		Jede Klausel hat die Grösse $2$, es werden $n$ mal maximal $\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^3)$
+		Jede Klausel hat die Größe $2$, es werden $n$ mal maximal $\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^3)$
 \end{enumerate}
 \begin{tabular}{@{} p{\tabspace}}
 $\varphi$ wird nun als Konjunktion des Ganzen definiert: \[\varphi(G) = \varphi_1 \land \varphi_2 \land \varphi_3 \] 
