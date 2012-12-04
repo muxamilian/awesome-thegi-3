@@ -227,16 +227,16 @@ Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die Indizes ha
 	\item 	Jeder Knoten kommt genau einmal vor:
 		\[\varphi_2 = \bigwedge_{j \in {V(G)}} ~\bigvee_{0 \le i < n } \left( X_{i,j} \land \left( \bigwedge_{i' \in \{0,...,n-1 \}\setminus\{ i\}} ~ \lnot X_{i',j} \right) \right)\]
 		Jede Klausel hat die Größe $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_2 \in \mathcal{O}(n^3)$
-	\item  	Die Kanten existieren und bilden einen geschlossenen Pfad:
+	\item  	Die Kanten existieren und bilden von jeglichem Startpunkt einen geschlossenen Pfad:
 
-		\[\varphi_3 = \bigwedge_{1 \le i <n}~ \left(\bigvee_{\{k,l\} \in E(G)} X_{i,k} \land X_{i+1,l} \right) \land \bigvee_{\{k,l\} \in E(G)} X_{0,k} \land X_{n,l}\]
-		Jede Klausel hat die Größe $2$, es werden $n$ mal maximal $\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^3)$
+		\[\varphi_3 = \bigwedge_{0 \le m < n}\bigwedge_{0 \le i <n}~ \left(\bigvee_{\{k,l\} \in E(G)} X_{(i+m)\text{mod}~n,k} \land X_{((i+m)\text{mod}~n)+1,l} \right) \]
+		Jede Klausel hat die Größe $2$, es werden $n^2$ mal maximal $\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^4)$
 
 \end{enumerate}
 \begin{tabular}{@{} p{\tabspace}}
 $\varphi$ wird nun als Konjunktion des Ganzen definiert: \[\varphi(G) = \varphi_1 \land \varphi_2 \land \varphi_3 \] 
 $\varphi(G)$ ist genau erfüllbar, wenn ein Hamilton Kreis in $G$ existiert. Da für $\varphi_{1-3}$ gezeigt wurde, dass es polynomiellen Aufwand hat, ist der Aufwand von $\varphi$ ebenfalls polynomiell, nämlich\\
-$\mathcal{O}(n^3) + \mathcal{O}(n^3) + \mathcal{O}(n^3) = \mathcal{O}(n^3)$.
+$\mathcal{O}(n^3) + \mathcal{O}(n^3) + \mathcal{O}(n^4) = \mathcal{O}(n^4)$.
 
 \end{tabular}
 \end{document}
