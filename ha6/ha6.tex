@@ -32,7 +32,7 @@ Tom Nick \hspace{2cm}\= - 340528\\
 Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
-\subsection*{Aufgabe 1}
+\section*{Aufgabe 1}
 \begin{enumerate}
 	\item[(i)]
 	\( h: V(G) \rightarrow V(H)\\
@@ -122,7 +122,7 @@ Aus (*) und (**) folgt:
 \end{enumerate}
 \end{enumerate}
 
-\subsection*{Aufgabe 2}
+\section*{Aufgabe 2}
 \begin{tabular}{@{} p{\tabspace}}
 Zu zeigen ist:\\
 (i) Existieren für alle endlichen Teilgraphen G' von G Homomorphismen von G' nach H, so 
@@ -170,7 +170,7 @@ endlichen Teilgraphen G' von G Homomorphismen von G' nach H.
 	Ist trivial.
 \end{enumerate}
 
-\subsection*{Aufgabe 3}
+\section*{Aufgabe 3}
 \begin{tabular}{@{} p{\tabspace}}
 In der Hausaufgabe 4 wurde bewiesen, dass die P-Resolution korrekt ist, d.h. falls es eine Menge von Klausels eine P-Resolutionswiderlegung hat, so ist die Klauselmenge unerfüllbar. Damit die P-Resolution vollständig ist, muss gezeigt werden, dass für jede unerfüllbare Klauselmenge eine P-Resolutionswiderlegung existiert. Dazu wird zuerst folgende Behauptung aufgestellt: \\
 \end{tabular}
@@ -216,7 +216,7 @@ Nun muss das ganze noch für jede Klauselmenge $\mathcal{C}$ bewiesen werden. Se
 \end{tabular}
 
 \textbf{Hinweis: Große Teile des Beweises kommen aus den Vorlesungsfolien der VL TheGI3 von S. Kreutzer. }
-\subsection*{Aufgabe 4}
+\section*{Aufgabe 4}
 \begin{tabular}{@{} p{\tabspace}}
 Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die Indizes haben mit der Namensgebung $X_{i,j}$. Die Idee ist, dass diese $n \times n$ Matrix aus Variablen einen Pfad definiert, indem man jeweils genau eine Variable der $n$ Variablen mit 1 belegt, alle anderen mit 0. Nun würden die Variablen $X_{i,j}$ und $X_{i+1,k}$ für die Kante $\{j,k\}$ stehen. $\varphi$ muss folgendes leisten:
 \end{tabular}
@@ -239,6 +239,25 @@ $\varphi(G)$ ist genau erfüllbar, wenn ein Hamilton Kreis in $G$ existiert. Da 
 $\mathcal{O}(n^3) + \mathcal{O}(n^3) + \mathcal{O}(n^4) = \mathcal{O}(n^4)$.
 
 \end{tabular}
+%Zuerst führen wir Variablen $V_i$ für jeden Knoten ein. Außerdem führen wir die Variable $X_{i,j}$ für eine Kante $\{i,j\}$ ein. Für jedes $X_{i,j}$ führen wir $X_{j,i}$ ein. Alle diese Variablen werden in ein $2|E|$-Tupel namens T gesteckt, wobei die Reihenfolge egal ist.
+%
+%\begin{verbatim}
+%len = |E|
+%for i in range(0,len-1):
+%    var = T[i]
+%    var_after_var = T[i+1]
+%    second_index = var[1] # gets the second index of the variable
+%    for j in range(j,2*len):
+%        looked_for_var = T[j]
+%        first_index = looked_for_var[0]
+%        if(second_index == first_index):
+%            swap(var_after_var, looked_for_var)
+%            break
+%T = T[:len-1] # take the first len-1 elements (because the one that links
+%              # the last and the first must be added separately
+%\end{verbatim}
+%Nun stellen wir die folgende Formel $\varphi$ auf mit dem sortierten T, das der Algorithmus zurückgegeben hat:
+%$$ \varphi = \left(\bigwedge_{v \in T} v\right) \land \left(\bigwedge_{1\le i < j \le |E|} X_{i,j} \leftrightarrow X_{j,i}\right) \land X_{T[n-1],T[0]} \land \left(\bigwedge_{\right)$$
 \end{document}
 
 
