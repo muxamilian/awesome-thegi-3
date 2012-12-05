@@ -216,27 +216,28 @@ Nun muss das ganze noch für jede Klauselmenge $\mathcal{C}$ bewiesen werden. Se
 \end{tabular}
 
 \textbf{Hinweis: Große Teile des Beweises kommen aus den Vorlesungsfolien der VL TheGI3 von S. Kreutzer. }
+\newpage
 \section*{Aufgabe 4}
 \begin{tabular}{@{} p{\tabspace}}
-Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die Indizes haben mit der Namensgebung $X_{i,j}$. Die Idee ist, dass diese $n \times n$ Matrix aus Variablen einen Pfad definiert, indem man jeweils genau eine Variable der $n$ Variablen mit 1 belegt, alle anderen mit 0. Nun würden die Variablen $X_{i,j}$ und $X_{i+1,k}$ für die Kante $\{j,k\}$ stehen. $\varphi$ muss folgendes leisten:
+Wir definieren $n = |V(G)|$. Es werden $n$ Variablen eingeführt, die Indizes haben mit die Namensgebung $X_{i,j}$, wobei $1 \le i \le n $ und $j$ ein Knoten aus V(G) ist. Die Idee ist, dass diese $n \times n$ Matrix aus Variablen eine Permutation der Knoten definiert, indem die Matrix in jeder Zeile und Spalte genau 1 hat. Man muss nun 1. und 2. prüfen ob es eine gültige Permutation ist und 3. ob diese Permutation ein Hamilton Kreis darstellt.
 \end{tabular}
 \begin{enumerate}
 	\item 	Jede Variable definiert genau einen Knoten.
-		\[\varphi_1 = \bigwedge_{0 \le i < n } ~\bigvee_{j \in {V(G)}} \left( X_{i,j} \land \left( \bigwedge_{k \in V(G)\setminus\{ j\}} ~ \lnot X_{i,k} \right) \right) \]
+		\[\varphi_1 = \bigwedge_{1 \le i \le n } ~\bigvee_{j \in {V(G)}} \left( X_{i,j} \land \left( \bigwedge_{k \in V(G)\setminus\{ j\}} ~ \lnot X_{i,k} \right) \right) \]
 		Jede Klausel hat die Größe $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_1 \in \mathcal{O}(n^3)$
 	\item 	Jeder Knoten kommt genau einmal vor:
-		\[\varphi_2 = \bigwedge_{j \in {V(G)}} ~\bigvee_{0 \le i < n } \left( X_{i,j} \land \left( \bigwedge_{i' \in \{0,...,n-1 \}\setminus\{ i\}} ~ \lnot X_{i',j} \right) \right)\]
+		\[\varphi_2 = \bigwedge_{j \in {V(G)}} ~\bigvee_{1 \le i \le n} \left( X_{i,j} \land \left( \bigwedge_{i' \in \{1,...,n\}\setminus\{ i\}} ~ \lnot X_{i',j} \right) \right) \]
 		Jede Klausel hat die Größe $n$, es werden $n$ mal $n$ Klauseln gebildet $\Rightarrow \varphi_2 \in \mathcal{O}(n^3)$
-	\item  	Die Kanten existieren und bilden von jeglichem Startpunkt einen geschlossenen Pfad:
+	\item  	Die Kanten existieren und bilden einen geschlossenen Pfad.
 
-		\[\varphi_3 = \bigwedge_{0 \le m < n}\bigwedge_{0 \le i <n}~ \left(\bigvee_{\{k,l\} \in E(G)} X_{(i+m)\text{mod}~n,k} \land X_{((i+m)\text{mod}~n)+1,l} \right) \]
-		Jede Klausel hat die Größe $2$, es werden $n^2$ mal maximal $\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^4)$
+		\[\varphi_3 = \bigwedge_{1 \le i \le n}~ \left(\bigvee_{\{k,l\} \in E(G)} X_{i,k} \land X_{(i+1,l)} \right) \land \bigvee_{\{k,l\} \in E(G) } X_{1,k} \land X_{n,l}\]
+		Jede Klausel hat die Größe $2$, es werden $n$ mal maximal $2\binom{n}{2}$ Klauseln gebildet $\Rightarrow \varphi_3 \in \mathcal{O}(n^3)$.
 
 \end{enumerate}
 \begin{tabular}{@{} p{\tabspace}}
 $\varphi$ wird nun als Konjunktion des Ganzen definiert: \[\varphi(G) = \varphi_1 \land \varphi_2 \land \varphi_3 \] 
 $\varphi(G)$ ist genau erfüllbar, wenn ein Hamilton Kreis in $G$ existiert. Da für $\varphi_{1-3}$ gezeigt wurde, dass es polynomiellen Aufwand hat, ist der Aufwand von $\varphi$ ebenfalls polynomiell, nämlich\\
-$\mathcal{O}(n^3) + \mathcal{O}(n^3) + \mathcal{O}(n^4) = \mathcal{O}(n^4)$.
+$\mathcal{O}(n^3) + \mathcal{O}(n^3) + \mathcal{O}(n^3) = \mathcal{O}(n^3)$.
 
 \end{tabular}
 %Zuerst führen wir Variablen $V_i$ für jeden Knoten ein. Außerdem führen wir die Variable $X_{i,j}$ für eine Kante $\{i,j\}$ ein. Für jedes $X_{i,j}$ führen wir $X_{j,i}$ ein. Alle diese Variablen werden in ein $2|E|$-Tupel namens T gesteckt, wobei die Reihenfolge egal ist.
