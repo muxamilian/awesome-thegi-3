@@ -20,6 +20,8 @@ left=1.8cm, right=1.8cm,
 top=2.0cm, bottom=2.0cm]{geometry}
 \usepackage{tabularx}
 
+\newcommand{\rf}{\right\rfloor}
+\newcommand{\lf}{\left\lfloor}
 \newcommand{\tabspace}{15cm}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -65,21 +67,21 @@ Sei $n_1,n_2 \in \N$:\\
 Somit ist h ein gültiger Homomorphismus von $\N$ nach $\Z$.
 
 \item[(i)]
+\begin{tabular}{@{} p{\tabspace}}
 Angenommen es gäbe besagten Homomorphismus. Nach der Definition des Homomorphismus, müssen die Konstantensymbole wieder auf sich abgebildet werden.
 Somit gilt:
-
+\end{tabular} \\
+\\
 $h(0^{\mathcal{Z}}) = 0^{\mathcal{N}} = 0 $ \\
 $h(1^{\mathcal{Z}}) = 1^{\mathcal{N}} = 1 $ \\
-
-Außerdem gilt: 
-
-\begin{align*}
-&h(\cdot^{\mathcal{Z}}(-1,-1)) = h(1) \overset{Def. Hom.}{=} 1 = \cdot^{\mathcal{N}}(h(-1),h(-1))\\
-&\Rightarrow -1 \mapsto 1\\
 \\
-&h(+^{\mathcal{Z}}(-1,1)) = h(0) = 0 \neq 2 = +^{\mathcal{N}}(1,1) = +^{\mathcal{N}}(h(-1),h(1))
-\end{align*}
-
+Außerdem gilt: \\
+\\
+\( h(\cdot^{\mathcal{Z}}(-1,-1)) = h(1) \overset{Def. Hom.}{=} 1 = \cdot^{\mathcal{N}}(h(-1),h(-1))\\
+\Rightarrow -1 \mapsto 1\\
+\\
+h(+^{\mathcal{Z}}(-1,1)) = h(0) = 0 \neq 2 = +^{\mathcal{N}}(1,1) = +^{\mathcal{N}}(h(-1),h(1)) \) \\
+\\
 Somit entsteht unweigerlich ein Widerspruch, wenn es einen Homomorphismus von $\mathbb{Z}$ nach $\mathbb{N}$ gäbe.
 
 \end{enumerate}
@@ -135,7 +137,7 @@ $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ induziert.
 \\
 \( \mathcal{N} = (\N, <^{\N}) \\
 \\
-n_1 <^{\mathcal{N}} n_2 \text{~~~~~gdw. ($n_1$ mod 2 $< n_2$ mod 2) oder ($n_1 = n_2$ und $n_1 < n_2$)} \\
+n_1 <^{\mathcal{N}} n_2 \text{~~~~~gdw. ($n_1$ mod 2 $< n_2$ mod 2) $\vee$ (($n_1 \text{ mod  } 2 = n_2 \text{ mod  } 2) \wedge n_1 < n_2$)} \\
 \\
 \text{Damit $\mathcal{N}$ und $\mathcal{M}$ isomorph sind, muss es einen Isomorphismus zwischen $\{0,1\} \times \N$ und} \\
 \text{$\N$ geben.} \\
@@ -179,9 +181,29 @@ b ist auch injektiv, da Folgendes gilt: \\
 \\
 Seien $n_1,n_2 \in \N$ mit $n_1 \neq n_2$: \\
 \\
-b($n_1$) = ($n_1$ mod 2, $n_1$) $\neq$ ($n_2$ mod 2, $n_2$) = b($n_2$) \\
+\textbf{Fall 1}~ $n_1$ mod 2 $\neq n_2$ mod 2: \\
 \\
-gilt wegen $n_1 \neq n_2$.\\
+b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$)\\
+\\
+\textbf{Fall 2}~ $n_1 + 2 \leq n_2$: \\
+\\
+$\lf \frac{n_1}{2} \rf < \lf \frac{n_1 + 2}{2} \rf = \lf \frac{n_1}{2} + 1 \rf \leq \frac{n_2}{2}$ \\  
+$\Rightarrow$ b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$) \\
+\\
+\textbf{Fall 3}~ $n_2 + 2 \leq n_1$: \\
+\\
+analog zu Fall 2. \\
+\\
+\textbf{Fall 4}~ $n_1 + 1 = n_2$ oder $n_2 + 1 = n_1$: \\
+\\
+Nach Annahme muss $n_1$ eine gerade und $n_2$ eine ungerade Zahl sein oder \\
+umgekehrt. Daraus folgt:\\
+\\
+$n_1$ mod 2 $\neq n_2$ mod 2 $\Rightarrow$ 
+b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$)\\
+\\
+Daraus folgt, dass b($n_1$) $\neq$ b($n_2$) und damit die Injektivität von b.
+\\
 \\
 Die Inverse von b: \\
 \\
@@ -214,19 +236,20 @@ Seien $(k_1,n_1),(k_2,n_2) \in \{0,1\} \times \N$ mit $(k_1,n_1) \neq (k_2,n_2)$
 Die Inverse $b^{-1}$ ist also injektiv. \\
 b ist damit eine Bijektion. \\
 \\
+\\
+\\
+\\
 \textbf{Beweis für (ii):} \\
 \\
 2-stelliges Relationssymbol $<$: \\
 \\
 \( \forall a_1 \forall a_2~ ((a_1,a_2) \in <^{N} \\
-\Leftrightarrow (a_1 \text{ mod } 2 < a_2 \text{ mod } 2) \vee (a_1 = a_2 \wedge a_1 < a_2) \\
+\Leftrightarrow (a_1 \text{ mod } 2 < a_2 \text{ mod } 2) \vee ((a_1 \text{ mod } 2 = a_2 \text{ mod } 2) \wedge a_1 < a_2) \\
 \Leftrightarrow (b(a_1),b(a_2)) \in <^{M}) \) \\
 \\
 \textbf{Beweis für (iii):} \\
 \\
 Es gibt keine Funktionssymbole aus $\sigma$, also ist hier nichts zu beweisen. \\
-\\
-\\
 \\
 \textbf{Beweis für (iv):} \\
 \\
