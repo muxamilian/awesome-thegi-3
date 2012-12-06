@@ -1,0 +1,216 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+
+\newcommand{\tabspace}{15cm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 6} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+\subsection*{Aufgabe 1}
+trivial ;)
+
+\subsection*{Aufgabe 2}
+\begin{enumerate}
+\item[(i)]
+\textbf{Homomorphismus:} \\
+\\
+\( h: \N \rightarrow \Z \\
+n \mapsto n \) \\
+\\
+\textbf{Beweis für Richtigkeit des Homomorphismus:} \\
+\\
+Konstanten:\\
+\\
+\( h(0^{\mathcal{N}}) = 0^{\mathcal{N}} = 0 \\
+h(1^{\mathcal{N}}) = 1^{\mathcal{N}} = 1 \) \\
+\\
+Operatoren: \\
+\\
+Sei $n_1,n_2 \in \N$:\\
+\\
+\( h(+^{\mathcal{N}} (n_1,n_2)) = h(n_1 + n_2) = n_1 + n_2 
+= h(n_1) + h(n_2) = +^{\mathcal{Z}} (h(n_1),h(n_2)) \\
+\\
+ h(\cdot^{\mathcal{N}} (n_1,n_2)) = h(n_1 \cdot n_2) = n_1 \cdot n_2 
+= h(n_1) \cdot h(n_2) = \cdot^{\mathcal{Z}} (h(n_1),h(n_2)) \) \\
+\\
+Somit ist h ein gültiger Homomorphismus von $\N$ nach $\Z$.
+
+\item[(i)] ~\\
+\begin{tabular}{@{} p{\tabspace}}
+Nach der Definition des Homomorphismus, müssen die Konstantensymbole wieder auf sich abgebildet werden.
+Somit gilt: \\
+\\
+$h(0^{\mathcal{N}}) = 0^{\mathcal{Z}} = 0 $ \\
+$h(1^{\mathcal{N}}) = 1^{\mathcal{Z}} = 1 $ \\
+\\
+Des Weiteren gilt nach der Def. des Homomorphismus: \\
+\\
+$h(+^N(z_1,z_2)) = +^Z(h(z_1),h(z_2))$ mit $z_1,z_2 \in \Z$\\
+\\
+Da h(1) = 1 gilt, muss auch folgendes gelten:\\
+\\
+$h(+^N(1,1)) = +^Z(h(1),h(1))$\\
+$\Rightarrow h(2) = +^Z(1,1) = 2$ \\
+\\
+Ebenso gilt:\\
+\\
+$h(+^N(1,2)) = +^Z(h(1),h(2))$\\
+$\Rightarrow h(3) = +^Z(1,2) = 3$ \\
+\\
+Das kann man jetzt für alle Zahlen von 0 bis $\infty$ fortführen, sodass jedes n $\in \mathbb{Z}$ mit $n \geq 0$ 
+auf $n$ abgebildet wird. 
+Folglich bleiben aber keine Zahlen mehr "übrig", auf die die negativen Zahlen aus $\mathbb{Z}$ abgebildet werden könnten.
+Ein Homomorphismus ist also nicht möglich von $\mathbb{Z}$ nach $\mathbb{N}$. 
+\end{tabular} \\
+\end{enumerate}
+
+\subsection*{Aufgabe 3}
+Damit $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ gilt, müssen folgende Bedingungen erfüllt sein: \\
+\\
+\begin{enumerate}
+\item[(i)]
+Das Bild von h(A) $\subseteq$ B 
+
+\item[(ii)]
+Für alle Operatoren $op^\mathfrak{B}_{h(A)}$ der Substruktur $\mathfrak{B}_{h(A)}$, muss gelten, \\
+dass sie abgeschlossen bzgl. des Bildes von h(A) sind.
+
+\end{enumerate}
+
+\textbf{Beweis für (i):} \\
+\\
+Der Homomorphismus h ist als Funktion folgendermaßen definiert: \\
+\\
+h: A $\rightarrow$ B \\
+\\
+Daraus folgt sofort, dass h(A) $\subseteq$ B ist. \\
+\\
+\textbf{Beweis für (ii): }\\
+\\
+Da h ein Homomorphismus von A  nach B ist, muss gelten mit n als Stelligkeit des Operators: \\
+\\
+\( (*)~ \forall a_1~ \forall a_2 ... \forall a_n~ h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) 
+= op^{\mathfrak{B}}(h(a_1),h(a_2),...,h(a_n)) 
+= op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n))\) \\
+\\
+Wären die Operatoren nicht abgeschlossen bzgl. des Bildes von h, dann würde folgendes gelten: \\
+\\
+$\exists a_1~ \exists a_2 ... \exists a_n~ (op^\mathfrak{B}_{h(A)} (h(a_1),h(a_2),...,h(a_n))) \notin$ h(A) \\
+\\
+Nach (*) gilt aber: \\
+\\
+$\forall a_1~ \forall a_2 ... \forall a_n~ 
+(h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) = op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n)) )$ mit\\
+\\
+$h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) \in h(A) \Leftrightarrow op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n)) \in h(A)$ \\
+\\
+was ein Widerspruch zur Annahme darstellt.\\
+Folglich müssen die Operatoren abgeschlossen sein. \\
+\\
+Da (i) und (ii) gilt, induziert das Bild h(A) in $\mathfrak{B}$ ein Substruktur $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$
+
+
+\subsection*{Aufgabe 4}
+\textbf{Struktur:} \\
+\\
+\( \mathcal{N} = (\N, <^{\N}) \\
+\\
+n_1 <^{\mathcal{N}} n_2 \text{~~~~~gdw. ($n_1$ mod 2 $< n_2$ mod 2) oder ($n_1 = n_2$ und $n_1 < n_2$)} \\
+\\
+\text{Damit $\mathcal{N}$ und $\mathcal{M}$ isomorph sind, muss es eine Bijektion zwischen $\{0,1\} \times \N$ und} \\
+\text{$\N$ geben.} \\
+\\
+\textbf{Isomorphismus:} \\
+\\
+b: \N \rightarrow \{0,1\} \times \N \\
+\\
+n \rightarrow (n \text{ mod } 2, \left\lfloor \frac{n}{2} \right\rfloor) \) \\
+\\
+\textbf{Beweis der Richtigkeit von b:} \\
+\\
+Damit b eine Bijektion ist, muss b und seine Inverse die Eigenschaften einer Funktion erfüllen, \\
+nämlich Linkstotalität und Injektivität. \\
+\\
+b ist offensichtlich linkstotal.\\
+b ist auch injektiv, da Folgendes gilt: \\
+\\
+Seien $n_1,n_2 \in \N$ mit $n_1 \neq n_2$: \\
+\\
+b($n_1$) = ($n_1$ mod 2, $n_1$) $\neq$ ($n_2$ mod 2, $n_2$) = b($n_2$) \\
+\\
+gilt wegen $n_1 \neq n_2$.\\
+\\
+Die Inverse von b: \\
+\\
+\( b^{-1}: \{0,1\} \times \N \rightarrow \N \\
+\\
+(k, n) \rightarrow 
+\begin{cases}
+2 \cdot n, & k = 0 \\
+2 \cdot n + 1, & sonst
+\end{cases} \) \\
+\\
+$b^{-1}$ ist offensichtlich linkstotal. \\
+$b^{-1}$ ist auch injektiv, da Folgendes gilt: \\
+\\
+Seien $(k_1,n_1),(k_2,n_2) \in \{0,1\} \times \N$ mit $(k_1,n_1) \neq (k_2,n_2)$: \\
+\\
+\begin{tabular}{@{} lll} 
+\textbf{Fall 1} & $k_1 = 0 \neq 1 = k_2$: & $b^{-1} (k_1,n_1) = 2 \cdot n_1 \neq 2 \cdot n_2 + 1 = b^{-1} (k_1,n_2)$ \\
+				&&\\
+\textbf{Fall 2} & $k_1 = 1 \neq 0 = k_2$: & analog zu Fall 1\\
+&&\\
+\textbf{Fall 3} & $n_1 \neq n_2$ und : & $b^{-1} (k_1,n_1) = 2 \cdot n_1 \neq 2 \cdot n_2 = b^{-1} (k_2,n_2)$ \\
+			    & $k_1 = k_2 = 0$	   &\\
+&&\\
+\textbf{Fall 4} & $n_1 \neq n_2$ und : & $b^{-1} (k_1,n_1) = 2 \cdot n_1 + 1 \neq 2 \cdot n_2 + 1 = b^{-1} (k_2,n_2)$ \\
+			    & $k_1 = k_2 = 1$	   &
+\end{tabular} \\
+\\
+\\
+Die Inverse $b^{-1}$ ist also injektiv. \\
+b ist damit eine Bijektion. \\
+\\
+Des Weiteren muss b die Anforderungen an einen Isomorphismus erfüllen: \\
+\\
+Konstanten: \\
+Es gibt keine Konstanten, also ist hier nichts zu beweisen. \\
+\\
+2-stelliges Relationssymbol $<$: \\
+\\
+\( \forall a_1 \forall a_2~ ((a_1,a_2) \in <^{N} \\
+\Leftrightarrow (a_1 \text{ mod } 2 < a_2 \text{ mod } 2) \vee (a_1 = a_2 \wedge a_1 < a_2) \\
+\Leftrightarrow (b(a_1),b(a_2)) \in <^{M}) \) \\
+\\
+Damit wurde bewiesen, dass b ein korrekter Isomorphismus zwischen $\mathcal{N}$ und $\mathcal{M}$ ist.
+
+\end{document}
