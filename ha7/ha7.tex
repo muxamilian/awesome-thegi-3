@@ -26,7 +26,7 @@ top=2.0cm, bottom=2.0cm]{geometry}
 
 \begin{document}
 \begin{center}
-\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 6} \\
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 7} \\
 \large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
 \end{center}
 \begin{tabbing}
@@ -157,6 +157,29 @@ n \rightarrow (n \text{ mod } 2, \left\lfloor \frac{n}{2} \right\rfloor) \) \\
 \\
 \textbf{Beweis der Richtigkeit von b:} \\
 \\
+b muss folgende Dinge erfüllen: 
+\begin{enumerate}
+\item[(i)]
+b muss eine Bijektion sein: \\
+b: $\N \rightarrow \{0,1\} \times \N$
+
+\item[(ii)]
+Für alle n-stelligen Relationssymbole R $\in \sigma$ 
+und alle $\overline{a} := a_1,a_2,...,a_n \in \N^n$: \\
+wenn $\overline{a} \in \N^n$ genau, dann wenn $(b(a_1),b(a_2),...,b(a_n)) \in \{0,1\} \times \N$
+
+\item[(iii)]
+Für alle n-stelligen Funtionssymbole f $\in \sigma$ 
+und alle $\overline{a} := a_1,a_2,...,a_n \in \N^n$: \\
+$b(f^{\mathcal{N}}(\overline{a})) = f^{\mathcal{M}}(b(a_1),b(a_2),...,b(a_n))$
+
+\item[(iv)]
+Für alle Konstantensymbole $c \in \sigma$ gilt: \\
+$b(c^{\mathcal{N}}) = c^{\mathcal{M}}$
+
+\end{enumerate}
+\textbf{Beweis für (i):} \\
+\\
 Damit b eine Bijektion ist, muss b und seine Inverse die Eigenschaften einer Funktion erfüllen, \\
 nämlich Linkstotalität und Injektivität. \\
 \\
@@ -200,10 +223,7 @@ Seien $(k_1,n_1),(k_2,n_2) \in \{0,1\} \times \N$ mit $(k_1,n_1) \neq (k_2,n_2)$
 Die Inverse $b^{-1}$ ist also injektiv. \\
 b ist damit eine Bijektion. \\
 \\
-Des Weiteren muss b die Anforderungen an einen Isomorphismus erfüllen: \\
-\\
-Konstanten: \\
-Es gibt keine Konstanten, also ist hier nichts zu beweisen. \\
+\textbf{Beweis für (ii):} \\
 \\
 2-stelliges Relationssymbol $<$: \\
 \\
@@ -211,6 +231,16 @@ Es gibt keine Konstanten, also ist hier nichts zu beweisen. \\
 \Leftrightarrow (a_1 \text{ mod } 2 < a_2 \text{ mod } 2) \vee (a_1 = a_2 \wedge a_1 < a_2) \\
 \Leftrightarrow (b(a_1),b(a_2)) \in <^{M}) \) \\
 \\
-Damit wurde bewiesen, dass b ein korrekter Isomorphismus zwischen $\mathcal{N}$ und $\mathcal{M}$ ist.
-
+\textbf{Beweis für (iii):} \\
+\\
+Es gibt keine Funktionssymbole aus $\sigma$, also ist hier nichts zu beweisen. \\
+\\
+\\
+\\
+\textbf{Beweis für (iv):} \\
+\\
+Es gibt keine Konstantensymbole aus $\sigma$, also ist hier nichts zu beweisen. \\
+\\
+\\
+b erfüllt damit i-iv und ist somit ein korrekter Isomorphismus von $\mathcal{N}$ nach $\mathcal{M}$. 
 \end{document}
