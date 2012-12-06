@@ -64,33 +64,24 @@ Sei $n_1,n_2 \in \N$:\\
 \\
 Somit ist h ein gültiger Homomorphismus von $\N$ nach $\Z$.
 
-\item[(i)] ~\\
-\begin{tabular}{@{} p{\tabspace}}
-Nach der Definition des Homomorphismus, müssen die Konstantensymbole wieder auf sich abgebildet werden.
-Somit gilt: \\
+\item[(i)]
+Angenommen es gäbe besagten Homomorphismus. Nach der Definition des Homomorphismus, müssen die Konstantensymbole wieder auf sich abgebildet werden.
+Somit gilt:
+
+$h(0^{\mathcal{Z}}) = 0^{\mathcal{N}} = 0 $ \\
+$h(1^{\mathcal{Z}}) = 1^{\mathcal{N}} = 1 $ \\
+
+Außerdem gilt: 
+
+\begin{align*}
+&h(\cdot^{\mathcal{Z}}(-1,-1)) = h(1) \overset{Def. Hom.}{=} 1 = \cdot^{\mathcal{N}}(h(-1),h(-1))\\
+&\Rightarrow -1 \mapsto 1\\
 \\
-$h(0^{\mathcal{N}}) = 0^{\mathcal{Z}} = 0 $ \\
-$h(1^{\mathcal{N}}) = 1^{\mathcal{Z}} = 1 $ \\
-\\
-Des Weiteren gilt nach der Def. des Homomorphismus: \\
-\\
-$h(+^N(z_1,z_2)) = +^Z(h(z_1),h(z_2))$ mit $z_1,z_2 \in \Z$\\
-\\
-Da h(1) = 1 gilt, muss auch folgendes gelten:\\
-\\
-$h(+^N(1,1)) = +^Z(h(1),h(1))$\\
-$\Rightarrow h(2) = +^Z(1,1) = 2$ \\
-\\
-Ebenso gilt:\\
-\\
-$h(+^N(1,2)) = +^Z(h(1),h(2))$\\
-$\Rightarrow h(3) = +^Z(1,2) = 3$ \\
-\\
-Das kann man jetzt für alle Zahlen von 0 bis $\infty$ fortführen, sodass jedes n $\in \mathbb{Z}$ mit $n \geq 0$ 
-auf $n$ abgebildet wird. 
-Folglich bleiben aber keine Zahlen mehr "übrig", auf die die negativen Zahlen aus $\mathbb{Z}$ abgebildet werden könnten.
-Ein Homomorphismus ist also nicht möglich von $\mathbb{Z}$ nach $\mathbb{N}$. 
-\end{tabular} \\
+&h(+^{\mathcal{Z}}(-1,1)) = h(0) = 0 \neq 2 = +^{\mathcal{N}}(1,1) = +^{\mathcal{N}}(h(-1),h(1))
+\end{align*}
+
+Somit entsteht unweigerlich ein Widerspruch, wenn es einen Homomorphismus von $\mathbb{Z}$ nach $\mathbb{N}$ gäbe.
+
 \end{enumerate}
 
 \subsection*{Aufgabe 3}
