@@ -36,12 +36,19 @@ Tom Nick \hspace{2cm}\= - 340528\\
 Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
-\subsection*{Aufgabe 1}
-trivial ;)
-
-\subsection*{Aufgabe 2}
-\begin{enumerate}
-\item[(i)]
+\section*{Aufgabe 1}
+Die gebundenen Variablen bekommen im nachfolgenden Teil Indizes, die anzeigen, welcher Quantor welche Variablen bindet. Freie Variablen sind somit jene, die keinen Index haben.
+\begin{enumerate}[(i)]
+\item
+$$\varphi_1 = \forall x_1 \forall y_1 \forall z_1 \left(\left( E(x_1,y_1) \land E(y_1,z_1) \rightarrow E(x_1,z_1) \right) \land \exists x_2 E(x_2,x_2) \right)$$
+\item
+$$\varphi_2 = \forall y_1 ( E(x,y_1) \rightarrow \forall x_1 (E(y_1,x_1) \rightarrow P(x_1))) \rightarrow \forall y_2 (E(x,y_2) \rightarrow P(y_2))$$
+\item
+$$\varphi_3 = \exists y_1 (E(x,y_1) \land P(y_1)) \to \exists y_2 (E(x,y_2) \land (\lnot \exists x_1(E(y_2,x_1) \land P(x_1)) \land P(y_2)))$$
+\end{enumerate}
+\section*{Aufgabe 2}
+\begin{enumerate}[(i)]
+\item
 \textbf{Homomorphismus:} \\
 \\
 \( h: \N \rightarrow \Z \\
@@ -66,11 +73,10 @@ Sei $n_1,n_2 \in \N$:\\
 \\
 Somit ist h ein gültiger Homomorphismus von $\N$ nach $\Z$.
 
-\item[(i)]
-\begin{tabular}{@{} p{\tabspace}}
-Angenommen es gäbe besagten Homomorphismus. Nach der Definition des Homomorphismus, müssen die Konstantensymbole wieder auf sich abgebildet werden.
-Somit gilt:
-\end{tabular} \\
+\item
+Angenommen es gäbe besagten Homomorphismus. \\
+Nach der Definition des Homomorphismus, müssen die Konstantensymbole wieder auf sich abgebildet werden.
+Somit gilt: \\
 \\
 $h(0^{\mathcal{Z}}) = 0^{\mathcal{N}} = 0 $ \\
 $h(1^{\mathcal{Z}}) = 1^{\mathcal{N}} = 1 $ \\
@@ -86,7 +92,7 @@ Somit entsteht unweigerlich ein Widerspruch, wenn es einen Homomorphismus von $\
 
 \end{enumerate}
 
-\subsection*{Aufgabe 3}
+\section*{Aufgabe 3}
 Damit $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ gilt, müssen folgende Bedingungen erfüllt sein: \\
 \\
 \begin{enumerate}
@@ -132,7 +138,7 @@ Folglich müssen die Operatoren abgeschlossen sein, weshalb h(A) eine $\sigma$-a
 Da (i) und (ii) gilt, folgt nach dem Satz der VL, dass h(A) eine Substruktur 
 $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ induziert.
 
-\subsection*{Aufgabe 4}
+\section*{Aufgabe 4}
 \textbf{Struktur:} \\
 \\
 \( \mathcal{N} = (\N, <^{\N}) \\
