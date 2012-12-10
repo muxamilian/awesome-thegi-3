@@ -84,52 +84,37 @@ $$\varphi_3 = \exists y_1 (E(x,y_1) \land P(y_1)) \to \exists y_2 (E(x,y_2) \lan
 	Somit entsteht aus (1) und (2) unweigerlich ein Widerspruch, wenn es einen Homomorphismus von $\mathbb{Z}$ nach $\mathbb{N}$ gäbe.
 
 	\end{enumerate}
-
-	\section*{Aufgabe 3}
-	Damit $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ gilt, müssen folgende Bedingungen erfüllt sein: \\
-	\\
-	\begin{enumerate}
+\newpage
+\section*{Aufgabe 3}
+Damit $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ gilt, müssen folgende Bedingungen erfüllt sein: 
+\begin{enumerate}
 \item[(i)]
 Das Bild von h(A) $\subseteq$ B 
 
 \item[(ii)]
-Für alle Operatoren $op^\mathfrak{B}_{h(A)}$ der Substruktur $\mathfrak{B}_{h(A)}$, muss gelten, \\
+Für alle Operatoren $op^\mathfrak{B}_{h(A)}$ der Substruktur $\mathfrak{B}_{h(A)}$, muss gelten, 
 dass sie abgeschlossen bzgl. des Bildes von h(A) sind.
-
 \end{enumerate}
-
-\textbf{Beweis für (i):} \\
+\begin{itemize}
+	\item 	\textbf{Beweis für (i):}\\
+		Der Homomorphismus h ist als Funktion folgendermaßen definiert: 
+		\[\text{h: A}\rightarrow\text{B} \]
+		Daraus folgt sofort, dass h(A) $\subseteq$ B ist. 
+	\item  	\textbf{Beweis für (ii)}
+		Da h ein Homomorphismus von A  nach B ist, muss gelten mit n als Stelligkeit des Operators: 
+		\[ (*)~ \forall a_1~ \forall a_2 ... \forall a_n~ h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) 
+		= op^{\mathfrak{B}}(h(a_1),h(a_2),...,h(a_n)) 
+		= op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n))\] 
+Wären die Operatoren nicht abgeschlossen bzgl. des Bildes von h, dann würde folgendes gelten: 
+\[\exists a_1~ \exists a_2 ... \exists a_n~ (op^\mathfrak{B}_{h(A)} (h(a_1),h(a_2),...,h(a_n))) \notin \text{h(A)} \]
+Nach (*) gilt aber: 
+\[\forall a_1~ \forall a_2 ... \forall a_n~ 
+(h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) = op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n)) )\] mit
+\[h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) \in h(A) \Leftrightarrow op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n)) \in h(A)\]
+was ein Widerspruch zur Annahme darstellt. Folglich müssen die Operatoren abgeschlossen sein, weshalb h(A) eine $\sigma$-abgeschlossene Menge ist. \\
 \\
-Der Homomorphismus h ist als Funktion folgendermaßen definiert: \\
-\\
-h: A $\rightarrow$ B \\
-\\
-Daraus folgt sofort, dass h(A) $\subseteq$ B ist. \\
-\\
-\textbf{Beweis für (ii): }\\
-\\
-Da h ein Homomorphismus von A  nach B ist, muss gelten mit n als Stelligkeit des Operators: \\
-\\
-\( (*)~ \forall a_1~ \forall a_2 ... \forall a_n~ h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) 
-= op^{\mathfrak{B}}(h(a_1),h(a_2),...,h(a_n)) 
-= op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n))\) \\
-\\
-Wären die Operatoren nicht abgeschlossen bzgl. des Bildes von h, dann würde folgendes gelten: \\
-\\
-$\exists a_1~ \exists a_2 ... \exists a_n~ (op^\mathfrak{B}_{h(A)} (h(a_1),h(a_2),...,h(a_n))) \notin$ h(A) \\
-\\
-Nach (*) gilt aber: \\
-\\
-$\forall a_1~ \forall a_2 ... \forall a_n~ 
-(h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) = op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n)) )$ mit\\
-\\
-$h(op^{\mathfrak{A}}(a_1,a_2,...,a_n)) \in h(A) \Leftrightarrow op^{\mathfrak{B}}_{h(A)}(h(a_1),h(a_2),...,h(a_n)) \in h(A)$ \\
-\\
-was ein Widerspruch zur Annahme darstellt.\\
-Folglich müssen die Operatoren abgeschlossen sein, weshalb h(A) eine $\sigma$-abgeschlossene Menge ist. \\
-\\
-Da (i) und (ii) gilt, folgt nach dem Satz der VL, dass h(A) eine Substruktur 
-$\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ induziert.
+\end{itemize}
+Da (i) und (ii) gilt, folgt nach dem Satz der VL, dass h(A) eine Substruktur $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ induziert.
 
 \section*{Aufgabe 4}
 \textbf{Struktur:} \\
