@@ -89,11 +89,10 @@ $$\varphi_3 = \exists y_1 (E(x,y_1) \land P(y_1)) \to \exists y_2 (E(x,y_2) \lan
 Damit $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ gilt, müssen folgende Bedingungen erfüllt sein: 
 \begin{enumerate}
 \item[(i)]
-Das Bild von h(A) $\subseteq$ B 
-
+	Das Bild von h(A) $\subseteq$ B 
 \item[(ii)]
-Für alle Operatoren $op^\mathfrak{B}_{h(A)}$ der Substruktur $\mathfrak{B}_{h(A)}$, muss gelten, 
-dass sie abgeschlossen bzgl. des Bildes von h(A) sind.
+	Für alle Operatoren $op^\mathfrak{B}_{h(A)}$ der Substruktur $\mathfrak{B}_{h(A)}$, muss gelten, 
+	dass sie abgeschlossen bzgl. des Bildes von h(A) sind.
 \end{enumerate}
 \begin{itemize}
 	\item 	\textbf{Beweis für (i):}\\
@@ -116,130 +115,107 @@ was ein Widerspruch zur Annahme darstellt. Folglich müssen die Operatoren abges
 Da (i) und (ii) gilt, folgt nach dem Satz der VL, dass h(A) eine Substruktur $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ induziert.
 
 \section*{Aufgabe 4}
-\textbf{Struktur:} \\
-\\
-\( \mathcal{N} = (\N, <^{\N}) \\
-\\
-n_1 <^{\mathcal{N}} n_2 \text{~~~~~gdw. ($n_1$ mod 2 $< n_2$ mod 2) $\vee$ (($n_1 \text{ mod  } 2 = n_2 \text{ mod  } 2) \wedge n_1 < n_2$)} \\
-\\
-\text{Damit $\mathcal{N}$ und $\mathcal{M}$ isomorph sind, muss es einen Isomorphismus zwischen $\{0,1\} \times \N$ und} \\
-\text{$\N$ geben.} \\
-\\
-\textbf{Isomorphismus:} \\
-\\
-b: \N \rightarrow \{0,1\} \times \N \\
-\\
-n \rightarrow (n \text{ mod } 2, \left\lfloor \frac{n}{2} \right\rfloor) \) \\
-\\
-\textbf{Beweis der Richtigkeit von b:} \\
-\\
-b muss folgende Dinge erfüllen: 
-\begin{enumerate}
-\item[(i)]
-b muss eine Bijektion sein: \\
-b: $\N \mapsto \{0,1\} \times \N$
+\begin{itemize}
+	\item 	\textbf{Struktur: } 
+		\begin{flalign*}
+			\mathcal{N} &= (\N, <^{\N}) &\\
+			n_1 &<^{\mathcal{N}} n_2 \text{~~~~~gdw. ($n_1$ mod 2 $< n_2$ mod 2) $\vee$ (($n_1 \text{ mod  } 2 = n_2 \text{ mod  } 2) \wedge n_1 < n_2$)} &
+		\end{flalign*}
+		Damit $\mathcal{N}$ und $\mathcal{M}$ isomorph sind, muss es einen Isomorphismus zwischen $\{0,1\} \times \N$ und $\N$ geben.
+	\item 	\textbf{Isomorphismus} 
+		\begin{flalign*}
+			b: \N &\rightarrow \{0,1\} \times \N &\\
+			n &\rightarrow (n \text{ mod } 2, \left\lfloor \frac{n}{2} \right\rfloor) &
+		\end{flalign*} 
+	\item  	\textbf{Beweis der Richtigkeit von b:} \\
+		b muss folgende Dinge erfüllen: 
+		\begin{enumerate}
+		\item[(i)]
+		b muss eine Bijektion sein: \\
+		b: $\N \mapsto \{0,1\} \times \N$
 
-\item[(ii)]
-Für alle n-stelligen Relationssymbole R $\in \sigma$ 
-und alle $\overline{a} := a_1,a_2,...,a_n \in \N^n$: \\
-wenn $\overline{a} \in \N^n$ genau, dann wenn $(b(a_1),b(a_2),...,b(a_n)) \in \{0,1\} \times \N$
+		\item[(ii)]
+		Für alle n-stelligen Relationssymbole R $\in \sigma$ 
+		und alle $\overline{a} := a_1,a_2,...,a_n \in \N^n$: \\
+		wenn $\overline{a} \in \N^n$ genau, dann wenn $(b(a_1),b(a_2),...,b(a_n)) \in \{0,1\} \times \N$
 
-\item[(iii)]
-Für alle n-stelligen Funtionssymbole f $\in \sigma$ 
-und alle $\overline{a} := a_1,a_2,...,a_n \in \N^n$: \\
-$b(f^{\mathcal{N}}(\overline{a})) = f^{\mathcal{M}}(b(a_1),b(a_2),...,b(a_n))$
+		\item[(iii)]
+		Für alle n-stelligen Funtionssymbole f $\in \sigma$ 
+		und alle $\overline{a} := a_1,a_2,...,a_n \in \N^n$: \\
+		$b(f^{\mathcal{N}}(\overline{a})) = f^{\mathcal{M}}(b(a_1),b(a_2),...,b(a_n))$
 
-\item[(iv)]
-Für alle Konstantensymbole $c \in \sigma$ gilt: \\
-$b(c^{\mathcal{N}}) = c^{\mathcal{M}}$
+		\item[(iv)]
+		Für alle Konstantensymbole $c \in \sigma$ gilt: \\
+		$b(c^{\mathcal{N}}) = c^{\mathcal{M}}$
 
-\end{enumerate}
-\textbf{Beweis für (i):} \\
-\\
-Damit b eine Bijektion ist, muss b und seine Inverse die Eigenschaften einer Funktion erfüllen, \\
-nämlich Linkstotalität und Injektivität. \\
-\\
-b ist offensichtlich linkstotal.\\
-b ist auch injektiv, da Folgendes gilt: \\
-\\
-Seien $n_1,n_2 \in \N$ mit $n_1 \neq n_2$: \\
-\\
-\textbf{Fall 1}~ $n_1$ mod 2 $\neq n_2$ mod 2: \\
-\\
-b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$)\\
-\\
-\textbf{Fall 2}~ $n_1 + 2 \leq n_2$: \\
-\\
-$\lf \frac{n_1}{2} \rf < \lf \frac{n_1 + 2}{2} \rf = \lf \frac{n_1}{2} + 1 \rf \leq \lf \frac{n_2}{2} \rf$ \\  
-$\Rightarrow$ b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$) \\
-\\
-\textbf{Fall 3}~ $n_2 + 2 \leq n_1$: \\
-\\
-analog zu Fall 2. \\
-\\
-\textbf{Fall 4}~ $n_1 + 1 = n_2$ oder $n_2 + 1 = n_1$: \\
-\\
-Nach Annahme muss $n_1$ eine gerade und $n_2$ eine ungerade Zahl sein oder \\
-umgekehrt. Daraus folgt:\\
-\\
-$n_1$ mod 2 $\neq n_2$ mod 2 $\Rightarrow$ 
-b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$)\\
-\\
-Daraus folgt, dass b($n_1$) $\neq$ b($n_2$) und damit die Injektivität von b.
-\\
-\\
-Die Inverse von b: \\
-\\
-\( b^{-1}: \{0,1\} \times \N \rightarrow \N \\
-\\
-(k, n) \rightarrow 
-\begin{cases}
-2 \cdot n, & k = 0 \\
-2 \cdot n + 1, & sonst
-\end{cases} \) \\
-\\
-$b^{-1}$ ist offensichtlich linkstotal. \\
-$b^{-1}$ ist auch injektiv, da Folgendes gilt: \\
-\\
-Seien $(k_1,n_1),(k_2,n_2) \in \{0,1\} \times \N$ mit $(k_1,n_1) \neq (k_2,n_2)$: \\
-\\
-\begin{tabular}{@{} lll} 
-\textbf{Fall 1} & $k_1 = 0 \neq 1 = k_2$: & $b^{-1} (k_1,n_1) = 2 \cdot n_1 \neq 2 \cdot n_2 + 1 = b^{-1} (k_1,n_2)$ \\
-				&&\\
-\textbf{Fall 2} & $k_1 = 1 \neq 0 = k_2$: & analog zu Fall 1\\
-&&\\
-\textbf{Fall 3} & $n_1 \neq n_2$ und : & $b^{-1} (k_1,n_1) = 2 \cdot n_1 \neq 2 \cdot n_2 = b^{-1} (k_2,n_2)$ \\
-			    & $k_1 = k_2 = 0$	   &\\
-&&\\
-\textbf{Fall 4} & $n_1 \neq n_2$ und : & $b^{-1} (k_1,n_1) = 2 \cdot n_1 + 1 \neq 2 \cdot n_2 + 1 = b^{-1} (k_2,n_2)$ \\
-			    & $k_1 = k_2 = 1$	   &
-\end{tabular} \\
-\\
-\\
-Die Inverse $b^{-1}$ ist also injektiv. \\
-b ist damit eine Bijektion. \\
-\\
-\\
-\\
-\\
-\textbf{Beweis für (ii):} \\
-\\
-2-stelliges Relationssymbol $<$: \\
-\\
-\( \forall a_1 \forall a_2~ ((a_1,a_2) \in <^{N} \\
-\Leftrightarrow (a_1 \text{ mod } 2 < a_2 \text{ mod } 2) \vee ((a_1 \text{ mod } 2 = a_2 \text{ mod } 2) \wedge a_1 < a_2) \\
-\Leftrightarrow (a_1 \text{ mod } 2 < a_2 \text{ mod } 2) \vee ((a_1 \text{ mod } 2 = a_2 \text{ mod } 2) 
-\wedge \lf \frac{a_1}{2} \rf < \lf \frac{a_2}{2} \rf ) \\
-\Leftrightarrow (b(a_1),b(a_2)) \in <^{M}) \) \\
-\\
-\textbf{Beweis für (iii):} \\
-\\
-Es gibt keine Funktionssymbole aus $\sigma$, also ist hier nichts zu beweisen. \\
-\\
-\textbf{Beweis für (iv):} \\
-\\
-Es gibt keine Konstantensymbole aus $\sigma$, also ist hier nichts zu beweisen. \\
-\\
-\\
+		\end{enumerate}
+\end{itemize}
+\begin{itemize}
+\item 	\textbf{Beweis für (i):} \\
+	Damit b eine Bijektion ist, muss b und seine Inverse die Eigenschaften einer Funktion erfüllen, nämlich Linkstotalität und Injektivität. 
+	\begin{itemize}
+	 	\item b ist offensichtlich linkstotal.
+	 	\item b ist auch injektiv, da Folgendes gilt: \\
+			Seien $n_1,n_2 \in \N$ mit $n_1 \neq n_2$: 
+			\begin{enumerate}[\textbf{Fall } 1.]
+			 	\setlength{\itemindent}{1em}
+				\item 	$n_1$ mod 2 $\neq n_2$ mod 2: \\
+					b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$)\\
+				\item  	$n_1 + 2 \leq n_2$: \\
+					$\lf \frac{n_1}{2} \rf < \lf \frac{n_1 + 2}{2} \rf = \lf \frac{n_1}{2} + 1 \rf \leq \lf \frac{n_2}{2} \rf$ \\  
+					$\Rightarrow$ b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$) 
+				\item  	$n_2 + 2 \leq n_1$: \\
+					analog zu Fall 2. 
+				\item  	$n_1 + 1 = n_2$ oder $n_2 + 1 = n_1$: \\
+					Nach Annahme muss $n_1$ eine gerade und $n_2$ eine ungerade Zahl sein oder \\
+					umgekehrt. Daraus folgt:\\
+					\\
+					$n_1$ mod 2 $\neq n_2$ mod 2 $\Rightarrow$ 
+					b($n_1$) = ($n_1$ mod 2, $\lf \frac{n_1}{2} \rf$) $\neq$ ($n_2$ mod 2, $\lf \frac{n_2}{2} \rf$) = b($n_2$)
+			\end{enumerate}
+	Daraus folgt, dass b($n_1$) $\neq$ b($n_2$) und damit die Injektivität von b.
+
+	\end{itemize}
+
+	Die Inverse von b:
+	\begin{flalign*}
+		 b^{-1}: \{0,1\} \times \N &\rightarrow \N  &\\
+		(k, n) &\rightarrow 
+		\begin{cases}
+			2 \cdot n, & k = 0 \\
+			2 \cdot n + 1, & sonst
+		\end{cases}& 
+	\end{flalign*}
+	\begin{itemize}
+		\item 	$b^{-1}$ ist offensichtlich linkstotal. 
+		\item 	$b^{-1}$ ist auch injektiv, da Folgendes gilt: \\
+			Seien $(k_1,n_1),(k_2,n_2) \in \{0,1\} \times \N$ mit $(k_1,n_1) \neq (k_2,n_2)$: \\
+			\begin{enumerate}[\textbf{Fall } 1.]
+				\setlength{\itemindent}{1em}
+				\item 	$k_1 = 0 \neq 1 = k_2$: \\
+					$b^{-1} (k_1,n_1) = 2 \cdot n_1 \neq 2 \cdot n_2 + 1 = b^{-1} (k_1,n_2)$ 
+				\item 	$k_1 = 1 \neq 0 = k_2$: \\
+					analog zu Fall 1
+				\item  	$n_1 \neq n_2$ und  $k_1 = k_2 = 0$: \\
+					$b^{-1} (k_1,n_1) = 2 \cdot n_1 \neq 2 \cdot n_2 = b^{-1} (k_2,n_2)$
+				\item  	$n_1 \neq n_2$ und : $k_1 = k_2 = 1$ \\
+					$b^{-1} (k_1,n_1) = 2 \cdot n_1 + 1 \neq 2 \cdot n_2 + 1 = b^{-1} (k_2,n_2)$ 				    
+			\end{enumerate}
+	Die Inverse $b^{-1}$ ist also injektiv. 
+	\end{itemize}
+	b ist damit eine Bijektion. 
+\item  	\textbf{Beweis für (ii):} \\
+	2-stelliges Relationssymbol $<$: \\
+	\\
+	\( \forall a_1 \forall a_2~ ((a_1,a_2) \in <^{N} \\
+	\Leftrightarrow (a_1 \text{ mod } 2 < a_2 \text{ mod } 2) \vee ((a_1 \text{ mod } 2 = a_2 \text{ mod } 2) \wedge a_1 < a_2) \\
+	\Leftrightarrow (a_1 \text{ mod } 2 < a_2 \text{ mod } 2) \vee ((a_1 \text{ mod } 2 = a_2 \text{ mod } 2) 
+	\wedge \lf \frac{a_1}{2} \rf < \lf \frac{a_2}{2} \rf ) \\
+	\Leftrightarrow (b(a_1),b(a_2)) \in <^{M}) \) 
+\item \textbf{Beweis für (iii):} \\
+	Es gibt keine Funktionssymbole aus $\sigma$, also ist hier nichts zu beweisen. 
+\item  \textbf{Beweis für (iv):} \\
+	Es gibt keine Konstantensymbole aus $\sigma$, also ist hier nichts zu beweisen. 
+\end{itemize}
 b erfüllt damit i-iv und ist somit ein korrekter Isomorphismus von $\mathcal{N}$ nach $\mathcal{M}$. 
 \end{document}
