@@ -49,48 +49,46 @@ $$\varphi_3 = \exists y_1 (E(x,y_1) \land P(y_1)) \to \exists y_2 (E(x,y_2) \lan
 \section*{Aufgabe 2}
 \begin{enumerate}[(i)]
 \item
-\begin{itemize}
-	\item 	\textbf{Konstruktion: } \\
-		\( h: \N \rightarrow \Z \\
-		n \mapsto n \)
-	\item 	\textbf{Beweis für Richtigkeit des Homomorphismus:} 
-		\begin{itemize}
-			\item 	\textbf{Konstanten:}\\
-				\( h(0^{\mathcal{N}}) = 0^{\mathcal{N}} = 0 \\
-				h(1^{\mathcal{N}}) = 1^{\mathcal{N}} = 1 \) 
-			\item  	\textbf{Operatoren:} \\
-				Sei $n_1,n_2 \in \N$:
-				\begin{align*} h(+^{\mathcal{N}} (n_1,n_2)) &= h(n_1 + n_2) = n_1 + n_2 
-				= h(n_1) + h(n_2) = +^{\mathcal{Z}} (h(n_1),h(n_2)) \\
-				 h(\cdot^{\mathcal{N}} (n_1,n_2)) &= h(n_1 \cdot n_2) = n_1 \cdot n_2 
-				= h(n_1) \cdot h(n_2) = \cdot^{\mathcal{Z}} (h(n_1),h(n_2)) \end{align*}
-		\end{itemize}
-Somit ist h ein gültiger Homomorphismus von $\N$ nach $\Z$.
-\end{itemize}
+	\begin{itemize}
+		\item 	\textbf{Konstruktion: } \\
+			\( h: \N \rightarrow \Z \\
+			n \mapsto n \)
+		\item 	\textbf{Beweis für Richtigkeit des Homomorphismus:} 
+			\begin{itemize}
+				\item 	\textbf{Konstanten:}\\
+					\( h(0^{\mathcal{N}}) = 0^{\mathcal{N}} = 0 \\
+					h(1^{\mathcal{N}}) = 1^{\mathcal{N}} = 1 \) 
+				\item  	\textbf{Operatoren:} \\
+					Sei $n_1,n_2 \in \N$:
+					\begin{align*} h(+^{\mathcal{N}} (n_1,n_2)) &= h(n_1 + n_2) = n_1 + n_2 
+					= h(n_1) + h(n_2) = +^{\mathcal{Z}} (h(n_1),h(n_2)) \\
+					 h(\cdot^{\mathcal{N}} (n_1,n_2)) &= h(n_1 \cdot n_2) = n_1 \cdot n_2 
+					= h(n_1) \cdot h(n_2) = \cdot^{\mathcal{Z}} (h(n_1),h(n_2)) \end{align*}
+			\end{itemize}
+	Somit ist h ein gültiger Homomorphismus von $\N$ nach $\Z$.
+	\end{itemize}
 
 \item
-Angenommen es gäbe besagten Homomorphismus. \\
-Nach der Definition des Homomorphismus, müssen die Konstantensymbole wieder auf sich abgebildet werden.
-Somit gilt: \\
-\\
-$h(0^{\mathcal{Z}}) = 0^{\mathcal{N}} = 0 $ \\
-$h(1^{\mathcal{Z}}) = 1^{\mathcal{N}} = 1 $ \\
-\\
-Außerdem gilt: \\
-\\
-\( h(\cdot^{\mathcal{Z}}(-1,-1)) = h(1) \overset{Def. Hom.}{=} 1 = \cdot^{\mathcal{N}}(h(-1),h(-1))\\
-\Rightarrow -1 \mapsto 1\\
-\\
-h(+^{\mathcal{Z}}(-1,1)) = h(0) = 0 \neq 2 = +^{\mathcal{N}}(1,1) = +^{\mathcal{N}}(h(-1),h(1)) \) \\
-\\
-Somit entsteht unweigerlich ein Widerspruch, wenn es einen Homomorphismus von $\mathbb{Z}$ nach $\mathbb{N}$ gäbe.
+	Angenommen es gäbe besagten Homomorphismus. 
+	Nach der Definition des Homomorphismus, müssen die Konstantensymbole wieder auf sich abgebildet werden.
+	Somit gilt: 
+	\begin{align*}
+		h(0^{\mathcal{Z}}) &= 0^{\mathcal{N}} = 0  \\
+		h(1^{\mathcal{Z}}) &= 1^{\mathcal{N}} = 1 
+	\end{align*}
+	Außerdem gilt: 
+	\begin{align}
+	 	h(\cdot^{\mathcal{Z}}(-1,-1)) &= h(1) \overset{Def. Hom.}{=} 1 = \cdot^{\mathcal{N}}(h(-1),h(-1)) \Rightarrow -1 \mapsto 1 \\
+		h(+^{\mathcal{Z}}(-1,1)) &= h(0) = 0 \neq 2 = +^{\mathcal{N}}(1,1) = +^{\mathcal{N}}(h(-1),h(1)) 
+	\end{align}
+	Somit entsteht aus (1) und (2) unweigerlich ein Widerspruch, wenn es einen Homomorphismus von $\mathbb{Z}$ nach $\mathbb{N}$ gäbe.
 
-\end{enumerate}
+	\end{enumerate}
 
-\section*{Aufgabe 3}
-Damit $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ gilt, müssen folgende Bedingungen erfüllt sein: \\
-\\
-\begin{enumerate}
+	\section*{Aufgabe 3}
+	Damit $\mathfrak{B}_{h(A)} \subseteq \mathfrak{B}$ gilt, müssen folgende Bedingungen erfüllt sein: \\
+	\\
+	\begin{enumerate}
 \item[(i)]
 Das Bild von h(A) $\subseteq$ B 
 
