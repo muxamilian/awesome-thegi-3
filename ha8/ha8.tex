@@ -58,8 +58,14 @@ Marius Liwotto\> -  341051
 
 \subsection*{Aufgabe 2}
 \begin{align*}
-	\varphi_e &= \varphi \rightarrow \exists x.Z^{\mathcal{A}}(x) \\ 
-	\varphi_t &= \varphi \leftrightarrow \top
+	var(\phi) &= \{x_1,x_2,...,x_n\} \\
+	\beta(x_i) &= 
+	\begin{cases}
+	\top, & x_i = 1 \\
+	\bot, & x_i = 0
+	\end{cases} \\
+	\varphi_e &= \exists x_1 \exists x_2 ...\exists x_n \neg Z^{\mathcal{A}}( \llbracket \phi \rrbracket^{\beta}) \\
+	\varphi_t &= \forall x_1 \forall x_2 ...\forall x_n \neg Z^{\mathcal{A}}( \llbracket \phi \rrbracket^{\beta})
 \end{align*}
 
 \subsection*{Aufgabe 3}
