@@ -48,12 +48,17 @@ Marius Liwotto\> -  341051
 	\end{itemize}
 	\item 
 	\begin{align*}
-		\varphi_1 &= \lnot(\forall x \exists y. \cdot( x, y ) = 1) \land \lnot \exists x. \cdot(x,x) = -1 &\\
-		\varphi_2 &= \forall x \lnot \exists y. \cdot( x, y ) = 1 \land \lnot \exists x. \cdot(x,x) = -1& \\
-		\varphi_3 &= \exists x. \cdot(x,x) = -1&
+		\psi_0(x) &= \forall y(x \cdot y = x) \\
+		\psi_1(x) &= \forall y(x \cdot y = y) \\
+		\psi_i(x) &= \exists y(\psi_1(y) \land \exists z(\psi_0(z) \land y + (x \cdot x) = z)) \\
+		\psi_{\text{inverse mult.}} &=\exists z((\psi_1(z)  \land \forall x \exists y (x \cdot y = z)) \\
+		&\\
+		\phi_1 &= \lnot(\psi_{\text{inverse mult.}}) \\
+		\phi_2 &= \psi_{\text{inverse mult.}} \land \lnot(\exists x\psi_i(x)) \\
+		\phi_3 &= \exists x \psi_i(x)
 	\end{align*}
-	Es gibt eigentlich nur zwei Bedingugen: Jede Zahl hat eine Zahl, um mit dieser Zahl multipliziert 1 als Ergebnis zu haben. Bei rationalen und komplexen kann man immer den Kehrwert einer Zahl bilden und hat genau das erreicht. Bei natürlichen gibt es den Kehrwert nicht. Es gibt eine Zahl mit sich selber multipliziert, die -1 ergibt. Dies gilt nur in den komplexen Zahles ($i^2 = -1$). Damit hat man genug Bedingungen um für alle 3 Strukturen eine Formel festzulegen, die nur bei ihnen gilt: Bei den natürlichen Zahlen gibt es für nicht jede Zahl ein Inverses Element der Multiplikation (falls 1 das neutrale Element ist). Die rationalen Zahlen habe für jede Zahl ein Inverses Element der Multiplikation (Falls 1 das neutrale Element ist), aber besitzen keine Zahl die mit sich selber multipliziert $-1$ ergibt. Die komplexen erfüllen erste und zweite Bedingung.
-	
+$\psi_0(x)$ beschreibt eine 0. Also das übergeben x hat die Eigenschaften der 0 bzw. bei diesen Mengen erfüllt nur die 0 diese Eigenschaften. Analog mit $\psi_1(x)$ für 1 und $\psi_i(x)$ für $i$. $\psi_{\text{inverse mult.}}$ gilt wenn jedes Element bezüglich der Multiplikation ein inverses Element besitzt (Wenn 1 das neutrale Element ist). Die natürlichen Zahlen besitzen diese Eigenschaft nicht, weshalb $\phi_1$ nur von diesen erfüllt wird ($\mathbb{Z}$ würde auch $\phi_1$ erfüllen.)
+Die rationalen Zahlen besitzen zwar für jedes Element ein inverses bzgl. der Multiplikation, aber kein Element mit den Eigenschaften von $i$. Die komplexen Zahlen besitzen ein Element mit den Eigenschaften von $i$.
 \end{enumerate}
 
 \subsection*{Aufgabe 2}
