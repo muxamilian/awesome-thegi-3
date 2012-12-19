@@ -40,11 +40,11 @@ Marius Liwotto\> -  341051
 \begin{enumerate}[(i)]
 	\item 
 	\begin{itemize}
-		\item 	Gilt für alle Graphen mit einer Kante: $A_1 \vDash \varphi_1$, $A_2 \vDash \varphi_1$ , $A_3 \vDash \varphi_1$
+		\item 	Gilt für alle Graphen mit einem Zyklus ungerader Länge wobei die Länge 5 nicht überschreiten darf. $A_1 \vDash \varphi_1$, $A_2 \not \vDash \varphi_1$ , $A_3 \vDash \varphi_1$
 		\item 	Gilt für alle Graphen bei dem jeder Knoten zwei Kanten hat und ein dritter Knoten existiert, der keine Kante zu diesem Knoten hat.
 			$A_1 \vDash \varphi_2$, $A_2 \vDash \varphi_2$ , $A_3 \not\vDash \varphi_2$
 		\item  	Gilt für alle Graphen, bei denen alle unterschiedlichen Knoten mit allen unterschiedlichen Knoten verbunden sind.
-			$A_1 \vDash \varphi_3$, $A_2 \vDash \not\varphi_3$ , $A_3 \not\vDash \varphi_3$
+			$A_1 \vDash \varphi_3$, $A_2 \not\vDash\varphi_3$ , $A_3 \not\vDash \varphi_3$
 	\end{itemize}
 	\item 
 	\begin{align*}
@@ -57,7 +57,7 @@ Marius Liwotto\> -  341051
 		\phi_2 &= \psi_{\text{inverse mult.}} \land \lnot(\exists x\psi_i(x)) \\
 		\phi_3 &= \exists x \psi_i(x)
 	\end{align*}
-$\psi_0(x)$ beschreibt eine 0. Also das übergeben x hat die Eigenschaften der 0 bzw. bei diesen Mengen erfüllt nur die 0 diese Eigenschaften. Analog mit $\psi_1(x)$ für 1 und $\psi_i(x)$ für $i$. $\psi_{\text{inverse mult.}}$ gilt wenn jedes Element bezüglich der Multiplikation ein inverses Element besitzt (Wenn 1 das neutrale Element ist). Die natürlichen Zahlen besitzen diese Eigenschaft nicht, weshalb $\phi_1$ nur von diesen erfüllt wird ($\mathbb{Z}$ würde auch $\phi_1$ erfüllen.)
+$\psi_0(x)$ beschreibt eine 0. Also das übergebene x hat die Eigenschaften der 0 bzw. bei diesen Mengen erfüllt nur die 0 diese Eigenschaften. Analog mit $\psi_1(x)$ für 1 und $\psi_i(x)$ für $i$. $\psi_{\text{inverse mult.}}$ gilt wenn jedes Element bezüglich der Multiplikation ein inverses Element besitzt (Wenn 1 das neutrale Element ist). Die natürlichen Zahlen besitzen diese Eigenschaft nicht, weshalb $\phi_1$ nur von diesen erfüllt wird ($\mathbb{Z}$ würde auch $\phi_1$ erfüllen.)
 Die rationalen Zahlen besitzen zwar für jedes Element ein inverses bzgl. der Multiplikation, aber kein Element mit den Eigenschaften von $i$. Die komplexen Zahlen besitzen ein Element mit den Eigenschaften von $i$.
 \end{enumerate}
 
