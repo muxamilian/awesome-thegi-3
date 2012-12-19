@@ -1,0 +1,81 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+
+\newcommand{\rf}{\right\rfloor}
+\newcommand{\lf}{\left\lfloor}
+\newcommand{\tabspace}{15cm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 8} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+\subsection*{Aufgabe 1}
+\begin{enumerate}[(i)]
+	\item 
+	\begin{itemize}
+		\item 	Gilt für alle Graphen mit einer Kante: $A_1 \vDash \varphi_1$, $A_2 \vDash \varphi_1$ , $A_3 \vDash \varphi_1$
+		\item 	Gilt für alle Graphen bei dem jeder Knoten zwei Kanten hat und ein dritter Knoten existiert, der keine Kante zu diesem Knoten hat.
+			$A_1 \vDash \varphi_2$, $A_2 \vDash \varphi_2$ , $A_3 \not\vDash \varphi_2$
+		\item  	Gilt für alle Graphen, bei denen alle unterschiedlichen Knoten mit allen unterschiedlichen Knoten verbunden sind.
+			$A_1 \vDash \varphi_3$, $A_2 \vDash \not\varphi_3$ , $A_3 \not\vDash \varphi_3$
+	\end{itemize}
+	\item 
+	\begin{align*}
+		\psi_0(x) &= \forall y(x \cdot y = x) \\
+		\psi_1(x) &= \forall y(x \cdot y = y) \\
+		\psi_i(x) &= \exists y(\psi_1(y) \land \exists z(\psi_0(z) \land y + (x \cdot x) = z)) \\
+		\psi_{\text{inverse mult.}} &=\exists z((\psi_1(z)  \land \forall x \exists y (x \cdot y = z)) \\
+		&\\
+		\phi_1 &= \lnot(\psi_{\text{inverse mult.}}) \\
+		\phi_2 &= \psi_{\text{inverse mult.}} \land \lnot(\exists x\psi_i(x)) \\
+		\phi_3 &= \exists x \psi_i(x)
+	\end{align*}
+$\psi_0(x)$ beschreibt eine 0. Also das übergeben x hat die Eigenschaften der 0 bzw. bei diesen Mengen erfüllt nur die 0 diese Eigenschaften. Analog mit $\psi_1(x)$ für 1 und $\psi_i(x)$ für $i$. $\psi_{\text{inverse mult.}}$ gilt wenn jedes Element bezüglich der Multiplikation ein inverses Element besitzt (Wenn 1 das neutrale Element ist). Die natürlichen Zahlen besitzen diese Eigenschaft nicht, weshalb $\phi_1$ nur von diesen erfüllt wird ($\mathbb{Z}$ würde auch $\phi_1$ erfüllen.)
+Die rationalen Zahlen besitzen zwar für jedes Element ein inverses bzgl. der Multiplikation, aber kein Element mit den Eigenschaften von $i$. Die komplexen Zahlen besitzen ein Element mit den Eigenschaften von $i$.
+\end{enumerate}
+
+\subsection*{Aufgabe 2}
+\begin{align*}
+	var(\phi) &= \{x_1,x_2,...,x_n\} \\
+	\beta(x_i) &= 
+	\begin{cases}
+	\top, & x_i = 1 \\
+	\bot, & x_i = 0
+	\end{cases} \\
+	\varphi_e &= \exists x_1 \exists x_2 ...\exists x_n \neg Z^{\mathcal{A}}( \llbracket \phi \rrbracket^{\beta}) \\
+	\varphi_t &= \forall x_1 \forall x_2 ...\forall x_n \neg Z^{\mathcal{A}}( \llbracket \phi \rrbracket^{\beta})
+\end{align*}
+
+\subsection*{Aufgabe 3}
+\begin{align*}
+	\varphi_k &= \exists x_1...\exists x_k(\forall y( \bigvee_{1 \le i \le k} x_i = y \lor E(y,x_i))
+\end{align*}
+
+\end{document}
