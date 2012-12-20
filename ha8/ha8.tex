@@ -77,26 +77,30 @@ Die rationalen Zahlen besitzen zwar für jedes Element ein inverses bzgl. der Mu
 \begin{align*}
 	\varphi_k &= \exists x_1...\exists x_k(\forall y( \bigvee_{1 \le i \le k} x_i = y \lor E(y,x_i))
 \end{align*}
-
+\newpage
 \subsection*{Aufgabe 4}
 
-Wir übersetzen die Formel $\phi$ folgendermaßen induktiv in die Formel $\psi_n$:
-
-\begin{align*}
-&c: FO[\sigma] \rightarrow AL \\
-&&\\
-&Basisfall: & \\
-&Fall1: &c(\phi) &= c(E(x,y)) = E(x,y) \\
-&Fall2: &c(\phi) &= c(\forall x~ E(x,y)) = \bigwedge\limits_{i = 0}^n E(x_i,y) \\
-&Fall3: &c(\phi) &= c(\exists x~ E(x,y)) = \bigvee\limits_{i = 0}^n E(x_i,y) \\
-&&\\
-&Induktionsschritt: &\\
-&Fall 1: &c(\phi) &= c(\phi_1 * \phi_2) = c(\phi_1) * c(\phi_2) \\
-&Fall 2: &c(\phi) &= c(\forall x~(\phi_1 * \phi_2)) = 
-\bigwedge\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big) \\
-&Fall 3: &c(\phi) &= c(\exists x~(\phi_1 * \phi_2)) = 
-\bigvee\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big)
-\end{align*}
+Wir übersetzen die Formel $\phi$ folgendermaßen induktiv in die Formel $\psi_n$: \\
+\ \\
+$c: FO[\sigma] \rightarrow AL$ 
+\begin{itemize}
+	\item 	Basisfall: 
+		\begin{enumerate}[\text{Fall } 1:]
+		\setlength{\itemindent}{2em}
+		\item  $c(\phi) = c(E(x,y)) = E(x,y)$
+		\item  $c(\phi) = c(\forall x~ E(x,y)) = \bigwedge\limits_{i = 0}^n E(x_i,y)$ 
+		\item  $c(\phi) = c(\exists x~ E(x,y)) = \bigvee\limits_{i = 0}^n E(x_i,y)$
+		\end{enumerate}
+	\item 	Induktionsschritt: 
+		\begin{enumerate}[\text{Fall } 1:]
+		\setlength{\itemindent}{2em}
+		\item  $c(\phi) = c(\phi_1 * \phi_2) = c(\phi_1) * c(\phi_2)$ 
+		\item  $c(\phi) = c(\forall x~(\phi_1 * \phi_2)) = 
+		\bigwedge\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big)$ 
+		\item  $c(\phi) = c(\exists x~(\phi_1 * \phi_2)) = 
+		\bigvee\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big)$
+		\end{enumerate}
+\end{itemize}
 
 Aufgrund der Definition von c gilt, dass $\phi$ genau dann wahr wird, wenn $\psi_n$ wahr wird. Daraus folgt, dass jede Belegung $\beta$, 
 eine Belegung ist, welche die geforderten Eigenschaften erfüllt.
