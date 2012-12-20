@@ -94,12 +94,14 @@ $c: FO[\sigma] \rightarrow AL$
 	\item 	Induktionsschritt: 
 		\begin{enumerate}[\text{Fall } 1:]
 		\setlength{\itemindent}{2em}
-		\item  $c(\phi) = c(\phi_1 * \phi_2) = c(\phi_1) * c(\phi_2)$ 
+		\item  $c(\phi) = c(\lnot\phi_1) = \lnot (c(\phi_1))$
+		\item   $c(\phi) = c(\phi_1 * \phi_2) = (c(\phi_1) * c(\phi_2))$
 		\item  $c(\phi) = c(\forall x~(\phi_1 * \phi_2)) = 
 		\bigwedge\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big)$ 
 		\item  $c(\phi) = c(\exists x~(\phi_1 * \phi_2)) = 
-		\bigvee\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big)$
+		\bigvee\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big)$ \\
 		\end{enumerate}
+		($* \in \{\lor, \land, \rightarrow, \Leftrightarrow\}$)
 \end{itemize}
 
 Aufgrund der Definition von c gilt, dass $\phi$ genau dann wahr wird, wenn $\psi_n$ wahr wird. Daraus folgt, dass jede Belegung $\beta$, 
