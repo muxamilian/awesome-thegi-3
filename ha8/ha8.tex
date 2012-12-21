@@ -87,9 +87,10 @@ $c: FO[\sigma] \rightarrow AL$
 	\item 	Basisfall: 
 		\begin{enumerate}[\text{Fall } 1:]
 		\setlength{\itemindent}{2em}
-		\item  $c(\phi) = c(E(x,y)) = E(x,y)$
-		\item  $c(\phi) = c(\forall x~ E(x,y)) = \bigwedge\limits_{i = 0}^n E(x_i,y)$ 
-		\item  $c(\phi) = c(\exists x~ E(x,y)) = \bigvee\limits_{i = 0}^n E(x_i,y)$
+		\item  $c(\phi) = c(E(x,y)) = Z_{x,y}$
+		\item  $c(\phi) = c(\forall x~ E(x,y)) = \bigwedge\limits_{i = 0}^n Z_{x_i,y}$
+		\item  $c(\phi) = c(\forall y~ E(x,y)) = \bigwedge\limits_{i = 0}^n Z_{x,y_i}$  
+		\item  $c(\phi) = c(\exists y~ E(x,y)) = \bigvee\limits_{i = 0}^n Z_{x,y_i}$
 		\end{enumerate}
 	\item 	Induktionsschritt: 
 		\begin{enumerate}[\text{Fall } 1:]
@@ -97,12 +98,13 @@ $c: FO[\sigma] \rightarrow AL$
 		\item  $c(\phi) = c(\lnot\phi_1) = \lnot (c(\phi_1))$
 		\item   $c(\phi) = c(\phi_1 * \phi_2) = (c(\phi_1) * c(\phi_2))$
 		\item  $c(\phi) = c(\forall x~(\phi_1 * \phi_2)) = 
-		\bigwedge\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big)$ 
+		\bigwedge\limits_{i = 1}^n \Big( c(\phi_1(x_i)) * c(\phi_2(x_i)) \Big)$ 
 		\item  $c(\phi) = c(\exists x~(\phi_1 * \phi_2)) = 
-		\bigvee\limits_{i = 1}^n \Big( c(\phi_1(x_1,x_2,...,x_n)) * c(\phi_2(x_1,x_2,...,x_n)) \Big)$ \\
+		\bigvee\limits_{i = 1}^n \Big( c(\phi_1(x_i)) * c(\phi_2(x_i)) \Big)$ \\
 		\end{enumerate}
 		($* \in \{\lor, \land, \rightarrow, \Leftrightarrow\}$)
 \end{itemize}
+Die Belegung $\beta$ ist nun definiert als auf allen Variablen $Z_{x_i,y_i}$ mit $1 \le i \le n$: $\beta(Z_{x_i,y_i}) = \top \Leftrightarrow E(x_i,y_i)$
 
 Aufgrund der Definition von c gilt, dass $\phi$ genau dann wahr wird, wenn $\psi_n$ wahr wird. Daraus folgt, dass jede Belegung $\beta$, 
 eine Belegung ist, welche die geforderten Eigenschaften erfüllt.
