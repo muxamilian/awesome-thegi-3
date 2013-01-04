@@ -1,0 +1,47 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+
+\newcommand{\rf}{\right\rfloor}
+\newcommand{\lf}{\left\lfloor}
+\newcommand{\tabspace}{15cm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 8} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+\subsection*{Aufgabe 1}
+\subsection*{Aufgabe 2}
+\begin{align*}
+\phi_1(\mathcal{N}) &:= \exists~ x~ (y = x + x) \\
+\phi_2(\mathcal{N}) &:= \exists~ x~ (y = x \cdot x) \\
+\phi_3(\mathcal{R}) &:= x = y \cdot y \\
+\phi_4(\mathcal{R}) &:= \exists \\
+\end{align*}
+\end{document}
