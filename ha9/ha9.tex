@@ -43,11 +43,18 @@ Marius Liwotto\> -  341051
 			\varphi_1 &:= \lnot (\exists x \exists y E(x,y) \land \lnot \exists x \forall y \exists z (\lnot E(x,z) \lor f(x,y) = z)) \rightarrow \exists x E(x,f(y,x)) \\
 			&\equiv  (\exists x \exists y E(x,y) \land \lnot \exists x \forall y \exists z (\lnot E(x,z) \lor f(x,y) = z)) \lor \exists x E(x,f(y,x)) \\
 			&\equiv  (\exists x \exists y E(x,y) \land \forall x \exists y \forall z \lnot(\lnot E(x,z) \lor f(x,y) = z))) \lor \exists x E(x,f(y,x)) \\
-			&\equiv  (\exists x \exists y E(x,y) \land \forall x \exists y \forall z (E(x,z) \land \lnot(f(x,y) = z)))) \lor \exists x E(x,f(y,x)) \text{ in NNF} \\
+			&\equiv  (\exists x \exists y E(x,y) \land \forall x \exists y \forall z (E(x,z) \land \lnot(f(x,y) = z)))) \lor \exists x E(x,f(y,x)) \\
 			&\equiv  (\exists x_1 \exists y_2 E(x_1,y_2) \land \forall x_2 \exists y_2 \forall z_1 (E(x_2,z_1) \land \lnot(f(x_2,y_2) = z_1)))) \lor \exists x_3 E(x_3,f(y,x_3)) \\
-			&\equiv  \exists x_1 \exists y_2\forall x_2 \exists y_2 \forall z_1\exists x_3((E(x_1,y_2) \land   (E(x_2,z_1) \land \lnot(f(x_2,y_2) = z_1)))) \lor E(x_3,f(y,x_3))) \text{ in PN} \\
+			&\equiv  \exists x_1 \exists y_2\forall x_2 \exists y_2 \forall z_1\exists x_3((E(x_1,y_2) \land   (E(x_2,z_1) \land \lnot(f(x_2,y_2) = z_1)))) \lor E(x_3,f(y,x_3)))  \\
 		\end{align*}
-	\item \[ \]
+	\item 
+		\begin{align*}
+			\varphi_2 &:= \exists y \forall z (E(x,z) \land (E(y,z) \rightarrow \forall x(E(f(x,y),z)\land \lnot \forall  y R(x,y) ))) \\
+			&\equiv \exists y \forall z (E(x,z) \land (\lnot E(y,z) \lor\forall x(E(f(x,y),z)\land \lnot \forall  y R(x,y) ))) \\
+			&\equiv \exists y \forall z (E(x,z) \land (\lnot E(y,z) \lor\forall x(E(f(x,y),z)\land \exists y \lnot R(x,y) ))) \\
+			&\equiv \exists y_1 \forall z_1 (E(x_1,z_1) \land (\lnot E(y_1,z_1) \lor \forall x_2 (E(f(x_2,y_1),z_1)\land \exists y_1 \lnot R(x_2,y_1) )) \\
+			&\equiv \exists y_1 \forall z_1 \forall x_2 (E(x_1,z_1) \land (\lnot E(y_1,z_1) \lor  (E(f(x_2,y_1),z_1)\land \lnot R(x_2,y_1) ))) \\
+		\end{align*}
 \end{enumerate}
 \subsection*{Aufgabe 2}
 \begin{align*}
