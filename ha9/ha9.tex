@@ -28,7 +28,7 @@ top=2.0cm, bottom=2.0cm]{geometry}
 
 \begin{document}
 \begin{center}
-\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 8} \\
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 9} \\
 \large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
 \end{center}
 \begin{tabbing}
@@ -37,6 +37,18 @@ Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
 \subsection*{Aufgabe 1}
+\begin{enumerate}[(i)]
+	\item 
+		\begin{align*}
+			\varphi_1 &:= \lnot (\exists x \exists y E(x,y) \land \lnot \exists x \forall y \exists z (\lnot E(x,z) \lor f(x,y) = z)) \rightarrow \exists x E(x,f(y,x)) \\
+			&\equiv  (\exists x \exists y E(x,y) \land \lnot \exists x \forall y \exists z (\lnot E(x,z) \lor f(x,y) = z)) \lor \exists x E(x,f(y,x)) \\
+			&\equiv  (\exists x \exists y E(x,y) \land \forall x \exists y \forall z \lnot(\lnot E(x,z) \lor f(x,y) = z))) \lor \exists x E(x,f(y,x)) \\
+			&\equiv  (\exists x \exists y E(x,y) \land \forall x \exists y \forall z (E(x,z) \land \lnot(f(x,y) = z)))) \lor \exists x E(x,f(y,x)) \text{ in NNF} \\
+			&\equiv  (\exists x_1 \exists y_2 E(x_1,y_2) \land \forall x_2 \exists y_2 \forall z_1 (E(x_2,z_1) \land \lnot(f(x_2,y_2) = z_1)))) \lor \exists x_3 E(x_3,f(y,x_3)) \\
+			&\equiv  \exists x_1 \exists y_2\forall x_2 \exists y_2 \forall z_1\exists x_3((E(x_1,y_2) \land   (E(x_2,z_1) \land \lnot(f(x_2,y_2) = z_1)))) \lor E(x_3,f(y,x_3))) \text{ in PN} \\
+		\end{align*}
+	\item \[ \]
+\end{enumerate}
 \subsection*{Aufgabe 2}
 \begin{align*}
 \phi_1(\mathcal{N}) &:= \exists~ x~ (y = x + x) \\
