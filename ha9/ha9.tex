@@ -69,7 +69,6 @@ Marius Liwotto\> -  341051
 \section*{Aufgabe 3}
 \begin{enumerate}[(i)]
 \item
-
 \item
 Die gegebene Struktur enthält nur die Relation $<$ aber keine Funktionssymbole. 
 $<$ ist über $\mathbb{Z}$ eine Relation ohne Maximum oder Minimum. 
@@ -102,6 +101,16 @@ Durch die Abwesenheit von Funktionssymbolen ist es somit nicht möglich, eine Fo
 \end{enumerate}
 
 \section*{Aufgabe 4}
+Annahme: Bei einer festen Variablenmenge gibt es bis auf logische Äquivalenz nur endlich viele Formeln.
+
+Es gibt nun zwei Fälle:
+\begin{itemize}
+\item
+Ein Quantor ist in der innersten Ebene und enthält keine weiteren Quantoren. Innerhalb des Quantors können höchstens q Variablen auftreten. Nach unseren Annahme gibt es somit nur endlich viele Formeln mit den innersten Quantoren.
+\item
+Eine Quantor enthält noch weitere quantifizierte Formeln. Für alle inneren Formeln gibt es nach Punkt 1 nur endlich viele Formeln. Die Formel im aktuellen Quantor ist nun eine Verknüpfung aus inneren Quantoren, die nur endlich viele Formeln haben und anderen Variablen, die im Quantor selber oder in äußeren Quantoren definiert werden. Somit gibt es auch hier nur endlich viele Formeln.
+\end{itemize}
+TODO: Mit struktureller aufschreiben und dann noch sagen, dass man die Quantoren auch umsortieren kann... und dass es nur endlich viele Umsortierungen gibt...
 \end{document}
 
 
