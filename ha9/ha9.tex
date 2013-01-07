@@ -101,16 +101,19 @@ Durch die Abwesenheit von Funktionssymbolen ist es somit nicht möglich, eine Fo
 \end{enumerate}
 
 \section*{Aufgabe 4}
-Annahme: Bei einer festen Variablenmenge gibt es bis auf logische Äquivalenz nur endlich viele Formeln.
-
-Es gibt nun zwei Fälle:
-\begin{itemize}
-\item
-Ein Quantor ist in der innersten Ebene und enthält keine weiteren Quantoren. Innerhalb des Quantors können höchstens q Variablen auftreten. Nach unseren Annahme gibt es somit nur endlich viele Formeln mit den innersten Quantoren.
-\item
-Eine Quantor enthält noch weitere quantifizierte Formeln. Für alle inneren Formeln gibt es nach Punkt 1 nur endlich viele Formeln. Die Formel im aktuellen Quantor ist nun eine Verknüpfung aus inneren Quantoren, die nur endlich viele Formeln haben und anderen Variablen, die im Quantor selber oder in äußeren Quantoren definiert werden. Somit gibt es auch hier nur endlich viele Formeln.
-\end{itemize}
-TODO: Mit struktureller aufschreiben und dann noch sagen, dass man die Quantoren auch umsortieren kann... und dass es nur endlich viele Umsortierungen gibt...
+Es gibt folgende Fälle:
+\begin{enumerate}
+\item{$q = 0$}\\
+Dann gilt die Aussage schon nach dem Hinweis des Aufgabenblattes.
+\item{$q \le 1$}\\
+Sei $\varphi$ die Formel ohne freie Variablen mit maximal $q$ Quantoren. Dann gibt es eine zu $\varphi$ nach Theorem 4.34 der Folien eine äquivalente Formel $\varphi'$ in Pränexnormalform. Also gilt $\varphi \equiv \varphi'$. Es reicht also zu zeigen, dass es nur endlich viele Formeln in Pränexnormalform gibt.
+\\\\
+Diese Formel $\varphi'$ hat dann die Form $Q_1x_1...Q_px_p\ \psi$, mit $1 \le p \le q$ wobei $\psi$ eine Formel der Aussagenlogik ist, in der keine freien Variablen vorhanden sind. 
+\\\\
+Somit kann nach der Annahme des Aufgabenblattes $\psi$ nur eine von endlich vielen Formeln sein.  Die Reihenfolge der Quantoren $Q_1x_1...Q_px_p\ \psi$ spielt für den Wahrheitswert von $\varphi$ keine Rolle. 
+\\\
+Somit gibt es bis auf logische Äquivalenz nur endlich viele Formeln mit weniger als $q$ Quantoren.
+\end{enumerate}
 \end{document}
 
 
