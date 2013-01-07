@@ -36,7 +36,7 @@ Tom Nick \hspace{2cm}\= - 340528\\
 Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
-\subsection*{Aufgabe 1}
+\section*{Aufgabe 1}
 \begin{enumerate}[(i)]
 	\item 
 		\begin{align*}
@@ -56,7 +56,7 @@ Marius Liwotto\> -  341051
 			&\equiv \exists y_1 \forall z_1 \forall x_2 (E(x_1,z_1) \land (\lnot E(y_1,z_1) \lor  (E(f(x_2,y_1),z_1)\land \lnot R(x_2,y_1) ))) \\
 		\end{align*}
 \end{enumerate}
-\subsection*{Aufgabe 2}
+\section*{Aufgabe 2}
 \begin{align*}
 \phi_1(\mathcal{N}) &:= \exists~ x~ (y = x + x) \\
 \phi_2(\mathcal{N}) &:= \exists~ x~ (y = x \cdot x) \\
@@ -65,4 +65,42 @@ Marius Liwotto\> -  341051
 \phi_5(\mathcal{R}) &:= \exists~ m~ \exists~ n~ (n \cdot n = m \wedge y = x + m) \\
 \phi_6(\mathcal{R}) &:= (u'' = u \cdot u' - v \cdot v') \wedge (v'' = u' \cdot v + u \cdot v') \\
 \end{align*}
+
+\section*{Aufgabe 3}
+\begin{enumerate}[(i)]
+\item
+
+\item
+Die gegebene Struktur enthält nur die Relation $<$ aber keine Funktionssymbole. 
+$<$ ist über $\mathbb{Z}$ eine Relation ohne Maximum oder Minimum. 
+
+Damit es ein $\varphi$ gibt sodass $\varphi(\mathcal{Z}) = \lbrace 0 \rbrace$, muss es möglich sein, die $0$ von allen anderen Zahlen zu unterscheiden. Durch die Unendlichkeit von $\mathbb{Z}$ ist es nicht möglich durch Quantifikation bestimmte Zahlen zu erkennen:
+\begin{itemize}
+\item
+$\exists x \exists y (x < y)$
+\item
+$\exists y (x < y)$
+\item
+$\exists x (x < y)$
+\item
+$\forall x \forall y (x < y)$
+\item
+$\forall y (x < y)$
+\item
+$\forall x (x < y)$
+\item
+$x < y$
+\item
+$\exists x \forall y (x < y)$
+\item
+$\forall x \exists y (x < y)$
+
+In keinem der Fälle kann eine Variable eindeutig bestimmt und eines Aussage gilt immer für unendlich viele Variablen. Durch die Abwesenheit von Funktionssymbolen ist es somit nicht möglich, eine Formel $\varphi$ aufzustellen, die die gegebenen Vorraussetzungen erfüllt.
+\end{itemize}
+\end{enumerate}
+
+\section*{Aufgabe 4}
 \end{document}
+
+
+
