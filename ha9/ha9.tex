@@ -59,9 +59,9 @@ Marius Liwotto\> -  341051
 \section*{Aufgabe 2}
 \begin{align*}
 \phi_1(\mathcal{N}) &:= \exists~ x~ (y = x + x) \\
- &\phi_1(x) := \forall y(y \cdot x = y) \\
- &\phi_2(x) := \exists y(x = y +y \land \phi_1(y)) \\
-\phi_2(\mathcal{N}) &:= \forall b \forall c \exists d (b \cdot c = a \rightarrow (c = d\land \phi_2(d) \lor b = d\land \phi_2(d) )) \\
+ &\phi_{one}(x) := \forall y(y \cdot x = y) \\
+ &\phi_{two}(x) := \exists y(x = y +y \land \phi_{one}(y)) \\
+\phi_2(\mathcal{N}) &:= \forall b \forall c \exists d (b \cdot c = a \rightarrow ((c = d\lor b = d) \land \phi_{two}(d) )) \\
 \phi_3(\mathcal{R}) &:= x = y \cdot y \\
 \phi_4(\mathcal{R}) &:= \exists~ m~ \forall~ n~ (m \cdot n = m \wedge m = x + y) \\
 \phi_5(\mathcal{R}) &:= \exists~ m~ \exists~ n~ (n \cdot n = m \wedge y = x + m) \\
