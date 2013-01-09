@@ -61,6 +61,7 @@ Marius Liwotto\> -  341051
 \phi_1(\mathcal{N}) &:= \exists~ x~ (y = x + x) \\
  &\phi_{one}(x) := \forall y(y \cdot x = y) \\
  &\phi_{two}(x) := \exists y(x = y +y \land \phi_{one}(y)) \\
+ &\phi_{prim}(x) := \forall y \forall z (y \cdot z = x \rightarrow (\phi_1(y) \land z = x) \lor (\phi_1(z) \land y = x)) \\
 \phi_2(\mathcal{N}) &:= \forall b \forall c ((b \cdot c = a \land \phi_{prim}(b))\rightarrow \phi_{two}(b) ) \\
 \phi_3(\mathcal{R}) &:= x = y \cdot y \\
 \phi_4(\mathcal{R}) &:= \exists~ m~ \forall~ n~ (m \cdot n = m \wedge m = x + y) \\
@@ -99,28 +100,19 @@ $<$ ist über $\mathbb{Z}$ eine Relation ohne Maximum oder Minimum.
 Damit es ein $\varphi$ gibt sodass $\varphi(\mathcal{Z}) = \lbrace 0 \rbrace$, muss es möglich sein, die $0$ von allen anderen Zahlen zu unterscheiden. Durch die Unendlichkeit von $\mathbb{Z}$ ist es nicht möglich durch Quantifikation bestimmte Zahlen zu erkennen:
 \begin{itemize}
 \item
-$\exists x \exists y (x < y)$
-\item
 $\exists y (x < y)$
 \item
 $\exists x (x < y)$
 \item
-$\forall x \forall y (x < y)$
-\item
 $\forall y (x < y)$
 \item
 $\forall x (x < y)$
-\item
-$x < y$
-\item
-$\exists x \forall y (x < y)$
-\item
-$\forall x \exists y (x < y)$
-
-In jedem der Fälle gibt es unendlich viele Variablen, die die Gleichung erfüllen. Die mehrfache Verwendung von $<$ hilft nicht weiter, da die Menge an erfüllenden Werten immer unendlich groß bleibt. 
+\end{itemize}
+In jedem der Fälle kommt wieder $\Z$ herraus, jegliche logische Verknüpfungen erzeugen entweder wieder $\Z$ oder die leere Menge, man könnte das mit einer strukturellen Induktion beweisen, aber wer echt viel Schreibarbeit.
 
 Durch die Abwesenheit von Funktionssymbolen ist es somit nicht möglich, eine Formel $\varphi$ aufzustellen, die die gegebenen Vorraussetzungen erfüllt.
-\end{itemize}
+
+
 \end{enumerate}
 
 \section*{Aufgabe 4}
@@ -128,7 +120,7 @@ Es gibt folgende Fälle:
 \begin{enumerate}
 \item{$q = 0$}\\
 Dann gilt die Aussage schon nach dem Hinweis des Aufgabenblattes.
-\item{$q \le 1$}\\
+\item{$q \ge 1$}\\
 Sei $\varphi$ die Formel ohne freie Variablen mit maximal $q$ Quantoren. Dann gibt es eine zu $\varphi$ nach Theorem 4.34 der Folien eine äquivalente Formel $\varphi'$ in Pränexnormalform. Also gilt $\varphi \equiv \varphi'$. Es reicht also zu zeigen, dass es nur endlich viele Formeln in Pränexnormalform gibt.
 \\\\
 Diese Formel $\varphi'$ hat dann die Form $Q_1x_1...Q_px_p\ \psi$, mit $1 \le p \le q$ wobei $\psi$ eine Formel der Aussagenlogik ist, in der keine freien Variablen vorhanden sind. 
