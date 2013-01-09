@@ -69,11 +69,11 @@ Marius Liwotto\> -  341051
 \section*{Aufgabe 3}
 \begin{enumerate}[(i)]
 \item
-$\overline{b} := (b_1,b_2,...,b_k)$
+$\overline{x} := (x_1,x_2,...,x_k)$
 
 $\varphi(\mathcal{B}) = \pi(\varphi(\mathcal{A}))$
-$\Leftrightarrow \forall \overline{b}~ (\overline{b} \in \varphi(\mathcal{B})$
-$\Leftrightarrow (\pi^{-1}(b_1),...,\pi^{-1}(b_k)) \in \pi(\varphi(\mathcal{A}))$
+$\Leftrightarrow \forall \overline{x}~ (\overline{x} \in \varphi(\mathcal{B})$
+$\Leftrightarrow \overline{x} \in \pi(\varphi(\mathcal{A}))$
 \\
 \\
 Da $\pi$ ein Isomorphismus von $\mathcal{A}$ nach $\mathcal{B}$ ist, gilt für alle Relationen R aus $\sigma$: 
@@ -81,10 +81,14 @@ Da $\pi$ ein Isomorphismus von $\mathcal{A}$ nach $\mathcal{B}$ ist, gilt für a
 (*) $\overline{a} \in R^{\mathcal{A}} \Leftrightarrow \pi(\overline{a}) \in R^{\mathcal{B}}$
 \\
 \\
-$\forall \overline{b}~ (\overline{b} \in \varphi(\mathcal{B}) 
-\Leftrightarrow \varphi(\overline{b}) \equiv T
-\overset{(*)}{\Leftrightarrow} \varphi(\pi^{-1}(b_1),...,\pi^{-1}(b_k)) \equiv T 
-\Leftrightarrow (\pi^{-1}(b_1),...,\pi^{-1}(b_k)) \in \varphi(\mathcal{A})) $
+\begin{align*}
+\forall \overline{x}~ \big( \overline{x} \in \varphi(\mathcal{B}) 
+&\Leftrightarrow \varphi(\overline{x}) \equiv T \\
+&\overset{(*)}{\Leftrightarrow} \varphi(\pi^{-1}(x_1),...,\pi^{-1}(x_k)) \equiv T \\
+&\Leftrightarrow (\pi^{-1}(x_1),...,\pi^{-1}(x_k)) \in \varphi(\mathcal{A}) \\ 
+&\Leftrightarrow \overline{x} \in \pi(\varphi(\mathcal{A}) \big)
+\end{align*}
+
 
 \item
 Die gegebene Struktur enthält nur die Relation $<$ aber keine Funktionssymbole. 
