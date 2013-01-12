@@ -37,7 +37,46 @@ Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
 \subsection*{Aufgabe 1}
-
+\begin{enumerate}[(i)]
+	\item $\mathcal{A}_1 = (\mathbb{C},M^{\mathcal{A}_1})$ und $\mathcal{B}_1 = (\mathbb{R}, M^{\mathcal{B}_1})$, wobei $M$ ein 3-stelliges Relationssymbol ist und es gilt $(a,b,c) \in M^{\mathcal{A}_1} \Leftrightarrow a \cdot b = c$ und für $a,b,c \in \mathbb{C}$ und $M^{\mathcal{B}_1} = M^{\mathcal{B}_1} \cap \mathbb{R}^3$ \\
+	Zuerst ein paar Formeln: 
+	\begin{align*}
+		\phi_1(x) &:= \forall y.M(x,y,y) \\
+		\phi_{-1}(x) &:= \exists a \exists b. M(a, a, x) \land M(x,x,b) \land \phi_1(b) \\
+		\phi_{i}(x) &:= \exists a.M(x, x, a) \land \phi_{-1}(a)
+	\end{align*}
+	\textbf{Die Duplikatorin gewinnt das 2-Runden Spiel}
+		\begin{enumerate}[1. \text{Zug:}]
+			\item  	
+			\begin{enumerate}[\text{Fall} 1.]
+				\item  	H wählt $a_1 \in \mathbb{C}$ mit $\phi_{-1}(a_1)) \lor \phi_1(a_1) \lor \phi_i(a_1)$ \\
+					D wählt beliebiges $b_1 \in \mathbb{R}$
+				\item  	H wählt $a_1 \in \mathbb{C}$ mit $\lnot(\phi_{-1}(a_1)) \lor \phi_1(a_1) \lor \phi_i(a_1))$ \\
+					D wählt beliebiges $b_1 \in \mathbb{R}$
+			\end{enumerate}
+			\item 
+			\begin{enumerate}[\text{Fall} 1.]
+				\item 	H wählt $a_2 \in \mathbb{C}$ mit $M^{\mathcal{A}_1}(a_1, a_1, a_2)$ \\
+					D wählt $b_1 \in \mathbb{R}$ mit $M^{\mathcal{B}_1}(b_1,b_1,b_2)$ 
+				\item  	H wählt $a_2 \in \mathbb{C}$ mit $\phi_i(a_1) \lor \phi_1(a_1) \lor \phi_{-1}(a_1) \land \lnot M^{\mathcal{A}_1}(a_1,a_1,a_2) \land a_1 \neq a_2$  
+				\item  	H wählt $a_2 \in \mathbb{C}$ mit $a_1 = a_2$ \\
+					D wählt $b_2 \in \mathbb{R} $ mit $b_1 = b_2$
+				\item  	H wählt $a_2 \in  \mathbb{C}$ mit $\lnot(\phi_i(a_1) \lor \phi_1(a_1) \lor \phi_{-1}(a_1)) \land \lnot M^{\mathcal{A}_1}(a_1,a_1,a_2) \land a_1 \neq a_2$ \\
+					D wählt $b_2 \in \mathbb{R}$ beliebig
+			\end{enumerate}
+		\end{enumerate}
+	\textbf{Der Herausforderer gewinnt das 3-Runden Spiel}
+		\begin{enumerate}[1. \text{Zug:}]
+			\item  	H wählt $a_1 \in \mathbb{C}$ mit $\phi_{i}(a_1))$ \\
+				D wählt $b_1 \in \mathbb{R}$ beliebig
+			\item 	H wählt $a_2 \in \mathbb{C}$ mit $\phi_{-1}(a_2)$ \\
+				D wählt $b_1 \in \mathbb{R}$ mit $M^{\mathcal{B}_1}(b_1,b_1,b_2)$, sonst verliert sie sofort.
+			\item  	H wählt $a_3 \in \mathbb{C}$ mit $\phi_{1}(a_3)$ \\
+			Dann gilt $M^{\mathcal{A}_1}(a_1,a_1,a_2), M^{\mathcal{A}_1}(a_2,a_2,a_3), M^{\mathcal{A}_1}(a_3,a_3,a_3)$ \\
+			Da $M^{\mathcal{B}_1}(b_3,b_3,b_3)$ gelten muss kann $b_3$ nur $0$ oder $1$ sein. Da aber auch $M^{\mathcal{B}_1}(b_2,b_2,b_3)$ gilt, muss $b_3 = 1$ sein, $b_2$ kann nur $-1$ sein, da $b_3 = 1$. Doch gibt es kein $b_1 \in  \mathbb{R}$ mit $M^{\mathcal{B}_1}(b_1,b_1,b_2)$.
+			
+		\end{enumerate}
+\end{enumerate}
 \subsection*{Aufgabe 2}
 
 \subsection*{Aufgabe 3}
