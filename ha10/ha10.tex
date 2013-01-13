@@ -39,7 +39,7 @@ Marius Liwotto\> -  341051
 \subsection*{Aufgabe 1}
 \begin{enumerate}[(i)]
 	\item $\mathcal{A}_1 = (\mathbb{C},M^{\mathcal{A}_1})$ und $\mathcal{B}_1 = (\mathbb{R}, M^{\mathcal{B}_1})$, wobei $M$ ein 3-stelliges Relationssymbol ist und es gilt $(a,b,c) \in M^{\mathcal{A}_1} \Leftrightarrow a \cdot b = c$ und für $a,b,c \in \mathbb{C}$ und $M^{\mathcal{B}_1} = M^{\mathcal{B}_1} \cap \mathbb{R}^3$ \\
-	\textbf{Die Duplikatorin gewinnt das 1-Runden Spiel}
+	\textbf{Die Duplikatorin gewinnt das 2-Runden Spiel}
 		\begin{enumerate}[1. \text{Zug:}]
 			\item  	
 			\begin{enumerate}[\text{Fall} 1.]
@@ -48,19 +48,29 @@ Marius Liwotto\> -  341051
 				\item  	H wählt $a_1 \in \mathbb{C}$ mit $\lnot(M(a_1,a_1,a_1))$ \\
 					D wählt beliebiges $b_1 \in \mathbb{R}$
 			\end{enumerate}
+			\item  	
+			\begin{enumerate}[\text{Fall} 1.]
+				\item  	H wählt $a_2 \in \mathbb{C}$ mit $M(a_2,a_2,a_1) \land a_1 \neq a_2$ \\
+					D wählt $b_2 \in \mathbb{R}$ mit $M(b_2,b_2,b_1) \land b_1 \neq b_2$
+				\item  	H wählt $a_1 \in \mathbb{C}$ mit $\lnot(M(a_2,a_2,a_1))$ \\
+					D wählt beliebiges $b_1 \in \mathbb{R}$
+				\item  	H wählt $a_2 \in \mathbb{C}$ mit $a_2 = a_1$ \\
+					D wählt $b_2 \in \mathbb{R}$ mit  $b_2 = b_1$
+			\end{enumerate}
 		\end{enumerate}
-	\textbf{Der Herausforderer gewinnt das 2-Runden Spiel}
+	\textbf{Der Herausforderer gewinnt das 3-Runden Spiel}
 		\begin{enumerate}[1. \text{Zug:}]
 			\item  	H wählt $a_1 \in \mathbb{C}$ mit $M(a_1,a_1,a_1)$ \\
 				D wählt $b_1 \in \mathbb{R}$ mit $M(b_1,b_1,b_1)$ sonst verliert sie sofort.
 			\item 	H wählt $a_2 \in \mathbb{C}$ mit $M(a_2,a_2,a_1) \land a_1 \neq a_2$ \\
-			Dann gilt $M^{\mathcal{A}_1}(a_1,a_1,a_1), M^{\mathcal{A}_1}(a_2,a_2,a_1)$ \\
-			Da $M^{\mathcal{B}_1}(b_1,b_1,b_1)$ gelten muss, muss $b_1$ gleich 1 oder 0 sein. Doch besitzt $\mathbb{R}$ kein $b_2$, dass
-			$M^{\mathcal{A}_1}(b_2,b_2,a_1)$ erfüllt, weder für 0 noch für 1.
+				D wählt $b_2 \in \mathbb{R}$ mit $M(b_2,b_2,b_1) \land b_1 \neq b_2$ sonst verliert sie sofort.
+			\item  	H wählt $a_3 \in \mathbb{C}$ mit $M(a_3,a_3,a_2) \land a_3 \neq a_2$
+			Dann gilt $M^{\mathcal{A}_1}(a_1,a_1,a_1), M^{\mathcal{A}_1}(a_2,a_2,a_1), M^{\mathcal{A}_1}(a_3,a_3,a_2)$ \\
+			Da $M^{\mathcal{B}_1}(b_1,b_1,b_1)$ gelten muss, muss $b_1$ gleich 1 oder 0 sein. Da jedoch auch $M^{\mathcal{B}_1}(b_2,b_2,b_1)$ mit $b_2 \neq b_1$ gelten muss, muss $b_1 = 1$ und $b_2 = -1$ sein. Nun gibt es aber keine $b_3 \in \mathbb{R}$ mit $M^{\mathcal{B}_1}(b_3,b_3,b_2)$, in $\mathbb{C}$ gibt es dafür $i \lor -i$
 		\end{enumerate}
-	Aus dem Spiel folgt die Formel: $\exists a \exists b (M(a,a,a) \land M(b,b,a) \land a \neq b )$ 
+	Aus dem Spiel folgt die Formel: $\exists a \exists b \exists c (M(a,a,a) \land M(b,b,a) \land M(c,c,b) \land (a \neq b) \land (b \neq c))$ 
 	\item  	$\mathcal{A}_1 = (\mathbb{C},M^{\mathcal{A}_1})$ und $\mathcal{B}_1 = (\mathbb{R}, M^{\mathcal{B}_1})$.
-	\textbf{Die Duplikatorin gewinnt das 1-Runden Spiel}
+	\textbf{Die Duplikatorin gewinnt das 3-Runden Spiel}
 		\begin{enumerate}[1. \text{Zug:}]
 			\item  	
 			\begin{enumerate}[\text{Fall} 1.]
