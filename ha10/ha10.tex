@@ -38,7 +38,7 @@ Marius Liwotto\> -  341051
 \end{tabbing}
 \subsection*{Aufgabe 1}
 \begin{enumerate}[(i)]
-	\item $\mathcal{A}_1 = (\mathbb{C},M^{\mathcal{A}_1})$ und $\mathcal{B}_1 = (\mathbb{R}, M^{\mathcal{B}_1})$, wobei $M$ ein 3-stelliges Relationssymbol ist und es gilt $(a,b,c) \in M^{\mathcal{A}_1} \Leftrightarrow a \cdot b = c$ und für $a,b,c \in \mathbb{C}$ und $M^{\mathcal{B}_1} = M^{\mathcal{B}_1} \cap \mathbb{R}^3$ \\
+	\item $\mathcal{A}_1 = (\mathbb{C},M^{\mathcal{A}_1})$ und $\mathcal{B}_1 = (\mathbb{R}, M^{\mathcal{B}_1})$, wobei $M$ ein 3-stelliges Relationssymbol ist und es gilt $(a,b,c) \in M^{\mathcal{A}_1} \Leftrightarrow a \cdot b = c$ für $a,b,c \in \mathbb{C}$ und $M^{\mathcal{B}_1} = M^{\mathcal{B}_1} \cap \mathbb{R}^3$ \\
 	\textbf{Die Duplikatorin gewinnt das 2-Runden Spiel}
 		\begin{enumerate}[1. \text{Zug:}]
 			\item  	
@@ -94,18 +94,40 @@ Marius Liwotto\> -  341051
 \subsection*{Aufgabe 2}
 \begin{enumerate}
 	\item 	Zwei $\sigma$-Strukturen $(\mathcal{A},\mathcal{B})$ sind elementar Äquivalent, genau dann wenn f.a. $\varphi \in FO(\sigma)$ gilt $\mathcal{A} \vDash \varphi \Leftrightarrow B \vDash \varphi$ bzw. die Duplikatorin gewinnt für jedes $m \in \N$ das m-Runden Spiel.
-	\item  	Zwei $\sigma$-Strukturen $(\mathcal{A},\mathcal{B})$ sind isomorph, wenn es eine Bijektion zwischen diesen existiert.
+	\item  	Zwei $\sigma$-Strukturen $(\mathcal{A},\mathcal{B})$ sind isomorph, wenn es eine Bijektion $f$ zwischen diesen existiert und $f$ ein Homomoprhismus ist.
+\end{enumerate}
+\textbf{Beweis:}
+\begin{enumerate}
+	\item \textbf{$\mathcal{A}$ und $\mathcal{B}$ sind elementar äquivalent $\Leftrightarrow$ Die Duplikatorin gewinnt jedes m-Runden Spiel} \\
+	Sei $m \in \N$ ein beliebig. 
+Eine Gewinnstrategie der Duplikatiorin würde jeden Zug des Herausforderes kopieren, da $\infty \not \in \N$ gilt diese Strategie für jedes m-Runden Spiel. 
+	\item \textbf{$\mathcal{A} \not \cong \mathcal{B} \Leftrightarrow$ Es gibt keine Bikjektion zwischen den Strukturen und $f$ ein Homomorphismus ist} \\
 \end{enumerate}
 
-\textbf{$\mathcal{A}$ und $\mathcal{B}$ sind elementar äquivalent} \\
+
 
 
 
 \subsection*{Aufgabe 3}
-In Aufgabe 2 wurde gezeigt, dass die $\sigma$-Strukturen $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent sind, d.h. heisst f.a. $\varphi \in FO[\sigma]$ gilt: $\mathcal{A} \vDash \varphi \Leftrightarrow B \vDash \varphi$. $\mathcal{A}$ besitzt nur endliche Komponenten, $\mathcal{B}$ auch eine unendliche. \\Somit kann es keine Formel $\varphi \in FO[\sigma]$ geben, die nur dann erfüllbar ist genau dann wenn der Graph nur endliche Komponenten enthält, da die Strukturen elementar äquivalent sind.
+In Aufgabe 2.) wurde gezeigt, dass die $\sigma$-Strukturen $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent sind, d.h. heisst f.a. $\varphi \in FO[\sigma]$ gilt: $\mathcal{A} \vDash \varphi \Leftrightarrow B \vDash \varphi$. $\mathcal{A}$ besitzt nur endliche Komponenten, $\mathcal{B}$ auch eine unendliche. \\Somit kann es keine Formel $\varphi \in FO[\sigma]$ geben, die nur dann erfüllbar ist genau dann wenn der Graph nur endliche Komponenten enthält, da die Strukturen elementar äquivalent sind.
 
 
 \subsection*{Aufgabe 4}
+
+Ein Aussage eines unendlichen EF-Spiels ist äquivalent zur Aussage ob zwischen den Strukturen ein isomorphismus vorliegt, also:
+\[\text{D gewinnt }\mathfrak{G}_{\infty}(\mathcal{A}, \mathcal{B}) \Leftrightarrow  \mathcal{A} \cong \mathcal{B}\]
+\textbf{Beweis:}
+\begin{enumerate}
+	\item 
+	\begin{enumerate}
+		\item 	$\mathcal{A} \cong \mathcal{B} \Rightarrow $ D gewinnt $\mathfrak{G}_{\infty}$ \\
+			Der Isomorphismus ist eine Gewinnstrategie für D.
+		\item 	D gewinnt $\mathfrak{G}_{\infty}$ $\Rightarrow \mathcal{A} \cong \mathcal{B} $ \\
+			Die Züge von D. stellen ein Isomorphismus da...
+	\end{enumerate}
+\end{enumerate}
+In Aufgabe 2.) gewinnt die Duplikatorin jedes Spiel, da die Strukturen elementar äquivalent sind, sie sind jedoch nicht isomorph, womit sie das unendliche EF-Spiel nicht gewinnen würde.
+
 
 \end{document}
 
