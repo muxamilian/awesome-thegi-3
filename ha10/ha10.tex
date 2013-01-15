@@ -99,10 +99,13 @@ Marius Liwotto\> -  341051
 \textbf{Beweis:}
 \begin{enumerate}
 	\item \textbf{$\mathcal{A}$ und $\mathcal{B}$ sind elementar äquivalent $\Leftrightarrow$ Die Duplikatorin gewinnt jedes m-Runden Spiel} \\
-	Sei $m \in \N$ ein beliebig. \textbf\textsc{{Stimmt doch nicht, was ist wenn der Herausforderer $\infty$ wählt, dann ist alles kaputt... -- Max}}
-Eine Gewinnstrategie der Duplikatiorin würde jeden Zug des Herausforderes kopieren, da $\infty \not \in \N$ gilt diese Strategie für jedes m-Runden Spiel. 
+	Sei $m \in \N$ ein beliebig. Wählt der Herausforderen ein Tupel $a_n$, die Unendlichkeit nicht enthält, so wählt die Duplikatorin genau das gleiche Element in der anderen Struktur. Dadurch entsteht logischerweise ein Homomorphismus.\\
+	Wählt der Herausforderer aber ein Tupel $a_n$ mit Unendlich, so wählt die Duplikatorin ein Tupel $b_n = (i,j)$, wobei i größer ist als m. Da alle Komponenten vollständige Untergraphen darstellen, entsteht hierbei ebenfalls ein partieller Isomorphismus.\\
+	Für alle unendlichen Tupel des Herausforderers in den nächsten Runden gibt die Duplikatorin Antworten aus der gleichen Komponente wie vorhin an.\\
+	Da das Spiel nur $m$ Runden hat, ergibt dies auch mit der Unendlichkeit der Komponente kein Problem.
 	\item \textbf{$\mathcal{A} \not \cong \mathcal{B} \Leftrightarrow$ Es gibt keine Bikjektion zwischen den Strukturen und $f$ ein Homomorphismus ist} \\
-	Gibt es besagten Isomorphismus, so muss es ein Tupel $ x = (\infty, i)$ geben, das auf $y = (k,j)$ abgebildet wird. Nun steht nach Definition von $E^{\mathcal{B}}$ $x$ mit unendlich vielen Elementen in Relation, $y$ aber immer nur mit endlich vielen, da es nur endlich viele natürliche Zahlen gibt, die kleiner als $k$ sind. Darum kann es keinen Isomorphismus geben, da Elemente nicht bedeutungsgleich abgebildet werden können.
+	Um einen Isomorphismus darzustellen, muss jedes Tupel ohne Unendlich auf das identische Tupel in der anderen Struktur abgebildet werden, da jede Komponente einen vollständigen Untergraphen darstellt und das die einzige Lösung ist, um die Verträglichkeit des Isomorphismus sicherzustellen. \\
+	Da somit jede Komponente auf sich selbst abgebildet wird, ist kein Element mehr übrig, auf das die zusätzliche unendliche Komponente in $B$ abgebildet werden kann.
 \end{enumerate}
 
 
@@ -110,7 +113,7 @@ Eine Gewinnstrategie der Duplikatiorin würde jeden Zug des Herausforderes kopie
 
 
 \subsection*{Aufgabe 3}
-In Aufgabe 2.) wurde gezeigt, dass die $\sigma$-Strukturen $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent sind, d.h. heisst f.a. $\varphi \in FO[\sigma]$ gilt: $\mathcal{A} \vDash \varphi \Leftrightarrow B \vDash \varphi$. $\mathcal{A}$ besitzt nur endliche Komponenten, $\mathcal{B}$ auch eine unendliche. \\Somit kann es keine Formel $\varphi \in FO[\sigma]$ geben, die nur dann erfüllbar ist genau dann wenn der Graph nur endliche Komponenten enthält, da die Strukturen elementar äquivalent sind.
+In Aufgabe 2.) wurde gezeigt, dass die $\sigma$-Strukturen $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent sind, d.h. heißt f.a. $\varphi \in FO[\sigma]$ gilt: $\mathcal{A} \vDash \varphi \Leftrightarrow B \vDash \varphi$. $\mathcal{A}$ besitzt nur endliche Komponenten, $\mathcal{B}$ auch eine unendliche. \\Somit kann es keine Formel $\varphi \in FO[\sigma]$ geben, die nur dann erfüllbar ist genau dann wenn der Graph nur endliche Komponenten enthält, da die Strukturen elementar äquivalent sind.
 
 
 \subsection*{Aufgabe 4}
