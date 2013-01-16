@@ -153,8 +153,25 @@ Marius Liwotto\> -  341051
 			\end{enumerate}
 	\end{enumerate}
 	
-	Angenommen H. spielt in $\mathcal{A}$,dann gilt der Fall, wenn H in $\mathcal{B}$ analog dazu.
+	Angenommen H. spielt in $\mathcal{A}$,dann gilt der Fall, wenn H in $\mathcal{B}$ analog dazu. \\
+	
+	Beweis, dass es kein Isomorphismus $\pi: B \rightarrow A$ gibt zwischen $\mathcal{A}$ und $\mathcal{B}$.
+	
+	Wenn es eine Isomorphismus geben würde, müsste er auch die Tupel aus B mit unendlich auf Elemente aus A abbilden, in der Weise:
+	
+	\begin{align*}
+		\pi((\infty, b)) = (x,y)
+	\end{align*}
 
+	Da gilt $E^B((\infty, b),(\infty, b')) \equiv T$ für alle b, b' $\in \mathbb{N}$ muss nach Isomorphimuseigenschaften gelten:
+	\begin{align*}
+		E^A(\pi((\infty, b)),\pi((\infty, b'))) \equiv T \text{ für alle b, b'} \in \mathbb{N}. 
+	\end{align*}
+	
+	Das ist aber nicht möglich, denn $\infty$ wird auf eine natürliche Zahl x 	abgebildet für die es immer ein y gibt, sodass y $>$ x. Daraus folgt unweigerlich:
+	$E^A((x,y)(x,y)) \equiv false$, was ein Widerspruch zu den Isomorphismuseigenschaften ist.
+	
+	
 \subsection*{Aufgabe 3}
 In Aufgabe 2. wurde gezeigt, dass die $\sigma$-Strukturen $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent sind, d.h. heißt f.a. $\varphi \in FO[\sigma]$ gilt: $\mathcal{A} \vDash \varphi \Leftrightarrow B \vDash \varphi$. $\mathcal{A}$ besitzt nur endliche Komponenten, $\mathcal{B}$ auch eine unendliche. \\Somit kann es keine Formel $\varphi \in FO[\sigma]$ geben, die nur dann erfüllbar ist genau dann wenn der Graph nur endliche Komponenten enthält, da die Strukturen elementar äquivalent sind.
 
