@@ -118,19 +118,25 @@ In Aufgabe 2. wurde gezeigt, dass die $\sigma$-Strukturen $\mathcal{A}$ und $\ma
 
 \subsection*{Aufgabe 4}
 
-Ein Aussage eines unendlichen EF-Spiels ist äquivalent zur Aussage ob zwischen den Strukturen ein isomorphismus vorliegt, also:
-\[\text{D gewinnt }\mathfrak{G}_{\infty}(\mathcal{A}, \mathcal{B}) \Leftrightarrow  \mathcal{A} \cong \mathcal{B}\]
-\textbf{Beweis:}
-\begin{enumerate}
-	\item 
-	\begin{enumerate}
-		\item 	$\mathcal{A} \cong \mathcal{B} \Rightarrow $ D gewinnt $\mathfrak{G}_{\infty}$ \\
-			Der Isomorphismus ist eine Gewinnstrategie für D.
-		\item 	D gewinnt $\mathfrak{G}_{\infty}$ $\Rightarrow \mathcal{A} \cong \mathcal{B} $ \\
-			Die Züge von D. stellen ein Isomorphismus da...
-	\end{enumerate}
-\end{enumerate}
-In Aufgabe 2.) gewinnt die Duplikatorin jedes Spiel, da die Strukturen elementar äquivalent sind, sie sind jedoch nicht isomorph, womit sie das unendliche EF-Spiel nicht gewinnen würde.
+Bei bestimmten Strukturen, bei denen man keine allgemeine Gewinnstrategie für die Duplikatorin wählen kann, sondern ein $m$ benötigt, sagt ein Gewinn für die Duplikatorin in $\mathfrak{G}_{\infty}$ etwas anderes aus, als dass sie f.a. $m $ das $\mathfrak{G}_m$ Spiel gewinnt. (Die Strukturen aus 2. sind solche) \\
+
+Wie in 2.) gezeigt wurde, sind $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent, also das die Duplikatorin f.a. $m \in \N$ das $\mathfrak{G}_m$ Spiel gewinnt.
+Sei zu zeigen, dass die Duplikatorin das $\mathfrak{G}_{\infty}$ nicht gewinnen kann. \\
+
+\textbf{Beweis: Der Herausforderer gewinnt das $\infty$-Runden Spiel}
+		\begin{enumerate}[1. \text{Zug:}]
+			\item  	H wählt $a_1 \in B$ mit $a_1 = (\infty, 0)$ \\
+				D wählt $b_1 \in A$ mit $b_1 = (x,0)$. Normalerweise sollte x eine möglichst grosse Zahl sein, damit D lange überlebt, aber dies ist irrelevant bei diesem Spiel.
+			\item[2-x Zug:] 	H wählt $a_x \in B$ mit $a_x = a_{x-1} + (0,1)$ \\
+				D wählt $b_x \in A$ mit $b_x = b_{x-1} + (0,1)$
+
+			\item[x+1. Zug:] 	H wählt $a_{x+1} \in B$ mit $a_x = a_{x} + (0,1)$ \\
+						D wählt $b_{x+1} \in A$	
+		\end{enumerate}
+		Da D von Anfang an eine Struktur auswählen muss, aus der sie wählt, hat diese eine bestimmte Grösse $x$, nach $x$-Runden sind alle Elemente daraus aufgebraucht und ein Element aus einer anderen Struktur würde den partiellen Isomorphismus zerstören. \\
+
+		Damit wurde gezeigt, dass dies zwei verschiedene Spiele sind.
+
 
 
 \end{document}
