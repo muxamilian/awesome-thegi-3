@@ -157,18 +157,27 @@ Marius Liwotto\> -  341051
 	
 	Beweis, dass es kein Isomorphismus $\pi: B \rightarrow A$ gibt zwischen $\mathcal{A}$ und $\mathcal{B}$.
 	
-	Wenn es eine Isomorphismus geben würde, müsste er auch die Tupel aus B mit unendlich auf Elemente aus A abbilden, in der Weise:
+	Wenn es eine Isomorphismus geben würde, müsste er auch die Tupel aus B mit unendlich auf Elemente aus A abbilden, in der Weise, dass 				$\infty$ des Tupels ($\infty$,b) immer auf das selbe Element x abgebildet wird und b auf ein beliebiges y.
 	
 	\begin{align*}
 		\pi((\infty, b)) = (x,y)
 	\end{align*}
-
+	
+	Würde dies nicht gelten, so würde gäbe es 2 Tupel:
+	
+	\begin{align*}
+		\pi((\infty, b)) = (x,y) \neq (x',y) = \pi((\infty, b')) \Rightarrow E^{\mathcal{B}}((\infty, b),(\infty, b')) \neq E^{\mathcal{A}}					(\pi((\infty, b)),\pi((\infty, b')))
+	\end{align*}
+	
 	Da gilt $E^B((\infty, b),(\infty, b')) \equiv T$ für alle b, b' $\in \mathbb{N}$ muss nach Isomorphimuseigenschaften gelten:
 	\begin{align*}
 		E^A(\pi((\infty, b)),\pi((\infty, b'))) \equiv T \text{ für alle b, b'} \in \mathbb{N}. 
 	\end{align*}
 	
-	Das ist aber nicht möglich, denn $\infty$ wird auf eine natürliche Zahl x 	abgebildet für die es immer ein y gibt, sodass y $>$ x. Daraus folgt unweigerlich:
+	Das ist aber nicht möglich, denn $\infty$ wird immer auf die natürliche Zahl x abgebildet, für die es immer ein y gibt, sodass y $>$ x. 
+	Des Weiteren muss es ein Tupel (x,y) geben mit x $<$ y, da es nur endlich viele Zahlen gibt, die kleiner sind als x, aber es unendlich viele 			Tupel($\infty$,b), die auf etwas abgebildet werden müssen.
+	
+	Daraus folgt unweigerlich:
 	$E^A((x,y)(x,y)) \equiv false$, was ein Widerspruch zu den Isomorphismuseigenschaften ist.
 	
 	
