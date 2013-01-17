@@ -163,23 +163,24 @@ Marius Liwotto\> -  341051
 		\pi((\infty, b)) = (x,y)
 	\end{align*}
 	
-	Würde dies nicht gelten, so würde gäbe es 2 Tupel:
+	Würde dies nicht gelten, so würde gäbe es 2 Tupel ($\infty$, b),($\infty$, b'):
 	
 	\begin{align*}
 		\pi((\infty, b)) = (x,y) \neq (x',y) = \pi((\infty, b')) \Rightarrow E^{\mathcal{B}}((\infty, b),(\infty, b')) \neq E^{\mathcal{A}}					(\pi((\infty, b)),\pi((\infty, b')))
 	\end{align*}
 	
 	Das stünde im Widerspruch zu den Isomorphismuseigenschaften.
-	Da gilt $E^B((\infty, b),(\infty, b'))$ für alle b, b' $\in \mathbb{N}$ muss nach Isomorphimuseigenschaften gelten:
+	
+	Da gilt $E^B((\infty, b),(\infty, b')) \equiv T$ für alle b, b' $\in \mathbb{N}$ muss nach Isomorphimuseigenschaften gelten:
 	\begin{align*}
 		E^A(\pi((\infty, b)),\pi((\infty, b'))) \text{ für alle b, b'} \in \mathbb{N}. 
 	\end{align*}
 	
-	Das ist aber nicht möglich, denn $\infty$ wird immer auf die natürliche Zahl x abgebildet, für die es immer ein y gibt, sodass y $>$ x. 
-	Des Weiteren muss es ein Tupel (x,y) geben mit x $<$ y, da es nur endlich viele Zahlen gibt, die kleiner sind als x, aber es unendlich viele 			Tupel($\infty$,b), die auf etwas abgebildet werden müssen.
+	Das ist aber nicht möglich, denn $\infty$ wird immer auf die natürliche Zahl x abgebildet, für das es immer ein y gibt, sodass y $>$ x. 
+	Da es nur endliche viele verschiedene Zahlen gibt, die kleiner sind als x, aber unendlich viele Tupel der Form ($\infty$,b) auf ein Tupel 			(x,y) injektiv abgebildet werden müssen, folgt, dass es ein Tupel (x,y) geben muss, sodass x $<$ y.
 	
 	Daraus folgt unweigerlich:
-	$E^A((x,y)(x,y)) \equiv \bot$, was ein Widerspruch zu den Isomorphismuseigenschaften ist.
+	$E^A((x,y),(x,y)) \equiv false$, was ein Widerspruch zu den Isomorphismuseigenschaften ist.
 	
 	
 \subsection*{Aufgabe 3}
