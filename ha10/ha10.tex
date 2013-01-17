@@ -105,7 +105,7 @@ Marius Liwotto\> -  341051
 		Es gilt, dass bereits m-Runden gespielt wurden und die Duplikatorin noch nicht verloren hat, wobei
 		$a_1,a_2,...,a_m \in A$ und $b_1,b_2,...,b_m \in B$ bereits gespielt wurden.
 		
-		Angenommen H. spielt auf $b_{m+1} \in B$ mit $b_{m+1} \neq b_i,~ i \in \{1,...,m\}$. Fall $b_{m+1}$ ein bereits gespieltes Element ist, 	
+		Angenommen H spielt auf $b_{m+1} \in B$ mit $b_{m+1} \neq b_i,~ i \in \{1,...,m\}$. Fall $b_{m+1}$ ein bereits gespieltes Element ist, 	
 		spielt es die D auf das Element, welches es vorher gewählt hat.
 		
 		\item[]
@@ -114,48 +114,48 @@ Marius Liwotto\> -  341051
 				$b_{m+1} = (\infty, b)$ mit $b \in \mathbb{N}$, dann wird $b_{m+1}$ auf (m+k,b) abgebildet, wobei $k > 0$.
 				\begin{enumerate}
 					\item	
-						Es existiert ein i $\in [1,m] a_i = (m+k,b)$. 
+						Es existiert ein $i \in \{1,...,m\}$, sodass $a_i = (m+k,b)$. 
 						
-						Suche ein b', sodass b' $<$ m + k und (m+k,b') $\neq a_i$ mit i $\in [1,m]$ , welches existiert, da bis 
+						Suche ein $b'$, sodass $b' < m + k$ und $(m+k,b')$ $\neq a_i$ mit i $\in \{1,...,m\}$ , welches existiert, da bis 
 						jetzt nur m Runden gespielt wurden und damit nur m Elemente, welcher kleiner m + k
 						sind genutzt wurden, existieren noch k passende b'. 
 						
-						D bildet($\infty$,b) nun auf(m+k, b') ab.
+						D bildet ($\infty$,b) nun auf (m+k, b') ab.
 						
 					\item 
-						Es existiert kein i $\in [1,m] a_i = (m+k,b)$. 
+						Es existiert kein $i \in \{1,...,m\}$, sodass $a_i = (m+k,b)$. 
 						
-						Suche ein b', sodass b' $<$, welches existiert, da bis 
-						jetzt nur m Runden gespielt wurden und damit nur m Elemente, welcher kleiner m + k
-						sind genutzt wurden, existieren noch k passende b'. 
+%						Suche ein b', sodass b' $<$, welches existiert, da bis 
+%						jetzt nur m Runden gespielt wurden und damit nur m Elemente, welcher kleiner m + k
+%						sind genutzt wurden, existieren noch k passende b'. 
 						
-						D bildet ($\infty$,b) nun auf(m+k, b') ab.
+						D bildet ($\infty$,b) nun auf $(m+k, b)$ ab.
 				\end{enumerate}
 			\item
-				$b_{m+1} = (n, b)$ mit $n,b \in \mathbb{N}$.
+				$b_{m+1} = (n,b)$ mit $n,b \in \mathbb{N}$.
 				
 				\begin{enumerate}
 					\item
-						Falls es ein $b_i$ mit $i \in [1,m]$ gibt, sodass $b_i = (n,l)$ mit l $\in \mathbb{N}$, dann bildet D (n, b) auf 
-						(n,b) ab.
+						Falls es ein $b_i$ mit $i \in \{1,...,m\}$ gibt, sodass $b_i = (n,l)$ mit l $\in \mathbb{N}$, dann bildet D $(n,b)$ auf 
+						$(n,b')$ ab:
 						\begin{enumerate}
 							\item
-								Falls es ein $i \in [1,m]$ gibt mit $a_i = (n,b)$, dann bildet D (n,b) auf (n,b') ab und b < n gilt, bildet D 
-								(n,b) auf (n,b') ab, sodass b' < n gilt. Dieses (n,b') existiert, da für n genau eine Komponente der Größe 											n existiert, sodass es eine noch nicht belegte Kombination (n,b') gibt, für die b' < n gilt.
+								Falls es ein $i \in \{1,...,m\}$ gibt mit $a_i = (n,b)$, dann bildet D $(n,b)$ auf $(n,b')$ ab und wenn $b < n$ gilt, bildet D 
+								$(n,b)$ auf $(n,b')$ ab, sodass $b' < n$ gilt. Dieses $(n,b') $ existiert, da für n genau eine Komponente der Größe 											n existiert, sodass es eine noch nicht belegte Kombination $(n,b')$ gibt, für die $b' < n$ gilt.
 							\item
-								Falls es ein $i \in [1,m]$ gibt mit $a_i = (n,b)$, dann bildet D (n,b) auf (n,b') ab und b > n gilt, bildet D 
-								(n,b) auf (n,b') ab, sodass b' < n gilt. Dieses (n,b') existiert, da unendlich viele b' $\in \mathbb{N}$ 											existieren, die größer als n sind.
+								Falls es ein $i \in \{1,...,m\}$ gibt mit $a_i = (n,b)$, dann bildet D $(n,b)$ auf $(n,b')$ ab und wenn $b > n$ gilt, bildet D 
+								$(n,b)$ auf $(n,b')$ ab, sodass $b' < n$ gilt. Dieses $(n,b')$ existiert, da unendlich viele b' $\in \mathbb{N}$ 											existieren, die größer als n sind.
 						\end{enumerate}
 					\item
-						Falls es kein $b_i$ mit $i \in [1,m]$ gibt, sodass $b_i = (n,l)$ mit l $\in \mathbb{N}$, dann bildet D (n, b) auf 
-						(n,b) ab.
+						Falls es kein $b_i$ mit $i \in \{1,...,m\}$ gibt, sodass $b_i = (n,l)$ mit l $\in \mathbb{N}$, dann bildet D $(n, b)$ auf 
+						$(n,b)$ ab.
 				\end{enumerate}
 			\end{enumerate}
 	\end{enumerate}
 	
-	Angenommen H. spielt in $\mathcal{A}$,dann gilt der Fall, wenn H in $\mathcal{B}$ analog dazu. \\
+	Angenommen H spielt in $\mathcal{A}$, dann gilt der Fall, wenn H in $\mathcal{B}$ analog dazu. \\
 	
-	Beweis, dass es kein Isomorphismus $\pi: B \rightarrow A$ gibt zwischen $\mathcal{A}$ und $\mathcal{B}$.
+	Beweis, dass es keinen Isomorphismus $\pi: B \rightarrow A$ gibt zwischen $\mathcal{A}$ und $\mathcal{B}$.
 	
 	Wenn es eine Isomorphismus geben würde, müsste er auch die Tupel aus B mit unendlich auf Elemente aus A abbilden, in der Weise, dass 				$\infty$ des Tupels ($\infty$,b) immer auf das selbe Element x abgebildet wird und b auf ein beliebiges y.
 	
@@ -170,16 +170,16 @@ Marius Liwotto\> -  341051
 	\end{align*}
 	
 	Das stünde im Widerspruch zu den Isomorphismuseigenschaften.
-	Da gilt $E^B((\infty, b),(\infty, b')) \equiv T$ für alle b, b' $\in \mathbb{N}$ muss nach Isomorphimuseigenschaften gelten:
+	Da gilt $E^B((\infty, b),(\infty, b'))$ für alle b, b' $\in \mathbb{N}$ muss nach Isomorphimuseigenschaften gelten:
 	\begin{align*}
-		E^A(\pi((\infty, b)),\pi((\infty, b'))) \equiv T \text{ für alle b, b'} \in \mathbb{N}. 
+		E^A(\pi((\infty, b)),\pi((\infty, b'))) \text{ für alle b, b'} \in \mathbb{N}. 
 	\end{align*}
 	
 	Das ist aber nicht möglich, denn $\infty$ wird immer auf die natürliche Zahl x abgebildet, für die es immer ein y gibt, sodass y $>$ x. 
 	Des Weiteren muss es ein Tupel (x,y) geben mit x $<$ y, da es nur endlich viele Zahlen gibt, die kleiner sind als x, aber es unendlich viele 			Tupel($\infty$,b), die auf etwas abgebildet werden müssen.
 	
 	Daraus folgt unweigerlich:
-	$E^A((x,y)(x,y)) \equiv false$, was ein Widerspruch zu den Isomorphismuseigenschaften ist.
+	$E^A((x,y)(x,y)) \equiv \bot$, was ein Widerspruch zu den Isomorphismuseigenschaften ist.
 	
 	
 \subsection*{Aufgabe 3}
@@ -190,7 +190,7 @@ In Aufgabe 2. wurde gezeigt, dass die $\sigma$-Strukturen $\mathcal{A}$ und $\ma
 
 Bei bestimmten Strukturen, bei denen man keine allgemeine Gewinnstrategie für die Duplikatorin wählen kann, sondern ein $m$ benötigt, sagt ein Gewinn für die Duplikatorin in $\mathfrak{G}_{\infty}$ etwas anderes aus, als dass sie f.a. $m $ das $\mathfrak{G}_m$ Spiel gewinnt. (Die Strukturen aus 2. sind solche) \\
 
-Wie in 2.) gezeigt wurde, sind $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent, also das die Duplikatorin f.a. $m \in \N$ das $\mathfrak{G}_m$ Spiel gewinnt.
+Wie in 2.) gezeigt wurde, sind $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent, also dass die Duplikatorin f.a. $m \in \N$ das $\mathfrak{G}_m$ Spiel gewinnt.
 Sei zu zeigen, dass die Duplikatorin das $\mathfrak{G}_{\infty}$ nicht gewinnen kann. \\
 
 \textbf{Beweis: Der Herausforderer gewinnt das $\infty$-Runden Spiel}
