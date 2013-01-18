@@ -38,6 +38,7 @@ Marius Liwotto\> -  341051
 \end{tabbing}
 \subsection*{Aufgabe 1}
 \begin{enumerate}[(i)]
+<<<<<<< HEAD
 \item
 Sei $n$ die Anzahl an Elementen im Universum von $G$. Ein $H$ muss für einen Isomorphismus auf jeden Fall die gleiche Anzahl an Elementen haben, wie $G$, nämlich $n$.
 
@@ -69,4 +70,32 @@ Da wir hiermit ein endliches Axiomensystem -- nämlich $\xi$ -- aufgestellt habe
 
 $\xi$ ist ein endliches Axiomensystem, da alle $\psi_i$ und auch $\varphi$ aus (i) für endliche Graphen trivialerweise stets endlich sind. 
 \end{enumerate}
+=======
+	\item Sei der Satz $\varphi$ definiert als:
+	\[ \varphi = \bigwedge_{(a,b) \in E(G)} (a,b) \]
+	\item 
+\end{enumerate}
+
+\subsection*{Aufgabe 2}
+Es wurde in den Präzensübungen gezeigt, dass die Duplikatorin das EF Spiel zwischen $(\mathbb{Q},<)$ und $(\mathbb{R},<)$ immer gewinnt, d.h. diese Strukturen sind Elementar äquivalent.
+Somit kann es keine Menge $\Phi$ an $FO[\sigma]$ geben, sodass Mod($\Phi$) genau die Klasse aller zu $(\mathbb{Q},<)$ isomorphen Mengen ist, da $(\mathbb{R},<)$ nicht isomorph ist.
+\subsection*{Aufgabe 3}
+\begin{enumerate}[(i)]
+	\item Es wird im folgenden widerlegt, dass $T$ eine vollständige Theorie ist.
+	\item 
+\end{enumerate}
+
+\subsection*{Aufgabe 4}
+Die Struktur der unendlichen $\sigma$-Strukturen ist axiomatisierbar mit:
+\begin{align*}
+	\Phi = \{\varphi_n | n \in \N \} \text{ wobei } \varphi_n = \exists x_1 ... \exists x_n. \bigwedge_{1  \le i \le n} \bigwedge_{1 \le j \le, i \neq j} x_i \neq x_j
+\end{align*}
+Falls es ein endliches $\Phi$ geben sollte heisst das man könnte die Konjunktion über $\Phi$ bilden:
+\[\varphi = \bigwedge_{\psi \in \Phi} \psi \]
+Da $\varphi$ endlich ist kann man den Quantorenrang bestimmen: $m = qr(\varphi)$. \\
+\\
+Wähle zwei $\sigma$-Strukturen $(\mathcal{A} = (A,<),\mathcal{B} = (B,<))$, wobei die Menge $A$ die grösse $2^{m+1}$ hat und $B$ unendlich ist. Würden wir nun eine EF-Spiel auf diesen Strukturen spielen, würde die Duplikatorin das $m$-Runden Spiel gewinnen (siehe Satz aus der Vorlesung), daraus folgt die $m$-Äquivalenz zwischen diesen Strukturen, d.h. f.a. $\varphi \in FO[\sigma] $ mit $qr(\varphi) = m$ gilt $\mathcal{A} \vDash \varphi \Leftrightarrow \mathcal{B} \vDash \varphi$. Somit kann es kein endliches Axiomsystem geben, dass die Menge der undendlichen Mengen axiomatisiert.
+
+
+>>>>>>> 3d02f28b3fa199d518ad8309d45357e9a9362b8a
 \end{document}
