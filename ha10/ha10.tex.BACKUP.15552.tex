@@ -1,0 +1,218 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+
+\newcommand{\rf}{\right\rfloor}
+\newcommand{\lf}{\left\lfloor}
+\newcommand{\tabspace}{15cm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 10} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+\subsection*{Aufgabe 1}
+\begin{enumerate}[(i)]
+	\item $\mathcal{A}_1 = (\mathbb{C},M^{\mathcal{A}_1})$ und $\mathcal{B}_1 = (\mathbb{R}, M^{\mathcal{B}_1})$, wobei $M$ ein 3-stelliges Relationssymbol ist und es gilt $(a,b,c) \in M^{\mathcal{A}_1} \Leftrightarrow a \cdot b = c$ für $a,b,c \in \mathbb{C}$ und $M^{\mathcal{B}_1} = M^{\mathcal{B}_1} \cap \mathbb{R}^3$ \\
+	\textbf{Die Duplikatorin gewinnt das 2-Runden Spiel}
+		\begin{enumerate}[1. \text{Zug:}]
+			\item  	
+			\begin{enumerate}[\text{Fall} 1.]
+				\item  	H wählt $a_1 \in \mathbb{C}$ mit $M(a_1,a_1,a_1)$ \\
+					D wählt $b_1 \in \mathbb{R}$ mit $M(b_1,b_1,b_1)$
+				\item  	H wählt $a_1 \in \mathbb{C}$ mit $\lnot(M(a_1,a_1,a_1))$ \\
+					D wählt $b_1 \in \mathbb{R}$ mit $\lnot(M(b_1,b_1,b_1))$
+			\end{enumerate}
+			\item  	
+			\begin{enumerate}[\text{Fall} 1.]
+				\item  	H wählt $a_2 \in \mathbb{C}$ mit $M(a_2,a_2,a_1) \land a_1 \neq a_2$ \\
+					D wählt $b_2 \in \mathbb{R}$ mit $M(b_2,b_2,b_1) \land b_1 \neq b_2$
+				\item  	H wählt $a_1 \in \mathbb{C}$ mit $\lnot(M(a_2,a_2,a_1)) \land a_1 \neq a_2$ \\
+					D wählt $b_2 \in \mathbb{R}$ mit $\lnot(M(b_2,b_2,b_1)) \land b_1 \neq b_2$
+				\item  	H wählt $a_2 \in \mathbb{C}$ mit $a_2 = a_1$ \\
+					D wählt $b_2 \in \mathbb{R}$ mit  $b_2 = b_1$
+			\end{enumerate}
+		\end{enumerate}
+	\textbf{Der Herausforderer gewinnt das 3-Runden Spiel}
+		\begin{enumerate}[1. \text{Zug:}]
+			\item  	H wählt $a_1 \in \mathbb{C}$ mit $M(a_1,a_1,a_1)$ \\
+				D wählt $b_1 \in \mathbb{R}$ mit $M(b_1,b_1,b_1)$ sonst verliert sie sofort.
+			\item 	H wählt $a_2 \in \mathbb{C}$ mit $M(a_2,a_2,a_1) \land a_1 \neq a_2$ \\
+				D wählt $b_2 \in \mathbb{R}$ mit $M(b_2,b_2,b_1) \land b_1 \neq b_2$ sonst verliert sie sofort.
+			\item  	H wählt $a_3 \in \mathbb{C}$ mit $M(a_3,a_3,a_2) \land a_3 \neq a_2$
+			Dann gilt $M^{\mathcal{A}_1}(a_1,a_1,a_1), M^{\mathcal{A}_1}(a_2,a_2,a_1), M^{\mathcal{A}_1}(a_3,a_3,a_2)$ \\
+			Da $M^{\mathcal{B}_1}(b_1,b_1,b_1)$ gelten muss, muss $b_1$ gleich 1 oder 0 sein. Da jedoch auch $M^{\mathcal{B}_1}(b_2,b_2,b_1)$ mit $b_2 \neq b_1$ gelten muss, muss $b_1 = 1$ und $b_2 = -1$ sein. Nun gibt es aber keine $b_3 \in \mathbb{R}$ mit $M^{\mathcal{B}_1}(b_3,b_3,b_2)$, in $\mathbb{C}$ gibt es dafür $i \lor -i$
+		\end{enumerate}
+	Aus dem Spiel folgt die Formel: $\exists a \exists b \exists c (M(a,a,a) \land M(b,b,a) \land M(c,c,b) \land (a \neq b) \land (b \neq c))$ 
+	\item  	$\mathcal{A}_1 = (\mathbb{C},M^{\mathcal{A}_1})$ und $\mathcal{B}_1 = (\mathbb{R}, M^{\mathcal{B}_1})$. \\
+	\textbf{Die Duplikatorin gewinnt das 1-Runden Spiel}
+		\begin{enumerate}[1. \text{Zug:}]
+			\item  	
+			\begin{enumerate}[\text{Fall} 1.]
+				\item  	H wählt $a_1 \in \Z$ mit $R(a_1,a_1,a_1)$ \\
+					D wählt $b_1 \in \Z$ mit $R(b_1,b_1,b_1) $ 
+				\item  	H wählt $a_1 \in \mathbb{Z}$ mit $\lnot(R(a_1,a_1,a_1))$ \\
+					D wählt beliebiges $b_1 \in \mathbb{Z}$
+			\end{enumerate}
+		\end{enumerate}
+	\textbf{Der Herausforderer gewinnt das 2-Runden Spiel}
+		\begin{enumerate}[1. \text{Zug:}]
+			\item  	H wählt $a_1 \in \mathbb{Z}$ mit $R(a_1,a_1,a_1)$ \\
+				D wählt $b_1 \in \Z$ mit $R(b_1,b_1,b_1) $, sonst verliert sie sofort.
+			\item  	H wählt $a_2 \in \mathbb{Z}$ mit $R(a_2,a_2,a_2) \land a_1 \neq a_2$ \\
+			Dann gilt $R^{\mathcal{A}_1}(a_1,a_1,a_1), R^{\mathcal{A}_1}(a_2,a_2,a_2)$. $R^{\mathcal{B}_1}(b_1,b_1,b_1)$ gilt zwar auch, aber da $a_1 \neq a_2 \Rightarrow b_1 \neq b_2$ gelten muss, jedoch nur die $0$ diese Bedingung erfüllt, gewinnt H das 2-Runden Spiel.
+
+		\end{enumerate}
+	Aus dem Spiel folgt die Formel: $\exists a \exists b(R(a,a,a) \land R(b,b,b) \land b \neq a)$
+
+\end{enumerate}
+\subsection*{Aufgabe 2}
+	Um zu beweisen, dass die Strukturen m-Äquivalent sind, reicht es eine Gewinnstrategie für die Duplikatorin anzugeben. 
+	
+	Gewinnstrategie per Induktion:
+	
+	\begin{enumerate}
+
+	\item[IA:] ~\\
+		m = 0, weswegen noch nichts gespielt wurde und die Duplikatorin kann noch nicht verloren haben kann.
+		
+	\item[IS:]
+		Es gilt, dass bereits m-Runden gespielt wurden und die Duplikatorin noch nicht verloren hat, wobei
+		$a_1,a_2,...,a_m \in A$ und $b_1,b_2,...,b_m \in B$ bereits gespielt wurden.
+		
+		Angenommen H spielt auf $b_{m+1} \in B$ mit $b_{m+1} \neq b_i,~ i \in \{1,...,m\}$. Fall $b_{m+1}$ ein bereits gespieltes Element ist, 	
+		spielt es die D auf das Element, welches es vorher gewählt hat.
+		
+		\item[]
+		\begin{enumerate}[\text{Fall} 1.]
+			\item
+				$b_{m+1} = (\infty, b)$ mit $b \in \mathbb{N}$, dann wird $b_{m+1}$ auf (m+k,b) abgebildet, wobei $k > 0$.
+				\begin{enumerate}
+					\item	
+						Es existiert ein $i \in \{1,...,m\}$, sodass $a_i = (m+k,b)$. 
+						
+						Suche ein $b'$, sodass $b' < m + k$ und $(m+k,b')$ $\neq a_i$ mit i $\in \{1,...,m\}$ , welches existiert, da bis 
+						jetzt nur m Runden gespielt wurden und damit nur m Elemente, welcher kleiner m + k
+						sind genutzt wurden, existieren noch k passende b'. 
+						
+						D bildet ($\infty$,b) nun auf (m+k, b') ab.
+						
+					\item 
+						Es existiert kein $i \in \{1,...,m\}$, sodass $a_i = (m+k,b)$. 
+						
+%						Suche ein b', sodass b' $<$, welches existiert, da bis 
+%						jetzt nur m Runden gespielt wurden und damit nur m Elemente, welcher kleiner m + k
+%						sind genutzt wurden, existieren noch k passende b'. 
+						
+						D bildet ($\infty$,b) nun auf $(m+k, b)$ ab.
+				\end{enumerate}
+			\item
+				$b_{m+1} = (n,b)$ mit $n,b \in \mathbb{N}$.
+				
+				\begin{enumerate}
+					\item
+						Falls es ein $b_i$ mit $i \in \{1,...,m\}$ gibt, sodass $b_i = (n,l)$ mit l $\in \mathbb{N}$, dann bildet D $(n,b)$ auf 
+						$(n,b')$ ab:
+						\begin{enumerate}
+							\item
+								Falls es ein $i \in \{1,...,m\}$ gibt mit $a_i = (n,b)$, dann bildet D $(n,b)$ auf $(n,b')$ ab und wenn $b < n$ gilt, bildet D 
+								$(n,b)$ auf $(n,b')$ ab, sodass $b' < n$ gilt. Dieses $(n,b') $ existiert, da für n genau eine Komponente der Größe 											n existiert, sodass es eine noch nicht belegte Kombination $(n,b')$ gibt, für die $b' < n$ gilt.
+							\item
+								Falls es ein $i \in \{1,...,m\}$ gibt mit $a_i = (n,b)$, dann bildet D $(n,b)$ auf $(n,b')$ ab und wenn $b > n$ gilt, bildet D 
+								$(n,b)$ auf $(n,b')$ ab, sodass $b' < n$ gilt. Dieses $(n,b')$ existiert, da unendlich viele b' $\in \mathbb{N}$ 											existieren, die größer als n sind.
+						\end{enumerate}
+					\item
+						Falls es kein $b_i$ mit $i \in \{1,...,m\}$ gibt, sodass $b_i = (n,l)$ mit l $\in \mathbb{N}$, dann bildet D $(n, b)$ auf 
+						$(n,b)$ ab.
+				\end{enumerate}
+			\end{enumerate}
+	\end{enumerate}
+	
+	Angenommen H spielt in $\mathcal{A}$, dann gilt der Fall, wenn H in $\mathcal{B}$ analog dazu. \\
+	
+	Beweis, dass es keinen Isomorphismus $\pi: B \rightarrow A$ gibt zwischen $\mathcal{A}$ und $\mathcal{B}$.
+	
+	Wenn es eine Isomorphismus geben würde, müsste er auch die Tupel aus B mit unendlich auf Elemente aus A abbilden, in der Weise, dass 				$\infty$ des Tupels ($\infty$,b) immer auf das selbe Element x abgebildet wird und b auf ein beliebiges y.
+	
+	\begin{align*}
+		\pi((\infty, b)) = (x,y)
+	\end{align*}
+	
+	Würde dies nicht gelten, so würde gäbe es 2 Tupel ($\infty$, b),($\infty$, b'):
+	
+	\begin{align*}
+		\pi((\infty, b)) = (x,y) \neq (x',y) = \pi((\infty, b')) \Rightarrow E^{\mathcal{B}}((\infty, b),(\infty, b')) \neq E^{\mathcal{A}}					(\pi((\infty, b)),\pi((\infty, b')))
+	\end{align*}
+	
+	Das stünde im Widerspruch zu den Isomorphismuseigenschaften.
+<<<<<<< HEAD
+	Da gilt $E^B((\infty, b),(\infty, b'))$ für alle b, b' $\in \mathbb{N}$ muss nach Isomorphimuseigenschaften gelten:
+=======
+	
+	Da gilt $E^B((\infty, b),(\infty, b')) \equiv T$ für alle b, b' $\in \mathbb{N}$ muss nach Isomorphimuseigenschaften gelten:
+>>>>>>> d490300765d70832443385a37ae5e2edd5eb2a8a
+	\begin{align*}
+		E^A(\pi((\infty, b)),\pi((\infty, b'))) \text{ für alle b, b'} \in \mathbb{N}. 
+	\end{align*}
+	
+	Das ist aber nicht möglich, denn $\infty$ wird immer auf die natürliche Zahl x abgebildet, für das es immer ein y gibt, sodass y $>$ x. 
+	Da es nur endliche viele verschiedene Zahlen gibt, die kleiner sind als x, aber unendlich viele Tupel der Form ($\infty$,b) auf ein Tupel 			(x,y) injektiv abgebildet werden müssen, folgt, dass es ein Tupel (x,y) geben muss, sodass x $<$ y.
+	
+	Daraus folgt unweigerlich:
+<<<<<<< HEAD
+	$E^A((x,y)(x,y)) \equiv \bot$, was ein Widerspruch zu den Isomorphismuseigenschaften ist.
+=======
+	$E^A((x,y),(x,y)) \equiv false$, was ein Widerspruch zu den Isomorphismuseigenschaften ist.
+>>>>>>> d490300765d70832443385a37ae5e2edd5eb2a8a
+	
+	
+\subsection*{Aufgabe 3}
+In Aufgabe 2. wurde gezeigt, dass die $\sigma$-Strukturen $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent sind, d.h. heißt f.a. $\varphi \in FO[\sigma]$ gilt: $\mathcal{A} \vDash \varphi \Leftrightarrow B \vDash \varphi$. $\mathcal{A}$ besitzt nur endliche Komponenten, $\mathcal{B}$ auch eine unendliche. \\Somit kann es keine Formel $\varphi \in FO[\sigma]$ geben, die nur dann erfüllbar ist genau dann wenn der Graph nur endliche Komponenten enthält, da die Strukturen elementar äquivalent sind.
+
+
+\subsection*{Aufgabe 4}
+
+Bei bestimmten Strukturen, bei denen man keine allgemeine Gewinnstrategie für die Duplikatorin wählen kann, sondern ein $m$ benötigt, sagt ein Gewinn für die Duplikatorin in $\mathfrak{G}_{\infty}$ etwas anderes aus, als dass sie f.a. $m $ das $\mathfrak{G}_m$ Spiel gewinnt. (Die Strukturen aus 2. sind solche) \\
+
+Wie in 2.) gezeigt wurde, sind $\mathcal{A}$ und $\mathcal{B}$ elementar äquivalent, also dass die Duplikatorin f.a. $m \in \N$ das $\mathfrak{G}_m$ Spiel gewinnt.
+Sei zu zeigen, dass die Duplikatorin das $\mathfrak{G}_{\infty}$ nicht gewinnen kann. \\
+
+\textbf{Beweis: Der Herausforderer gewinnt das $\infty$-Runden Spiel}
+		\begin{enumerate}[1. \text{Zug:}]
+			\item  	H wählt $a_1 \in B$ mit $a_1 = (\infty, 0)$ \\
+				D wählt $b_1 \in A$ mit $b_1 = (x,0)$. Normalerweise sollte x eine möglichst grosse Zahl sein, damit D lange überlebt, aber dies ist irrelevant bei diesem Spiel.
+			\item[2-x Zug:] 	H wählt $a_x \in B$ mit $a_x = a_{x-1} + (0,1)$ \\
+				D wählt $b_x \in A$ mit $b_x = b_{x-1} + (0,1)$
+
+			\item[x+1. Zug:] 	H wählt $a_{x+1} \in B$ mit $a_x = a_{x} + (0,1)$ \\
+						D wählt $b_{x+1} \in A$	
+		\end{enumerate}
+		Da D von Anfang an eine Struktur auswählen muss, aus der sie wählt, hat diese eine bestimmte Grösse $x$, nach $x$-Runden sind alle Elemente daraus aufgebraucht und ein Element aus einer anderen Struktur würde den partiellen Isomorphismus zerstören. \\
+
+		Damit wurde gezeigt, dass dies zwei verschiedene Spiele sind.
+\end{document}
