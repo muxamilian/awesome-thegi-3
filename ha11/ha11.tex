@@ -37,4 +37,36 @@ Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
 \subsection*{Aufgabe 1}
+\begin{enumerate}[(i)]
+\item
+Sei $n$ die Anzahl an Elementen im Universum von $G$. Ein $H$ muss für einen Isomorphismus auf jeden Fall die gleiche Anzahl an Elementen haben, wie $G$, nämlich $n$.
+
+Wir führen die Variable $E_{i,j}$ für jede Kante $E^G(i,j)$ ein, wobei $1\le i,j \le n$. Es muss gelten $E_{i,j} \equiv E^G(i,j)$.
+
+Wir konstruieren folgende Formel:
+\begin{align*}
+\varphi &:= \exists y_1 ... \exists y_n~ \left(\left(y_1 \neq y_2 \land ... \land  y_1 \neq y_n\right) \land ... \land \left(y_{n-1} \neq y_n\right)\right) \\
+&\land \left(\left( E^H(y_1,y_2) \leftrightarrow E_{1,2} \land ... \land E^H(y_1,y_n) \leftrightarrow E_{1,n} \right) \land \left( E^H(y_{n-1},y_n) \leftrightarrow E_{n-1,n} \right) \right)
+\end{align*}
+
+Der Satz stellt sicher, dass alle $x_1$ bis $x_n$ ungleich gewählt sind und sie genau dann in Relation zueinander stehen, wenn sie dies auch im Graphen $G$ taten.
+\item
+Es muss eine Menge von Sätzen $\Phi$ oder ein Satz $\xi$ gefunden werden, sodass $\mathcal C = \textsf{Mod}(\Phi)$ oder $\mathcal C = \textsf{Mod}(\xi)$.
+
+Wir definieren für jeden Graphen $G_i$ die folgende Formel:
+\begin{align*}
+\psi_i &:= \bigvee_{G' \subset G_i} \varphi_{G'} \text{ , wobei $\varphi_{G'}$ die Formel aus (i) für den Untergraph $G'$ ist.}
+\end{align*}
+$\psi_i$ sagt also aus, ob $H$ isomorph zu einem Teilgraphen von $G_i$ ist.
+
+Ferner definieren wir folgende Formel:
+\begin{align*}
+\xi &:= \bigvee_{i \in \{1,...,k\}} \psi_i
+\end{align*}
+Diese Formel verodert die vorhin definierten $\psi_i$. Sie sag also aus, ob H zu einem Subgraphen eines der Graphen $G_1,...,G_k$ isomorph ist.
+
+Da wir hiermit ein endliches Axiomensystem -- nämlich $\xi$ -- aufgestellt haben, ist gewiss, dass $\mathcal C$ endlich axiomatisierbar ist.
+
+$\xi$ ist ein endliches Axiomensystem, da alle $\psi_i$ und auch $\varphi$ aus (i) für endliche Graphen trivialerweise stets endlich sind. 
+\end{enumerate}
 \end{document}
