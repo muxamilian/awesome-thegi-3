@@ -70,11 +70,11 @@ Da wir hiermit ein endliches Axiomensystem -- nämlich $\xi$ -- aufgestellt habe
 $\xi$ ist ein endliches Axiomensystem, da alle $\psi_i$ und auch $\varphi$ aus (i) für endliche Graphen trivialerweise stets endlich sind. 
 
 \section*{Aufgabe 2}
-Es wurde in den Präzensübungen gezeigt, dass die Duplikatorin das E.F.-Spiel zwischen $(\mathbb{Q},<)$ und $(\mathbb{R},<)$ immer gewinnt, d.h. diese Strukturen sind elementar äquivalent.
+Es wurde in den Präsenzübungen gezeigt, dass die Duplikatorin das E.F.-Spiel zwischen $(\mathbb{Q},<)$ und $(\mathbb{R},<)$ immer gewinnt, d.h. diese Strukturen sind elementar äquivalent.
 Somit kann es keine Menge $\Phi$ an $FO[\sigma]$ geben, sodass Mod($\Phi$) genau die Klasse aller zu $(\mathbb{Q},<)$ isomorphen Mengen ist, da $(\mathbb{R},<)$ nicht isomorph ist.
 \section*{Aufgabe 3}
 \begin{enumerate}[(i)]
-\item Es wird im folgenden widerlegt, dass $T$ eine vollständige Theorie ist.
+\item Es wird im Folgenden widerlegt, dass $T$ eine vollständige Theorie ist.
 
 Das Gegenbeispiel sei hierbei der folgende Satz:
 \begin{align*}
@@ -87,7 +87,11 @@ Für $\mathcal A := \{\mathbb{N},<\}$ -- welches eine lineare Ordnung darstellt 
 Für $\mathcal B := \{\mathbb{Z},<\}$ -- welches ebenfalls eine lineare Ordnung darstellt -- gilt dieser Satz jedoch nicht. Wählt man für $y = x-1$ findet man immer ein noch kleineres Element.\\
 
 Somit kann die Theorie nicht vollständig sein, da es einen Satz gibt, der manchmal gilt, manchmal aber auch nicht. 
-\item 
+\item Im folgenden zeigen wir, dass $\textsf{Th}(\mathcal{A})$ für eine Struktur $\mathcal{A}$ eine vollständige Theorie ist.
+
+Angenommen es gäbe einen Satz $\psi$, sodass nicht gilt: $\psi \in T$ oder $\lnot \psi \in T$.
+Das würde bedeuten, dass es einen Satz gibt, von dem nicht festgestellt werden kann, ob er in $\mathcal{A}$ gilt oder nicht... TO BE CONTINUED
+\\ \textbf{Ich glaube, dass das vollständige Theorien sind, bin mir aber nicht ganz sicher -- Max}
 \end{enumerate}
 
 \section*{Aufgabe 4}
@@ -95,7 +99,7 @@ Die Struktur der unendlichen $\sigma$-Strukturen ist axiomatisierbar mit:
 \begin{align*}
 	\Phi = \{\varphi_n | n \in \N \} \text{ wobei } \varphi_n = \exists x_1 ... \exists x_n. \bigwedge_{1  \le i \le n} \bigwedge_{1 \le j \le, i \neq j} x_i \neq x_j
 \end{align*}
-Falls es ein endliches $\Phi$ geben sollte heisst das man könnte die Konjunktion über $\Phi$ bilden:
+Falls es ein endliches $\Phi$ geben sollte, heißt das man könnte die Konjunktion über $\Phi$ bilden:
 \[\varphi = \bigwedge_{\psi \in \Phi} \psi \]
 Da $\varphi$ endlich ist kann man den Quantorenrang bestimmen: $m = qr(\varphi)$. \\
 \\
