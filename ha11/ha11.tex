@@ -70,12 +70,24 @@ Da wir hiermit ein endliches Axiomensystem -- nämlich $\xi$ -- aufgestellt habe
 $\xi$ ist ein endliches Axiomensystem, da alle $\psi_i$ und auch $\varphi$ aus (i) für endliche Graphen trivialerweise stets endlich sind. 
 
 \section*{Aufgabe 2}
-Es wurde in den Präzensübungen gezeigt, dass die Duplikatorin das EF Spiel zwischen $(\mathbb{Q},<)$ und $(\mathbb{R},<)$ immer gewinnt, d.h. diese Strukturen sind Elementar äquivalent.
+Es wurde in den Präzensübungen gezeigt, dass die Duplikatorin das E.F.-Spiel zwischen $(\mathbb{Q},<)$ und $(\mathbb{R},<)$ immer gewinnt, d.h. diese Strukturen sind elementar äquivalent.
 Somit kann es keine Menge $\Phi$ an $FO[\sigma]$ geben, sodass Mod($\Phi$) genau die Klasse aller zu $(\mathbb{Q},<)$ isomorphen Mengen ist, da $(\mathbb{R},<)$ nicht isomorph ist.
 \section*{Aufgabe 3}
 \begin{enumerate}[(i)]
-	\item Es wird im folgenden widerlegt, dass $T$ eine vollständige Theorie ist.
-	\item 
+\item Es wird im folgenden widerlegt, dass $T$ eine vollständige Theorie ist.
+
+Das Gegenbeispiel sei hierbei der folgende Satz:
+\begin{align*}
+\varphi &:= \exists x \forall y~ x < y
+\end{align*}
+Dieser Satz besagt, ob es ein kleinstes Element in der Relation gibt. \\
+
+Für $\mathcal A := \{\mathbb{N},<\}$ -- welches eine lineare Ordnung darstellt -- gilt dieser Satz. Die Zahl $0$ ist hierbei das Element, welches $\varphi$ erfüllt.
+
+Für $\mathcal B := \{\mathbb{Z},<\}$ -- welches ebenfalls eine lineare Ordnung darstellt -- gilt dieser Satz jedoch nicht. Wählt man für $y = x-1$ findet man immer ein noch kleineres Element.\\
+
+Somit kann die Theorie nicht vollständig sein, da es einen Satz gibt, der manchmal gilt, manchmal aber auch nicht. 
+\item 
 \end{enumerate}
 
 \section*{Aufgabe 4}
