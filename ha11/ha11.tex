@@ -87,11 +87,12 @@ Für $\mathcal A := \{\mathbb{N},<\}$ -- welches eine lineare Ordnung darstellt 
 Für $\mathcal B := \{\mathbb{Z},<\}$ -- welches ebenfalls eine lineare Ordnung darstellt -- gilt dieser Satz jedoch nicht. Wählt man für $y = x-1$ findet man immer ein noch kleineres Element.\\
 
 Somit kann die Theorie nicht vollständig sein, da es einen Satz gibt, der manchmal gilt, manchmal aber auch nicht. 
-\item Im folgenden zeigen wir, dass $\textsf{Th}(\mathcal{A})$ für eine Struktur $\mathcal{A}$ eine vollständige Theorie ist.
-
-Angenommen es gäbe einen Satz $\psi$, sodass nicht gilt: $\psi \in T$ oder $\lnot \psi \in T$.
-Das würde bedeuten, dass es einen Satz gibt, von dem nicht festgestellt werden kann, ob er in $\mathcal{A}$ gilt oder nicht... TO BE CONTINUED
-\\ \textbf{Ich glaube, dass das vollständige Theorien sind, bin mir aber nicht ganz sicher -- Max}
+\item Im folgenden zeigen wir, dass $\textsf{Th}(\mathcal{A})$ für eine Struktur $\mathcal{A}$ eine vollständige Theorie ist. \\
+\[ \textsf{Th}(\mathcal{A}) = \{ \varphi \in FO[\sigma] \mid \mathcal{A} \vDash \varphi\} \Leftrightarrow \forall \psi \in FO[\sigma].(\textsf{Th}(\mathcal{A}) \vDash \psi \Rightarrow \psi \in \textsf{Th}(\mathcal{A}) )\]
+Sei $\psi \in FO[\sigma]$ beliebig. \\
+Annahme: $\textsf{Th}(\mathcal{A}) \vDash \psi$ \ \ \ Zu Zeigen: $\psi \in \textsf{Th}(\mathcal{A})$
+\[ \textsf{Th}(\mathcal{A}) \vDash \psi \Leftrightarrow \mathcal{A} \vDash \psi  \Leftrightarrow \psi \text{ ist ein Satz von } \mathcal{A} \Leftrightarrow \psi \in \textsf{Th}(\mathcal{A})\]
+Damit wurde gezeigt, dass $\psi \in \textsf{Th}(\mathcal{A})$ eine vollständige Theorie ist.
 \end{enumerate}
 
 \section*{Aufgabe 4}
