@@ -104,13 +104,11 @@ Somit kann die Theorie nicht vollständig sein, da es einen Satz gibt, der manch
 		\item[Fall 2]
 			$\mathcal{A} \nvDash \varphi 
 			\Rightarrow \neg (\mathcal{A} \nvDash \varphi)
-			\overset{(*)}{\Leftrightarrow} \mathcal{A} \vDash \neg \varphi \Leftrightarrow \neg \varphi \in Th(\mathcal{A})$\\
-		\item[(*)]
-			Nach Annahme gilt, dass $\varphi$ unter der Struktur $\mathcal{A}$ zu $\perp$ auswertet. Nimmt man nun die Formel 
-			$\neg \varphi$ wertet diese noch immer unter $\mathcal{A}$ zu $\perp$ aus, woraus folgt, dass $\neg \varphi$ unter $\mathcal{A}$ zu 				$\top$ auswertet.
+			\overset{(*)}{\Leftrightarrow} \mathcal{A} \vDash \neg \varphi \Leftrightarrow \neg \varphi \in Th(\mathcal{A})$
+			
+			(*) Nach Annahme gilt, dass $\varphi$ unter der Struktur $\mathcal{A}$ zu 
+			
 	\end{itemize}
-	
-	Damit wurde bewiesen, dass $Th(\mathcal{A}$) eine vollständige Theorie ist.
 \end{enumerate}
 
 \section*{Aufgabe 4}
