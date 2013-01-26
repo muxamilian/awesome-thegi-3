@@ -28,7 +28,7 @@ top=2.0cm, bottom=2.0cm]{geometry}
 
 \begin{document}
 \begin{center}
-\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 12} \\
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 11} \\
 \large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
 \end{center}
 \begin{tabbing}
@@ -36,7 +36,7 @@ Tom Nick \hspace{2cm}\= - 340528\\
 Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
-\section*{Aufgabe 1}
+\subsection*{Aufgabe 1}
 	\begin{enumerate}[(i)]
 		\item 
 			\begin{align*}
@@ -56,9 +56,25 @@ Marius Liwotto\> -  341051
 			gilt.
 			
 			Nehmen wir nun die lineare endliche Ordnung $\mathcal{B}_1 = (B_1,E^{\mathcal{B}_1})$ mit $|B_1| = 2^{m+1} > 2^m$ und $\mathcal{B}_1 			= (B_2,E^{\mathcal{B}_1})$ mit $|B_2| = 2^m + 1 > 2^m$. Es gilt nach dem Satz der Vorlesung, dass die Duplikatorin das EF-Spiel 					gewinnen würde, woraus folgt, dass $\varphi_2$ die beiden Ordnungen nicht unterscheiden könnte. Da aber $|B_1|$ gerade ist und $|					B_2|$ ungerade, ist das ein Widerspruch zur Annahme, woraus folgt, dass die Annahme falsch sein muss. Somit kann 									kein solcher $FO[\sigma]$-Satz $\varphi_2$ existieren. 
-				
+		\item
+		\item
+			Widerspruchsannahme: Es existiert ein solcher $FO[\sigma]$-Satz $\varphi_4$. \\
+			
+			Nach der Teilaufgabe (iii) existiert ein Satz $\varphi_3$, sodass für jeden 				endlichen Graph G = (A,E) gilt:
+			\begin{align*}
+				\text{Der Graph } (A, \varphi_3(\mathcal{A})) \text{ ist zusammenhängend genau dann, wenn $|A|$ ungerade ist.}
+			\end{align*}
+			
+			Nun gilt nach $\varphi_4$ auch:
+			\begin{align*}
+				&G' = (A,\varphi_3(\mathcal{A})) \vDash \varphi_4 \text{ genau dann, wenn $|A|$ ungerade ist.} \\
+				\Leftrightarrow
+				&G' = (A,\varphi_3(\mathcal{A})) \nvDash \varphi_4 \text{ genau dann, wenn $|A|$ gerade ist.} 
+			\end{align*}
+			
+			Das ist ein Widerspruch zur Teilaufgabe (ii), woraus folgt, dass die Annahme falsch sein muss, sodass es keinen solchen 							$FO[\sigma]$-Satz $\varphi_4$ geben kann.
 	\end{enumerate}
-\section*{Aufgabe 3}
+\subsection*{Aufgabe 3}
 	\begin{enumerate}[(i)]
 		\item
 			Der Herausforderer spielt in der Struktur $\mathcal{B}$ und wählt $\infty$. Gibt die Duplikatorin das Element a als Antwort, dann 					gilt, dass ein Element i in $\mathcal{A}$ existiert, sodass a $<$ b. Daraus folgt aber, dass es ebenfalls ein $P_i^{\mathcal{A}}$ 					gibt, sodass $a \notin P_i^{\mathcal{A}}$, was jedoch ein Widerspruch ist, da $\infty$ in allen einstelligen Relationen aus 						$\mathcal{B}$ vorkommt.
