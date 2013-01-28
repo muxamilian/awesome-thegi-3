@@ -79,7 +79,32 @@ Die Formel lautet folgendermaßen:
 			Das ist ein Widerspruch zur Teilaufgabe (ii), woraus folgt, dass die Annahme falsch sein muss, sodass es keinen solchen 							$FO[\sigma]$-Satz $\varphi_4$ geben kann.
 	\end{enumerate}
 \section*{Aufgabe 2}
+Der gesuchte partielle Isomorphismus hat nach Definition folgende Abbildungsvorschrift:
+\begin{align*}
+a_1 = 1 \mapsto & ~ b_1 = 1 \\
+a_2 = 2 \mapsto &  ~ b_2 = 2 \\
+a_3 \mapsto & ~ b_3 = x \\
+a_4 \mapsto & ~ b_4 = 1 + x \\
+a_5 \mapsto & ~ b_5
+\end{align*}
+Es gilt $\left(b_1,b_3,b_4\right) \in P^{\mathcal B}$, was $1 + x = 1 + x$ entspricht.
+Es muss also auch gelten $\left(a_1 = 1,a_3,a_4\right) \in P^{\mathcal A}$. Daraus folgt, dass entweder $a_3$ oder $a_4$ ungerade sind.\\
 
+Fallunterscheidung:
+\begin{enumerate}[(a)]
+\item $a_3$ ist die gerade Zahl.
+
+Wir wählen als Herausforderer im 3. Zug $a_5 = \frac{a_3}{2}$.
+Nun gilt offensichtlich $\left(a_2 = 2,a_5 = \frac{a_3}{2},a_3\right) \in M^{\mathcal A}$.
+
+$\left(b_2 = 2,b_5,b_3 = x\right) \in M^{\mathcal B}$ gilt aber keinesfalls, da es trivialerweise kein Element in $B$ gibt, die mit $2$ multipliziert $x$ ergibt.
+\item $a_4$ ist die gerade Zahl.
+
+Wir wählen als Herausforderer im 3. Zug $a_5 = \frac{a_4}{2}$.
+Nun gilt offensichtlich $\left(a_2 = 2,a_5 = \frac{a_4}{2},a_4\right) \in M^{\mathcal A}$.
+
+$\left(b_2 = 2,b_5,b_4 = x\right) \in M^{\mathcal B}$ gilt aber keinesfalls, da es trivialerweise kein Element in $B$ gibt, die mit $2$ multipliziert $x + 1$ ergibt.
+\end{enumerate}
 \section*{Aufgabe 3}
 	\begin{enumerate}[(i)]
 		\item
