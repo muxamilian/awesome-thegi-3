@@ -19,6 +19,8 @@
 left=1.8cm, right=1.8cm,
 top=2.0cm, bottom=2.0cm]{geometry}
 \usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{trees,petri,decorations,arrows,automata,shapes,shadows,positioning,plotmarks}
 
 \newcommand{\rf}{\right\rfloor}
 \newcommand{\lf}{\left\lfloor}
@@ -58,9 +60,79 @@ Marius Liwotto\> -  341051
 			Nehmen wir nun die lineare endliche Ordnung $\mathcal{B}_1 = (B_1,E^{\mathcal{B}_1})$ mit $|B_1| = 2^{m+1} > 2^m$ und $\mathcal{B}_1 			= (B_2,E^{\mathcal{B}_1})$ mit $|B_2| = 2^m + 1 > 2^m$. Es gilt nach dem Satz der Vorlesung, dass die Duplikatorin das EF-Spiel 					gewinnen würde, woraus folgt, dass $\varphi_2$ die beiden Ordnungen nicht unterscheiden könnte. Da aber $|B_1|$ gerade ist und $|					B_2|$ ungerade, ist das ein Widerspruch zur Annahme, woraus folgt, dass die Annahme falsch sein muss. Somit kann 									kein solcher $FO[\sigma]$-Satz $\varphi_2$ existieren. 
 		\item
 Die Formel lautet folgendermaßen:
-\begin{align*}
-\varphi_3(x,y) = \lnot \exists z~ 
-\end{align*}
+\begin{align}
+\varphi_3(x,y) = 
+& \exists z ((x \neq z \land y \neq z) \land (E(x,z) \land E(z,y)) \land \forall a(E(a,x) \lor k = z \lor k = x \lor k = y \lor E(y,k) \lor \\
+& \exists z ((y \neq z \land x \neq z) \land (E(y,z) \land E(z,x)) \land \forall a(E(a,y) \lor k = z \lor k = y \lor k = x \lor E(x,k) \lor \\
+& \exists z ((x \neq z) \land E(z,x) \land \forall a(a = a \lor E(x,a) \lor a = z) \land \forall a(y = a \lor E(a,y))) \lor\\
+& \exists z ((x \neq z) \land E(z,y) \land \forall a(a = a \lor E(y,a) \lor a = z) \land \forall a(x = a \lor E(a,x))) 
+\end{align}
+\begin{enumerate}[(1)]
+	\item sagt aus, dass es ein $z$ gibt, dass genau zwischen $x$ und $y$ liegt.
+	\item  ist analog zu (1), nur dass $x$ und $y$ getauscht wurden.  
+	\item sagt aus, dass es ein $z$ gibt. dass das kleinste Element ist, $x$ ist das zwei kleinste und $y$ das grösste.
+	\item ist analog zu (2) nur, dass $x$ und $y$ getauscht wurden.
+\end{enumerate}
+Wir erklären die Formel an einem Beispiel. Sei $\mathcal{A} = (\{1,..,7\},<)$ die Struktur auf der die $\varphi_3$ benutzt wird.
+\begin{enumerate}[1.]
+	\item \textit{Initialzustand}, die Menge der Kanten ist leer:
+	\begin{center}
+		\begin{tikzpicture}[auto,bend angle=30,node distance=2cm]
+			% Zustaende
+			\node[state]	(1)	{1};
+			\node[state]	(2)[right of=1]	{2};
+			\node[state]	(3)[right of=2]	{3};
+			\node[state]	(4)[right of=3]	{4};
+			\node[state]	(5)[right of=4]	{5};
+			\node[state]	(6)[right of=5]	{6};
+			\node[state]	(7)[right of=6]	{7};
+		\end{tikzpicture}
+	\end{center}
+	\item (1) und (2) wird angewendet, dadurch bilden jeweils die geraden, wie die ungeraden einen ungerichteten Pfad.
+	\begin{center}
+		\begin{tikzpicture}[auto,bend angle=30,node distance=2cm]
+			% Zustaende
+			\node[state]	(1)	{1};
+			\node[state]	(2)[right of=1]	{2};
+			\node[state]	(3)[right of=2]	{3};
+			\node[state]	(4)[right of=3]	{4};
+			\node[state]	(5)[right of=4]	{5};
+			\node[state]	(6)[right of=5]	{6};
+			\node[state]	(7)[right of=6]	{7};
+			\path[<->, bend right] (1) edge node {} (3);
+			\path[<->, bend right] (3) edge node {} (5);
+			\path[<->, bend right] (5) edge node {} (7);
+			\path[<->, bend left] (2) edge node {} (4);
+			\path[<->, bend left] (4) edge node {} (6);
+		\end{tikzpicture}
+	\end{center}
+	\item (3) und (4) wird angewendet, dadurch wird der letzte Knoten mit dem zwei kleinsten (ungerichtet) verbunden wird:
+	\begin{center}
+		\begin{tikzpicture}[auto,bend angle=30,node distance=2cm]
+			% Zustaende
+			\node[state]	(1)	{1};
+			\node[state]	(2)[right of=1]	{2};
+			\node[state]	(3)[right of=2]	{3};
+			\node[state]	(4)[right of=3]	{4};
+			\node[state]	(5)[right of=4]	{5};
+			\node[state]	(6)[right of=5]	{6};
+			\node[state]	(7)[right of=6]	{7};
+			\path[<->, bend right] (1) edge node {} (3);
+			\path[<->, bend right] (3) edge node {} (5);
+			\path[<->, bend right] (5) edge node {} (7);
+			\path[<->, bend left] (2) edge node {} (4);
+			\path[<->, bend left] (4) edge node {} (6);
+			\path[<->, bend left] (2) edge node {} (7);
+		\end{tikzpicture}
+	\end{center}
+\end{enumerate}
+Es ist klar, dass dies bei ungeraden Graphen immer funktioniert, durch den letzten Schritt entsteht eine Verbindung von den ungeraden zu den geraden Knoten.
+Da ein ungerader immer einen ungeraden Knoten am Ende hat funktioniert das immer. Analog ist klar warum dies nicht bei geraden Graphen funktioniert: man würde nur einen Kreis bei den geraden Knoten erzeugen, jedoch nie eine Verbindung zu den ungeraden.
+
+
+
+
+
 		\item
 			Widerspruchsannahme: Es existiert ein solcher $FO[\sigma]$-Satz $\varphi_4$. \\
 			
