@@ -166,13 +166,14 @@ top=2.0cm, bottom=2.0cm]{geometry}
 			\item
 				Sei $\sigma$ eine Signatur und $\mathcal{A}$ eine $\sigma$-Struktur.\\
 				
-				Eine $\sigma$-Interpretation $\mathcal{I}$ ist ein Paar ($\mathcal{A}, \beta$).
-				
 				Eine Interpretation ist passend zu $\Phi \subseteq FO[\sigma]$, falls $\beta$ passend zu allen $\varphi \in \Phi$ ist.
 				
 				Eine Interpretation erfüllt $\Phi \subseteq FO[\sigma]$, falls $\beta$ alle $\varphi \in \Phi$ erfüllt.
 				
-				Man sagt $\mathcal{I}$ ist ein Modell von $\Phi$.\\
+				Man sagt $\mathcal{I}$ ist ein Modell von $\Phi$ und schreibt:
+				\begin{align*}
+					\mathcal{I} \vDash \Phi
+				\end{align*}
 				
 				Falls $\Phi$ eine Menge von $\sigma$-Sätzen ist, schreibt man:
 				\begin{align*}
@@ -195,7 +196,7 @@ top=2.0cm, bottom=2.0cm]{geometry}
 				\end{align*}
 			
 			\item
-				Sei $\sigma$ eine Signatur, $\Phi \subseteq FO[\sigma]$ und $\varphi \in FO[\sigma]$.
+				Sei $\sigma$ eine Signatur, $\Phi \subseteq FO[\sigma]$ und $\varphi \in FO[\sigma]$. \\ 
 				
 				$\varphi$ ist eine Folgerung von $\Phi$, geschrieben $\Phi \vDash \varphi$, wenn für jede zu $\Phi$ und $\varphi$ passende 							$\sigma$-Interpretation $\mathcal{I}$ gilt:
 				\begin{align*}
