@@ -1,0 +1,110 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+
+\newcommand{\rf}{\right\rfloor}
+\newcommand{\lf}{\left\lfloor}
+\newcommand{\tabspace}{15cm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Hausaufgabenabgabe 11} \\
+\large{Tutorium: Sebastian , Mi 14.00 - 16.00 Uhr}
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximillian Bachl \> - 341455 \\
+Marius Liwotto\> -  341051
+\end{tabbing}
+\subsection*{Aufgabe 1}
+	\begin{enumerate}[(i)]
+		\item 
+			\begin{align*}
+				\varphi_1 &= &&\forall x~ \neg E(x,x) \wedge \\
+				&&&\forall x \forall y~ 
+				(x \neq y \Rightarrow E(x,y) \vee E(y,x)) \wedge  \\
+				&&&\forall x \forall y \forall z (E(x,y) \wedge E(y,z) \Rightarrow E(x,z))
+			\end{align*}
+			
+		\item
+			Widerspruchsannahme:
+			
+			Es existiert ein $\varphi_2$ mit Quantorenrang m, sodass für jede endliche lineare Ordnung $\mathcal{A} = (A,E^{\mathcal{A}})$ 
+			\begin{align*}
+				\mathcal{A} \vDash \varphi_2 \text{ genau dann, wenn $|A|$ ungerade ist.}
+			\end{align*}
+			gilt.
+			
+			Nehmen wir nun die lineare endliche Ordnung $\mathcal{B}_1 = (B_1,E^{\mathcal{B}_1})$ mit $|B_1| = 2^{m+1} > 2^m$ und $\mathcal{B}_1 			= (B_2,E^{\mathcal{B}_1})$ mit $|B_2| = 2^m + 1 > 2^m$. Es gilt nach dem Satz der Vorlesung, dass die Duplikatorin das EF-Spiel 					gewinnen würde, woraus folgt, dass $\varphi_2$ die beiden Ordnungen nicht unterscheiden könnte. Da aber $|B_1|$ gerade ist und $|					B_2|$ ungerade, ist das ein Widerspruch zur Annahme, woraus folgt, dass die Annahme falsch sein muss. Somit kann 									kein solcher $FO[\sigma]$-Satz $\varphi_2$ existieren. 
+		\item
+		\item
+			Widerspruchsannahme: Es existiert ein solcher $FO[\sigma]$-Satz $\varphi_4$. \\
+			
+			Nach der Teilaufgabe (iii) existiert ein Satz $\varphi_3$, sodass für jeden 				endlichen Graph G = (A,E) gilt:
+			\begin{align*}
+				\text{Der Graph } (A, \varphi_3(\mathcal{A})) \text{ ist zusammenhängend genau dann, wenn $|A|$ ungerade ist.}
+			\end{align*}
+			
+			Nun gilt nach $\varphi_4$ auch:
+			\begin{align*}
+				&G' = (A,\varphi_3(\mathcal{A})) \vDash \varphi_4 \text{ genau dann, wenn $|A|$ ungerade ist.} \\
+				\Leftrightarrow
+				&G' = (A,\varphi_3(\mathcal{A})) \nvDash \varphi_4 \text{ genau dann, wenn $|A|$ gerade ist.} 
+			\end{align*}
+			
+			Das ist ein Widerspruch zur Teilaufgabe (ii), woraus folgt, dass die Annahme falsch sein muss, sodass es keinen solchen 							$FO[\sigma]$-Satz $\varphi_4$ geben kann.
+	\end{enumerate}
+\subsection*{Aufgabe 3}
+	\begin{enumerate}[(i)]
+		\item
+			Der Herausforderer spielt in der Struktur $\mathcal{B}$ und wählt $\infty$. Gibt die Duplikatorin das Element a als Antwort, dann 					gilt, dass ein Element i in $\mathcal{A}$ existiert, sodass a $<$ b. Daraus folgt aber, dass es ebenfalls ein $P_i^{\mathcal{A}}$ 					gibt, sodass $a \notin P_i^{\mathcal{A}}$, was jedoch ein Widerspruch ist, da $\infty$ in allen einstelligen Relationen aus 						$\mathcal{B}$ vorkommt.
+		\item
+			Sei $\varphi \in FO[\sigma]$ beliebig.
+			
+			Für jedes $P_i(x)$ mit $x \in \mathbb{N}$ gilt (*): \\
+			\begin{itemize}
+				\item[i $>$ 0:] ~\\
+					1. wurde x durch einen Existenzquantor quantifiziert, ist $P_i(x) = 1$
+				
+					Für jedes $P_i$ existiert eine Zahl x, sodass x $>$ i und damit $P_i(x) = 1$. \\
+					
+					2. wenn x durch einen Allquantor quantifiziert wurde, ist $P_i(x) = 0$
+					
+					Für jedes $P_i$ existiert eine Zahl x, sodass x $<$ i und damit $P_i(x) = 0$. \\
+						
+				\item[i = 0:] ~\\
+					1. wurde x durch einen Existenzquantor quantifiziert, ist $P_0(x) = 1$
+				
+					Für $P_0$ existiert eine Zahl x, sodass x $>$ 0 und damit $P_0(x) = 1$. \\
+					
+					2. wenn x durch einen Allquantor quantifiziert wurde, ist $P_0(x) = 1$
+					
+					Für $P_0$ existiert keine Zahl x, sodass x $<$ 0 und damit $P_0(x) = 1$. \\
+			\end{itemize}
+			
+			Die Aussagen (*) gelten in beiden Strukturen, woraus folgt, dass alle Relationen gleich auswerten und somit auch der Satz $\varphi$ 				in beiden Strukturen immer gleich auswertet. Da keine Einschränkung bei $\varphi$ getroffen wurde, folgt, dass es keinen 							$FO[\sigma]$-Satz gibt, der beide Strukturen unterscheidet, sodass sie elementar äquivalent sind.
+			
+			
+			
+	\end{enumerate}
+\end{document}

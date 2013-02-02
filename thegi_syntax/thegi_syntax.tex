@@ -1,0 +1,227 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+
+\newcommand{\rf}{\right\rfloor}
+\newcommand{\lf}{\left\lfloor}
+\newcommand{\tabspace}{15cm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\begin{center}
+\Large{Theoretische Grundlagen der Informatik 3: Syntax}
+\end{center}
+	\subsection*{Aussagenlogik}
+	\begin{enumerate}[(i)]
+		\item
+			Sei $\varphi \in AL$ und $\beta$ eine passende Belegung.
+			\begin{align*}
+				\llbracket \varphi \rrbracket^{\beta} \in \{0,1\}
+			\end{align*}
+			
+		\item
+			Sei $\varphi \in AL$ und $\beta$ eine passende Belegung.
+			\begin{align*}
+				\beta \vDash \varphi \Leftrightarrow \llbracket \varphi \rrbracket^{\beta} = 1
+			\end{align*}
+			Man sagt $\beta$ erfüllt $\varphi$ bzw. ist Modell von $\varphi$.
+			
+		\item	
+			Sei $\Phi \subseteq AL$ und $\varphi \in AL$.
+			
+			$\varphi$ folgt aus $\Phi$, wenn jede zu $\Phi \cup \{\varphi\}$ passende Belegung $\beta$, die $\Phi$
+			erfüllt, auch $\varphi$ erfüllt. Man schreibt:
+			\begin{align*}
+				\Phi \vDash \varphi 
+			\end{align*}
+			
+			Falls $\Phi = \{\phi\}$, schreibt man:
+			\begin{align*}
+				\phi \vDash \varphi 
+			\end{align*}
+		\item
+			Sei $\varphi \in AL$ in DNF.
+			\begin{align*}
+				\mathcal{C}(\varphi) = \{C_1,...,C_n\}
+			\end{align*}
+			Wobei $C_1$ bis $C_n$ die Klauseln von $\mathcal{C}$ sind.
+			
+		\item
+			Sei $\mathcal{C} = \{C_1,C_2,...,C_n\}$ eine endliche Menge von Klauseln mit $C_i = \{L_{i,j} ~|~ 1 \leq j \leq m_i \}$.
+			\begin{align*}
+				\varphi(\mathcal{C}) = \bigvee\limits_{1 \leq i \leq n} \bigwedge\limits_{1 \leq j \leq m_i} L_{i,j}
+			\end{align*}
+			Falls $\mathcal{C} = \emptyset$, schreibt man:
+			\begin{align*}
+				\varphi(\mathcal{C}) = \top
+			\end{align*}
+			
+		\item
+			Sei $\beta$ eine Belegung und $\mathcal{C}$ eine Klauselmenge. Man schreibt:
+			\begin{align*}
+				\beta \vDash \mathcal{C}
+			\end{align*}
+			für
+			\begin{align*}
+				\beta \vDash \varphi(\mathcal{C})
+			\end{align*}
+			
+		\item
+			Sei $\mathcal{C}$ eine Klauselmenge und C eine Klausel. Man schreibt:
+			\begin{align*}
+				\mathcal{C} \vDash C
+			\end{align*}
+			Falls für jede passende Belegung $\beta$ gilt:
+			\begin{align*}
+				\beta \vDash \mathcal{C} \Rightarrow \beta \vDash C
+			\end{align*}
+		
+		\item
+			Seien $C_1, C_2$ Klauseln, dann schreibt man:
+			\begin{align*}
+				Res(C_1,C_2)
+			\end{align*}
+			für die Resolventenmenge von $C_1$ und $C_2$.
+		
+		\item
+			Eine Resolutionsableitung einer Klausel C aus einer Klauselmenge $\mathcal{C}$ ist eine Sequenz $(C_1,...,C_n)$ mit $C_n = C$ und 					für
+			$1 \leq k < n$:
+			\begin{itemize}
+				\item
+					$C_k \in \mathcal{C}$ oder
+				\item
+					Es gibt ein $i,j < k$, sodass $C_k \in Res(C_i,C_j)$
+			\end{itemize}
+			
+			Man schreibt auch:
+			\begin{align*}
+				\mathcal{C} \vdash_R C
+			\end{align*}
+		\item
+			Eine Resolutionswiderlegung einer Klauselmenge $\mathcal{C}$ ist eine Resolutionsableitung der leeren Klausel $\square$.	
+	\end{enumerate}	 
+	
+	\subsection*{Strukturen}
+		\begin{enumerate}[(i)]
+				\item	
+					Jede Funktion/Relation besitzt eine Stelligkeit:
+					\begin{align*}
+						ar(R) \in \N \text{ bzw. } ar(f) \in \N
+					\end{align*}
+					
+				\item
+					Sei $\tau$ eine Signatur, $\sigma \subseteq \tau$ und $\mathcal{B}$ eine $\tau$-Struktur.\\
+					Das $\sigma$-Redukt $\mathcal{B}_{|_{\sigma}}$ von $\mathcal{B}$ ist eine $\sigma$-Struktur $\mathcal{B}_{|_{\sigma}}$, die 						durch das Weglassen der Symbole in $\tau \setminus \sigma$ entsteht. \\ 
+					$\mathcal{B}$ heißt Expansion von $\mathcal{B}_{|_{\sigma}}$.
+		\end{enumerate}
+	
+	\subsection*{Prädikatenlogik}
+		\begin{enumerate}[(i)]
+			\item
+				Sei $\sigma$ eine Signatur und $\mathcal{A}$ eine $\sigma$-Struktur.\\
+				
+				Eine Belegung in $\mathcal{A}$ ist eine Funktion 
+				\begin{align*}
+					\beta: Dom(\beta) \rightarrow A \text{ mit } Dom(\beta) \subseteq \text{ VAR}
+				\end{align*}
+				
+				
+				$\beta$ heißt passend zu $\varphi \in FO[\sigma]$, falls frei($\varphi$) $\subseteq Dom(\beta$). 
+			
+			\item
+				Sei $\sigma$ eine Signatur und $\mathcal{A}$ eine $\sigma$-Struktur.\\
+				
+				Eine $\sigma$-Interpretation $\mathcal{I}$ ist ein Paar ($\mathcal{A}, \beta$).
+				
+				Eine Interpretation ist passend zu $\varphi \in FO[\sigma]$, falls $\beta$ passend zu $\varphi$ ist.
+				
+				Für 
+				\begin{align*}
+					\llbracket \varphi \rrbracket^{\mathcal{I}} = 1
+				\end{align*}
+				schreiben wir:
+				\begin{align*}
+					\mathcal{I} \vDash \varphi
+				\end{align*}
+				
+			\item
+				Sei $\sigma$ eine Signatur und $\mathcal{A}$ eine $\sigma$-Struktur.\\
+				
+				Eine $\sigma$-Interpretation $\mathcal{I}$ ist ein Paar ($\mathcal{A}, \beta$).
+				
+				Eine Interpretation ist passend zu $\Phi \subseteq FO[\sigma]$, falls $\beta$ passend zu allen $\varphi \in \Phi$ ist.
+				
+				Eine Interpretation erfüllt $\Phi \subseteq FO[\sigma]$, falls $\beta$ alle $\varphi \in \Phi$ erfüllt.
+				
+				Man sagt $\mathcal{I}$ ist ein Modell von $\Phi$.\\
+				
+				Falls $\Phi$ eine Menge von $\sigma$-Sätzen ist, schreibt man:
+				\begin{align*}
+					\mathcal{A} \vDash \Phi
+				\end{align*}
+				
+				
+			\item	
+				Sei $\Phi \in FO[\sigma]$ eine Formel mit frei($\Phi$) $\subseteq \{x_1,..., x_k\}$. \\
+				
+				Sei A eine $\sigma$-Struktur und $\beta$ eine Belegung, so dass $\beta(x_i) := a_i$, für alle $1 \leq i \leq k$.
+				
+				Wir schreiben:
+				\begin{align*}
+					\mathcal{A} \vDash \varphi[x_1/a_1,..., x_k/a_k] \text{ statt } \mathcal{I} \vDash \varphi
+				\end{align*}
+				Ist $\varphi$ ein Satz schreiben wir:
+				\begin{align*}
+					\mathcal{A} \vDash \varphi
+				\end{align*}
+			
+			\item
+				Sei $\sigma$ eine Signatur, $\Phi \subseteq FO[\sigma]$ und $\varphi \in FO[\sigma]$.
+				
+				$\varphi$ ist eine Folgerung von $\Phi$, geschrieben $\Phi \vDash \varphi$, wenn für jede zu $\Phi$ und $\varphi$ passende 							$\sigma$-Interpretation $\mathcal{I}$ gilt:
+				\begin{align*}
+					\mathcal{I} \vDash \Phi \Rightarrow \mathcal{I} \vDash \varphi
+				\end{align*}
+				
+				Falls $\Phi = \emptyset$, schreiben wir:
+				\begin{align*}
+					\vDash \varphi \text{ statt } \emptyset \vDash \varphi
+				\end{align*}
+		
+			\item
+				Sei $\sigma$ eine Signatur und $\Phi \subseteq FO[\sigma]$ eine Menge von $\sigma$-Sätzen.\\
+				
+				Mod($\Phi$), ist die Klasse aller $\sigma$-Strukturen $\mathcal{A}$ mit $\mathcal{A} \vDash \Phi$.
+				
+				Falls $\Phi := {\varphi}$ nur einen Satz enthält, schreiben wir kurz Mod($\varphi$).
+		\end{enumerate}
+		
+	\subsection*{Sequenzkalkül}
+		\begin{enumerate}[(i)]
+			\item
+				Sei $\Phi \subseteq$ AL eine Menge von Formeln und sei $\varphi \in$ AL.
+				
+				1. $\Phi$ ist konsistent genau dann, wenn $\Phi$ erfüllbar ist.
+				
+				2. $\Phi \vdash_S \varphi$ genau dann, wenn $\Phi \vDash \varphi$.
+		\end{enumerate}
+\end{document}
