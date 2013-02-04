@@ -38,5 +38,21 @@ Tom Nick \hspace{2cm}\= - 340528\\
 Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
+\subsection*{Aufgabe 1.}
+\begin{enumerate}[(i)]
+	\item
+	\begin{enumerate}[a)]
+	Das untenstehende Sequenzkalkül ist korrekt:
+		\item \[ (\exists \Rightarrow) \frac{\Phi, \psi(c) \Rightarrow \Delta}{\Phi, \exists x \psi(x)\Rightarrow \Delta} c \text{ kommt nicht in $\Phi,\delta,\psi(x)$ vor}\]
+		\textbf{Beweis:} 
+		Sei $J = (\mathcal{A},\beta)$ ein $\tau$-Interpretation die $\Phi$ und für mindestens ein $x$, $\psi(x)$ erfüllt. Also:
+		\begin{align*}
+			J &\vDash \Phi \\
+			J &\vDash \exists x \psi(x)
+		\end{align*}
+		Sei $a := \llbracket c \rrbracket^{J}$. Also gilt $J \vDash \psi[a]$, daraus folgt offensichtlich, dass $J \vDash \psi(c)$ gilt. Nach Vorraussetzung gibt es also ein $\varphi \in \Delta$, sodass $J \vDash \varphi$.
+	\end{enumerate}
+\end{enumerate}
+
 	
 \end{document}
