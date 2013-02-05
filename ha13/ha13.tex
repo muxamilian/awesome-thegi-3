@@ -42,8 +42,9 @@ Marius Liwotto\> -  341051
 \begin{enumerate}[(i)]
 	\item
 	\begin{enumerate}[a)]
-	Das untenstehende Sequenzkalkül ist korrekt:
-		\item \[ (\exists \Rightarrow) \frac{\Phi, \psi(c) \Rightarrow \Delta}{\Phi, \exists x \psi(x)\Rightarrow \Delta} c \text{ kommt nicht in $\Phi,\delta,\psi(x)$ vor}\]
+	
+		\item \textbf{Behauptung: } Das untenstehende Sequenzkalkül ist korrekt:
+		\[ (\exists \Rightarrow) \frac{\Phi, \psi(c) \Rightarrow \Delta}{\Phi, \exists x \psi(x)\Rightarrow \Delta} c \text{ kommt nicht in $\Phi,\delta,\psi(x)$ vor}\]
 		\textbf{Beweis:} 
 		Sei $J = (\mathcal{A},\beta)$ ein $\tau$-Interpretation die $\Phi$ und für mindestens ein $x$, $\psi(x)$ erfüllt. Also:
 		\begin{align*}
@@ -51,6 +52,20 @@ Marius Liwotto\> -  341051
 			J &\vDash \exists x \psi(x)
 		\end{align*}
 		Sei $a := \llbracket c \rrbracket^{J}$. Also gilt $J \vDash \psi[a]$, daraus folgt offensichtlich, dass $J \vDash \psi(c)$ gilt. Nach Vorraussetzung gibt es also ein $\varphi \in \Delta$, sodass $J \vDash \varphi$.
+		\item \textbf{Behauptung: } Das untenstehende Sequenzkalkül ist korrekt:
+		\[ (\Rightarrow \exists) \frac{\Phi \Rightarrow \Delta,\psi(t)}{\Phi \Rightarrow \Delta, \exists x \psi (x)} \]
+		\textbf{Beweis:} 
+		Sei $\tau$ die Signatur die alle Relations, Funktions und Konstanten Symbole enthält, die in $\Phi, \Delta, \psi(x)$ vorkommen, aber nicht $t$.
+		Sei $J = (\mathcal{A},\beta)$ eine $\tau$-Interpretation mit $J \vDash \Phi$.
+		Nach Vorraussetzung erfüllt $J$ eine Formel in $\Delta \cup \{ \psi(t) \}$
+		\begin{enumerate}[\text{Fall: } 1.]
+			\item $J \vDash \varphi \in \Delta$, dies gilt offensichtlich.
+			\item $J \vDash \psi(t)$ \\
+			Z.z. $J \vDash \exists \forall x \psi(x)$ \\
+			Sei $J_a$ die $\tau \cup \{t\}$-Interpretation sodass $J_a$ die Konstante $c$ mit $a$ belegt und sonst ist $J_a$ gleich $J$.
+			Es gilt $J_{a\mid_\tau}$ = $J$, daraus folgt, dass $\forall \varphi \in \Delta.J_a \not \vDash \varphi$. Also muss $J_a \vDash \psi(t)$.
+			Also gilt $J \vDash \psi[a]$ für mindestens ein $a \in A$. Daher also $J \vDash \exists \psi (x)$
+		\end{enumerate}
 	\end{enumerate}
 \end{enumerate}
 
