@@ -14,6 +14,7 @@
 \usepackage{enumerate}
 \usepackage{hyperref}
 \usepackage{ulem}
+\usepackage{bussproofs}
 \usepackage{stmaryrd }
 \usepackage[a4paper,
 left=1.8cm, right=1.8cm,
@@ -51,7 +52,7 @@ Marius Liwotto\> -  341051
 			J &\vDash \Phi \\
 			J &\vDash \exists x \psi(x)
 		\end{align*}
-		Sei $a := \llbracket c \rrbracket^{J}$. Also gilt $J \vDash \psi[a]$, daraus folgt offensichtlich, dass $J \vDash \psi(c)$ gilt. Nach Vorraussetzung gibt es also ein $\varphi \in \Delta$, sodass $J \vDash \varphi$.
+		Sei $a := \llbracket c \rrbracket^{J}$. Also gilt $J \vDash \psi[x/a]$, daraus folgt offensichtlich, dass $J \vDash \psi(c)$ gilt. Nach Vorraussetzung gibt es also ein $\varphi \in \Delta$, sodass $J \vDash \varphi$.
 		\item \textbf{Behauptung: } Das untenstehende Sequenzkalkül ist korrekt:
 		\[ (\Rightarrow \exists) \frac{\Phi \Rightarrow \Delta,\psi(t)}{\Phi \Rightarrow \Delta, \exists x \psi (x)} \]
 		\textbf{Beweis:} 
@@ -93,5 +94,19 @@ Somit gibt es offensichtlich eine Interpretation, sodass die obere Sequenz gült
 
 
 \end{enumerate}
-	
+\subsection*{Aufgabe 3}
+Es gilt:
+\begin{align*}
+	\{ \forall x f(x) = x \} \Rightarrow \{ f(f(c)) = c \} \equiv \{ \forall x f(x) = x \} \cup \{ \forall x f(x) = x \}   \Rightarrow \{ f(f(c)) = c \}
+\end{align*}
+Mit dem Sequenzenkalkül kann man das Axiom nun beweisen:
+\begin{prooftree}
+\AxiomC{$\{f(f(c)) = c \} \Rightarrow \{f(f(c)) = c \}$}
+\LeftLabel{$(\mathcal{S} \Rightarrow)$}
+\UnaryInfC{$\{f(c) = c, f(f(c)) = f(c) \} \Rightarrow \{f(f(c)) = c \}$}
+\LeftLabel{$(\forall \Rightarrow)$}
+\UnaryInfC{$\{\forall x f(x) = x, f(f(c)) = f(c) \} \Rightarrow \{f(f(c)) = c \}$}
+\LeftLabel{$(\forall \Rightarrow)$}
+\UnaryInfC{$\{ \forall x f(x) = x \} \cup \{ \forall x f(x) = x \}   \Rightarrow \{ f(f(c)) = c \}$}
+\end{prooftree}	
 \end{document}
