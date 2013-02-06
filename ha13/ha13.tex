@@ -38,7 +38,7 @@ Tom Nick \hspace{2cm}\= - 340528\\
 Maximillian Bachl \> - 341455 \\
 Marius Liwotto\> -  341051
 \end{tabbing}
-\subsection*{Aufgabe 1.}
+\subsection*{Aufgabe 1}
 \begin{enumerate}[(i)]
 	\item
 	\begin{enumerate}[a)]
@@ -55,19 +55,32 @@ Marius Liwotto\> -  341051
 		\item \textbf{Behauptung: } Das untenstehende Sequenzkalkül ist korrekt:
 		\[ (\Rightarrow \exists) \frac{\Phi \Rightarrow \Delta,\psi(t)}{\Phi \Rightarrow \Delta, \exists x \psi (x)} \]
 		\textbf{Beweis:} 
-		Sei $\tau$ die Signatur die alle Relations, Funktions und Konstanten Symbole enthält, die in $\Phi, \Delta, \psi(x)$ vorkommen, aber nicht $t$.
-		Sei $J = (\mathcal{A},\beta)$ eine $\tau$-Interpretation mit $J \vDash \Phi$.
+		Sei $\tau$ die Signatur die alle Relations-, Funktions- und Konstantensymbole enthält, die in $\Phi, \Delta, \psi(x)$ vorkommen, aber nicht $t$.
+		Sei $\mathcal{J} = (\mathcal{A},\beta)$ eine $\tau$-Interpretation mit $J \vDash \Phi$.
 		Nach Vorraussetzung erfüllt $J$ eine Formel in $\Delta \cup \{ \psi(t) \}$
 		\begin{enumerate}[\text{Fall: } 1.]
-			\item $J \vDash \varphi \in \Delta$, dies gilt offensichtlich.
-			\item $J \vDash \psi(t)$ \\
-			Z.z. $J \vDash \exists \forall x \psi(x)$ \\
-			Sei $J_a$ die $\tau \cup \{t\}$-Interpretation sodass $J_a$ die Konstante $c$ mit $a$ belegt und sonst ist $J_a$ gleich $J$.
-			Es gilt $J_{a\mid_\tau}$ = $J$, daraus folgt, dass $\forall \varphi \in \Delta.J_a \not \vDash \varphi$. Also muss $J_a \vDash \psi(t)$.
-			Also gilt $J \vDash \psi[a]$ für mindestens ein $a \in A$. Daher also $J \vDash \exists \psi (x)$
+			\item $\mathcal{J} \vDash \varphi \in \Delta$, dies gilt offensichtlich.
+			\item $\mathcal{J} \vDash \psi(t)$ \\
+			Z.z. $\mathcal{J} \vDash \exists \forall x \psi(x)$ \\
+			Sei $J_a$ die $\tau \cup \{t\}$-Interpretation sodass $\mathcal{J}_a$ die Konstante $c$ mit $a$ belegt und sonst ist $\mathcal{J}_a$ gleich $J$.
+			Es gilt $\mathcal{J}_{a\mid_\tau}$ = $J$, daraus folgt, dass $\forall \varphi \in \Delta.J_a \not \vDash \varphi$. Also muss $J_a \vDash \psi(t)$.
+			Also gilt $\mathcal{J} \vDash \psi[a]$ für mindestens ein $a \in A$. Daher also $J \vDash \exists \psi (x)$
 		\end{enumerate}
 	\end{enumerate}
 \end{enumerate}
+\subsection*{Aufgabe 2}
+\begin{enumerate}[(i)]
+\item
+$$\frac{\Phi, \psi \Rightarrow \Delta}{\Phi \Rightarrow \Delta}$$
 
+Wir geben ein Gegenbeispiel an. Wir wählen $\Phi = \{\top\}$, $\psi = \bot$ sowie $\Delta = \{\top\}$. 
+
+Dann gilt:
+
+$$\frac{\{\top\}, \bot \Rightarrow \{\top\}}{\{\top\} \Rightarrow \{\top\}}$$
+
+Somit gilt in jeder beliebigen Interpretation $\mathcal{J}$, dass die obere Sequenz ungültig ist, die untere aber nicht.
+\item
+\end{enumerate}
 	
 \end{document}
