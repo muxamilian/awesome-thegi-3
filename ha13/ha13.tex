@@ -101,12 +101,15 @@ Es gilt:
 \end{align*}
 Mit dem Sequenzenkalkül kann man das Axiom nun beweisen:
 \begin{prooftree}
-\AxiomC{$\{f(f(c)) = c \} \Rightarrow \{f(f(c)) = c \}$}
-\LeftLabel{$(\mathcal{S} \Rightarrow)$}
-\UnaryInfC{$\{f(c) = c, f(f(c)) = f(c) \} \Rightarrow \{f(f(c)) = c \}$}
-\LeftLabel{$(\forall \Rightarrow)$}
-\UnaryInfC{$\{\forall x f(x) = x, f(f(c)) = f(c) \} \Rightarrow \{f(f(c)) = c \}$}
-\LeftLabel{$(\forall \Rightarrow)$}
-\UnaryInfC{$\{ \forall x f(x) = x \} \cup \{ \forall x f(x) = x \}   \Rightarrow \{ f(f(c)) = c \}$}
-\end{prooftree}	
+	\AxiomC{$\{f(f(c)) = c \} \Rightarrow \{f(f(c)) = c \}$}
+	\LeftLabel{$(\mathcal{S} \Rightarrow)$}
+	\UnaryInfC{$\{f(c) = c, f(f(c)) = f(c) \} \Rightarrow \{f(f(c)) = c \}$}
+	\LeftLabel{$(\forall \Rightarrow)$}
+	\UnaryInfC{$\{\forall x f(x) = x, f(f(c)) = f(c) \} \Rightarrow \{f(f(c)) = c \}$}
+	\LeftLabel{$(\forall \Rightarrow)$}
+	\UnaryInfC{$\{ \forall x f(x) = x \} \cup \{ \forall x f(x) = x \}   \Rightarrow \{ f(f(c)) = c \}$}
+\end{prooftree}
+\subsection*{Aufgabe 4}
+Da $\sigma = \emptyset$ gilt, dass alle Formeln $\varphi \in FO[\sigma]$ in der Auswertung in verschiedenen $\sigma$-Strukturen sich nur über den Quantorenrang von $\varphi$ unterscheiden. Da $\varphi$ endlich ist (Eingabe ist endlich), hat $\varphi$ einen Quantorenrang $qr(\varphi) = m$. Würde man nun eine $\sigma$-Struktur suchen die ein Modell von $\varphi$ ist, würde es reichen beliebige Strukturen  mit $m$ Elementen zu testen, da jede Struktur mit mehr als $m$ Elementen elementar-äquivalent zu der mit $m$ ist. Damit kann jede Berechnung der Turingmaschine die ein $\varphi$ bekommen hat, nach dem untersuchen von Strukturen mit $1-m$ Elementen abbrechen, falls keine gefunden wurde und eindeutig sagen, dass es kein Modell gibt bzw. dass es ein Modell gibt. Dies entspricht der Definition von Entscheidbarkeit.
+
 \end{document}
