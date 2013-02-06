@@ -81,6 +81,17 @@ $$\frac{\{\top\}, \bot \Rightarrow \{\top\}}{\{\top\} \Rightarrow \{\top\}}$$
 
 Somit gilt in jeder beliebigen Interpretation $\mathcal{J}$, dass die obere Sequenz ungültig ist, die untere aber nicht.
 \item
+$$\frac{\Phi, \lnot\forall x\varphi \Rightarrow \Delta}{\Phi \Rightarrow \Delta, \exists x \varphi}$$
+
+Wir geben ein Gegenbeispiel an. Wir wählen $\Phi = \{\top\}$, $\varphi = (x=x)$ sowie $\Delta = \emptyset$. 
+
+Dann gilt:
+
+$$\frac{\{\top\}, (\lnot \forall x ~ x = x) \Rightarrow \emptyset}{\{\top\} \Rightarrow (\exists x~ x=x)}$$
+
+Somit gibt es offensichtlich eine Interpretation, sodass die obere Sequenz gültig ist, die untere aber nicht
+
+
 \end{enumerate}
 	
 \end{document}
