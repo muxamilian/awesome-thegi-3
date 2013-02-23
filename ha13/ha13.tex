@@ -47,11 +47,6 @@ Marius Liwotto\> -  341051
 		\item \textbf{Behauptung: } Die untenstehende Sequenzkalkülregel ist korrekt:
 		\[ (\exists \Rightarrow) \frac{\Phi, \psi(c) \Rightarrow \Delta}{\Phi, \exists x \psi(x)\Rightarrow \Delta} c \text{ kommt nicht in $\Phi,\delta,\psi(x)$ vor}\]
 		\textbf{Beweis:} 
-		Sei $J = (\mathcal{A},\beta)$ ein $\tau$-Interpretation die $\Phi$ und für mindestens ein $x$, $\psi(x)$ erfüllt. Also:
-		\begin{align*}
-			J &\vDash \Phi \\
-			J &\vDash \exists x \psi(x)
-		\end{align*}
 		Sei $\tau$ die Signatur die alle Relations-, Funktions- und Konstantensymbole enthält, die in $\Phi, \Delta, \psi(x)$ vorkommen, aber nicht $c$.
 		Wir nehmen an, dass $\Phi \cup \{ \exists x \psi(x)\}$ erfüllbar ist, sonst sind wir fertig. \\
 		Sei also $J = (\mathcal{A}, \beta)$ eine $\tau$-Interpretation mit $J \vDash \Phi \cup \{\exists x\psi(x) \}$. 
