@@ -44,7 +44,7 @@ Marius Liwotto\> -  341051
 	\item
 	\begin{enumerate}[a)]
 	
-		\item \textbf{Behauptung: } Das untenstehende Sequenzkalkül ist korrekt:
+		\item \textbf{Behauptung: } Die untenstehende Sequenzkalkülregel ist korrekt:
 		\[ (\exists \Rightarrow) \frac{\Phi, \psi(c) \Rightarrow \Delta}{\Phi, \exists x \psi(x)\Rightarrow \Delta} c \text{ kommt nicht in $\Phi,\delta,\psi(x)$ vor}\]
 		\textbf{Beweis:} 
 		Sei $J = (\mathcal{A},\beta)$ ein $\tau$-Interpretation die $\Phi$ und für mindestens ein $x$, $\psi(x)$ erfüllt. Also:
@@ -52,21 +52,17 @@ Marius Liwotto\> -  341051
 			J &\vDash \Phi \\
 			J &\vDash \exists x \psi(x)
 		\end{align*}
-		Sei $a := \llbracket c \rrbracket^{J}$. Also gilt $J \vDash \psi[x/a]$, daraus folgt offensichtlich, dass $J \vDash \psi(c)$ gilt. Nach Vorraussetzung gibt es also ein $\varphi \in \Delta$, sodass $J \vDash \varphi$.
-		\item \textbf{Behauptung: } Das untenstehende Sequenzkalkül ist korrekt:
-		\[ (\Rightarrow \exists) \frac{\Phi \Rightarrow \Delta,\psi(t)}{\Phi \Rightarrow \Delta, \exists x \psi (x)} \]
-		\textbf{Beweis:} 
-		Sei $\tau$ die Signatur die alle Relations-, Funktions- und Konstantensymbole enthält, die in $\Phi, \Delta, \psi(x)$ vorkommen, aber nicht $t$.
-		Sei $\mathcal{J} = (\mathcal{A},\beta)$ eine $\tau$-Interpretation mit $J \vDash \Phi$.
-		Nach Vorraussetzung erfüllt $J$ eine Formel in $\Delta \cup \{ \psi(t) \}$
-		\begin{enumerate}[\text{Fall: } 1.]
-			\item $\mathcal{J} \vDash \varphi \in \Delta$, dies gilt offensichtlich.
-			\item $\mathcal{J} \vDash \psi(t)$ \\
-			Z.z. $\mathcal{J} \vDash \exists \forall x \psi(x)$ \\
-			Sei $J_a$ die $\tau \cup \{t\}$-Interpretation sodass $\mathcal{J}_a$ die Konstante $c$ mit $a$ belegt und sonst ist $\mathcal{J}_a$ gleich $J$.
-			Es gilt $\mathcal{J}_{a\mid_\tau}$ = $J$, daraus folgt, dass $\forall \varphi \in \Delta.J_a \not \vDash \varphi$. Also muss $J_a \vDash \psi(t)$.
-			Also gilt $\mathcal{J} \vDash \psi[a]$ für mindestens ein $a \in A$. Daher also $J \vDash \exists \psi (x)$
-		\end{enumerate}
+		Sei $\tau$ die Signatur die alle Relations-, Funktions- und Konstantensymbole enthält, die in $\Phi, \Delta, \psi(x)$ vorkommen, aber nicht $c$.
+		Wir nehmen an, dass $\Phi \cup \{ \exists x \psi(x)\}$ erfüllbar ist, sonst sind wir fertig. \\
+		Sei also $J = (\mathcal{A}, \beta)$ eine $\tau$-Interpretation mit $J \vDash \Phi \cup \{\exists x\psi(x) \}$. 
+		Sei $a \in A$ sodass $J[x/a] \vDash \psi(x)$. Sei $J_a$ die $\tau \cup \{c\}$-Interpretation, die die Konstante $c$ mit $a$ belegt und
+		sonst mit $J$ übereinstimmt. Da $J[x/a] \vDash \psi(x)$ und da $c$ nicht in $\Phi$ und $\psi(x)$ vorkommt, gilt $J_a \vDash \Phi \cup \{\psi(c)\}$.
+		Nach Vorraussetzung gilt $J_a \vDash \delta$ für ein $\delta \in \Delta$. Da $c$ nicht in $\Delta$ vorkommt, gilt auch $J \vDash \delta$. Dies war zu zeigen.
+		\item \textbf{Behauptung: } Die untenstehende Sequenzkalkülregel ist korrekt:
+		\[  ( \Rightarrow \exists ) \frac{\Phi \Rightarrow \Delta, \psi(c)}{\Phi\Rightarrow \Delta, \exists x \psi(x)} \]
+		Wir nehmen an, dass $\Phi$ erfüllbar ist, sonst sind wir fertig. Sei aber $J = (\mathcal{A}, \beta)$ eine Interpretation mit $J \vDash \Phi$. 
+		Falls $J \vDash \delta$ für ein $\delta \in \Delta$, so sind wir fertig. Sonst gilt nach Vorraussetzung $J \vDash \psi(c)$. Sei $a = \llbracket c \rrbracket^J$,
+		Daraus gilt $J[x/a] \vDash \psi(x)$
 	\end{enumerate}
 \end{enumerate}
 \subsection*{Aufgabe 2}
